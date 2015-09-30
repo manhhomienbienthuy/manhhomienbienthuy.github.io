@@ -162,38 +162,50 @@ h6 {
 
 .post-body h1 {
   line-height: 40px;
-  font-size: 42px;
+  font-size: 26px;
+  font-family: "Helvetica Neue", "Helvetica", sans-serif;
+  font-weight: bold;
   margin: 10px 0;
 }
 
 .post-body h2 {
-  font-size: 36px;
+  font-size: 24px;
+  font-family: "Helvetica Neue", "Helvetica", sans-serif;
+  font-weight: bold;
   line-height: 44px;
   padding-bottom: 5px;
   margin: 10px 0;
 }
 
 .post-body h3 {
-  font-size: 30px;
+  font-size: 20px;
+  font-family: "Helvetica Neue", "Helvetica", sans-serif;
+  font-weight: bold;
   line-height: 40px;
   padding-bottom: 5px;
   margin: 10px 0;
 }
 
 .post-body h4 {
-  font-size: 26px;
+  font-size: 18px;
+  font-family: "Helvetica Neue", "Helvetica", sans-serif;
+  font-weight: bold;
   line-height: 36px;
   margin: 10px 0;
 }
 
 .post-body h5 {
-  font-size: 20px;
+  font-size: 16px;
+  font-family: "Helvetica Neue", "Helvetica", sans-serif;
+  font-weight: bold;
   line-height: 30px;
   margin: 10px 0;
 }
 
 .post-body h6 {
-  font-size: 16px;
+  font-size: 14px;
+  font-family: "Helvetica Neue", "Helvetica", sans-serif;
+  font-weight: bold;
   line-height: 24px;
   margin: 10px 0;
 }
@@ -793,7 +805,7 @@ main-col,
 }
 
 .post-body {
-  font: normal normal 16px Merriweather, sans-serif;
+  font: normal normal 18px Georgia, serif;
   line-height: inherit;
   word-wrap: break-word;
 }

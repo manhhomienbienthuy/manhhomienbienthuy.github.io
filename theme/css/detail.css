@@ -305,7 +305,7 @@ span.article_timestamp {
   font-size: 90%;
 }
 
-p code {
+p code, li code {
   padding: 0.2em 0.4em;
   margin: 0px;
   background-color: rgba(0, 0, 0, 0.04);
