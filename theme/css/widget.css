@@ -1,0 +1,207 @@
+header {
+  display: block;
+}
+
+#ArchiveList .toggle {
+  cursor: pointer;
+  font-family: Arial,sans-serif;
+}
+
+#ArchiveList .toggle-open {
+  _font-size: 1.7em;
+  line-height: .6em;
+}
+
+#ArchiveList {
+  text-align: left;
+}
+
+#ArchiveList a.post-count-link,
+#ArchiveList a.post-count-link:link,
+#ArchiveList a.post-count-link:visited {
+  text-decoration: none;
+}
+
+#ArchiveList a.toggle,
+#ArchiveList a.toggle:link,
+#ArchiveList a.toggle:visited,
+#ArchiveList a.toggle:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+.BlogArchive #ArchiveList ul li {
+  background: none;
+  list-style: none;
+  list-style-image: none;
+  list-style-position: outside;
+  border-width: 0;
+  padding-left: 15px;
+  text-indent: -15px;
+  margin: .25em 0;
+  background-image: none;
+}
+
+.BlogArchive #ArchiveList ul ul li {
+  padding-left: 1.2em;
+}
+
+.BlogArchive #ArchiveList ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  list-style-image: none;
+  border-width: 0;
+}
+
+.BlogArchive #ArchiveList ul.posts li {
+  padding-left: 1.3em;
+}
+
+#blog-pager-newer-link {
+  float: left;
+}
+
+#blog-pager-older-link {
+  float: right;
+}
+
+#blog-pager {
+  margin: 1em 0;
+  text-align: center;
+  overflow: hidden;
+}
+
+.status-msg-wrap {
+  font-size: 110%;
+  width: 90%;
+  margin: 10px auto;
+  position: relative;
+}
+
+.status-msg-border {
+  border: 1px solid #000;
+  filter: alpha(opacity=40);
+  -moz-opacity: .4;
+  opacity: .4;
+  width: 100%;
+  position: relative;
+}
+
+.status-msg-bg {
+  background-color: #ccc;
+  opacity: .8;
+  filter: alpha(opacity=30);
+  -moz-opacity: .8;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.status-msg-body {
+  text-align: center;
+  padding: .3em 0;
+  width: 100%;
+  position: absolute;
+  z-index: 4;
+}
+
+.status-msg-hidden {
+  visibility: hidden;
+  padding: .3em 0;
+}
+
+.status-msg-wrap a {
+  padding-left: .4em;
+  text-decoration: underline;
+}
+
+.comment-form {
+  clear: both;
+  _width: 410px;
+}
+
+#comments-block.avatar-comment-indent {
+  margin-left: 45px;
+  position: relative;
+}
+
+.comments {
+  clear: both;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+::root .goog-custom-button,
+::root .goog-custom-button-outer-box {
+  line-height: 0;
+}
+
+::root .goog-custom-button-inner-box {
+  line-height: normal;
+}
+
+.FollowByEmail .follow-by-email-inner input:-moz-placeholder {
+  font-size: 13px;
+  font-family: arial,sans-serif;
+  color: #999;
+}
+
+div.clear {
+  clear: both;
+}
+
+.quickedit {
+  cursor: pointer;
+}
+
+.PopularPosts .item-thumbnail {
+  float: left;
+  margin: 0 5px 5px 0;
+}
+
+.PopularPosts .widget-content ul li {
+  padding: .7em 0;
+}
+
+.PopularPosts img {
+  padding-right: .4em;
+}
+
+.PopularPosts .item-title {
+  padding-bottom: .2em;
+}
+
+.item-control {
+  display: none;
+}
+
+.item-control a {
+  text-decoration: none !important;
+}
+
+.widget-item-control {
+  float: right;
+  height: 20px;
+  margin-top: -20px;
+  position: relative;
+  z-index: 10;
+}
+
+.widget-item-control a {
+  opacity: .5;
+}
+
+.widget-item-control a:hover {
+  opacity: 1;
+}
+
+.widget .widget-item-control a img {
+  border: none;
+  padding: none;
+  background: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  -ie-box-shadow: none;
+  box-shadow: none;
+}
