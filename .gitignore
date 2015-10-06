@@ -1,0 +1,5 @@
+.webassets-cache
+theme/js/
+theme/css/
+!theme/css/vpyeu.*.css
+!theme/js/vpyeu.*.js

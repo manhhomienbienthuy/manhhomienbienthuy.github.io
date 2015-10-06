@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<title>Grunt and 5 tasks to improve web performance - Anh Tranngoc's space</title>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta content="Anh Tranngoc's space" name="description">
+<meta content="blog, python, web, viet phuong, yeu, Anh Tranngoc" name="keywords">
+<link href="/theme/images/favicon.ico" rel="icon" type="image/x-icon">
+<link href="https://twitter.com/AnhTranngoc" rel="publisher">
+<link href="https://twitter.com/AnhTranngoc" rel="author">
+<link href="https://twitter.com/AnhTranngoc" rel="me">
+<meta content="Anh Tranngoc" name="Author">
+<meta content="general" name="rating">
+
+<meta content="Viet Phuong yeu" property="og:title">
+<meta content="website" property="og:type">
+<meta content="http://manhhomienbienthuy.bitbucket.org" property="og:url">
+<meta content="http://manhhomienbienthuy.bitbucket.org/theme/images/favicon.ico" property="og:image">
+<meta content="Anh Tranngoc's space" property="og:description">
+
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Open+Sans:400,700|Montserrat|Pacifico|Roboto+Mono&subset=latin,vietnamese" rel="stylesheet">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/theme/css/vpyeu.style.css?94d223ff">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>  <link rel="stylesheet" href="/theme/css/vpyeu.detail.css?b1093ac2">
+<div class="top_header clearfix">
+  <div class="ct-wrapper">
+<div class="nav-menu">
+  <div class="vt_menu_toggle">
+    <i class="fa fa-bars"></i>
+  </div>
+  <ul class="clearfix blog_menus">
+    <li><a class="current" href="/">Home</a>
+    <li><a href="/category/technology.html">Technology</a>
+    <li><a href="/category/news.html">News</a>
+    <li><a href="/category/lifestyle.html">Lifestyle</a>
+    <li><a href="/category/travel.html">Travel</a>
+    <li><a href="/category/family.html">Family</a>
+    <li><a href="/categories.html">All categories</a>
+  </ul>
+</div>    <div class="right clearfix social_search">
+<div class="social-wrap right">
+  <ul class="dslc-social">
+    <li>
+      <a href="https://twitter.com/AnhTranngoc" target="_blank">
+        <span class="fa fa-twitter"></span>
+      </a>
+    <li>
+      <a href="https://www.facebook.com/manhhomienbienthuy" target="_blank">
+        <span class="fa fa-facebook"></span>
+      </a>
+    <li>
+      <a href="https://www.youtube.com/user/manhhomienbienthuy" target="_blank">
+        <span class="fa fa-youtube-play"></span>
+      </a>
+    <li>
+      <a href="https://github.com/manhhomienbienthuy" target="_blank">
+        <span class="fa fa-github"></span>
+      </a>
+    <li>
+      <a href="https://instagram.com/manhhomienbienthuy/" target="_blank">
+        <span class="fa fa-instagram"></span>
+      </a>
+  </ul>
+</div>    </div>
+  </div>
+</div>
+<div class="clr"></div><header class="blog_header" id="blog_header">
+  <div class="ct-wrapper clearfix">
+    <div class="header_wrapper clearfix">
+      <div class="header section" id="header">
+        <div class="widget Header" id="Header1">
+          <div id="header-inner">
+            <a href="/" style="display: block">
+              <img alt="Anh Tranngoc's space" id="Header1_headerimg" src="/theme/images/logo.png">
+            </a>
+            <center>This site is under heavy development</center>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="clr"></div><div class="ct-wrapper clearfix">
+  <div class="outer-wrapper">
+    <div class="main-wrapper">
+      <div class="article section" id="content">
+        <div class="widget Blog" id="Blog1">
+          <div class="blog-posts hfeed">
+<div class="post-outer">
+  <div class="post hentry">
+<h1 class="article_post_title entry-title">
+  Grunt and 5 tasks to improve web performance
+</h1>
+
+<div class="article_meta_container post-header">
+  <span class="article_author vcard">
+    <abbr class="fn">
+      posted in
+      <a href="/category/technology.html">
+        <u>Technology</u>
+      </a>
+    </abbr>
+  </span>
+  <span class="article_timestamp"> on October 15 2015</span>
+  <span class="article_comment_link right">
+    <i class="fa fa-comments"></i>
+    <a href="#disqus_thread">No Comments</a>
+  </span>
+</div>
+
+<div class="post-body entry-content">
+  <div dir="ltr" style="text-align: left;" trbidi="on">
+    <div class="separator" style="clear: both; text-align: center;">
+      <a href="#!" imageanchor="1" style="margin-left: 1em; margin-right: 1em;">
+        <img src="/images/grunt-the-js-task-runner.jpg" height="424" width="640" border="0">
+      </a>
+    </div>
+    <p>Hiệu suất và hoạt động mượt mà là một yếu tố rất quan trọng với 1
+trang Web.  Trong bài viết này, tôi sẽ hướng dẫn 1 số task của Gruntjs
+giúp cải thiệu hiệu suất của trang Web mà cụ thể ở đây là tốc độ tải
+trang.</p>
+<p>Tốc độ tải trang nhanh hay chậm phụ thuộc rất lớn vào lượng dữ liệu
+cần tải về của trang Web đó. Vì vậy trong bài viết này, tôi sẽ tập
+trung vào cách giảm dung lượng tải về của trang.</p>
+<p>Trong bài viết này, tôi sẽ giới thiệu Grunt và một số task của nó giúp
+bạn cải thiện tốc độ tải trang.</p>
+<h1>Grunt là gì?</h1>
+<p>Nếu bạn đang viết những ứng dụng Javascript hoặc đang phát triển một
+trang Web, bạn sẽ cần đến các công cụ giúp bạn một số việc như minify
+css, js, hoặc biên dịch scss, coffeescript, v.v... Những công việc này
+hoàn toàn có thể sử dụng những công cụ riêng biệt. Tuy nhiên, nếu chỉ
+cần đến 1 hoặc 2 công cụ thì có thể dùng riêng được, chứ nếu có nhiều
+công việc cần làm thì thực hiện chúng một cách riêng rẽ đúng là cực
+hình. Khi đó bạn cần đến các công cụ có thể chạy các tools đó hoàn
+toàn tự động.</p>
+<p>Một số framework như Rails có cơ chế assets pipline và có thể đặt rake
+task. Tuy nhiên không phải lúc nào framework cũng có những công cụ như
+vậy. Khi đó bạn cần các tools chạy task bên ngoài.</p>
+<p>Hiện nay có nhiều công cụ khác nhau, nhưng phổ biến hơn cả là Grunt và
+Gulp. Grunt có khoảng 15000 download mỗi ngày. Grunt là một tasks
+runner cho phép bạn cấu hình và gọi các task hoàn toàn tự động.</p>
+<p>Grunt là một task runner chạy bằng javascript đúng như tên gọi ở trên,
+nó là một chương trình dùng để gọi các chương trình khác. Những chương
+trình đó gọi là task của grunt. Thông thường các task này được sử dụng
+như các công cụ trong quá trình phát triển nên nó còn được gọi là
+build system.</p>
+<p>Grunt là task runner nên nó phụ thuộc vào các plugin để chạy các task
+của mình. Công việc của nó chỉ đơn giản là gọi và thực thi các task
+này.</p>
+<p>Việc config Grunt có thể hơi khó khi mới bắt đầu. Nhưng nếu đã quen
+rồi thì mọi chuyện rất đơn giản. Một khi đã config xong, mỗi khi cần
+chạy, bạn chỉ cần gõ lệnh</p>
+<div class="codehilite"><pre><span class="nv">$ </span>grunt
+</pre></div>
+
+
+<p>là các task sẽ được gọi là thực hiện lần lượt theo config của bạn.</p>
+<h1>Cài đặt và sử dụng</h1>
+<p>Grunt là task runner chạy bằng Javascript nên để chạy được, máy bạn cần
+được cài Nodejs.</p>
+<h2>Cài đặt Nodejs</h2>
+<p>Cài Nodejs bằng lệnh sau:</p>
+<div class="codehilite"><pre><span class="nv">$ </span>sudo apt-get install nodejs
+</pre></div>
+
+
+<p>Sau khi cài Nodejs, Grunt và các plugin của nó có thể dễ dàng cài đặt
+thông qua <code>npm</code> - trình quản lý package của Nodejs. Grunt version 0.4
+yêu cầu Nodejs version từ 0.8 trở nên. Trước khi cài đặt Grunt, có thể
+bạn cần update <code>npm</code> với lệnh sau:</p>
+<div class="codehilite"><pre><span class="nv">$ </span>npm update -g npm
+</pre></div>
+
+
+<h2>Cài Grunt CLI</h2>
+<p>Để sử dụng lệnh grunt trên Terminal hoặc các trình shell khác, bạn cần
+cài Grunt CLI bằng lệnh sau. Có thể bạn cần đến <code>sudo</code> tùy vào OS của
+bạn:</p>
+<div class="codehilite"><pre><span class="nv">$ </span>npm install -g grunt-cli
+</pre></div>
+
+
+<p>Tùy chọn <code>-g</code> ở trên nghĩa là grunt-cli sẽ được cài cho toàn hệ thống.
+Bạn có thể bỏ nó đi nếu chỉ muốn cài riêng cho project của mình. Nhưng
+tôi nghĩ bạn nên cài nó để có thể dùng ở tất cả project.</p>
+<p>Sau khi cài đặt, bạn có thể gọi lệnh <code>grunt</code> từ shell. Tuy nhiên, việc
+cài đặt cli hoàn toàn không liên quan đến cài dặt bản thân Grunt task
+runner. Grunt CLI chỉ có nhiệm vụ là gọi grunt và các task được config
+ở Grunfile. Với cách làm này, nó cho phép bạn sử dụng nhiều phiên bản
+grunt khác nhau với các project khác nhau.</p>
+<p>Các package được cài bởi <code>npm</code> thường lưu trong thư mục
+<code>node_packages</code> và bạn có thể ignore nó nếu sử dụng git hoặc các trình
+quản lý version tương tự.</p>
+<p>Việc config Gruntfile tôi sẽ nói ở phần tiếp theo đây.</p>
+<h2>Config grunt</h2>
+<p>Config thông thường của Grunt sẽ gồm 2 file: <code>package.json</code> và
+Gruntfile được đặt ở thư mục gốc project của bạn. Tuy nhiên bạn có thể
+đặt chúng ở bất cứ đâu tùy theo cấu trúc project. Khi đó, bạn cần sử
+dụng config <code>grunt.file.setBase</code> để đặt đường dẫn về thư mục gốc của
+project. Ví dụ tôi đặt Gruntfile và <code>package.json</code> Trong thư mục
+<code>grunt</code> thì config của tôi sẽ là:</p>
+<div class="codehilite"><pre>grunt.file.setBase(&quot;../&quot;)
+</pre></div>
+
+
+<p>File <code>package.json</code> là file mà <code>npm</code> dùng để lưu các thông tin liên
+quan đến project. Nó sẽ có danh sách Grunt và các plugin cần thiết của
+project trong phần <code>devDependencies</code>.</p>
+<p>Gruntfile là file có tên đầy đủ là <code>Gruntfile.js</code> hoặc
+<code>Gruntfile.coffee</code> and nó dùng để lưu các config chính liên quan đến
+các task của Grunt. Gruntfile có thể là một trong 2 file trên, js hoặc
+coffee tùy theo nhu cầu của bạn và project của bạn sử dụng javascript
+hay coffeescript.</p>
+<p>Khi config 2 file trên, chạy <code>npm install</code> nó sẽ tự động cài đặt các
+package cần thiết để có thể chạy các task của Grunt. Có 1 số cách để
+tạo file <code>package.json</code> như sau:</p>
+<ul>
+<li>Sử dụng <code>grunt-init</code> nó sẽ tự động tạo file <code>package.json</code> cho
+project của bạn, sau khi bạn confirm một số thông tin cần thiết.</li>
+<li>Sử dụng <code>npm init</code> sẽ tạo ra một file <code>package.json</code> đơn giản.</li>
+<li>Tùy vào nhu cầu của bạn, bạn có thể tự viết file <code>package.json</code> cho
+mình hoặc edit file được tạo ra từ 2 cách trên.</li>
+</ul>
+<p>Dưới đây là một ví dụ của file <code>package.json</code></p>
+<div class="codehilite"><pre><span class="p">{</span>
+  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;my-project-name&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;0.1.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;devDependencies&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;grunt&quot;</span><span class="p">:</span> <span class="s2">&quot;~0.4.5&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;grunt-contrib-jshint&quot;</span><span class="p">:</span> <span class="s2">&quot;~0.10.0&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;grunt-contrib-nodeunit&quot;</span><span class="p">:</span> <span class="s2">&quot;~0.4.1&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;grunt-contrib-uglify&quot;</span><span class="p">:</span> <span class="s2">&quot;~0.5.0&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<h2>Config <code>package.json</code> và cài Grunt cùng các plugin</h2>
+<p>Có một cách khá dễ dàng để cài đặt Grunt và các plugin của nó. Đó là
+sử dụng lệnh:</p>
+<div class="codehilite"><pre><span class="nv">$ </span>npm install &lt;module&gt; --save-dev
+</pre></div>
+
+
+<p>Sử dụng lệnh trên, không chỉ các gói cần thiết được cài đặt, mà nó còn
+tự động thêm module và phần <code>devDependencies</code> của file <code>package.json</code>.</p>
+<p>Ví dụ, lệnh dưới đây sẽ cài đặt Grunt và thêm vào <code>devDependencies</code>:</p>
+<div class="codehilite"><pre><span class="nv">$ </span>npm install grunt --save-dev
+</pre></div>
+
+
+<p>Sử dụng lệnh tương tự với các plugin của Grunt. Nếu như bạn làm việc
+với một project đã có sẵn config của Grunt. Đơn giản, bạn chỉ cần chạy
+lệnh</p>
+<div class="codehilite"><pre><span class="nv">$ </span>npm install
+</pre></div>
+
+
+<p>trong cùng thư mục với config đó. Nó sẽ tự động đọc file
+<code>package.json</code> và cài đặt các gói cần thiết đã được định nghĩa trong
+đó.</p>
+<h2>Config Gruntfile</h2>
+<p>Gruntfile (Gruntfile.js hoặc Gruntfile.coffee) là một file javascript
+(hoặc coffeescript) dùng để config cho việc hoạt động của Grunt.</p>
+<p>Một Gruntfile cần có các thành phần sau:</p>
+<ul>
+<li>Hàm wrapper</li>
+<li>Config cho project và các task</li>
+<li>Load các plugin và tasks</li>
+<li>Tùy biến task.</li>
+</ul>
+<p>Dưới đây là một ví dụ của Gruntfile. Các thông tin của project được
+đọc từ file <code>package.json</code>. Gruntfile định nghĩa task uglify để nén
+các file Javascript. Khi chạy lênh <code>grunt</code> thì default task <code>uglify</code>
+sẽ được gọi.</p>
+<div class="codehilite"><pre><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">grunt</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Project configuration.</span>
+  <span class="nx">grunt</span><span class="p">.</span><span class="nx">initConfig</span><span class="p">({</span>
+    <span class="nx">pkg</span><span class="o">:</span> <span class="nx">grunt</span><span class="p">.</span><span class="nx">file</span><span class="p">.</span><span class="nx">readJSON</span><span class="p">(</span><span class="s1">&#39;package.json&#39;</span><span class="p">),</span>
+    <span class="nx">uglify</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">options</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">banner</span><span class="o">:</span> <span class="s1">&#39;/*! &lt;%= pkg.name %&gt; &lt;%= grunt.template.today(&quot;yyyy-mm-dd&quot;) %&gt; */\n&#39;</span>
+      <span class="p">},</span>
+      <span class="nx">build</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">src</span><span class="o">:</span> <span class="s1">&#39;src/&lt;%= pkg.name %&gt;.js&#39;</span><span class="p">,</span>
+        <span class="nx">dest</span><span class="o">:</span> <span class="s1">&#39;build/&lt;%= pkg.name %&gt;.min.js&#39;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+
+  <span class="c1">// Load the plugin that provides the &quot;uglify&quot; task.</span>
+  <span class="nx">grunt</span><span class="p">.</span><span class="nx">loadNpmTasks</span><span class="p">(</span><span class="s1">&#39;grunt-contrib-uglify&#39;</span><span class="p">);</span>
+
+  <span class="c1">// Default task(s).</span>
+  <span class="nx">grunt</span><span class="p">.</span><span class="nx">registerTask</span><span class="p">(</span><span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;uglify&#39;</span><span class="p">]);</span>
+<span class="p">};</span>
+</pre></div>
+
+
+<p>Bây giờ, tôi sẽ giải thích từng thành phần của Gruntfile thông qua ví
+dụ trên.</p>
+<h3>Hàm wrapper</h3>
+<p>Tất cả các Gruntfile để được config với mẫu như trên, cho dù nó thay
+đổi tùy theo project. Bạn có thể tự viết config cho riêng mình, vì suy
+cho cùng thì đây cũng là code Javascript mà nó hoạt động như những
+file Javascript khác. Tuy nhiên, không nên làm như vậy ví đó không
+phải là con đường dễ dàng và việc config Grunt cũng không phải là ưu
+tiên của project.</p>
+<p>Hàm wrapper là hàm sẽ bao trọn toàn bộ hoạt động của Grunt. Tất cả các
+config của Grunt và các task của nó đề đặt ở trong hàm này. Hàm này sẽ
+như sau:</p>
+<div class="codehilite"><pre><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">grunt</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">Các</span> <span class="nx">config</span> <span class="nx">khác</span> <span class="nx">của</span> <span class="nx">Grunt</span> <span class="nx">đặt</span> <span class="nx">ở</span> <span class="nx">đây</span>
+<span class="p">};</span>
+</pre></div>
+
+
+<h3>Config của project và các task</h3>
+<p>Các task Grunt đề phụ thuộc vào config được định nghĩa bên trong
+<code>grunt.initConfig</code>.</p>
+<p>Trong ví dụ của chúng ta, <code>grunt.file.readJSON('package.json')</code> sẽ đọc
+thông tin JSON từ file <code>package.json</code>. Trong file, các block <code>&lt;% %&gt;</code>
+là template engine của riêng Grunt và bạn có thể đặt trong đó các
+biến, tương tự như template engine của các framework lập trình Web
+thông thường.</p>
+<p>Các task của Grunt, trong trường hợp của chúng là uglify, cần được
+config mới có thể hoạt động được. Trong trường hợp của chúng ta, task
+này nhận tùy chọn là thêm banner lên trên cùng của file kết quả.</p>
+<div class="codehilite"><pre><span class="c1">// Project configuration.</span>
+<span class="nx">grunt</span><span class="p">.</span><span class="nx">initConfig</span><span class="p">({</span>
+  <span class="nx">pkg</span><span class="o">:</span> <span class="nx">grunt</span><span class="p">.</span><span class="nx">file</span><span class="p">.</span><span class="nx">readJSON</span><span class="p">(</span><span class="s1">&#39;package.json&#39;</span><span class="p">),</span>
+  <span class="nx">uglify</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">options</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">banner</span><span class="o">:</span> <span class="s1">&#39;/*! &lt;%= pkg.name %&gt; &lt;%= grunt.template.today(&quot;yyyy-mm-dd&quot;) %&gt; */\n&#39;</span>
+    <span class="p">},</span>
+    <span class="nx">build</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">src</span><span class="o">:</span> <span class="s1">&#39;src/&lt;%= pkg.name %&gt;.js&#39;</span><span class="p">,</span>
+      <span class="nx">dest</span><span class="o">:</span> <span class="s1">&#39;build/&lt;%= pkg.name %&gt;.min.js&#39;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+
+
+<h3>Load Grunt và các plugin</h3>
+<p>Rất nhiều công cụ liên quan đến quá trình phát triển như cssmin,
+jsmin, linter, v.v... đều có sẵn các plugin của Grunt tương ứng. Và
+nếu chúng được định nghĩa trong <code>package.json</code> thì chúng sẽ được <code>npm</code>
+cài đặt.</p>
+<p>Để gọi chúng, ở Gruntfile chúng ta cần load Grunt và các plugin này.</p>
+<div class="codehilite"><pre><span class="c1">// Load the plugin that provides the &quot;uglify&quot; task.</span>
+<span class="nx">grunt</span><span class="p">.</span><span class="nx">loadNpmTasks</span><span class="p">(</span><span class="s1">&#39;grunt-contrib-uglify&#39;</span><span class="p">);</span>
+</pre></div>
+
+
+<p>Trên đây tôi đã giới thiệu Grunt và cách config chúng cho project của
+bạn. Tùy vào nhu cầu của bạn, bạn có thể sử dụng nó tùy ý để phục vụ
+cho công việc của mình. Phần tiếp theo, tôi sẽ giới thiệu một số task
+của Grunt giúp cải thiệu hiệu suất của trang Web, cụ thể là cải thiện
+tốc độ tải trang.</p>
+<h1>Các task grunt giúp cải thiện hiệu suất trang Web</h1>
+<p>Dưới đây tôi sẽ giới thiệu 5 task thông dụng và rất hữu ích để cải
+thiện hiệu suất trang Web của bạn.</p>
+<h2>grunt-contrib-imagemin</h2>
+<p>Đây là task đầu tiên tôi muốn nói tới. Lý do rất đơn giản, hình ảnh
+chính là những dữ liệu nặng nhất trên trang Web của chúng ta.</p>
+<p>Hãy nhìn vào <a href="http://httparchive.org/interesting.php#bytesperpage">thống kê của
+HTTParchive.org</a>
+và bạn dễ dàng nhận ra rằng, trên 63% lưu lượng truy cập vào trang Web
+là để tải hình ảnh. Vì lý do đó, nên việc giảm dung lượng hình ảnh có
+ý nghĩa rất lớn trong việc cải thiện tốc độ tải trang Web của bạn. Và
+grunt-contrib-imagemin là một task giúp làm việc đó.</p>
+<p>Task này sẽ dụng các tools sau để giúp nén ảnh và qua đó, giảm dung
+lượng file ảnh cần tải.</p>
+<ul>
+<li>gifsicle để nén các ảnh GIF</li>
+<li>jpegtran để nén các ảnh JPEG</li>
+<li>optipng để nén các ảnh PNG</li>
+<li>svgo để nén các ảnh SVG</li>
+</ul>
+<p>Một config đơn giản cho task này như sau:</p>
+<div class="codehilite"><pre><span class="nx">imagemin</span><span class="o">:</span> <span class="p">{</span>
+  <span class="nx">dist</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">options</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">optimizationLevel</span><span class="o">:</span> <span class="mi">5</span>
+    <span class="p">},</span>
+    <span class="nx">files</span><span class="o">:</span> <span class="p">[{</span>
+      <span class="nx">expand</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nx">cwd</span><span class="o">:</span> <span class="s2">&quot;src/images&quot;</span><span class="p">,</span>
+      <span class="nx">src</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;**/*.{png,jpg,gif}&quot;</span><span class="p">],</span>
+      <span class="nx">dest</span><span class="o">:</span> <span class="s2">&quot;dist/&quot;</span>
+    <span class="p">}]</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>Config này cho phép thiết lập mức độ tối ưu hóa thông qua setting cua
+key <code>optimizationLevel</code>. Giá trị có thể thay đổi trong khoảng từ 0 đến
+7, nếu bạn không thiết lập cho nó, giá trị default là 3 sẽ được sử
+dụng. Trong config trên, tất cả các file có phần mở rộng là <code>png</code>,
+<code>jpg</code>, <code>gif</code> và nằm trong thư mục <code>src/images</code> sẽ được nén và lưu các
+file kết quả vào thư mục <code>dist</code>.</p>
+<h2>grunt-contrib-uglify</h2>
+<p>Đây là task dùng để minify các file javascript. Task này không chỉ bỏ
+tất cả các khoảng trắng không cần thiết (bao gồm dấu cách, dấu xuống
+dòng, v.v...)  mà nó còn đổi tên các biến và các hàm để sử dụng những
+tên ngắn nhất có thể.  Điều này có thêm 1 lợi ích đó là các file
+javascript sau khi uglify sẽ rất khó đọc, cho dù có dùng các tools
+beautify cũng không thể khôi phục lại trạng thái ban đầu vì khi đó,
+các hàm và biến chỉ còn là những cái tên vô nghĩa như <code>a</code>, <code>b</code>, <code>c</code>,
+v.v...</p>
+<p>Một vài tùy chọn cho task này đó là sourceMap và banner. Tùy chọn
+sourceMap sẽ tạo một file map trong cùng thư mục với file đích được
+tạo ra. Default của option này là <code>false</code>, để kích hoạt nó, bạn set nó
+là <code>true</code> là được. Tùy chọn banner sẽ chèn thêm một đoạn comment vào
+đầu file đích. Bạn có thể viết vào đó giải thích ngắn gọn, tên tác
+giả, version, license, v.v...</p>
+<p>Dưới đây là một config đơn giản cho task này.</p>
+<div class="codehilite"><pre><span class="nx">uglify</span><span class="o">:</span> <span class="p">{</span>
+  <span class="nx">dist</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">options</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">sourceMap</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nx">banner</span><span class="o">:</span> <span class="s1">&#39;/*! MyLib.js 1.0.0 | Aurelio De Rosa (@AurelioDeRosa) | MIT Licensed */&#39;</span>
+    <span class="p">},</span>
+    <span class="nx">files</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s1">&#39;dest/output.min.js&#39;</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;src/input.js&#39;</span><span class="p">],</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>Để mình hoạ cho cách làm của task này, tôi có 1 ví dụ với đoạn
+javascript sau:</p>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">MyApplication</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="s1">&#39;hello&#39;</span><span class="p">;</span>
+
+  <span class="k">this</span><span class="p">.</span><span class="nx">sum</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">first</span><span class="p">,</span> <span class="nx">second</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">first</span> <span class="o">+</span> <span class="nx">second</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">this</span><span class="p">.</span><span class="nx">showData</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">data</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+
+
+<p>Sau khi dùng uglify, kết quả thu được sẽ là</p>
+<div class="codehilite"><pre><span class="kd">var</span> <span class="nx">MyApplication</span><span class="o">=</span><span class="kd">function</span><span class="p">(){</span><span class="kd">var</span> <span class="nx">a</span><span class="o">=</span><span class="s2">&quot;hello&quot;</span><span class="p">;</span><span class="k">this</span><span class="p">.</span><span class="nx">sum</span><span class="o">=</span><span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">){</span><span class="k">return</span> <span class="nx">a</span><span class="o">+</span><span class="nx">b</span><span class="p">},</span><span class="k">this</span><span class="p">.</span><span class="nx">showData</span><span class="o">=</span><span class="kd">function</span><span class="p">(){</span><span class="k">return</span> <span class="nx">a</span><span class="p">}};</span>
+</pre></div>
+
+
+<h2>grunt-contrib-cssmin</h2>
+<p>Tên của task này đã nói lên tất cả, task này sẽ nén các file css. Công
+việc của nó là xóa bỏ tất cả các dấu cách thừa trong file css. Cũng
+tương tự như uglify nó cũng có tùy chọn banner.</p>
+<p>Một config đơn giản cho task này như sau:</p>
+<div class="codehilite"><pre><span class="nx">cssmin</span><span class="o">:</span> <span class="p">{</span>
+  <span class="nx">dist</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">options</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">banner</span><span class="o">:</span> <span class="s1">&#39;/*! MyLib.js 1.0.0 | Aurelio De Rosa (@AurelioDeRosa) | MIT Licensed */&#39;</span>
+    <span class="p">},</span>
+    <span class="nx">files</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s1">&#39;dist/css/style.min.css&#39;</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;src/css/**/*.css&#39;</span><span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>Với config trên, cssmin sẽ minify tất cả các file css trong thư mục
+<code>src/css</code> và lưu kết quả vào 1 file duy nhất <code>style.min.css</code> nằm trong
+thư mục 'dist/css'. Config trên cũng thêm banner vào đầu file min này.</p>
+<h2>grunt-uncss</h2>
+<p>Một task khác cũng thao tác với các file css đó là grunt-uncss. Task
+này sẽ loại bỏ tất cả các code css không được dùng từ trong các file
+của project của bạn. Do đó, nó sẽ giảm kích thước các file css và giảm
+thời gian tải trang.  Điều này thực sự hữu ích khi bạn sẽ dụng các
+template dựng sẵn của người khác hoặc dùng những framework như
+Bootstrap hay Foundation. Không phải tất cả code css của họ bạn đều
+dùng, và giữ chúng lại chỉ làm chậm quá trình tải trang.</p>
+<p>Có một số giới hạn mà bạn cần tìm hiểu trước ở <a href="https://github.com/addyosmani/grunt-uncss">tài liệu của
+uncss</a></p>
+<p>Một demo ở trên trang github của uncss cho thấy rằng, nó có thể giảm
+dung lượng css của Bootstrap từ 120Kb xuống còn 11Kb bằng cách loại bỏ
+hết các thành phần không được sử dụng.</p>
+<p><img alt="uncss" src="https://camo.githubusercontent.com/986f80f311f534223b46dfd3addcf1e7257698eb/687474703a2f2f692e696d6775722e636f6d2f7568574d414c482e676966" /></p>
+<p>Có một số tùy chọn khi config task này, ví dụ như <code>ignore</code> cho phép
+chúng ta giữ lại những thành phần cho dù hiện tại nó chưa được sử
+dụng. Hoặc tùy chọn <code>ignoreSheets</code> cho phép chúng ta giữ lại toàn bộ
+các file chưa được dùng.</p>
+<p>Uncss có thể kiểm tra cả những thành phần được render bằng javascript,
+bằng cách chạy javascript của các trang thông qua phatomjs. Tuy nhiên,
+nếu những render này lấy dữ liệu từ AJAX thì nó chưa làm được. Ngoài
+ra, có một hạn chế là nó không tương thích với các template engine của
+các framework, nó chỉ làm việc với các file html mà thôi.</p>
+<p>Một config ví dụ như sau:</p>
+<div class="codehilite"><pre><span class="nx">uncss</span><span class="o">:</span> <span class="p">{</span>
+  <span class="nx">dist</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">options</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">ignore</span><span class="o">:</span> <span class="p">[</span><span class="sr">/js-.+/</span><span class="p">,</span> <span class="s1">&#39;.special-class&#39;</span><span class="p">],</span>
+      <span class="nx">ignoreSheets</span><span class="o">:</span> <span class="p">[</span><span class="sr">/fonts.googleapis/</span><span class="p">],</span>
+    <span class="p">},</span>
+    <span class="nx">files</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s1">&#39;dist/css/unused-removed.css&#39;</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;src/index.html&#39;</span><span class="p">,</span> <span class="s1">&#39;src/contact.html&#39;</span><span class="p">,</span> <span class="s1">&#39;src/service.html&#39;</span><span class="p">]</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<h2>grunt-contrib-htmlmin</h2>
+<p>Đây là task cuối cùng mà tôi muốn đề cập đến, đó là htmlmin, nó sẽ
+minify html code. Nó không thực sự giúp ích được nhiều, bởi vì trong
+quá trình phát triển, chúng ta không thể minify các file HTML được. Và
+cho dù minify thì nó cũng chỉ có thể giảm một vài Kb mà thôi. Tuy
+nhiên, một vài Kb với mỗi người nhưng nhiều người dùng thì nó cũng có
+ý nghĩa hết sức quan trọng.</p>
+<p>Dưới đây là một ví dụ về config của task này:</p>
+<div class="codehilite"><pre><span class="nx">htmlmin</span><span class="o">:</span> <span class="p">{</span>
+  <span class="nx">dist</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">options</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">removeComments</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nx">collapseWhitespace</span><span class="o">:</span> <span class="kc">true</span>
+    <span class="p">},</span>
+    <span class="nx">files</span><span class="o">:</span> <span class="p">[{</span>
+      <span class="nx">expand</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nx">cwd</span><span class="o">:</span> <span class="s1">&#39;src&#39;</span><span class="p">,</span>
+      <span class="nx">src</span><span class="o">:</span> <span class="s1">&#39;**/*.html&#39;</span><span class="p">,</span>
+      <span class="nx">dest</span><span class="o">:</span> <span class="s1">&#39;dist/&#39;</span>
+    <span class="p">}]</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>Với config trên, tất cả các file html trong thư mục <code>src</code> sẽ được
+minify. Với mỗi file này, htmlmin sẽ xóa tất cả các comment và thu
+lượng khoảng trắng về mức tối đa, và kết quả được lưu ở <code>dist</code>.</p>
+<h1>What's next?</h1>
+<h1>Kết luận</h1>
+<p>Trong bài viết này, tôi chỉ tập trung vào các task giúp giảm dung
+lượng những dữ liệu tĩnh để cải thiện tốc độ tải trang Web của
+bạn. Chúng rất đơn giản, dễ dùng và kết quả thu được biểu hiện rõ ràng
+ngay trước mắt chúng ta. Hy vọng bài viết có ích cho các bạn đang muốn
+phát triển Web cho riêng mình :)</p>
+<p>Đây là config đầy đủ của Gruntjs cho cả 5 task trên.</p>
+<p>Gruntfile.js</p>
+<div class="codehilite"><pre><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">grunt</span><span class="p">)</span> <span class="p">{</span>
+
+  <span class="nx">grunt</span><span class="p">.</span><span class="nx">initConfig</span><span class="p">({</span>
+    <span class="nx">pkg</span><span class="o">:</span> <span class="nx">grunt</span><span class="p">.</span><span class="nx">file</span><span class="p">.</span><span class="nx">readJSON</span><span class="p">(</span><span class="s2">&quot;package.json&quot;</span><span class="p">),</span>
+    <span class="nx">imagemin</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">dist</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">options</span><span class="o">:</span> <span class="p">{</span>
+          <span class="nx">optimizationLevel</span><span class="o">:</span> <span class="mi">5</span>
+        <span class="p">},</span>
+        <span class="nx">files</span><span class="o">:</span> <span class="p">[{</span>
+           <span class="nx">expand</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+           <span class="nx">cwd</span><span class="o">:</span> <span class="s2">&quot;static_root&quot;</span><span class="p">,</span>
+           <span class="nx">src</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;**/*.{png,jpg,gif,ico}&quot;</span><span class="p">],</span>
+           <span class="nx">dest</span><span class="o">:</span> <span class="s2">&quot;static_root&quot;</span>
+        <span class="p">}]</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="nx">uglify</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">dist</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">options</span><span class="o">:</span> <span class="p">{</span>
+           <span class="nx">sourceMap</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+           <span class="nx">banner</span><span class="o">:</span> <span class="s2">&quot;/*! Copyright: Anh Tranngoc */&quot;</span>
+        <span class="p">},</span>
+        <span class="nx">files</span><span class="o">:</span> <span class="p">[{</span>
+           <span class="nx">expand</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+           <span class="nx">cwd</span><span class="o">:</span> <span class="s2">&quot;static_root&quot;</span><span class="p">,</span>
+           <span class="nx">src</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;**/*.js&quot;</span><span class="p">],</span>
+           <span class="nx">dest</span><span class="o">:</span> <span class="s2">&quot;static_root&quot;</span>
+        <span class="p">}]</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="nx">cssmin</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">dist</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">options</span><span class="o">:</span> <span class="p">{</span>
+           <span class="nx">banner</span><span class="o">:</span> <span class="s2">&quot;/*! Copyright: Anh Tranngoc */&quot;</span>
+        <span class="p">},</span>
+        <span class="nx">files</span><span class="o">:</span> <span class="p">[{</span>
+           <span class="nx">expand</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+           <span class="nx">cwd</span><span class="o">:</span> <span class="s2">&quot;static_root&quot;</span><span class="p">,</span>
+           <span class="nx">src</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;**/*.css&quot;</span><span class="p">],</span>
+           <span class="nx">dest</span><span class="o">:</span> <span class="s2">&quot;static_root&quot;</span>
+        <span class="p">}]</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="nx">uncss</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">dist</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">files</span><span class="o">:</span> <span class="p">{</span>
+           <span class="s2">&quot;static_root/css/unused-removed.css&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;templates/t*.html&quot;</span><span class="p">]</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="nx">htmlmin</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">dist</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">options</span><span class="o">:</span> <span class="p">{</span>
+           <span class="nx">removeComments</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+           <span class="nx">collapseWhitespace</span><span class="o">:</span> <span class="kc">true</span>
+        <span class="p">},</span>
+        <span class="nx">files</span><span class="o">:</span> <span class="p">[{</span>
+           <span class="nx">expand</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+           <span class="nx">cwd</span><span class="o">:</span> <span class="s2">&quot;templates&quot;</span><span class="p">,</span>
+           <span class="nx">src</span><span class="o">:</span> <span class="s2">&quot;**/*.html&quot;</span><span class="p">,</span>
+           <span class="nx">dest</span><span class="o">:</span> <span class="s2">&quot;static_root/&quot;</span>
+        <span class="p">}]</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+
+  <span class="nx">grunt</span><span class="p">.</span><span class="nx">loadNpmTasks</span><span class="p">(</span><span class="s2">&quot;grunt-contrib-imagemin&quot;</span><span class="p">);</span>
+  <span class="nx">grunt</span><span class="p">.</span><span class="nx">loadNpmTasks</span><span class="p">(</span><span class="s2">&quot;grunt-contrib-uglify&quot;</span><span class="p">);</span>
+  <span class="nx">grunt</span><span class="p">.</span><span class="nx">loadNpmTasks</span><span class="p">(</span><span class="s2">&quot;grunt-contrib-cssmin&quot;</span><span class="p">);</span>
+  <span class="nx">grunt</span><span class="p">.</span><span class="nx">loadNpmTasks</span><span class="p">(</span><span class="s2">&quot;grunt-uncss&quot;</span><span class="p">);</span>
+  <span class="nx">grunt</span><span class="p">.</span><span class="nx">loadNpmTasks</span><span class="p">(</span><span class="s2">&quot;grunt-contrib-htmlmin&quot;</span><span class="p">);</span>
+  <span class="nx">grunt</span><span class="p">.</span><span class="nx">file</span><span class="p">.</span><span class="nx">setBase</span><span class="p">(</span><span class="s1">&#39;../&#39;</span><span class="p">)</span>
+  <span class="nx">grunt</span><span class="p">.</span><span class="nx">registerTask</span><span class="p">(</span><span class="s2">&quot;default&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;imagemin&quot;</span><span class="p">,</span> <span class="s2">&quot;uglify&quot;</span><span class="p">,</span> <span class="s2">&quot;cssmin&quot;</span><span class="p">]);</span>
+<span class="p">};</span>
+</pre></div>
+
+
+<p>package.json</p>
+<div class="codehilite"><pre><span class="p">{</span>
+  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;project&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;This is a project&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;main&quot;</span><span class="p">:</span> <span class="s2">&quot;Gruntfile.js&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;dependencies&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;grunt&quot;</span><span class="p">:</span> <span class="s2">&quot;^0.4.5&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;devDependencies&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;grunt-contrib-uglify&quot;</span><span class="p">:</span> <span class="s2">&quot;~0.9.2&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;grunt-contrib-cssmin&quot;</span><span class="p">:</span> <span class="s2">&quot;~0.13.0&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;grunt-contrib-imagemin&quot;</span><span class="p">:</span> <span class="s2">&quot;~0.9.4&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;grunt-uncss&quot;</span><span class="p">:</span> <span class="s2">&quot;~0.4.1&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;grunt-contrib-htmlmin&quot;</span><span class="p">:</span> <span class="s2">&quot;~0.4.0&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;scripts&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;test&quot;</span><span class="p">:</span> <span class="s2">&quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;repository&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;git&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;git@bitbucket.org:manhhomienbienthuy/vpyeu.git&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;author&quot;</span><span class="p">:</span> <span class="s2">&quot;Anh Tranngoc&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;license&quot;</span><span class="p">:</span> <span class="s2">&quot;MIT&quot;</span>
+<span class="p">}</span>
+</pre></div>
+  </div>
+  <div style="clear: both;"></div>
+</div><div class="post-footer">
+  <div class="meta post_tags">
+    <i class="fa fa-tags"></i>
+    Tagged in:
+      <a href="/tag/grunt.html" rel="tag">Grunt</a>
+      <a href="/tag/web.html" rel="tag">Web</a>
+      <a href="/tag/imagemin.html" rel="tag">imagemin</a>
+      <a href="/tag/uglify.html" rel="tag">uglify</a>
+      <a href="/tag/cssmin.html" rel="tag">cssmin</a>
+      <a href="/tag/uncss.html" rel="tag">uncss</a>
+      <a href="/tag/htmlmin.html" rel="tag">htmlmin</a>
+  </div>
+
+  <div class="share-wrapper">
+    <div class="title">— Share It —</div>
+    <ul class="entry-share-list clearfix">
+      <li class="facebook_share">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://manhhomienbienthuy.bitbucket.org/2015/Oct/15/grunt-and-5-tasks-to-improve-web-performance.html"
+          target="_blank">
+          <span class="share-text">Facebook</span>
+        </a>
+      <li class="twitter_share">
+        <a href="https://twitter.com/home?status=http://manhhomienbienthuy.bitbucket.org/2015/Oct/15/grunt-and-5-tasks-to-improve-web-performance.html"
+          target="_blank">
+          <span class="share-text">Twitter</span>
+        </a>
+      <li class="google_share">
+        <a href="https://plus.google.com/share?url=http://manhhomienbienthuy.bitbucket.org/2015/Oct/15/grunt-and-5-tasks-to-improve-web-performance.html"
+          target="_blank">
+          <span class="share-text">Google+</span>
+        </a>
+      <li class="linkedin_share">
+        <a href="https://www.linkedin.com/shareArticle?url=http://manhhomienbienthuy.bitbucket.org/2015/Oct/15/grunt-and-5-tasks-to-improve-web-performance.html"
+          target="_blank">
+          <span class="share-text">Linkedin</span>
+        </a>
+      <li class="pinterest_share">
+        <a href="https://pinterest.com/pin/create/button/?url=http://manhhomienbienthuy.bitbucket.org/2015/Oct/15/grunt-and-5-tasks-to-improve-web-performance.html"
+          target="_blank">
+          <span class="share-text">Pin It</span>
+        </a>
+    </ul>
+  </div>
+</div>  </div>
+<div class="blog-pager" id="blog-pager">
+
+  <span id="blog-pager-older-link">
+    <a clas="blog-pager-older-link" href="/2015/Oct/01/phu-quoc-travel.html"
+      id="Blog1_blog-pager-older-link" title="Older Post">
+      Older Post
+    </a>
+  </span>
+</div>  <div class="clear"></div>
+  <div id="comments" class="comments">
+<div id="disqus_thread"></div>
+<script>
+  var disqus_shortname = 'manhhomienbienthuy';
+
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+
+
+  (function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+  }());
+</script>
+<noscript>
+  Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript" rel="nofollow">
+    comments powered by Disqus.
+  </a>
+</noscript>  </div>
+  <div style="clear:both;"></div>
+</div>
+          </div>
+<div class="clear"></div>        </div>
+      </div>
+    </div>
+<div class="sidebar-wrapper">
+  <div class="sidebar col section" id="sidebar">
+<div class="widget HTML">
+  <div class="widget-content">
+    <h2>Ad Banner</h2>
+    <div>
+      <img src="/theme/images/banner.jpg">
+    </div>
+  </div>
+</div><div class="widget HTML" id="HTML2">
+  <div class="widget-content">
+    <h2>Social Share</h2>
+    <div class="sidebar_social_icons">
+      <ul class="clearfix">
+        <li class="facebook-social">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=http://manhhomienbienthuy.bitbucket.org"
+            target="_blank" title="Facebook">
+            <i class="fa fa-facebook ct-transition"></i>
+          </a>
+        <li class="twitter-social">
+          <a href="https://twitter.com/home?status=http://manhhomienbienthuy.bitbucket.org"
+            target="_blank" title="Twitter">
+            <i class="fa fa-twitter ct-transition"></i>
+          </a>
+        <li class="Linkedin-social">
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://manhhomienbienthuy.bitbucket.org"
+            target="_blank" title="Linkedin">
+            <i class="fa fa-linkedin ct-transition"></i>
+          </a>
+        <li class="pinterest-social">
+          <a href="https://pinterest.com/pin/create/button/?url=http://manhhomienbienthuy.bitbucket.org"
+            target="_blank" title="Pinterest">
+            <i class="fa fa-pinterest ct-transition"></i>
+          </a>
+        <li class="rss-social">
+          <a href="/feed/" target="_blank" title="Rss">
+            <i class="fa fa-rss ct-transition"></i>
+          </a>
+      </ul>
+    </div>
+  </div>
+</div><div class="widget PopularPosts" id="PopularPost2">
+  <h2>Popular Posts</h2>
+  <div class="widget-content popular-posts">
+    <ul>
+      <li>
+        <div class="item-content">
+          <div class="item-thumbnail">
+            <a href="/2015/Oct/15/grunt-and-5-tasks-to-improve-web-performance.html">
+              <img alt="" src="/images/grunt-the-js-task-runner.jpg" border="0" height="72" width="72">
+            </a>
+          </div>
+          <div class="item-title">
+            <a href="/2015/Oct/15/grunt-and-5-tasks-to-improve-web-performance.html">Grunt and 5 tasks to improve web performance</a>
+          </div>
+        </div>
+        <div style="clear: both;"></div>
+      <li>
+        <div class="item-content">
+          <div class="item-thumbnail">
+            <a href="/2015/Oct/01/phu-quoc-travel.html">
+              <img alt="" src="/images/phu-quoc.jpg" border="0" height="72" width="72">
+            </a>
+          </div>
+          <div class="item-title">
+            <a href="/2015/Oct/01/phu-quoc-travel.html">Phu Quoc travel</a>
+          </div>
+        </div>
+        <div style="clear: both;"></div>
+      <li>
+        <div class="item-content">
+          <div class="item-thumbnail">
+            <a href="/2015/Sep/30/hash-length-extension-attacks.html">
+              <img alt="" src="/images/hash_attack.png" border="0" height="72" width="72">
+            </a>
+          </div>
+          <div class="item-title">
+            <a href="/2015/Sep/30/hash-length-extension-attacks.html">Hash length Extension Attacks</a>
+          </div>
+        </div>
+        <div style="clear: both;"></div>
+      <li>
+        <div class="item-content">
+          <div class="item-thumbnail">
+            <a href="/2015/Aug/30/web-development-with-cherrypy-and-jinja2.html">
+              <img alt="" src="/images/cherrypy_logo_big.png" border="0" height="72" width="72">
+            </a>
+          </div>
+          <div class="item-title">
+            <a href="/2015/Aug/30/web-development-with-cherrypy-and-jinja2.html">Web development with Cherrypy and Jinja2</a>
+          </div>
+        </div>
+        <div style="clear: both;"></div>
+      <li>
+        <div class="item-content">
+          <div class="item-thumbnail">
+            <a href="/2015/Jul/30/ksnctf-write-up.html">
+              <img alt="" src="/images/Key-on-screen.jpg" border="0" height="72" width="72">
+            </a>
+          </div>
+          <div class="item-title">
+            <a href="/2015/Jul/30/ksnctf-write-up.html">KSNCTF write up</a>
+          </div>
+        </div>
+        <div style="clear: both;"></div>
+    </ul>
+  </div>
+</div><div class="widget Label" id="LabelWidget">
+  <h2>Label Cloud</h2>
+  <div class="widget-content list-label-widget-content">
+    <ul>
+      <li>
+        <a dir="ltr" href="/tag/hash.html">Hash</a>
+      <li>
+        <a dir="ltr" href="/tag/security.html">Security</a>
+      <li>
+        <a dir="ltr" href="/tag/attack.html">Attack</a>
+      <li>
+        <a dir="ltr" href="/tag/viet-nam.html">Viet Nam</a>
+      <li>
+        <a dir="ltr" href="/tag/travel.html">Travel</a>
+      <li>
+        <a dir="ltr" href="/tag/web.html">Web</a>
+      <li>
+        <a dir="ltr" href="/tag/phu-quoc.html">Phu Quoc</a>
+      <li>
+        <a dir="ltr" href="/tag/cherrypy.html">Cherrypy</a>
+      <li>
+        <a dir="ltr" href="/tag/jinja2.html">Jinja2</a>
+      <li>
+        <a dir="ltr" href="/tag/imagemin.html">imagemin</a>
+      <li>
+        <a dir="ltr" href="/tag/cssmin.html">cssmin</a>
+      <li>
+        <a dir="ltr" href="/tag/ksnctf.html">KSNCTF</a>
+      <li>
+        <a dir="ltr" href="/tag/sqlalchemy.html">SQLAlchemy</a>
+      <li>
+        <a dir="ltr" href="/tag/grunt.html">Grunt</a>
+      <li>
+        <a dir="ltr" href="/tag/uglify.html">uglify</a>
+      <li>
+        <a dir="ltr" href="/tag/uncss.html">uncss</a>
+      <li>
+        <a dir="ltr" href="/tag/htmlmin.html">htmlmin</a>
+      <li>
+        <a dir="ltr" href="/tag/python.html">Python</a>
+      <li><a dir="ltf" href="/tags.html">All tags</a>
+    </ul>
+  </div>
+</div><div class="widget BlogArchive" id="BlogArchive1">
+  <h2>Blog Archive</h2>
+  <div class="widget-content">
+    <div id="ArchiveList">
+      <div id="BlogArchive1_ArchiveList">
+        <ul class="hierarchy">
+            <dt>October 15 2015</dt>
+            <dd><a href="/2015/Oct/15/grunt-and-5-tasks-to-improve-web-performance.html">Grunt and 5 tasks to improve web performance</a></dd>
+            <dt>October 01 2015</dt>
+            <dd><a href="/2015/Oct/01/phu-quoc-travel.html">Phu Quoc travel</a></dd>
+            <dt>September 30 2015</dt>
+            <dd><a href="/2015/Sep/30/hash-length-extension-attacks.html">Hash length Extension Attacks</a></dd>
+            <dt>August 30 2015</dt>
+            <dd><a href="/2015/Aug/30/web-development-with-cherrypy-and-jinja2.html">Web development with Cherrypy and Jinja2</a></dd>
+            <dt>July 30 2015</dt>
+            <dd><a href="/2015/Jul/30/ksnctf-write-up.html">KSNCTF write up</a></dd>
+        </ul>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>  </div>
+</div>
+<div class="clr"></div>  </div>
+</div>
+<div id="footer">
+  <div class="ct-wrapper">
+<div class="footer section" id="footer1">
+  <div class="widget HTML" id="HTML5">
+    <h2>About Me</h2>
+    <div class="widget-content">
+      <div id="logo">
+        <a href="/" title="Anh Tranngoc's space">
+          <img alt="Anh Tranngoc's space" height="80"
+            src="/theme/images/logo_white.png">
+        </a>
+        <div class="margin margin-30"></div>
+        <p>Copyright © Anh Tranngoc.
+        <p>This work is licensed under a
+          <a href="http://creativecommons.org/licenses/by-nd/4.0/"
+            target="_blank">
+            Creative Commons Attribution-NoDerivatives 4.0 International
+            license (or later version)
+          </a>
+      </div>
+    </div>
+  </div>
+</div><div class="footer section" id="footer2">
+  <div class="widget PopularPosts" id="PopularPosts1">
+    <h2>Popular Posts</h2>
+    <div class="widget-content popular-posts">
+      <ul>
+        <li>
+          <div class="item-content">
+            <div class="item-thumbnail">
+              <a href="/2015/Oct/15/grunt-and-5-tasks-to-improve-web-performance.html">
+                <img alt="" src="/images/grunt-the-js-task-runner.jpg" border="0" height="72" width="72">
+              </a>
+            </div>
+            <div class="item-title">
+              <a href="/2015/Oct/15/grunt-and-5-tasks-to-improve-web-performance.html">Grunt and 5 tasks to improve web performance</a>
+            </div>
+          </div>
+          <div style="clear: both;"></div>
+        <li>
+          <div class="item-content">
+            <div class="item-thumbnail">
+              <a href="/2015/Oct/01/phu-quoc-travel.html">
+                <img alt="" src="/images/phu-quoc.jpg" border="0" height="72" width="72">
+              </a>
+            </div>
+            <div class="item-title">
+              <a href="/2015/Oct/01/phu-quoc-travel.html">Phu Quoc travel</a>
+            </div>
+          </div>
+          <div style="clear: both;"></div>
+        <li>
+          <div class="item-content">
+            <div class="item-thumbnail">
+              <a href="/2015/Sep/30/hash-length-extension-attacks.html">
+                <img alt="" src="/images/hash_attack.png" border="0" height="72" width="72">
+              </a>
+            </div>
+            <div class="item-title">
+              <a href="/2015/Sep/30/hash-length-extension-attacks.html">Hash length Extension Attacks</a>
+            </div>
+          </div>
+          <div style="clear: both;"></div>
+      </ul>
+    </div>
+  </div>
+</div><div class="footer section" id="footer3">
+  <div class="widget HTML" id="HTML4">
+    <h2>Twitter timeline</h2>
+    <div class="widget-content">
+      <div id="blog_newsletter">
+        <a class="twitter-timeline"
+          href="https://twitter.com/AnhTranngoc"
+          data-widget-id="639309521052037120">
+          Tweets by @AnhTranngoc
+        </a>
+      </div>
+    </div>
+  </div>
+</div>    <div class="clr"></div>
+    <div class="margin margin-30"></div>
+  </div>
+</div>
+<div class="footer_credits clearfix">
+  <div class="ct-wrapper">
+    <div class="clearfix left">
+      Created with <i class="fa fa-heart"></i> of Viet Phuong.
+      Powered by <a href="http://blog.getpelican.com/" target="_blank">Pelican</a>.
+    </div>
+    <div class="right footer_menu">
+      <ul class="blog_footer_menu">
+        <li><a href="/">Home</a></li>
+        <li><a href="/pages/contact-me.html">Contact</a></li>
+        <li><a href="/pages/about-me.html">About</a></li>
+        <li><a href="#blog_header" id="smooth_scroll">Top ↑</a></li>
+      </ul>
+    </div>
+  </div>
+</div>  <script src="/theme/js/vpyeu.min.js?e173f5f7"></script>
+<script src="/theme/js/social.js"></script>
