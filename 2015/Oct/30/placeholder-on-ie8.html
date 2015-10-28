@@ -298,13 +298,63 @@ có dữ liệu, chính là placeholder.</p>
 </pre></div>
 
 
+<h1>Update</h1>
+<p>Đoạn xử lý trên có một điểm yếu là nó chỉ sử dụng cho 1 trường
+password đã biết trước ID là <code>user_password</code> mà thôi. Trong trường hợp
+cần xử lý với nhiều trường password với các ID khác nhau thì bạn cần
+xử lý cho từng trường hợp giống như trường có ID <code>user_password</code> như
+trên. Đây không phải là một ý tưởng tốt.</p>
+<p>Vì vậy, đoạn chương trình Javascript trên được update như sau, có thể
+áp dụng với tất cả các trường password có ở trên trang Web.</p>
+<div class="codehilite"><pre><span class="nx">$</span> <span class="nf">-&gt;</span>
+  <span class="nv">is_ie89 = </span><span class="nx">navigator</span><span class="p">.</span><span class="nx">appVersion</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s">&quot;MSIE 8.&quot;</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span> <span class="o">||</span>
+    <span class="nx">navigator</span><span class="p">.</span><span class="nx">appVersion</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s">&quot;MSIE 9.&quot;</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span>
+  <span class="k">if</span> <span class="nx">is_ie89</span>
+    <span class="nv">input_passwords = </span><span class="p">{}</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s">&quot;[placeholder][type=password]&quot;</span><span class="p">).</span><span class="nx">each</span> <span class="nf">-&gt;</span>
+      <span class="nx">input_passwords</span><span class="p">[</span><span class="nx">@id</span><span class="p">]</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nx">@</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">outerHTML</span>
+      <span class="k">return</span>
+
+    <span class="nx">$</span><span class="p">(</span><span class="s">&quot;form&quot;</span><span class="p">).</span><span class="nx">on</span> <span class="s">&quot;focus&quot;</span><span class="p">,</span> <span class="s">&quot;[placeholder]&quot;</span><span class="p">,</span> <span class="nf">-&gt;</span>
+      <span class="k">if</span> <span class="nx">input_passwords</span><span class="p">[</span><span class="nx">@id</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="nx">$</span><span class="p">(</span><span class="nx">@</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s">&quot;type&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s">&quot;text&quot;</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">@id</span><span class="p">).</span><span class="nv">outerHTML = </span><span class="nx">input_passwords</span><span class="p">[</span><span class="nx">@id</span><span class="p">]</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s">&quot;#&quot;</span> <span class="o">+</span> <span class="nx">@id</span><span class="p">).</span><span class="nx">focus</span><span class="p">().</span><span class="nx">focus</span><span class="p">()</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s">&quot;#&quot;</span> <span class="o">+</span> <span class="nx">@id</span><span class="p">).</span><span class="nx">val</span> <span class="nx">@value</span>
+
+      <span class="k">if</span> <span class="nx">@value</span> <span class="o">==</span> <span class="nx">$</span><span class="p">(</span><span class="nx">@</span><span class="p">).</span><span class="nx">attr</span> <span class="s">&quot;placeholder&quot;</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s">&quot;#&quot;</span> <span class="o">+</span> <span class="nx">@id</span><span class="p">).</span><span class="nx">val</span> <span class="s">&quot;&quot;</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s">&quot;#&quot;</span> <span class="o">+</span> <span class="nx">@id</span><span class="p">).</span><span class="nx">removeClass</span> <span class="s">&quot;placeholder&quot;</span>
+      <span class="k">return</span>
+
+    <span class="nx">$</span><span class="p">(</span><span class="s">&quot;form&quot;</span><span class="p">).</span><span class="nx">on</span> <span class="s">&quot;blur&quot;</span><span class="p">,</span> <span class="s">&quot;[placeholder]&quot;</span><span class="p">,</span> <span class="nf">-&gt;</span>
+      <span class="k">if</span> <span class="nx">input_passwords</span><span class="p">[</span><span class="nx">@id</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="nx">@value</span> <span class="o">==</span> <span class="s">&quot;&quot;</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">@id</span><span class="p">).</span><span class="nv">outerHTML = </span><span class="nx">input_passwords</span><span class="p">[</span><span class="nx">@id</span><span class="p">]</span>
+          <span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/type=&quot;?password&quot;?/g</span><span class="p">,</span> <span class="s">&#39;type=&quot;text&quot;&#39;</span><span class="p">)</span>
+
+      <span class="k">if</span> <span class="nx">@value</span> <span class="o">==</span> <span class="s">&quot;&quot;</span> <span class="o">||</span> <span class="nx">@value</span> <span class="o">==</span> <span class="nx">$</span><span class="p">(</span><span class="nx">@</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s">&quot;placeholder&quot;</span><span class="p">)</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s">&quot;#&quot;</span> <span class="o">+</span> <span class="nx">@id</span><span class="p">).</span><span class="nx">addClass</span> <span class="s">&quot;placeholder&quot;</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s">&quot;#&quot;</span> <span class="o">+</span> <span class="nx">@id</span><span class="p">).</span><span class="nx">val</span> <span class="nx">$</span><span class="p">(</span><span class="nx">@</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s">&quot;placeholder&quot;</span><span class="p">)</span>
+      <span class="k">return</span>
+
+    <span class="nx">$</span><span class="p">(</span><span class="s">&quot;[placeholder]&quot;</span><span class="p">).</span><span class="nx">parents</span><span class="p">(</span><span class="s">&quot;form&quot;</span><span class="p">).</span><span class="nx">submit</span> <span class="nf">-&gt;</span>
+      <span class="nx">$</span><span class="p">(</span><span class="nx">@</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="s">&quot;[placeholder]&quot;</span><span class="p">).</span><span class="nx">each</span> <span class="nf">-&gt;</span>
+        <span class="nv">input = </span><span class="nx">$</span><span class="p">(</span><span class="nx">@</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nx">input</span><span class="p">.</span><span class="nx">val</span><span class="p">()</span> <span class="o">==</span> <span class="nx">input</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s">&quot;placeholder&quot;</span><span class="p">)</span>
+          <span class="nx">input</span><span class="p">.</span><span class="nx">val</span> <span class="s">&quot;&quot;</span>
+        <span class="k">return</span>
+      <span class="k">return</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s">&quot;[placeholder]&quot;</span><span class="p">).</span><span class="nx">blur</span><span class="p">()</span>
+
+  <span class="k">return</span>
+</pre></div>
+
+
+<p>Đoạn code trên là coffeescript, nó sẽ được convert ra Javascript. Chỉ
+cần nhúng đoạn Javascript đó với trang Web là nó sẽ hoạt động.</p>
 <p>Với xử lý như trên. Mặc dù nó hoạt động không hoàn toàn giống
 placeholder trên các trình duyệt hiện đại, nhưng cũng có thể chấp nhận
 được.</p>
-<video width="100%" controls>
-  <source src="/images/placeholder.ogv" type="video/ogg">
-  Your browser does not support the video tag.
-</video>
+<p><img alt="demo" src="/images/placeholder.gif" /></p>
   </div>
   <div style="clear: both;"></div>
 </div><div class="post-footer">
@@ -348,7 +398,7 @@ placeholder trên các trình duyệt hiện đại, nhưng cũng có thể ch�
 </div>  </div>
 <div class="blog-pager" id="blog-pager">
   <span id="blog-pager-newer-link">
-    <a class="blog-pager-newer-link" href="/2015/Nov/30/grunt-and-5-tasks-to-improve-web-performance.html"
+    <a class="blog-pager-newer-link" href="/2015/Nov/15/grunt-and-5-tasks-to-improve-web-performance.html"
       id="Blog1_blog-pager-newer-link" title="Newer Post">
       Newer Post
     </a>
@@ -440,12 +490,12 @@ placeholder trên các trình duyệt hiện đại, nhưng cũng có thể ch�
       <li>
         <div class="item-content">
           <div class="item-thumbnail">
-            <a href="/2015/Nov/30/grunt-and-5-tasks-to-improve-web-performance.html">
+            <a href="/2015/Nov/15/grunt-and-5-tasks-to-improve-web-performance.html">
               <img alt="" src="/images/grunt-the-js-task-runner.jpg" border="0" height="72" width="72">
             </a>
           </div>
           <div class="item-title">
-            <a href="/2015/Nov/30/grunt-and-5-tasks-to-improve-web-performance.html">Grunt and 5 tasks to improve web performance</a>
+            <a href="/2015/Nov/15/grunt-and-5-tasks-to-improve-web-performance.html">Grunt and 5 tasks to improve web performance</a>
           </div>
         </div>
         <div style="clear: both;"></div>
@@ -516,45 +566,45 @@ placeholder trên các trình duyệt hiện đại, nhưng cũng có thể ch�
   <div class="widget-content list-label-widget-content">
     <ul>
       <li>
-        <a dir="ltr" href="/tag/grunt.html">Grunt</a>
-      <li>
-        <a dir="ltr" href="/tag/cherrypy.html">Cherrypy</a>
-      <li>
-        <a dir="ltr" href="/tag/placeholder.html">placeholder</a>
-      <li>
-        <a dir="ltr" href="/tag/python.html">Python</a>
-      <li>
-        <a dir="ltr" href="/tag/ksnctf.html">KSNCTF</a>
+        <a dir="ltr" href="/tag/uglify.html">uglify</a>
       <li>
         <a dir="ltr" href="/tag/htmlmin.html">htmlmin</a>
       <li>
         <a dir="ltr" href="/tag/viet-nam.html">Viet Nam</a>
       <li>
-        <a dir="ltr" href="/tag/security.html">Security</a>
-      <li>
-        <a dir="ltr" href="/tag/ie8.html">IE8</a>
-      <li>
-        <a dir="ltr" href="/tag/travel.html">Travel</a>
-      <li>
-        <a dir="ltr" href="/tag/sqlalchemy.html">SQLAlchemy</a>
-      <li>
-        <a dir="ltr" href="/tag/web.html">Web</a>
-      <li>
-        <a dir="ltr" href="/tag/hash.html">Hash</a>
-      <li>
-        <a dir="ltr" href="/tag/imagemin.html">imagemin</a>
+        <a dir="ltr" href="/tag/phu-quoc.html">Phu Quoc</a>
       <li>
         <a dir="ltr" href="/tag/jinja2.html">Jinja2</a>
       <li>
-        <a dir="ltr" href="/tag/cssmin.html">cssmin</a>
+        <a dir="ltr" href="/tag/ksnctf.html">KSNCTF</a>
       <li>
-        <a dir="ltr" href="/tag/phu-quoc.html">Phu Quoc</a>
+        <a dir="ltr" href="/tag/travel.html">Travel</a>
       <li>
-        <a dir="ltr" href="/tag/attack.html">Attack</a>
+        <a dir="ltr" href="/tag/hash.html">Hash</a>
+      <li>
+        <a dir="ltr" href="/tag/cherrypy.html">Cherrypy</a>
+      <li>
+        <a dir="ltr" href="/tag/placeholder.html">placeholder</a>
       <li>
         <a dir="ltr" href="/tag/uncss.html">uncss</a>
       <li>
-        <a dir="ltr" href="/tag/uglify.html">uglify</a>
+        <a dir="ltr" href="/tag/web.html">Web</a>
+      <li>
+        <a dir="ltr" href="/tag/sqlalchemy.html">SQLAlchemy</a>
+      <li>
+        <a dir="ltr" href="/tag/grunt.html">Grunt</a>
+      <li>
+        <a dir="ltr" href="/tag/python.html">Python</a>
+      <li>
+        <a dir="ltr" href="/tag/cssmin.html">cssmin</a>
+      <li>
+        <a dir="ltr" href="/tag/security.html">Security</a>
+      <li>
+        <a dir="ltr" href="/tag/attack.html">Attack</a>
+      <li>
+        <a dir="ltr" href="/tag/imagemin.html">imagemin</a>
+      <li>
+        <a dir="ltr" href="/tag/ie8.html">IE8</a>
       <li><a dir="ltf" href="/tags.html">All tags</a>
     </ul>
   </div>
@@ -564,8 +614,8 @@ placeholder trên các trình duyệt hiện đại, nhưng cũng có thể ch�
     <div id="ArchiveList">
       <div id="BlogArchive1_ArchiveList">
         <ul class="hierarchy">
-            <dt>November 30 2015</dt>
-            <dd><a href="/2015/Nov/30/grunt-and-5-tasks-to-improve-web-performance.html">Grunt and 5 tasks to improve web performance</a></dd>
+            <dt>November 15 2015</dt>
+            <dd><a href="/2015/Nov/15/grunt-and-5-tasks-to-improve-web-performance.html">Grunt and 5 tasks to improve web performance</a></dd>
             <dt>October 30 2015</dt>
             <dd><a href="/2015/Oct/30/placeholder-on-ie8.html">Placeholder on IE8</a></dd>
             <dt>October 12 2015</dt>
@@ -612,15 +662,16 @@ placeholder trên các trình duyệt hiện đại, nhưng cũng có thể ch�
     <h2>Popular Posts</h2>
     <div class="widget-content popular-posts">
       <ul>
+
         <li>
           <div class="item-content">
             <div class="item-thumbnail">
-              <a href="/2015/Nov/30/grunt-and-5-tasks-to-improve-web-performance.html">
+              <a href="/2015/Nov/15/grunt-and-5-tasks-to-improve-web-performance.html">
                 <img alt="" src="/images/grunt-the-js-task-runner.jpg" border="0" height="72" width="72">
               </a>
             </div>
             <div class="item-title">
-              <a href="/2015/Nov/30/grunt-and-5-tasks-to-improve-web-performance.html">Grunt and 5 tasks to improve web performance</a>
+              <a href="/2015/Nov/15/grunt-and-5-tasks-to-improve-web-performance.html">Grunt and 5 tasks to improve web performance</a>
             </div>
           </div>
           <div style="clear: both;"></div>
