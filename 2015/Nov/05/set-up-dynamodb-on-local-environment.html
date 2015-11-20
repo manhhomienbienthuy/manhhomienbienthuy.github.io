@@ -20,7 +20,7 @@
 
 <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Open+Sans:400,700|Montserrat|Pacifico|Roboto+Mono&subset=latin,vietnamese" rel="stylesheet">
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="/theme/css/vpyeu.style.css?94d223ff">
+  <link rel="stylesheet" href="/theme/css/vpyeu.style.css?e44df605">
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>  <link rel="stylesheet" href="/theme/css/vpyeu.detail.css?b1093ac2">
 <div class="top_header clearfix">
   <div class="ct-wrapper">
@@ -104,7 +104,7 @@
   <span class="article_timestamp"> on November 05 2015</span>
   <span class="article_comment_link right">
     <i class="fa fa-comments"></i>
-    <a href="#disqus_thread">No Comments</a>
+    <a href="#comments">Comments</a>
   </span>
 </div>
 
@@ -223,7 +223,7 @@ line to <code>spec/rails_helper.rb</code></p>
 <div class="codehilite"><pre><span class="nb">require</span> <span class="s2">&quot;rake&quot;</span>
 <span class="no">Rails</span><span class="o">.</span><span class="n">application</span><span class="o">.</span><span class="n">load_tasks</span>
 
-<span class="no">Dir</span><span class="o">[</span><span class="no">Rails</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;spec/support/**/*.rb&#39;</span><span class="p">)</span><span class="o">].</span><span class="n">each</span> <span class="p">{</span><span class="o">|</span><span class="n">f</span><span class="o">|</span> <span class="nb">require</span> <span class="n">f</span><span class="p">}</span>
+<span class="no">Dir</span><span class="o">[</span><span class="no">Rails</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;spec/support/**/*.rb&#39;</span><span class="p">)</span><span class="o">].</span><span class="n">each</span><span class="p">{</span><span class="o">|</span><span class="n">f</span><span class="o">|</span> <span class="nb">require</span> <span class="n">f</span><span class="p">}</span>
 </pre></div>
 
 
@@ -242,24 +242,7 @@ any lines of test code:</p>
 those operations. Add <code>create_table</code> tasks to file
 <code>lib/tasks/dynamodb.rake</code></p>
 <div class="codehilite"><pre>  <span class="n">task</span> <span class="ss">:create_table</span><span class="p">,</span> <span class="o">[</span><span class="ss">:table_name</span><span class="o">]</span> <span class="o">=&gt;</span> <span class="ss">:environment</span> <span class="k">do</span> <span class="o">|</span><span class="n">_</span><span class="p">,</span> <span class="n">args</span><span class="o">|</span>
-    <span class="n">table_json</span> <span class="o">=</span> <span class="k">case</span> <span class="n">args</span><span class="o">[</span><span class="ss">:table_name</span><span class="o">].</span><span class="n">to_s</span>
-      <span class="k">when</span> <span class="s2">&quot;items&quot;</span>
-        <span class="no">ITEMS</span>
-      <span class="k">when</span> <span class="s2">&quot;groups&quot;</span>
-        <span class="no">GROUPS</span>
-      <span class="k">when</span> <span class="s2">&quot;stage_pv_logs&quot;</span>
-        <span class="no">STAGE_PV_LOGS</span>
-      <span class="k">when</span> <span class="s2">&quot;stage_cv_logs&quot;</span>
-        <span class="no">STAGE_CV_LOGS</span>
-      <span class="k">when</span> <span class="s2">&quot;uuid_maps&quot;</span>
-        <span class="no">UUID_MAPS</span>
-      <span class="k">when</span> <span class="s2">&quot;sum_orders&quot;</span>
-        <span class="no">SUM_ORDERS</span>
-      <span class="k">when</span> <span class="s2">&quot;last_navis&quot;</span>
-        <span class="no">LAST_NAVIS</span>
-      <span class="k">when</span> <span class="s2">&quot;visit_frequencies&quot;</span>
-        <span class="no">VISIT_FREQUENCIES</span>
-      <span class="k">end</span>
+    <span class="n">table_json</span> <span class="o">=</span> <span class="c1"># JSON params for creating table</span>
     <span class="no">Dynamodb</span><span class="o">::</span><span class="no">Base</span><span class="o">.</span><span class="n">__create_table</span> <span class="n">table_json</span> <span class="k">if</span> <span class="n">table_json</span><span class="o">.</span><span class="n">present?</span>
   <span class="k">end</span>
 </pre></div>
@@ -375,30 +358,7 @@ from the Amazon DynamoDB service in the following ways:</p>
   </span>
 </div>  <div class="clear"></div>
   <div id="comments" class="comments">
-<div id="disqus_thread"></div>
-<script>
-  var disqus_shortname = 'manhhomienbienthuy';
-
-  (function() {
-    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
-
-
-  (function () {
-    var s = document.createElement('script'); s.async = true;
-    s.type = 'text/javascript';
-    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-  }());
-</script>
-<noscript>
-  Please enable JavaScript to view the
-  <a href="https://disqus.com/?ref_noscript" rel="nofollow">
-    comments powered by Disqus.
-  </a>
-</noscript>  </div>
+<div class="fb-comments" data-href="http://manhhomienbienthuy.bitbucket.org/2015/Nov/05/set-up-dynamodb-on-local-environment.html" data-numposts="5"></div>  </div>
   <div style="clear:both;"></div>
 </div>
           </div>
@@ -553,59 +513,59 @@ from the Amazon DynamoDB service in the following ways:</p>
   <div class="widget-content list-label-widget-content">
     <ul>
       <li>
-        <a dir="ltr" href="/tag/sqlalchemy.html">SQLAlchemy</a>
-      <li>
-        <a dir="ltr" href="/tag/placeholder.html">placeholder</a>
-      <li>
-        <a dir="ltr" href="/tag/cherrypy.html">Cherrypy</a>
-      <li>
-        <a dir="ltr" href="/tag/aws.html">AWS</a>
-      <li>
-        <a dir="ltr" href="/tag/hash.html">Hash</a>
+        <a dir="ltr" href="/tag/ie8.html">IE8</a>
       <li>
         <a dir="ltr" href="/tag/dynamodb.html">DynamoDB</a>
       <li>
-        <a dir="ltr" href="/tag/grunt.html">Grunt</a>
-      <li>
-        <a dir="ltr" href="/tag/rails.html">Rails</a>
-      <li>
-        <a dir="ltr" href="/tag/macbook-pro.html">MacBook Pro</a>
+        <a dir="ltr" href="/tag/htmlmin.html">htmlmin</a>
       <li>
         <a dir="ltr" href="/tag/viet-nam.html">Viet Nam</a>
       <li>
-        <a dir="ltr" href="/tag/ksnctf.html">KSNCTF</a>
+        <a dir="ltr" href="/tag/uglify.html">uglify</a>
       <li>
-        <a dir="ltr" href="/tag/cssmin.html">cssmin</a>
-      <li>
-        <a dir="ltr" href="/tag/keyboard-backlight.html">keyboard backlight</a>
-      <li>
-        <a dir="ltr" href="/tag/uncss.html">uncss</a>
+        <a dir="ltr" href="/tag/placeholder.html">placeholder</a>
       <li>
         <a dir="ltr" href="/tag/attack.html">Attack</a>
       <li>
-        <a dir="ltr" href="/tag/python.html">Python</a>
-      <li>
-        <a dir="ltr" href="/tag/uglify.html">uglify</a>
-      <li>
         <a dir="ltr" href="/tag/jinja2.html">Jinja2</a>
       <li>
-        <a dir="ltr" href="/tag/security.html">Security</a>
-      <li>
-        <a dir="ltr" href="/tag/imagemin.html">imagemin</a>
-      <li>
-        <a dir="ltr" href="/tag/phu-quoc.html">Phu Quoc</a>
-      <li>
-        <a dir="ltr" href="/tag/htmlmin.html">htmlmin</a>
-      <li>
-        <a dir="ltr" href="/tag/fix.html">fix</a>
-      <li>
-        <a dir="ltr" href="/tag/travel.html">Travel</a>
-      <li>
-        <a dir="ltr" href="/tag/web.html">Web</a>
+        <a dir="ltr" href="/tag/uncss.html">uncss</a>
       <li>
         <a dir="ltr" href="/tag/local.html">Local</a>
       <li>
-        <a dir="ltr" href="/tag/ie8.html">IE8</a>
+        <a dir="ltr" href="/tag/keyboard-backlight.html">keyboard backlight</a>
+      <li>
+        <a dir="ltr" href="/tag/hash.html">Hash</a>
+      <li>
+        <a dir="ltr" href="/tag/sqlalchemy.html">SQLAlchemy</a>
+      <li>
+        <a dir="ltr" href="/tag/grunt.html">Grunt</a>
+      <li>
+        <a dir="ltr" href="/tag/ksnctf.html">KSNCTF</a>
+      <li>
+        <a dir="ltr" href="/tag/cherrypy.html">Cherrypy</a>
+      <li>
+        <a dir="ltr" href="/tag/security.html">Security</a>
+      <li>
+        <a dir="ltr" href="/tag/rails.html">Rails</a>
+      <li>
+        <a dir="ltr" href="/tag/travel.html">Travel</a>
+      <li>
+        <a dir="ltr" href="/tag/fix.html">fix</a>
+      <li>
+        <a dir="ltr" href="/tag/macbook-pro.html">MacBook Pro</a>
+      <li>
+        <a dir="ltr" href="/tag/web.html">Web</a>
+      <li>
+        <a dir="ltr" href="/tag/imagemin.html">imagemin</a>
+      <li>
+        <a dir="ltr" href="/tag/aws.html">AWS</a>
+      <li>
+        <a dir="ltr" href="/tag/phu-quoc.html">Phu Quoc</a>
+      <li>
+        <a dir="ltr" href="/tag/python.html">Python</a>
+      <li>
+        <a dir="ltr" href="/tag/cssmin.html">cssmin</a>
       <li><a dir="ltf" href="/tags.html">All tags</a>
     </ul>
   </div>
@@ -774,5 +734,4 @@ from the Amazon DynamoDB service in the following ways:</p>
       </ul>
     </div>
   </div>
-</div>  <script src="/theme/js/vpyeu.min.js?1165dd9b"></script>
-<script src="/theme/js/social.js"></script>
+</div>  <script src="/theme/js/vpyeu.min.js?cdf19654"></script>
