@@ -33,7 +33,27 @@ và tại sao bạn nên sử dụng framework này ...&lt;/p&gt;</summary><cate
 &lt;p&gt;Cuộc thi CTF lần đầu tiên được tổ chức tại hội thảo bảo mật nổi tiếng
 DefCon (Mỹ) lần thứ 5 năm 1997. Ngày nay hàng năm có rất nhiều các
 cuộc thi CTF được tổ chức trên toàn thế giới theo các quy mô khác
-nhau. Đơn vị ...&lt;/p&gt;</summary><category term="KSNCTF"></category><category term="Security"></category></entry><entry><title>New semester</title><link href="http://manhhomienbienthuy.bitbucket.org/2013/Apr/13/new-semester.html" rel="alternate"></link><updated>2013-04-13T10:00:00+00:00</updated><author><name>Anh Tranngoc</name></author><id>tag:manhhomienbienthuy.bitbucket.org,2013-04-13:2013/Apr/13/new-semester.html</id><summary type="html">&lt;p&gt;Học kỳ mới&lt;/p&gt;
+nhau. Đơn vị ...&lt;/p&gt;</summary><category term="KSNCTF"></category><category term="Security"></category></entry><entry><title>Self printing program</title><link href="http://manhhomienbienthuy.bitbucket.org/2014/Jul/29/self-printing-program.html" rel="alternate"></link><updated>2014-07-29T10:00:00+00:00</updated><author><name>Anh Tranngoc</name></author><id>tag:manhhomienbienthuy.bitbucket.org,2014-07-29:2014/Jul/29/self-printing-program.html</id><summary type="html">&lt;h3&gt;C&lt;/h3&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="cp"&gt;#include &amp;lt;stdio.h&amp;gt;&lt;/span&gt;
+
+&lt;span class="n"&gt;main&lt;/span&gt; &lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="kt"&gt;char&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;#include &amp;lt;stdio.h&amp;gt;%cmain()%c&amp;amp;#123;%c  char *s=%c%s%c;%c  printf (s, 10, 10, 10, 34, s, 34, 10, 10, 10);%c}%c&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="n"&gt;printf&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;34&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;34&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;python&lt;/h3&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;__file__&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;or ...&lt;/p&gt;</summary><category term="programming"></category><category term="self printing"></category></entry><entry><title>Writing Idiomatic Python</title><link href="http://manhhomienbienthuy.bitbucket.org/2014/Jul/24/writing-idiomatic-python.html" rel="alternate"></link><updated>2014-07-24T10:10:10+00:00</updated><author><name>Anh Tranngoc</name></author><id>tag:manhhomienbienthuy.bitbucket.org,2014-07-24:2014/Jul/24/writing-idiomatic-python.html</id><summary type="html">&lt;p&gt;"Idiomatic python" doesn't mean "idiotic snake". It means "pythonic
+code". Code written in the way the Python community has agreed it
+should be written. Who decided this? Well, all the python developers
+through the code they write, share and criticize. The patterns you see
+there. Who really decides is ...&lt;/p&gt;</summary><category term="programming"></category><category term="codingstyle"></category></entry><entry><title>New semester</title><link href="http://manhhomienbienthuy.bitbucket.org/2013/Apr/13/new-semester.html" rel="alternate"></link><updated>2013-04-13T10:00:00+00:00</updated><author><name>Anh Tranngoc</name></author><id>tag:manhhomienbienthuy.bitbucket.org,2013-04-13:2013/Apr/13/new-semester.html</id><summary type="html">&lt;p&gt;Học kỳ mới&lt;/p&gt;
 &lt;p&gt;Đầu tháng 4, 2013&lt;/p&gt;
 &lt;p&gt;Học kỳ mới đã bắt đầu. Mình cảm thấy nên viết một entry mặc dù vào
 thời điểm này, mình thấy không có nhiều ý tưởng gì cho bài viết.&lt;/p&gt;

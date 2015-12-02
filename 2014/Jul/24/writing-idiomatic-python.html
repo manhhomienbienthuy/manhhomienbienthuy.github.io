@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<title>Writing Idiomatic Python - Anh Tranngoc's space</title><meta charset="utf-8"><meta content="width=device-width, initial-scale=1" name="viewport"><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><meta content="Anh Tranngoc's space" name="description"><meta content="blog, python, web, viet phuong, yeu, Anh Tranngoc" name="keywords"><link href="/theme/images/favicon.ico" rel="icon" type="image/x-icon"><link href="https://twitter.com/AnhTranngoc" rel="publisher"><link href="https://twitter.com/AnhTranngoc" rel="author"><link href="https://twitter.com/AnhTranngoc" rel="me"><meta content="Anh Tranngoc" name="Author"><meta content="general" name="rating"><meta content="Viet Phuong yeu" property="og:title"><meta content="website" property="og:type"><meta content="http://manhhomienbienthuy.bitbucket.org" property="og:url"><meta content="http://manhhomienbienthuy.bitbucket.org/theme/images/favicon.ico" property="og:image"><meta content="Anh Tranngoc's space" property="og:description"><link href="http://manhhomienbienthuy.bitbucket.org/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Anh Tranngoc's space Full Atom Feed"><link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Open+Sans:400,700|Montserrat|Pacifico|Roboto+Mono&subset=latin,vietnamese" rel="stylesheet"><link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"><link rel="stylesheet" href="/theme/css/vpyeu.style.css?79a2c5f0"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script><link rel="stylesheet" href="/theme/css/vpyeu.detail.css?b1093ac2"><div class="top_header clearfix"><div class="ct-wrapper"><div class="nav-menu"><div class="vt_menu_toggle"><i class="fa fa-bars"></i></div><ul class="clearfix blog_menus"><li><a class="current" href="/">Home</a><li><a href="/category/technology.html">Technology</a><li><a href="/category/lifestyle.html">Lifestyle</a><li><a href="/category/travel.html">Travel</a><li><a href="/categories.html">All categories</a></ul></div><div class="right clearfix social_search"><div class="social-wrap right"><ul class="dslc-social"><li><a href="https://twitter.com/AnhTranngoc" target="_blank"><span class="fa fa-twitter"></span></a><li><a href="https://www.facebook.com/manhhomienbienthuy" target="_blank"><span class="fa fa-facebook"></span></a><li><a href="https://www.youtube.com/user/manhhomienbienthuy" target="_blank"><span class="fa fa-youtube-play"></span></a><li><a href="https://github.com/manhhomienbienthuy" target="_blank"><span class="fa fa-github"></span></a><li><a href="https://instagram.com/manhhomienbienthuy/" target="_blank"><span class="fa fa-instagram"></span></a><li><a href="/feeds/all.atom.xml" target="_blank"><span class="fa fa-rss"></span></a><li><a href="http://manhhomienbienthuy.github.io/" target="_blank"><span class="fa fa-link"></span></a></ul></div></div></div></div><div class="clr"></div><header class="blog_header" id="blog_header"><div class="ct-wrapper clearfix"><div class="header_wrapper clearfix"><div class="header section" id="header"><div class="widget Header" id="Header1"><div id="header-inner"><a href="/" style="display: block"><img alt="Anh Tranngoc's space" id="Header1_headerimg" src="/theme/images/logo.png"></a></div></div></div></div></div></header><div class="clr"></div><div class="ct-wrapper clearfix"><div class="outer-wrapper"><div class="main-wrapper"><div class="article section" id="content"><div class="widget Blog" id="Blog1"><div class="blog-posts hfeed"><div class="post-outer"><div class="post hentry"><h1 class="article_post_title entry-title"> Writing Idiomatic Python </h1><div class="article_meta_container post-header"><span class="article_author vcard"><abbr class="fn"> posted in <a href="/category/technology.html"><u>Technology</u></a></abbr></span><span class="article_timestamp"> on July 24 2014</span><span class="article_comment_link right"><i class="fa fa-comments"></i><a href="#disqus_thread">Comments</a></span></div><div class="post-body entry-content"><div dir="ltr" style="text-align: left;" trbidi="on"><p>"Idiomatic python" doesn't mean "idiotic snake". It means "pythonic code". Code written in the way the Python community has agreed it should be written. Who decided this? Well, all the python developers through the code they write, share and criticize. The patterns you see there. Who really decides is sometimes the BDFL (Guido) or a PEP.</p><p>Are you even sure what "Pythonic" code is? Writing Idiomatic Python will have you writing professional, "Pythonic" code in hours.</p><h1>Control structure and functions</h1><h2><code>if</code> statement</h2><h3>Avoid comparing directly to <code>True</code>, <code>False</code>, or <code>None</code></h3><p>No</p><div class="codehilite"><pre><span class="k">if</span> <span class="n">foo</span> <span class="o">==</span> <span class="bp">True</span><span class="p">:</span>
+</pre></div><p>Yes:</p><div class="codehilite"><pre><span class="k">if</span> <span class="n">foo</span><span class="p">:</span>
+</pre></div><p>But this is required (A function checking if an argument whose default value is <code>None</code>)</p><div class="codehilite"><pre><span class="k">def</span> <span class="nf">insert_value</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Inserts a value into my container, optionally at the</span>
+<span class="sd">    specified position&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">possition</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="o">....</span>
+</pre></div><p>Harmful</p><div class="codehilite"><pre><span class="k">def</span> <span class="nf">number_of_evil_robots_attacking</span><span class="p">():</span>
+    <span class="k">return</span> <span class="mi">10</span>
+<span class="k">def</span> <span class="nf">should_raise_shields</span><span class="p">():</span>
+    <span class="c"># &quot;We only raise Shields when one or more giant robots attack,</span>
+    <span class="c"># so I can just return that value...&quot;</span>
+    <span class="k">return</span> <span class="n">number_of_evil_robots_attacking</span><span class="p">()</span>
+<span class="k">if</span> <span class="n">should_raise_shields</span><span class="p">()</span> <span class="o">==</span> <span class="bp">True</span><span class="p">:</span>
+   <span class="n">raise_shields</span><span class="p">()</span>
+   <span class="k">print</span><span class="p">(</span><span class="s">&#39;Shields raised&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+   <span class="k">print</span><span class="p">(</span><span class="s">&#39;Safe! No giant robots attacking&#39;</span><span class="p">)</span>
+</pre></div><p>Idiomatic</p><div class="codehilite"><pre><span class="k">def</span> <span class="nf">number_of_evil_robots_attacking</span><span class="p">():</span>
+    <span class="k">return</span> <span class="mi">10</span>
+<span class="k">def</span> <span class="nf">should_raise_shields</span><span class="p">():</span>
+    <span class="c"># &quot;We only raise Shields when one or more giant robots attack,</span>
+    <span class="c"># so I can just return that value...&quot;</span>
+    <span class="k">return</span> <span class="n">number_of_evil_robots_attacking</span><span class="p">()</span>
+<span class="k">if</span> <span class="n">should_raise_shields</span><span class="p">():</span>
+   <span class="n">raise_shields</span><span class="p">()</span>
+   <span class="k">print</span><span class="p">(</span><span class="s">&#39;Shields raised&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+   <span class="k">print</span><span class="p">(</span><span class="s">&#39;Safe! No giant robots attacking&#39;</span><span class="p">)</span>
+</pre></div><h3>Avoid repeating variable name in compound <code>if</code> statement</h3><p>Harmful</p><div class="codehilite"><pre><span class="n">is_generic_name</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s">&#39;Tom&#39;</span>
+<span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s">&#39;Tom&#39;</span> <span class="ow">or</span> <span class="n">name</span> <span class="o">==</span> <span class="s">&#39;Dick&#39;</span> <span class="ow">or</span> <span class="n">name</span> <span class="o">==</span> <span class="s">&#39;Harry&#39;</span><span class="p">:</span>
+   <span class="n">is_generic_name</span> <span class="o">=</span> <span class="bp">True</span>
+</pre></div><p>Idiomatic</p><div class="codehilite"><pre><span class="n">name</span> <span class="o">=</span> <span class="s">&#39;Tom&#39;</span>
+<span class="n">is_generic_name</span> <span class="o">=</span> <span class="n">name</span> <span class="ow">in</span> <span class="p">(</span><span class="s">&#39;Tom&#39;</span><span class="p">,</span> <span class="s">&#39;Dick&#39;</span><span class="p">,</span> <span class="s">&#39;Harry&#39;</span><span class="p">)</span>
+</pre></div><h3>Avoid placing condition brach code on the same line as the colon</h3><p>Harmful</p><div class="codehilite"><pre><span class="n">name</span> <span class="o">=</span> <span class="s">&#39;Jeff&#39;</span>
+<span class="n">address</span> <span class="o">=</span> <span class="s">&#39;New York, NY&#39;</span>
+<span class="k">if</span> <span class="n">name</span><span class="p">:</span> <span class="k">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">address</span><span class="p">)</span>
+</pre></div><p>Idiomatic</p><div class="codehilite"><pre><span class="n">name</span> <span class="o">=</span> <span class="s">&#39;Jeff&#39;</span>
+<span class="n">address</span> <span class="o">=</span> <span class="s">&#39;New York, NY&#39;</span>
+<span class="k">if</span> <span class="n">name</span><span class="p">:</span>
+   <span class="k">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">address</span><span class="p">)</span>
+</pre></div><h2><code>for</code> loop</h2><h3>Use the <code>enumerate</code> functions in loops instead of creating</h3><div class="codehilite"><pre>&quot;index&quot; variable
+</pre></div><p>For example, C</p><div class="codehilite"><pre><span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">container</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Do stuff</span>
+<span class="p">}</span>
+</pre></div><p>Harmful</p><div class="codehilite"><pre><span class="n">my_container</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;Larry&#39;</span><span class="p">,</span> <span class="s">&#39;Moe&#39;</span><span class="p">,</span> <span class="s">&#39;Curly&#39;</span><span class="p">]</span>
+<span class="n">index</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">my_container</span><span class="p">:</span>
+    <span class="k">print</span> <span class="p">(</span><span class="s">&#39;{} {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">element</span><span class="p">))</span>
+        <span class="n">index</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div><p>Idiomatic</p><div class="codehilite"><pre><span class="n">my_container</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;Larry&#39;</span><span class="p">,</span> <span class="s">&#39;Moe&#39;</span><span class="p">,</span> <span class="s">&#39;Curly&#39;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">element</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">my_container</span><span class="p">):</span>
+    <span class="k">print</span> <span class="p">(</span><span class="s">&#39;{} {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">element</span><span class="p">))</span>
+</pre></div><h3>Use the <code>in</code> keyword to iterate over an <code>iterate</code></h3><p>Harmful</p><div class="codehilite"><pre><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;Larry&#39;</span><span class="p">,</span> <span class="s">&#39;Moe&#39;</span><span class="p">,</span> <span class="s">&#39;Curly&#39;</span><span class="p">]</span>
+<span class="n">index</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">my_list</span><span class="p">):</span>
+    <span class="k">print</span> <span class="p">(</span><span class="n">my_list</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
+    <span class="n">index</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div><p>Idiomatic</p><div class="codehilite"><pre><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;Larry&#39;</span><span class="p">,</span> <span class="s">&#39;Moe&#39;</span><span class="p">,</span> <span class="s">&#39;Curly&#39;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">my_list</span><span class="p">:</span>
+    <span class="k">print</span> <span class="p">(</span><span class="n">element</span><span class="p">)</span>
+</pre></div><h3>Use <code>else</code> to execute code after a <code>for</code> loop concludes</h3><p>Harmful</p><div class="codehilite"><pre><span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">get_all_users</span><span class="p">():</span>
+    <span class="n">has_malformed_email_address</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="k">print</span> <span class="p">(</span><span class="s">&#39;Checking {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">user</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">email_address</span> <span class="ow">in</span> <span class="n">user</span><span class="o">.</span><span class="n">get_all_email_addresses</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">email_is_malformed</span><span class="p">(</span><span class="n">email_address</span><span class="p">):</span>
+            <span class="n">has_malformed_email_address</span> <span class="o">=</span> <span class="bp">True</span>
+            <span class="k">print</span> <span class="p">(</span><span class="s">&#39;Has a malformed email address!&#39;</span><span class="p">)</span>
+            <span class="k">break</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">has_malformed_email_address</span><span class="p">:</span>
+        <span class="k">print</span> <span class="p">(</span><span class="s">&#39;All email addresses are valid!&#39;</span><span class="p">)</span>
+</pre></div><p>Idiomatic</p><div class="codehilite"><pre><span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">get_all_users</span><span class="p">():</span>
+    <span class="k">print</span> <span class="p">(</span><span class="s">&#39;Checking {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">user</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">email_address</span> <span class="ow">in</span> <span class="n">user</span><span class="o">.</span><span class="n">get_all_email_addresses</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">email_is_malformed</span><span class="p">(</span><span class="n">email_address</span><span class="p">):</span>
+            <span class="k">print</span> <span class="p">(</span><span class="s">&#39;Has a malformed email address!&#39;</span><span class="p">)</span>
+            <span class="k">break</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span> <span class="p">(</span><span class="s">&#39;All email addresses are valid!&#39;</span><span class="p">)</span>
+</pre></div><h2>Functions</h2><h3>Avoid using <code>''</code>, <code>[]</code>, and <code>{}</code> as default parameters to funcions</h3><p>Harmful</p><div class="codehilite"><pre><span class="c"># The default value [of a function] is evaluated only once.</span>
+<span class="c"># This makes a difference when the default is a mutable object</span>
+<span class="c"># such as a list, dictionary, or instances of most classes. For</span>
+<span class="c"># example, the following function accumulates the arguments</span>
+<span class="c"># passed to it on subsequent calls.</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">L</span><span class="o">=</span><span class="p">[]):</span>
+    <span class="n">L</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">L</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="c"># This will print</span>
+<span class="c">#</span>
+<span class="c"># [1]</span>
+<span class="c"># [1, 2]</span>
+<span class="c"># [1, 2, 3]</span>
+</pre></div><p>Idiomatic</p><div class="codehilite"><pre><span class="c"># If you don&#39;t want the default to be shared between subsequent</span>
+<span class="c"># calls, you can write the function like this instead:</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">L</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">L</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">L</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">L</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">L</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="c"># This will print</span>
+<span class="c"># [1]</span>
+<span class="c"># [2]</span>
+<span class="c"># [3]</span>
+</pre></div><h3>Use the <code>*args</code> and <code>**kwargs</code> to accept arbitrary arguments</h3><p>Harmful</p><div class="codehilite"><pre><span class="k">def</span> <span class="nf">make_api_call</span><span class="p">(</span><span class="n">foo</span><span class="p">,</span> <span class="n">bar</span><span class="p">,</span> <span class="n">baz</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">baz</span> <span class="ow">in</span> <span class="p">(</span><span class="s">&#39;Unicorn&#39;</span><span class="p">,</span> <span class="s">&#39;Oven&#39;</span><span class="p">,</span> <span class="s">&#39;New York&#39;</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">foo</span><span class="p">(</span><span class="n">bar</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+         <span class="k">return</span> <span class="n">bar</span><span class="p">(</span><span class="n">foo</span><span class="p">)</span>
+<span class="c"># I need to add another parameter to `make_api_call`</span>
+<span class="c"># without breaking everyone&#39;s existing code.</span>
+<span class="c"># I have two options...</span>
+<span class="k">def</span> <span class="nf">so_many_options</span><span class="p">():</span>
+<span class="c"># I can tack on new parameters, but only if I make</span>
+<span class="c"># all of them optional...</span>
+    <span class="k">def</span> <span class="nf">make_api_call</span><span class="p">(</span><span class="n">foo</span><span class="p">,</span> <span class="n">bar</span><span class="p">,</span> <span class="n">baz</span><span class="p">,</span> <span class="n">qux</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">foo_polarity</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                      <span class="n">baz_coefficient</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">quux_capacitor</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                      <span class="n">bar_has_hopped</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">true</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">false</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                      <span class="n">file_not_found</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="c"># ... and so on ad infinitum</span>
+        <span class="k">return</span> <span class="n">file_not_found</span>
+<span class="k">def</span> <span class="nf">version_graveyard</span><span class="p">():</span>
+        <span class="c"># ... or I can create a new function each time the signature</span>
+        <span class="c"># changes.</span>
+    <span class="k">def</span> <span class="nf">make_api_call_v2</span><span class="p">(</span><span class="n">foo</span><span class="p">,</span> <span class="n">bar</span><span class="p">,</span> <span class="n">baz</span><span class="p">,</span> <span class="n">qux</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">make_api_call</span><span class="p">(</span><span class="n">foo</span><span class="p">,</span> <span class="n">bar</span><span class="p">,</span> <span class="n">baz</span><span class="p">)</span> <span class="o">-</span> <span class="n">qux</span>
+    <span class="k">def</span> <span class="nf">make_api_call_v3</span><span class="p">(</span><span class="n">foo</span><span class="p">,</span> <span class="n">bar</span><span class="p">,</span> <span class="n">baz</span><span class="p">,</span> <span class="n">qux</span><span class="p">,</span> <span class="n">foo_polarity</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">foo_polarity</span> <span class="o">!=</span> <span class="s">&#39;reversed&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">make_api_call_v2</span><span class="p">(</span><span class="n">foo</span><span class="p">,</span> <span class="n">bar</span><span class="p">,</span> <span class="n">baz</span><span class="p">,</span> <span class="n">qux</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">None</span>
+    <span class="k">def</span> <span class="nf">make_api_call_v4</span><span class="p">(</span>
+                <span class="n">foo</span><span class="p">,</span> <span class="n">bar</span><span class="p">,</span> <span class="n">baz</span><span class="p">,</span> <span class="n">qux</span><span class="p">,</span> <span class="n">foo_polarity</span><span class="p">,</span> <span class="n">baz_coefficient</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">make_api_call_v3</span><span class="p">(</span>
+                <span class="n">foo</span><span class="p">,</span> <span class="n">bar</span><span class="p">,</span> <span class="n">baz</span><span class="p">,</span> <span class="n">qux</span><span class="p">,</span> <span class="n">foo_polarity</span><span class="p">)</span> <span class="o">*</span> <span class="n">baz_coefficient</span>
+    <span class="k">def</span> <span class="nf">make_api_call_v5</span><span class="p">(</span>
+                <span class="n">foo</span><span class="p">,</span> <span class="n">bar</span><span class="p">,</span> <span class="n">baz</span><span class="p">,</span> <span class="n">qux</span><span class="p">,</span> <span class="n">foo_polarity</span><span class="p">,</span>
+                <span class="n">baz_coefficient</span><span class="p">,</span> <span class="n">quux_capacitor</span><span class="p">):</span>
+        <span class="c"># I don&#39;t need &#39;foo&#39;, &#39;bar&#39;, or &#39;baz&#39; anymore, but I have to</span>
+        <span class="c"># keep supporting them...</span>
+        <span class="k">return</span> <span class="n">baz_coefficient</span> <span class="o">*</span> <span class="n">quux_capacitor</span>
+    <span class="k">def</span> <span class="nf">make_api_call_v6</span><span class="p">(</span>
+                <span class="n">foo</span><span class="p">,</span> <span class="n">bar</span><span class="p">,</span> <span class="n">baz</span><span class="p">,</span> <span class="n">qux</span><span class="p">,</span> <span class="n">foo_polarity</span><span class="p">,</span> <span class="n">baz_coefficient</span><span class="p">,</span>
+                <span class="n">quux_capacitor</span><span class="p">,</span> <span class="n">bar_has_hopped</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">bar_has_hopped</span><span class="p">:</span>
+            <span class="n">baz_coefficient</span> <span class="o">*=</span> <span class="o">-</span><span class="mi">1</span>
+            <span class="k">return</span> <span class="n">make_api_call_v5</span><span class="p">(</span><span class="n">foo</span><span class="p">,</span> <span class="n">bar</span><span class="p">,</span> <span class="n">baz</span><span class="p">,</span> <span class="n">qux</span><span class="p">,</span>
+                                    <span class="n">foo_polarity</span><span class="p">,</span> <span class="n">baz_coefficient</span><span class="p">,</span>
+                                    <span class="n">quux_capacitor</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">make_api_call_v7</span><span class="p">(</span>
+                <span class="n">foo</span><span class="p">,</span> <span class="n">bar</span><span class="p">,</span> <span class="n">baz</span><span class="p">,</span> <span class="n">qux</span><span class="p">,</span> <span class="n">foo_polarity</span><span class="p">,</span> <span class="n">baz_coefficient</span><span class="p">,</span>
+                <span class="n">quux_capacitor</span><span class="p">,</span> <span class="n">bar_has_hopped</span><span class="p">,</span> <span class="n">true</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">true</span>
+    <span class="k">def</span> <span class="nf">make_api_call_v8</span><span class="p">(</span>
+                <span class="n">foo</span><span class="p">,</span> <span class="n">bar</span><span class="p">,</span> <span class="n">baz</span><span class="p">,</span> <span class="n">qux</span><span class="p">,</span> <span class="n">foo_polarity</span><span class="p">,</span> <span class="n">baz_coefficient</span><span class="p">,</span>
+                <span class="n">quux_capacitor</span><span class="p">,</span> <span class="n">bar_has_hopped</span><span class="p">,</span> <span class="n">true</span><span class="p">,</span> <span class="n">false</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">false</span>
+    <span class="k">def</span> <span class="nf">make_api_call_v9</span><span class="p">(</span>
+                <span class="n">foo</span><span class="p">,</span> <span class="n">bar</span><span class="p">,</span> <span class="n">baz</span><span class="p">,</span> <span class="n">qux</span><span class="p">,</span> <span class="n">foo_polarity</span><span class="p">,</span> <span class="n">baz_coefficient</span><span class="p">,</span>
+                <span class="n">quux_capacitor</span><span class="p">,</span> <span class="n">bar_has_hopped</span><span class="p">,</span>
+                <span class="n">true</span><span class="p">,</span> <span class="n">false</span><span class="p">,</span> <span class="n">file_not_found</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">file_not_found</span>
+</pre></div><p>Idiomatic</p><div class="codehilite"><pre><span class="k">def</span> <span class="nf">make_api_call</span><span class="p">(</span><span class="n">foo</span><span class="p">,</span> <span class="n">bar</span><span class="p">,</span> <span class="n">baz</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">baz</span> <span class="ow">in</span> <span class="p">(</span><span class="s">&#39;Unicorn&#39;</span><span class="p">,</span> <span class="s">&#39;Oven&#39;</span><span class="p">,</span> <span class="s">&#39;New York&#39;</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">foo</span><span class="p">(</span><span class="n">bar</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">bar</span><span class="p">(</span><span class="n">foo</span><span class="p">)</span>
+<span class="c"># I need to add another parameter to `make_api_call`</span>
+<span class="c"># without breaking everyone&#39;s existing code.</span>
+<span class="c"># Easy...</span>
+<span class="k">def</span> <span class="nf">new_hotness</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">make_api_call</span><span class="p">(</span><span class="n">foo</span><span class="p">,</span> <span class="n">bar</span><span class="p">,</span> <span class="n">baz</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="c"># Now I can accept any type and number of arguments</span>
+        <span class="c"># without worrying about breaking existing code.</span>
+        <span class="n">baz_coefficient</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s">&#39;the_baz&#39;</span><span class="p">]</span>
+        <span class="c"># I can even forward my args to a different function without</span>
+        <span class="c"># knowing their contents!</span>
+        <span class="k">return</span> <span class="n">baz_coefficient</span> <span class="ow">in</span> <span class="n">new_function</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+</pre></div><h1>Working with data</h1><h2>Lists</h2><h3>Use a list comprehension to create a transformed version of an exisitng list</h3><p>Harmful</p><div class="codehilite"><pre><span class="n">some_other_list</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">some_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">some_other_list</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">is_prime</span><span class="p">(</span><span class="n">element</span><span class="p">):</span>
+        <span class="n">some_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">element</span> <span class="o">+</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div><p>Idiomatic</p><div class="codehilite"><pre><span class="n">some_other_list</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">some_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">element</span> <span class="o">+</span> <span class="mi">5</span>
+             <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">some_other_list</span>
+             <span class="k">if</span> <span class="n">is_prime</span><span class="p">(</span><span class="n">element</span><span class="p">)]</span>
+</pre></div><h3>Use the <code>*</code> operator to represent the "rest" of a list</h3><p>Harmful</p><div class="codehilite"><pre><span class="n">some_list</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">,</span> <span class="s">&#39;d&#39;</span><span class="p">,</span> <span class="s">&#39;e&#39;</span><span class="p">]</span>
+<span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="n">second</span><span class="p">,</span> <span class="n">rest</span><span class="p">)</span> <span class="o">=</span> <span class="n">some_list</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">some_list</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">some_list</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">rest</span><span class="p">)</span>
+<span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="n">middle</span><span class="p">,</span> <span class="n">last</span><span class="p">)</span> <span class="o">=</span> <span class="n">some_list</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">some_list</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">some_list</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">middle</span><span class="p">)</span>
+<span class="p">(</span><span class="n">head</span><span class="p">,</span> <span class="n">penultimate</span><span class="p">,</span> <span class="n">last</span><span class="p">)</span> <span class="o">=</span> <span class="n">some_list</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="n">some_list</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="n">some_list</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">head</span><span class="p">)</span>
+</pre></div><p>Idiomatic</p><div class="codehilite"><pre><span class="n">some_list</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">,</span> <span class="s">&#39;d&#39;</span><span class="p">,</span> <span class="s">&#39;e&#39;</span><span class="p">]</span>
+<span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="n">second</span><span class="p">,</span> <span class="o">*</span><span class="n">rest</span><span class="p">)</span> <span class="o">=</span> <span class="n">some_list</span>
+<span class="k">print</span><span class="p">(</span><span class="n">rest</span><span class="p">)</span>
+<span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="o">*</span><span class="n">middle</span><span class="p">,</span> <span class="n">last</span><span class="p">)</span> <span class="o">=</span> <span class="n">some_list</span>
+<span class="k">print</span><span class="p">(</span><span class="n">middle</span><span class="p">)</span>
+<span class="p">(</span><span class="o">*</span><span class="n">head</span><span class="p">,</span> <span class="n">penultimate</span><span class="p">,</span> <span class="n">last</span><span class="p">)</span> <span class="o">=</span> <span class="n">some_list</span>
+<span class="k">print</span><span class="p">(</span><span class="n">head</span><span class="p">)</span>
+</pre></div><h2>Dictionaries</h2><h3>Use the default parameter of <code>dic.get</code> to provide default values</h3><p>Harmful</p><div class="codehilite"><pre><span class="n">log_severity</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="k">if</span> <span class="s">&#39;severity&#39;</span> <span class="ow">in</span> <span class="n">configuration</span><span class="p">:</span>
+    <span class="n">log_severity</span> <span class="o">=</span> <span class="n">configuration</span><span class="p">[</span><span class="s">&#39;severity&#39;</span><span class="p">]</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">log_severity</span> <span class="o">=</span> <span class="s">&#39;Info&#39;</span>
+</pre></div><p>Idiomatic</p><div class="codehilite"><pre><span class="n">log_severity</span> <span class="o">=</span> <span class="n">configuration</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;severity&#39;</span><span class="p">,</span> <span class="s">&#39;Info&#39;</span><span class="p">)</span>
+</pre></div><h3>Use a dict comprehension to build a dict clearly and efficiently</h3><p>Harmful</p><div class="codehilite"><pre><span class="n">user_email</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">users_list</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">user</span><span class="o">.</span><span class="n">email</span><span class="p">:</span>
+        <span class="n">user_email</span><span class="p">[</span><span class="n">user</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">user</span><span class="o">.</span><span class="n">email</span>
+</pre></div><p>Idiomatic</p><div class="codehilite"><pre><span class="n">user_email</span> <span class="o">=</span> <span class="p">{</span><span class="n">user</span><span class="o">.</span><span class="n">name</span><span class="p">:</span> <span class="n">user</span><span class="o">.</span><span class="n">email</span>
+              <span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">users_list</span> <span class="k">if</span> <span class="n">user</span><span class="o">.</span><span class="n">email</span><span class="p">}</span>
+</pre></div><h2>Strings</h2><h3>Prefer the <code>format</code> functions for formatting strings</h3><div class="codehilite"><pre><span class="k">def</span> <span class="nf">get_formatted_user_info_worst</span><span class="p">(</span><span class="n">user</span><span class="p">):</span>
+    <span class="c"># Tedious to type and prone to conversion errors</span>
+    <span class="k">return</span> <span class="s">&#39;Name: &#39;</span> <span class="o">+</span> <span class="n">user</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s">&#39;, Age: &#39;</span> <span class="o">+</span> \
+            <span class="nb">str</span><span class="p">(</span><span class="n">user</span><span class="o">.</span><span class="n">age</span><span class="p">)</span> <span class="o">+</span> <span class="s">&#39;, Sex: &#39;</span> <span class="o">+</span> <span class="n">user</span><span class="o">.</span><span class="n">sex</span>
+<span class="k">def</span> <span class="nf">get_formatted_user_info_slightly_better</span><span class="p">(</span><span class="n">user</span><span class="p">):</span>
+    <span class="c"># No visible connection between the format string placeholders</span>
+    <span class="c"># and values to use. Also, why do I have to know the type?</span>
+    <span class="c"># Don&#39;t these types all have __str__ functions?</span>
+    <span class="k">return</span> <span class="s">&#39;Name: </span><span class="si">%s</span><span class="s">, Age: </span><span class="si">%i</span><span class="s">, Sex: </span><span class="si">%c</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span>
+                               <span class="n">user</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">user</span><span class="o">.</span><span class="n">age</span><span class="p">,</span> <span class="n">user</span><span class="o">.</span><span class="n">sex</span><span class="p">)</span>
+</pre></div><p>Idiomatic</p><div class="codehilite"><pre><span class="k">def</span> <span class="nf">get_formatted_user_info</span><span class="p">(</span><span class="n">user</span><span class="p">):</span>
+    <span class="c"># Clear and concise. At a glance I can tell exactly what</span>
+    <span class="c"># the output should be. Note: this string could be returned</span>
+    <span class="c"># directly, but the string itself is too long to fit on the</span>
+    <span class="c"># page.</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="s">&#39;Name: {user.name}, Age: {user.age}&#39;</span>
+             <span class="s">&#39;, Sex: {user.sex}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">user</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">output</span>
+</pre></div><h3>Use <code>''.join</code> when creating a single string for list elements</h3><p>Harmful</p><div class="codehilite"><pre><span class="n">result_list</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;True&#39;</span><span class="p">,</span> <span class="s">&#39;False&#39;</span><span class="p">,</span> <span class="s">&#39;File not found&#39;</span><span class="p">]</span>
+<span class="n">result_string</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
+<span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">result_list</span><span class="p">:</span>
+    <span class="n">result_string</span> <span class="o">+=</span> <span class="n">result</span>
+</pre></div><p>Idiomatic</p><div class="codehilite"><pre><span class="n">result_list</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;True&#39;</span><span class="p">,</span> <span class="s">&#39;False&#39;</span><span class="p">,</span> <span class="s">&#39;File not found&#39;</span><span class="p">]</span>
+<span class="n">result_string</span> <span class="o">=</span> <span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">result_list</span><span class="p">)</span>
+</pre></div><h3>Chain string functions to make a simple series of transformation more clear</h3><p>"No more than three chained functions" is a good rule of thumb</p><p>Harmful</p><div class="codehilite"><pre><span class="n">book_info</span> <span class="o">=</span> <span class="s">&#39; The Three Musketeers: Alexandre Dumas&#39;</span>
+<span class="n">formatted_book_info</span> <span class="o">=</span> <span class="n">book_info</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="n">formatted_book_info</span> <span class="o">=</span> <span class="n">formatted_book_info</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+<span class="n">formatted_book_info</span> <span class="o">=</span> <span class="n">formatted_book_info</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;:&#39;</span><span class="p">,</span> <span class="s">&#39; by&#39;</span><span class="p">)</span>
+</pre></div><p>Idiomatic</p><div class="codehilite"><pre><span class="n">book_info</span> <span class="o">=</span> <span class="s">&#39; The Three Musketeers: Alexandre Dumas&#39;</span>
+<span class="n">formatted_book_info</span> <span class="o">=</span> <span class="n">book_info</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;:&#39;</span><span class="p">,</span> <span class="s">&#39; by&#39;</span><span class="p">)</span>
+</pre></div><h2>Classes</h2><h3>Use underscore in function and variable names to help mark "private" data</h3><p>Harmful</p><div class="codehilite"><pre><span class="k">class</span> <span class="nc">Foo</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="mi">8</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_value</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">get_value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+    <span class="k">def</span> <span class="nf">should_destroy_earth</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">==</span> <span class="mi">42</span>
+<span class="k">class</span> <span class="nc">Baz</span><span class="p">(</span><span class="n">Foo</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">get_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">some_new_parameter</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Since &#39;get_value&#39; is called from the base class&#39;s</span>
+<span class="sd">    __init__ method and the base class definition doesn&#39;t</span>
+<span class="sd">    take a parameter, trying to create a Baz instance will</span>
+<span class="sd">    fail.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span>
+<span class="k">class</span> <span class="nc">Qux</span><span class="p">(</span><span class="n">Foo</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;We aren&#39;t aware of Foo&#39;s internals, and we innocently</span>
+<span class="sd">    create an instance attribute named &#39;id&#39; and set it to 42.</span>
+<span class="sd">    This overwrites Foo&#39;s id attribute and we inadvertently</span>
+<span class="sd">    blow up the earth.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Qux</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="mi">42</span>
+        <span class="c"># No relation to Foo&#39;s id, purely coincidental</span>
+<span class="n">q</span> <span class="o">=</span> <span class="n">Qux</span><span class="p">()</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">Baz</span><span class="p">()</span> <span class="c"># Raises &#39;TypeError&#39;</span>
+<span class="n">q</span><span class="o">.</span><span class="n">should_destroy_earth</span><span class="p">()</span> <span class="c"># returns True</span>
+<span class="n">q</span><span class="o">.</span><span class="n">id</span> <span class="o">==</span> <span class="mi">42</span> <span class="c"># returns True</span>
+</pre></div><p>Idiomatic</p><div class="codehilite"><pre><span class="k">class</span> <span class="nc">Foo</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Since &#39;id&#39; is of vital importance to us, we don&#39;t</span>
+<span class="sd">        want a derived class accidentally overwriting it. We&#39;ll</span>
+<span class="sd">        prepend with double underscores to introduce name</span>
+<span class="sd">        mangling.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__id</span> <span class="o">=</span> <span class="mi">8</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__get_value</span><span class="p">()</span> <span class="c"># Our &#39;private copy&#39;</span>
+    <span class="k">def</span> <span class="nf">get_value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+    <span class="k">def</span> <span class="nf">should_destroy_earth</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__id</span> <span class="o">==</span> <span class="mi">42</span>
+    <span class="c"># Here, we&#39;re storing an &#39;private copy&#39; of get_value,</span>
+    <span class="c"># and assigning it to &#39;__get_value&#39;. Even if a derived</span>
+    <span class="c"># class overrides get_value is a way incompatible with</span>
+    <span class="c"># ours, we&#39;re fine</span>
+    <span class="n">__get_value</span> <span class="o">=</span> <span class="n">get_value</span>
+<span class="k">class</span> <span class="nc">Baz</span><span class="p">(</span><span class="n">Foo</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">get_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">some_new_parameter</span><span class="p">):</span>
+        <span class="k">pass</span>
+<span class="k">class</span> <span class="nc">Qux</span><span class="p">(</span><span class="n">Foo</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Now when we set &#39;id&#39; to 42, it&#39;s not the same &#39;id&#39;</span>
+<span class="sd">        that &#39;should_destroy_earth&#39; is concerned with. In fact,</span>
+<span class="sd">        if you inspect a Qux object, you&#39;ll find it doesn&#39;t</span>
+<span class="sd">        have an __id attribute. So we can&#39;t mistakenly change</span>
+<span class="sd">        Foo&#39;s __id attribute even if we wanted to.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="mi">42</span>
+        <span class="c"># No relation to Foo&#39;s id, purely coincidental</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Qux</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+<span class="n">q</span> <span class="o">=</span> <span class="n">Qux</span><span class="p">()</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">Baz</span><span class="p">()</span> <span class="c"># Works fine now</span>
+<span class="n">q</span><span class="o">.</span><span class="n">should_destroy_earth</span><span class="p">()</span> <span class="c"># returns False</span>
+<span class="n">q</span><span class="o">.</span><span class="n">id</span> <span class="o">==</span> <span class="mi">42</span> <span class="c"># returns True</span>
+<span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">AttributeError</span><span class="p">):</span>
+    <span class="nb">getattr</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="s">&#39;__id&#39;</span><span class="p">)</span>
+</pre></div><h3>Define <code>__str__</code> in a class to show a human-readable representation</h3><p>Harmful</p><div class="codehilite"><pre><span class="k">class</span> <span class="nc">Point</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<span class="c"># Prints &#39;&lt;__main__.Point object at 0x91ebd0&gt;&#39;</span>
+</pre></div><p>Idiomatic</p><div class="codehilite"><pre><span class="k">class</span> <span class="nc">Point</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&#39;{0}, {1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<span class="c"># Prints &#39;1, 2&#39;</span>
+</pre></div><h2>Sets</h2><h3>Use sets to eliminate duplicate entries from interable containers</h3><p>Harmful</p><div class="codehilite"><pre><span class="n">unique_surnames</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">surname</span> <span class="ow">in</span> <span class="n">employee_surnames</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">surname</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">unique_surnames</span><span class="p">:</span>
+        <span class="n">unique_surnames</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">surname</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">display</span><span class="p">(</span><span class="n">elements</span><span class="p">,</span> <span class="n">output_format</span><span class="o">=</span><span class="s">&#39;html&#39;</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">output_format</span> <span class="o">==</span> <span class="s">&#39;std_out&#39;</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">elements</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">output_format</span> <span class="o">==</span> <span class="s">&#39;html&#39;</span><span class="p">:</span>
+        <span class="n">as_html</span> <span class="o">=</span> <span class="s">&#39;&lt;ul&gt;&#39;</span>
+        <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">elements</span><span class="p">:</span>
+            <span class="n">as_html</span> <span class="o">+=</span> <span class="s">&#39;&lt;li&gt;{}&lt;/li&gt;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">as_html</span> <span class="o">+</span> <span class="s">&#39;&lt;/ul&gt;&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s">&#39;Unknown format {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">output_format</span><span class="p">))</span>
+</pre></div><p>Idiomatic</p><div class="codehilite"><pre><span class="n">unique_surnames</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">employee_surnames</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">display</span><span class="p">(</span><span class="n">elements</span><span class="p">,</span> <span class="n">output_format</span><span class="o">=</span><span class="s">&#39;html&#39;</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">output_format</span> <span class="o">==</span> <span class="s">&#39;std_out&#39;</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">elements</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">output_format</span> <span class="o">==</span> <span class="s">&#39;html&#39;</span><span class="p">:</span>
+        <span class="n">as_html</span> <span class="o">=</span> <span class="s">&#39;&lt;ul&gt;&#39;</span>
+        <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">elements</span><span class="p">:</span>
+            <span class="n">as_html</span> <span class="o">+=</span> <span class="s">&#39;&lt;li&gt;{}&lt;/li&gt;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">as_html</span> <span class="o">+</span> <span class="s">&#39;&lt;/ul&gt;&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s">&#39;Unknown format {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">output_format</span><span class="p">))</span>
+</pre></div><h3>Use a set comprehension to generate sets concisely</h3><p>Harmful</p><div class="codehilite"><pre><span class="n">users_first_names</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">users</span><span class="p">:</span>
+    <span class="n">users_first_names</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">user</span><span class="o">.</span><span class="n">first_name</span><span class="p">)</span>
+</pre></div><p>Idiomatic</p><div class="codehilite"><pre><span class="n">users_first_names</span> <span class="o">=</span> <span class="p">{</span><span class="n">user</span><span class="o">.</span><span class="n">first_name</span> <span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">users</span><span class="p">}</span>
+</pre></div><h3>Understand and use the mathematical set operations</h3><ul><li>Union</li></ul><div class="codehilite"><pre><span class="n">A</span> <span class="o">|</span> <span class="n">B</span>
+</pre></div><ul><li>Intersection</li></ul><div class="codehilite"><pre><span class="n">A</span> <span class="o">&amp;</span> <span class="n">B</span>
+</pre></div><ul><li>Difference</li></ul><div class="codehilite"><pre><span class="n">A</span> <span class="o">-</span> <span class="n">B</span>
+</pre></div><ul><li>Symmetric Difference</li></ul><div class="codehilite"><pre><span class="n">A</span> <span class="o">^</span> <span class="n">B</span>
+</pre></div><p>Harmful</p><div class="codehilite"><pre><span class="k">def</span> <span class="nf">get_both_popular_and_active_users</span><span class="p">():</span>
+    <span class="c"># Assume the following two functions each return a</span>
+    <span class="c"># list of user names</span>
+    <span class="n">most_popular_users</span> <span class="o">=</span> <span class="n">get_list_of_most_popular_users</span><span class="p">()</span>
+    <span class="n">most_active_users</span> <span class="o">=</span> <span class="n">get_list_of_most_active_users</span><span class="p">()</span>
+    <span class="n">popular_and_active_users</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">most_active_users</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">most_popular_users</span><span class="p">:</span>
+            <span class="n">popular_and_active_users</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">user</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">popular_and_active_users</span>
+</pre></div><p>Idiomatic</p><div class="codehilite"><pre><span class="k">def</span> <span class="nf">get_both_popular_and_active_users</span><span class="p">():</span>
+    <span class="c"># Assume the following two functions each return a</span>
+    <span class="c"># list of user names</span>
+    <span class="k">return</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span>
+               <span class="n">get_list_of_most_active_users</span><span class="p">())</span> <span class="o">&amp;</span> <span class="nb">set</span><span class="p">(</span>
+                    <span class="n">get_list_of_most_popular_users</span><span class="p">()))</span>
+</pre></div><h2>Generator</h2><h3>Use a generator to lazily load infinite sequences</h3><p>Harmful</p><div class="codehilite"><pre><span class="k">def</span> <span class="nf">get_twitter_stream_for_keyword</span><span class="p">(</span><span class="n">keyword</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Get&#39;s the &#39;live stream&#39;, but only at the moment</span>
+<span class="sd">    the function is initially called. To get more entries,</span>
+<span class="sd">    the client code needs to keep calling</span>
+<span class="sd">    &#39;get_twitter_livestream_for_user&#39;. Not ideal.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">imaginary_twitter_api</span> <span class="o">=</span> <span class="n">ImaginaryTwitterAPI</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">imaginary_twitter_api</span><span class="o">.</span><span class="n">can_get_stream_data</span><span class="p">(</span><span class="n">keyword</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">imaginary_twitter_api</span><span class="o">.</span><span class="n">get_stream</span><span class="p">(</span><span class="n">keyword</span><span class="p">)</span>
+<span class="n">current_stream</span> <span class="o">=</span> <span class="n">get_twitter_stream_for_keyword</span><span class="p">(</span><span class="s">&#39;#jeffknupp&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">tweet</span> <span class="ow">in</span> <span class="n">current_stream</span><span class="p">:</span>
+    <span class="n">process_tweet</span><span class="p">(</span><span class="n">tweet</span><span class="p">)</span>
+<span class="c"># Uh, I want to keep showing tweets until the program is quit.</span>
+<span class="c"># What do I do now? Just keep calling</span>
+<span class="c"># get_twitter_stream_for_keyword? That seems stupid.</span>
+<span class="k">def</span> <span class="nf">get_list_of_incredibly_complex_calculation_results</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">first_incredibly_long_calculation</span><span class="p">(</span><span class="n">data</span><span class="p">),</span>
+            <span class="n">second_incredibly_long_calculation</span><span class="p">(</span><span class="n">data</span><span class="p">),</span>
+            <span class="n">third_incredibly_long_calculation</span><span class="p">(</span><span class="n">data</span><span class="p">),</span>
+            <span class="p">]</span>
+</pre></div><p>Idiomatic</p><div class="codehilite"><pre><span class="k">def</span> <span class="nf">get_twitter_stream_for_keyword</span><span class="p">(</span><span class="n">keyword</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Now, &#39;get_twitter_stream_for_keyword&#39; is a generator</span>
+<span class="sd">    and will continue to generate Iterable pieces of data</span>
+<span class="sd">    one at a time until &#39;can_get_stream_data(user)&#39; is</span>
+<span class="sd">    False (which may be never).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">imaginary_twitter_api</span> <span class="o">=</span> <span class="n">ImaginaryTwitterAPI</span><span class="p">()</span>
+    <span class="k">while</span> <span class="n">imaginary_twitter_api</span><span class="o">.</span><span class="n">can_get_stream_data</span><span class="p">(</span><span class="n">keyword</span><span class="p">):</span>
+        <span class="k">yield</span> <span class="n">imaginary_twitter_api</span><span class="o">.</span><span class="n">get_stream</span><span class="p">(</span><span class="n">keyword</span><span class="p">)</span>
+<span class="c"># Because it&#39;s a generator, I can sit in this loop until</span>
+<span class="c"># the client wants to break out</span>
+<span class="k">for</span> <span class="n">tweet</span> <span class="ow">in</span> <span class="n">get_twitter_stream_for_keyword</span><span class="p">(</span><span class="s">&#39;#jeffknupp&#39;</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">got_stop_signal</span><span class="p">:</span>
+        <span class="k">break</span>
+    <span class="n">process_tweet</span><span class="p">(</span><span class="n">tweet</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">get_list_of_incredibly_complex_calculation_results</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;A simple example to be sure, but now when the client</span>
+<span class="sd">    code iterates over the call to</span>
+<span class="sd">    &#39;get_list_of_incredibly_complex_calculation_results&#39;,</span>
+<span class="sd">    we only do as much work as necessary to generate the</span>
+<span class="sd">    current item.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">yield</span> <span class="n">first_incredibly_long_calculation</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="k">yield</span> <span class="n">second_incredibly_long_calculation</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="k">yield</span> <span class="n">third_incredibly_long_calculation</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div><h3>Prefer a generator expression to a list comprehension for simple iteration</h3><p>Harmful</p><div class="codehilite"><pre><span class="k">for</span> <span class="n">uppercase_name</span> <span class="ow">in</span> <span class="p">[</span><span class="n">name</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">get_all_usernames</span><span class="p">()]:</span>
+    <span class="n">process_normalized_username</span><span class="p">(</span><span class="n">uppercase_name</span><span class="p">)</span>
+</pre></div><p>Idiomatic</p><div class="codehilite"><pre><span class="k">for</span> <span class="n">uppercase_name</span> <span class="ow">in</span> <span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">get_all_usernames</span><span class="p">()):</span>
+    <span class="n">process_normalized_username</span><span class="p">(</span><span class="n">uppercase_name</span><span class="p">)</span>
+</pre></div><h3>Use a context manager to ensure resources are properly managed</h3><p>Harmful</p><div class="codehilite"><pre><span class="n">file_handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">path_to_file</span><span class="p">,</span> <span class="s">&#39;r&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">file_handle</span><span class="o">.</span><span class="n">readlines</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">raise_exception</span><span class="p">(</span><span class="n">line</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&#39;No! An Exception!&#39;</span><span class="p">)</span>
+</pre></div><p>Idiomatic</p><div class="codehilite"><pre><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path_to_file</span><span class="p">,</span> <span class="s">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_handle</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">file_handle</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">raise_exception</span><span class="p">(</span><span class="n">line</span><span class="p">):</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">&#39;No! An Exception!&#39;</span><span class="p">)</span>
+</pre></div><h2>Tupples</h2><h3>Use tupples to unpack data</h3><p>Harmful</p><div class="codehilite"><pre><span class="n">list_from_comma_separated_value_file</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;dog&#39;</span><span class="p">,</span> <span class="s">&#39;Fido&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="n">animal</span> <span class="o">=</span> <span class="n">list_from_comma_separated_value_file</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">name</span> <span class="o">=</span> <span class="n">list_from_comma_separated_value_file</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">age</span> <span class="o">=</span> <span class="n">list_from_comma_separated_value_file</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">output</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;{name} the {animal} is {age} years old&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                             <span class="n">animal</span><span class="o">=</span><span class="n">animal</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="n">age</span><span class="p">))</span>
+</pre></div><p>Idiomatic</p><div class="codehilite"><pre><span class="n">list_from_comma_separated_value_file</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;dog&#39;</span><span class="p">,</span> <span class="s">&#39;Fido&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="p">(</span><span class="n">animal</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span> <span class="o">=</span> <span class="n">list_from_comma_separated_value_file</span>
+<span class="n">output</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;{name} the {animal} is {age} years old&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                             <span class="n">animal</span><span class="o">=</span><span class="n">animal</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="n">age</span><span class="p">))</span>
+</pre></div><h3>Use <code>_</code> as a placeholder for data in a tupple that should be ignored</h3><p>Harmful</p><div class="codehilite"><pre><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="n">temp2</span><span class="p">)</span> <span class="o">=</span> <span class="n">get_user_info</span><span class="p">(</span><span class="n">user</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">age</span> <span class="o">&gt;</span> <span class="mi">21</span><span class="p">:</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="s">&#39;{name} can drink!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
+<span class="c"># &quot;Wait, where are temp and temp2 being used?&quot;</span>
+</pre></div><p>Idiomatic</p><div class="codehilite"><pre><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">)</span> <span class="o">=</span> <span class="n">get_user_info</span><span class="p">(</span><span class="n">user</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">age</span> <span class="o">&gt;</span> <span class="mi">21</span><span class="p">:</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="s">&#39;{name} can drink!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
+<span class="c"># &quot;Clearly, only name and age are interesting&quot;</span>
+</pre></div><h2>Variables</h2><h3>Avoid using a temporary variable when performing a swap of two values</h3><p>Harmful</p><div class="codehilite"><pre><span class="n">foo</span> <span class="o">=</span> <span class="s">&#39;Foo&#39;</span>
+<span class="n">bar</span> <span class="o">=</span> <span class="s">&#39;Bar&#39;</span>
+<span class="n">temp</span> <span class="o">=</span> <span class="n">foo</span>
+<span class="n">foo</span> <span class="o">=</span> <span class="n">bar</span>
+<span class="n">bar</span> <span class="o">=</span> <span class="n">temp</span>
+</pre></div><p>Idiomatic</p><div class="codehilite"><pre><span class="n">foo</span> <span class="o">=</span> <span class="s">&#39;Foo&#39;</span>
+<span class="n">bar</span> <span class="o">=</span> <span class="s">&#39;Bar&#39;</span>
+<span class="p">(</span><span class="n">foo</span><span class="p">,</span> <span class="n">bar</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">bar</span><span class="p">,</span> <span class="n">foo</span><span class="p">)</span>
+</pre></div><h1>Organizing you code</h1><h2>Modules and Packages</h2><h3>Use modules for encapsulation where other languages would use Object</h3><p>While Python certainly supports Object Oriented programming, it does not require it. Most experienced Python programmers (and programmers in general using a language that facilitates it) use classes and polymorphism relatively sparingly. There are a number of reasons why.</p><p>Most data that would otherwise stored in a class can be represented using the simple list, dict, and set types. Python has a wide variety of built-in functions and standard library modules optimized (both in design and implementation) to interact with them. One can make a compelling case that classes should be used only when necessary and almost never at API boundaries.</p><p>In Java, classes are the basic unit of encapsulation. Each file represents a Java class, regardless of whether that makes sense for the problem at hand. If I have a handful of utility functions, into a “Utility” class they go! If we don’t intuitively understand what it means to be a “Utility” object, no matter. Of course, I exaggerate, but the point is clear. Once one is forced to make everything a class, it is easy to carry that notion over to other programming languages.</p><p>In Python, groups of related functions and data are naturally encapsulated in modules. If I’m using an MVC web framework to build “Chirp”, I may have a package named chirp with model, view, and controller modules. If “Chirp” is an especially ambitious project and the code base is large, those modules could easily be packages themselves. The controller package may have a persistence module and a processing module. Neither of those need be related in any way other than the sense that they intuitively belong under controller.</p><p>If all of those modules became classes, interoperability immediately becomes an issue. We must carefully and precisely determine the methods we will expose publicly, how state will be updated, and the way in which our class supports testing. And instead of a dict or list, we have Processing and Persistence objects we must write code to support.</p><p>Note that nothing in the description of “Chirp” necessitates the use of any classes. Simple import statements make code sharing and encapsulation easy. Passing state explicitly as arguments to functions keeps everything loosely coupled. And it becomes far easier to receive, process, and transform data flowing through our system.</p><p>To be sure, classes may be a cleaner or more natural way to represent some “things”. In many instances, Object Oriented Programming is a handy paradigm. Just don’t make it the only paradigm you use.</p><h2>Formatting</h2><h3>Use all capital letters when declaring global constant values</h3><p>Harmful</p><div class="codehilite"><pre><span class="n">seconds_in_a_day</span> <span class="o">=</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">24</span>
+<span class="c"># ...</span>
+<span class="k">def</span> <span class="nf">display_uptime</span><span class="p">(</span><span class="n">uptime_in_seconds</span><span class="p">):</span>
+    <span class="n">percentage_run_time</span> <span class="o">=</span> <span class="p">(</span><span class="n">uptime_in_seconds</span><span class="o">/</span><span class="n">seconds_in_a_day</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+    <span class="c"># &quot;Huh!? Where did seconds_in_a_day come from?&quot;</span>
+    <span class="k">return</span> <span class="s">&#39;The process was up {percent} percent of the day&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                                       <span class="n">percent</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">percentage_run_time</span><span class="p">))</span>
+<span class="c"># ...</span>
+<span class="n">uptime_in_seconds</span> <span class="o">=</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">24</span>
+<span class="n">display_uptime</span><span class="p">(</span><span class="n">uptime_in_seconds</span><span class="p">)</span>
+</pre></div><p>Idiomatic</p><div class="codehilite"><pre><span class="n">SECONDS_IN_A_DAY</span> <span class="o">=</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">24</span>
+<span class="c"># ...</span>
+<span class="k">def</span> <span class="nf">display_uptime</span><span class="p">(</span><span class="n">uptime_in_seconds</span><span class="p">):</span>
+    <span class="n">percentage_run_time</span> <span class="o">=</span> <span class="p">(</span><span class="n">uptime_in_seconds</span><span class="o">/</span><span class="n">SECONDS_IN_A_DAY</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+    <span class="c"># &quot;Clearly SECONDS_IN_A_DAY is a constant defined</span>
+    <span class="c"># elsewhere in this module.&quot;</span>
+    <span class="k">return</span> <span class="s">&#39;The process was up {percent} percent of the day&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                                       <span class="n">percent</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">percentage_run_time</span><span class="p">))</span>
+<span class="c"># ...</span>
+<span class="n">uptime_in_seconds</span> <span class="o">=</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">24</span>
+<span class="n">display_uptime</span><span class="p">(</span><span class="n">uptime_in_seconds</span><span class="p">)</span>
+</pre></div><h3>Avoid placing multiple statements on a single line</h3><p>Harmful</p><div class="codehilite"><pre><span class="k">if</span> <span class="n">this_is_bad_code</span><span class="p">:</span> <span class="n">rewrite_code</span><span class="p">();</span> <span class="n">make_it_more_readable</span><span class="p">();</span>
+</pre></div><p>Idiomatic</p><div class="codehilite"><pre><span class="k">if</span> <span class="n">this_is_bad_code</span><span class="p">:</span>
+    <span class="n">rewrite_code</span><span class="p">()</span>
+<span class="n">make_it_more_readable</span><span class="p">()</span>
+</pre></div><h3>Formatting your code according to <a href="https://www.python.org/dev/peps/pep-0008/">PEP8</a></h3><h2>Executable scripts</h2><h3>Use <code>sys.exit</code> in your script to return proper error codes</h3><p>Harmful</p><div class="codehilite"><pre><span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">sys</span>
+    <span class="c"># What happens if no argument is passed on the</span>
+    <span class="c"># command line?</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">argument</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">do_stuff</span><span class="p">(</span><span class="n">argument</span><span class="p">)</span>
+        <span class="c"># Again, what if this is False? How would other</span>
+        <span class="c"># programs know?</span>
+        <span class="k">if</span> <span class="n">result</span><span class="p">:</span>
+            <span class="n">do_stuff_with_result</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div><p>Idiomatic</p><div class="codehilite"><pre><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="kn">import</span> <span class="nn">sys</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="c"># Calling sys.exit with a string automatically</span>
+        <span class="c"># prints the string to stderr and exits with</span>
+        <span class="c"># a value of &#39;1&#39; (error)</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="s">&#39;You forgot to pass an argument&#39;</span><span class="p">)</span>
+    <span class="n">argument</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">do_stuff</span><span class="p">(</span><span class="n">argument</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">result</span><span class="p">:</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="c"># We can also exit with just the return code</span>
+    <span class="n">do_stuff_with_result</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+    <span class="c"># Optional, since the return value without this return</span>
+    <span class="c"># statment would default to None, which sys.exit treats</span>
+    <span class="c"># as &#39;exit with 0&#39;</span>
+    <span class="k">return</span> <span class="mi">0</span>
+<span class="c"># The three lines below are the canonical script entry</span>
+<span class="c"># point lines. You&#39;ll see them often in other Python scripts</span>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+</pre></div><h3>Use the <code>if __name__ == '__main__'</code> pattern to allow a file to be both imported and run directly</h3><p>Harmful</p><div class="codehilite"><pre><span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="n">FIRST_NUMBER</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">SECOND_NUMBER</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">divide</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">/</span><span class="n">b</span>
+<span class="c"># I can&#39;t import this file (for the super</span>
+<span class="c"># useful &#39;divide&#39; function) without the following</span>
+<span class="c"># code being executed.</span>
+<span class="k">if</span> <span class="n">SECOND_NUMBER</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">divide</span><span class="p">(</span><span class="n">FIRST_NUMBER</span><span class="p">,</span> <span class="n">SECOND_NUMBER</span><span class="p">))</span>
+</pre></div><p>Idiomatic</p><div class="codehilite"><pre><span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="k">def</span> <span class="nf">divide</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">/</span><span class="n">b</span>
+<span class="c"># Will only run if script is executed directly,</span>
+<span class="c"># not when the file is imported as a module</span>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">first_number</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">second_number</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+    <span class="k">if</span> <span class="n">second_number</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">divide</span><span class="p">(</span><span class="n">first_number</span><span class="p">,</span> <span class="n">second_number</span><span class="p">))</span>
+</pre></div><h2>Imports</h2><h3>Prefer absolute imports to relative imports</h3><p>Harmful</p><div class="codehilite"><pre><span class="c"># My location is package.sub_package.module</span>
+<span class="c"># and I want to import package.other_module.</span>
+<span class="c"># The following should be avoided:</span>
+<span class="kn">from</span> <span class="nn">...package</span> <span class="kn">import</span> <span class="n">other_module</span>
+</pre></div><p>Idiomatic</p><div class="codehilite"><pre><span class="c"># My location is package.sub_package.another_sub_package.module</span>
+<span class="c"># and I want to import package.other_module.</span>
+<span class="c"># Either of the following are acceptable:</span>
+<span class="kn">import</span> <span class="nn">package.other_module</span>
+<span class="kn">import</span> <span class="nn">package.other_module</span> <span class="kn">as</span> <span class="nn">other</span>
+</pre></div><h3>Do not use <code>from foo import *</code> to import the contents of a module</h3><p>Harmful</p><div class="codehilite"><pre><span class="kn">from</span> <span class="nn">foo</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div><p>Idiomatic</p><div class="codehilite"><pre><span class="kn">from</span> <span class="nn">foo</span> <span class="kn">import</span> <span class="p">(</span><span class="n">bar</span><span class="p">,</span> <span class="n">baz</span><span class="p">,</span> <span class="n">qux</span><span class="p">,</span>
+                 <span class="n">quux</span><span class="p">,</span> <span class="n">quuux</span><span class="p">)</span>
+<span class="c"># or even better...</span>
+<span class="kn">import</span> <span class="nn">foo</span>
+</pre></div><h3>Arrange your <code>import</code> statements in a standard order</h3><ol><li>standard library modules</li><li>third-party library module installed in site-packages</li><li>modules local to the current project</li></ol><p>Harmful</p><div class="codehilite"><pre><span class="kn">import</span> <span class="nn">os.path</span>
+<span class="c"># Some function and class definitions,</span>
+<span class="c"># one of which uses os.path</span>
+<span class="c"># ....</span>
+<span class="kn">import</span> <span class="nn">concurrent.futures</span>
+<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">render_template</span>
+<span class="c"># Stuff using futures and Flask&#39;s render_template</span>
+<span class="c"># ....</span>
+<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="p">(</span><span class="n">Flask</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">session</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span>
+                   <span class="n">redirect</span><span class="p">,</span> <span class="n">url_for</span><span class="p">,</span> <span class="n">abort</span><span class="p">,</span>
+                   <span class="n">render_template</span><span class="p">,</span> <span class="n">flash</span><span class="p">,</span> <span class="n">_app_ctx_stack</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="c"># Code using flask and requests</span>
+<span class="c"># ....</span>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="c"># Imports when imported as a module are not so</span>
+    <span class="c"># costly that they need to be relegated to inside</span>
+    <span class="c"># an &#39;if __name__ == &#39;__main__&#39;&#39; block...</span>
+    <span class="kn">import</span> <span class="nn">this_project.utilities.sentient_network</span> <span class="kn">as</span> <span class="nn">skynet</span>
+    <span class="kn">import</span> <span class="nn">this_project.widgets</span>
+    <span class="kn">import</span> <span class="nn">sys</span>
+</pre></div><p>Idiomatic</p><div class="codehilite"><pre><span class="c"># Easy to see exactly what my dependencies are and where to</span>
+<span class="c"># make changes if a module or package name changes</span>
+<span class="kn">import</span> <span class="nn">concurrent.futures</span>
+<span class="kn">import</span> <span class="nn">os.path</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="p">(</span><span class="n">Flask</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">session</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span>
+                   <span class="n">redirect</span><span class="p">,</span> <span class="n">url_for</span><span class="p">,</span> <span class="n">abort</span><span class="p">,</span>
+                   <span class="n">render_template</span><span class="p">,</span> <span class="n">flash</span><span class="p">,</span> <span class="n">_app_ctx_stack</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">this_project.utilities.sentient_network</span> <span class="kn">as</span> <span class="nn">skynet</span>
+<span class="kn">import</span> <span class="nn">this_project.widgets</span>
+</pre></div><h1>General Advice</h1><h2>Avoid Reinventing the Wheel</h2><h3>Learn the contents of the Python standard library</h3><h3>Get to know <code>PyPI</code> (the Python Package Index)</h3><h2>Modules of Note</h2><h3>Learn the contents of the itertools module</h3><h3>Use functions in the <code>os.path</code> module when working with directory paths</h3><p>Harmful</p><div class="codehilite"><pre><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="n">filename_to_archive</span> <span class="o">=</span> <span class="s">&#39;test.txt&#39;</span>
+<span class="n">new_filename</span> <span class="o">=</span> <span class="s">&#39;test.bak&#39;</span>
+<span class="n">target_directory</span> <span class="o">=</span> <span class="s">&#39;./archives&#39;</span>
+<span class="n">today</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
+<span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s">&#39;./archives/&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">today</span><span class="p">))</span>
+<span class="n">os</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span>
+          <span class="n">filename_to_archive</span><span class="p">,</span>
+          <span class="n">target_directory</span> <span class="o">+</span> <span class="s">&#39;/&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">today</span><span class="p">)</span> <span class="o">+</span> <span class="s">&#39;/&#39;</span> <span class="o">+</span> <span class="n">new_filename</span><span class="p">)</span>
+          <span class="n">today</span><span class="p">)</span> <span class="o">+</span> <span class="s">&#39;/&#39;</span> <span class="o">+</span> <span class="n">new_filename</span><span class="p">)</span>
+</pre></div><p>Idiomatic</p><div class="codehilite"><pre><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="n">current_directory</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+<span class="n">filename_to_archive</span> <span class="o">=</span> <span class="s">&#39;test.txt&#39;</span>
+<span class="n">new_filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">filename_to_archive</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s">&#39;.bak&#39;</span>
+<span class="n">target_directory</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">current_directory</span><span class="p">,</span> <span class="s">&#39;archives&#39;</span><span class="p">)</span>
+<span class="n">today</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
+<span class="n">new_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">target_directory</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">today</span><span class="p">))</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">target_directory</span><span class="p">)):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">new_path</span><span class="p">):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">new_path</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span>
+              <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">current_directory</span><span class="p">,</span> <span class="n">filename_to_archive</span><span class="p">),</span>
+              <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">new_path</span><span class="p">,</span> <span class="n">new_filename</span><span class="p">))</span>
+</pre></div></div><div style="clear: both;"></div></div><div class="post-footer"><div class="meta post_tags"><i class="fa fa-tags"></i> Tagged in: <a href="/tag/programming.html" rel="tag">programming</a><a href="/tag/codingstyle.html" rel="tag">codingstyle</a></div><div class="share-wrapper"><div class="title">— Share It —</div><ul class="entry-share-list clearfix"><li class="facebook_share"><a href="https://www.facebook.com/sharer/sharer.php?u=http://manhhomienbienthuy.bitbucket.org/2014/Jul/24/writing-idiomatic-python.html" target="_blank"><span class="share-text">Facebook</span></a><li class="twitter_share"><a href="https://twitter.com/home?status=http://manhhomienbienthuy.bitbucket.org/2014/Jul/24/writing-idiomatic-python.html" target="_blank"><span class="share-text">Twitter</span></a><li class="google_share"><a href="https://plus.google.com/share?url=http://manhhomienbienthuy.bitbucket.org/2014/Jul/24/writing-idiomatic-python.html" target="_blank"><span class="share-text">Google+</span></a><li class="linkedin_share"><a href="https://www.linkedin.com/shareArticle?url=http://manhhomienbienthuy.bitbucket.org/2014/Jul/24/writing-idiomatic-python.html" target="_blank"><span class="share-text">Linkedin</span></a><li class="pinterest_share"><a href="https://pinterest.com/pin/create/button/?url=http://manhhomienbienthuy.bitbucket.org/2014/Jul/24/writing-idiomatic-python.html" target="_blank"><span class="share-text">Pin It</span></a></ul></div></div></div><div class="blog-pager" id="blog-pager"><span id="blog-pager-newer-link"><a class="blog-pager-newer-link" href="/2014/Jul/29/self-printing-program.html" id="Blog1_blog-pager-newer-link" title="Newer Post"> Newer Post </a></span><span id="blog-pager-older-link"><a clas="blog-pager-older-link" href="/2013/Apr/13/new-semester.html" id="Blog1_blog-pager-older-link" title="Older Post"> Older Post </a></span></div><div class="clear"></div><div id="comments" class="comments"><div id="disqus_thread"></div><script src="/theme/js/disqus.min.js?e04de23b"></script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript></div><div style="clear:both;"></div></div></div><div class="clear"></div></div></div></div><div class="sidebar-wrapper"><div class="sidebar col section" id="sidebar"><div class="widget HTML"><div class="widget-content"><h2>Ad Banner</h2><div><img src="/theme/images/banner.jpg"></div></div></div><div class="widget HTML" id="HTML2"><div class="widget-content"><h2>Social Share</h2><div class="sidebar_social_icons"><ul class="clearfix"><li class="facebook-social"><a href="https://www.facebook.com/sharer/sharer.php?u=http://manhhomienbienthuy.bitbucket.org" target="_blank" title="Facebook"><i class="fa fa-facebook ct-transition"></i></a><li class="twitter-social"><a href="https://twitter.com/home?status=http://manhhomienbienthuy.bitbucket.org" target="_blank" title="Twitter"><i class="fa fa-twitter ct-transition"></i></a><li class="Linkedin-social"><a href="https://www.linkedin.com/shareArticle?mini=true&url=http://manhhomienbienthuy.bitbucket.org" target="_blank" title="Linkedin"><i class="fa fa-linkedin ct-transition"></i></a><li class="pinterest-social"><a href="https://pinterest.com/pin/create/button/?url=http://manhhomienbienthuy.bitbucket.org" target="_blank" title="Pinterest"><i class="fa fa-pinterest ct-transition"></i></a><li class="rss-social"><a href="/feeds/all.atom.xml" target="_blank" title="Atom Feed"><i class="fa fa-rss ct-transition"></i></a></ul></div></div></div><div class="widget PopularPosts" id="PopularPost2"><h2>Popular Posts</h2><div class="widget-content popular-posts"><ul><li><div class="item-content"><div class="item-thumbnail"><a href="/2015/Dec/03/test-driven-development.html"><img alt src="/images/tdd.jpg" border="0" height="72" width="72"></a></div><div class="item-title"><a href="/2015/Dec/03/test-driven-development.html">Test Driven Development</a></div></div><div style="clear: both;"></div><li><div class="item-content"><div class="item-thumbnail"><a href="/2015/Nov/15/grunt-and-5-tasks-to-improve-web-performance.html"><img alt src="/images/grunt-the-js-task-runner.jpg" border="0" height="72" width="72"></a></div><div class="item-title"><a href="/2015/Nov/15/grunt-and-5-tasks-to-improve-web-performance.html">Grunt and 5 tasks to improve web performance</a></div></div><div style="clear: both;"></div><li><div class="item-content"><div class="item-thumbnail"><a href="/2015/Nov/05/set-up-dynamodb-on-local-environment.html"><img alt src="/images/dynamodb.png" border="0" height="72" width="72"></a></div><div class="item-title"><a href="/2015/Nov/05/set-up-dynamodb-on-local-environment.html">Set up DynamoDB on local environment</a></div></div><div style="clear: both;"></div><li><div class="item-content"><div class="item-thumbnail"><a href="/2015/Nov/03/fix-macbook-pro-keyboard-backlight.html"><img alt src="/images/keyboard_backlight.jpg" border="0" height="72" width="72"></a></div><div class="item-title"><a href="/2015/Nov/03/fix-macbook-pro-keyboard-backlight.html">Fix MacBook Pro keyboard backlight</a></div></div><div style="clear: both;"></div><li><div class="item-content"><div class="item-thumbnail"><a href="/2015/Oct/30/placeholder-on-ie8.html"><img alt src="/images/ie8.jpg" border="0" height="72" width="72"></a></div><div class="item-title"><a href="/2015/Oct/30/placeholder-on-ie8.html">Placeholder on IE8</a></div></div><div style="clear: both;"></div><li><div class="item-content"><div class="item-thumbnail"><a href="/2015/Oct/12/phu-quoc-travel.html"><img alt src="/images/phu-quoc.jpg" border="0" height="72" width="72"></a></div><div class="item-title"><a href="/2015/Oct/12/phu-quoc-travel.html">Phu Quoc travel</a></div></div><div style="clear: both;"></div><li><div class="item-content"><div class="item-thumbnail"><a href="/2015/Sep/30/hash-length-extension-attacks.html"><img alt src="/images/hash_attack.png" border="0" height="72" width="72"></a></div><div class="item-title"><a href="/2015/Sep/30/hash-length-extension-attacks.html">Hash length Extension Attacks</a></div></div><div style="clear: both;"></div><li><div class="item-content"><div class="item-thumbnail"><a href="/2015/Aug/30/web-development-with-cherrypy-and-jinja2.html"><img alt src="/images/cherrypy_logo_big.png" border="0" height="72" width="72"></a></div><div class="item-title"><a href="/2015/Aug/30/web-development-with-cherrypy-and-jinja2.html">Web development with Cherrypy and Jinja2</a></div></div><div style="clear: both;"></div></ul></div></div><div class="widget Label" id="LabelWidget"><h2>Label Cloud</h2><div class="widget-content list-label-widget-content"><ul><li><a dir="ltr" href="/tag/year.html">year</a><li><a dir="ltr" href="/tag/uglify.html">uglify</a><li><a dir="ltr" href="/tag/week.html">week</a><li><a dir="ltr" href="/tag/sqlalchemy.html">SQLAlchemy</a><li><a dir="ltr" href="/tag/japan.html">Japan</a><li><a dir="ltr" href="/tag/rails.html">Rails</a><li><a dir="ltr" href="/tag/uncss.html">uncss</a><li><a dir="ltr" href="/tag/fix.html">fix</a><li><a dir="ltr" href="/tag/winter.html">winter</a><li><a dir="ltr" href="/tag/cssmin.html">cssmin</a><li><a dir="ltf" href="/tags.html">All tags</a></ul></div></div><div class="widget BlogArchive" id="BlogArchive1"><h2>Blog Archive</h2><div class="widget-content"><div id="ArchiveList"><div id="BlogArchive1_ArchiveList"><ul class="hierarchy"><ul></ul><li class="archivedate expanded"><a class="toggle" href="/2015/"><span class="zippy toggle-open">▼&nbsp;</span></a><a class="post-count-link" href="/2015/"> 2015 </a><ul class="hierarchy"><li class="archivedate collapsed"><a class="toggle" href="/2015/Dec"><span class="zippy">►&nbsp;</span></a><a class="post-count-link" href="/2015/Dec/"> December </a></li><li class="archivedate collapsed"><a class="toggle" href="/2015/Nov"><span class="zippy">►&nbsp;</span></a><a class="post-count-link" href="/2015/Nov/"> November </a></li><li class="archivedate collapsed"><a class="toggle" href="/2015/Oct"><span class="zippy">►&nbsp;</span></a><a class="post-count-link" href="/2015/Oct/"> October </a></li><li class="archivedate collapsed"><a class="toggle" href="/2015/Sep"><span class="zippy">►&nbsp;</span></a><a class="post-count-link" href="/2015/Sep/"> September </a></li><li class="archivedate collapsed"><a class="toggle" href="/2015/Aug"><span class="zippy">►&nbsp;</span></a><a class="post-count-link" href="/2015/Aug/"> August </a></li><li class="archivedate collapsed"><a class="toggle" href="/2015/Jul"><span class="zippy">►&nbsp;</span></a><a class="post-count-link" href="/2015/Jul/"> July </a></li></ul><li class="archivedate expanded"><a class="toggle" href="/2014/"><span class="zippy toggle-open">▼&nbsp;</span></a><a class="post-count-link" href="/2014/"> 2014 </a><ul class="hierarchy"><li class="archivedate collapsed"><a class="toggle" href="/2014/Jul"><span class="zippy">►&nbsp;</span></a><a class="post-count-link" href="/2014/Jul/"> July </a></li></ul><li class="archivedate expanded"><a class="toggle" href="/2013/"><span class="zippy toggle-open">▼&nbsp;</span></a><a class="post-count-link" href="/2013/"> 2013 </a><ul class="hierarchy"><li class="archivedate collapsed"><a class="toggle" href="/2013/Apr"><span class="zippy">►&nbsp;</span></a><a class="post-count-link" href="/2013/Apr/"> April </a></li><li class="archivedate collapsed"><a class="toggle" href="/2013/Feb"><span class="zippy">►&nbsp;</span></a><a class="post-count-link" href="/2013/Feb/"> February </a></li><li class="archivedate collapsed"><a class="toggle" href="/2013/Jan"><span class="zippy">►&nbsp;</span></a><a class="post-count-link" href="/2013/Jan/"> January </a></li></ul><li class="archivedate expanded"><a class="toggle" href="/2012/"><span class="zippy toggle-open">▼&nbsp;</span></a><a class="post-count-link" href="/2012/"> 2012 </a><ul class="hierarchy"><li class="archivedate collapsed"><a class="toggle" href="/2012/Oct"><span class="zippy">►&nbsp;</span></a><a class="post-count-link" href="/2012/Oct/"> October </a></li><li class="archivedate collapsed"><a class="toggle" href="/2012/Aug"><span class="zippy">►&nbsp;</span></a><a class="post-count-link" href="/2012/Aug/"> August </a></li><li class="archivedate collapsed"><a class="toggle" href="/2012/Jul"><span class="zippy">►&nbsp;</span></a><a class="post-count-link" href="/2012/Jul/"> July </a></li><li class="archivedate collapsed"><a class="toggle" href="/2012/Jun"><span class="zippy">►&nbsp;</span></a><a class="post-count-link" href="/2012/Jun/"> June </a></li><li class="archivedate collapsed"><a class="toggle" href="/2012/May"><span class="zippy">►&nbsp;</span></a><a class="post-count-link" href="/2012/May/"> May </a></li><li class="archivedate collapsed"><a class="toggle" href="/2012/Apr"><span class="zippy">►&nbsp;</span></a><a class="post-count-link" href="/2012/Apr/"> April </a></li><li class="archivedate collapsed"><a class="toggle" href="/2012/Mar"><span class="zippy">►&nbsp;</span></a><a class="post-count-link" href="/2012/Mar/"> March </a></li><li class="archivedate collapsed"><a class="toggle" href="/2012/Jan"><span class="zippy">►&nbsp;</span></a><a class="post-count-link" href="/2012/Jan/"> January </a></li></ul><li class="archivedate expanded"><a class="toggle" href="/2011/"><span class="zippy toggle-open">▼&nbsp;</span></a><a class="post-count-link" href="/2011/"> 2011 </a><ul class="hierarchy"><li class="archivedate collapsed"><a class="toggle" href="/2011/Oct"><span class="zippy">►&nbsp;</span></a><a class="post-count-link" href="/2011/Oct/"> October </a></li></ul><li class="archivedate expanded"><a class="toggle" href="/2010/"><span class="zippy toggle-open">▼&nbsp;</span></a><a class="post-count-link" href="/2010/"> 2010 </a><ul class="hierarchy"><li class="archivedate collapsed"><a class="toggle" href="/2010/Oct"><span class="zippy">►&nbsp;</span></a><a class="post-count-link" href="/2010/Oct/"> October </a></li></ul></ul></div></div><div class="clear"></div></div></div></div></div><div class="clr"></div></div></div><div id="footer"><div class="ct-wrapper"><div class="footer section" id="footer1"><div class="widget HTML" id="HTML5"><h2>About Me</h2><div class="widget-content"><div id="logo"><a href="/" title="Anh Tranngoc's space"><img alt="Anh Tranngoc's space" height="80" src="/theme/images/logo_white.png"></a><div class="margin margin-30"></div><p>Copyright © Anh Tranngoc. <p>This work is licensed under a <a href="http://creativecommons.org/licenses/by-nd/4.0/" target="_blank"> Creative Commons Attribution-NoDerivatives 4.0 International license (or later version) </a></div></div></div></div><div class="footer section" id="footer2"><div class="widget PopularPosts" id="PopularPosts1"><h2>Popular Posts</h2><div class="widget-content popular-posts"><ul><li><div class="item-content"><div class="item-thumbnail"><a href="/2015/Dec/03/test-driven-development.html"><img alt src="/images/tdd.jpg" border="0" height="72" width="72"></a></div><div class="item-title"><a href="/2015/Dec/03/test-driven-development.html">Test Driven Development</a></div></div><div style="clear: both;"></div><li><div class="item-content"><div class="item-thumbnail"><a href="/2015/Nov/15/grunt-and-5-tasks-to-improve-web-performance.html"><img alt src="/images/grunt-the-js-task-runner.jpg" border="0" height="72" width="72"></a></div><div class="item-title"><a href="/2015/Nov/15/grunt-and-5-tasks-to-improve-web-performance.html">Grunt and 5 tasks to improve web performance</a></div></div><div style="clear: both;"></div><li><div class="item-content"><div class="item-thumbnail"><a href="/2015/Nov/05/set-up-dynamodb-on-local-environment.html"><img alt src="/images/dynamodb.png" border="0" height="72" width="72"></a></div><div class="item-title"><a href="/2015/Nov/05/set-up-dynamodb-on-local-environment.html">Set up DynamoDB on local environment</a></div></div><div style="clear: both;"></div></ul></div></div></div><div class="footer section" id="footer3"><div class="widget HTML" id="HTML4"><h2>Twitter timeline</h2><div class="widget-content"><div id="blog_newsletter"><a class="twitter-timeline" href="https://twitter.com/AnhTranngoc" data-widget-id="639309521052037120"> Tweets by @AnhTranngoc </a></div></div></div></div><div class="clr"></div><div class="margin margin-30"></div></div></div><div class="footer_credits clearfix"><div class="ct-wrapper"><div class="clearfix left"> Created with ♥ of Viet Phuong. Powered by <a href="http://blog.getpelican.com/" target="_blank">Pelican</a>. </div><div class="right footer_menu"><ul class="blog_footer_menu"><li><a href="/">Home</a></li><li><a href="/pages/contact-me.html">Contact</a></li><li><a href="/pages/about-me.html">About</a></li><li><a href="#blog_header" id="smooth_scroll">Top ↑</a></li></ul></div></div></div><script src="/theme/js/vpyeu.min.js?15c92a75"></script><script id="dsq-count-scr" src="//manhhomienbienthuy.disqus.com/count.js" async></script>
