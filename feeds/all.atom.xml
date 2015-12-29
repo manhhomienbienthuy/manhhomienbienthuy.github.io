@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Anh Tranngoc's space</title><link href="http://manhhomienbienthuy.bitbucket.org/" rel="alternate"></link><link href="http://manhhomienbienthuy.bitbucket.org/feeds/all.atom.xml" rel="self"></link><id>http://manhhomienbienthuy.bitbucket.org/</id><updated>2015-12-22T10:00:00+00:00</updated><entry><title>Exploring Python decorators</title><link href="http://manhhomienbienthuy.bitbucket.org/2015/Dec/22/exploring-python-decorators.html" rel="alternate"></link><updated>2015-12-22T10:00:00+00:00</updated><author><name>Anh Tranngoc</name></author><id>tag:manhhomienbienthuy.bitbucket.org,2015-12-22:2015/Dec/22/exploring-python-decorators.html</id><summary type="html">&lt;p&gt;&lt;a href="https://www.python.org/dev/peps/pep-0318/"&gt;Decorator&lt;/a&gt; trong Python
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Anh Tranngoc's space</title><link href="http://manhhomienbienthuy.bitbucket.org/" rel="alternate"></link><link href="http://manhhomienbienthuy.bitbucket.org/feeds/all.atom.xml" rel="self"></link><id>http://manhhomienbienthuy.bitbucket.org/</id><updated>2015-12-31T10:00:00+00:00</updated><entry><title>The year in review 2015</title><link href="http://manhhomienbienthuy.bitbucket.org/2015/Dec/31/the-year-in-review-2015.html" rel="alternate"></link><updated>2015-12-31T10:00:00+00:00</updated><author><name>Anh Tranngoc</name></author><id>tag:manhhomienbienthuy.bitbucket.org,2015-12-31:2015/Dec/31/the-year-in-review-2015.html</id><summary type="html">&lt;p&gt;Năm 2015 sắp kết thúc và năm mới đang đến gần, mà đây là thời điểm
+chúng ta nhìn lại một năm vừa rồi. Có rất nhiều câu hỏi đặt ra, như
+tôi đang làm việc gì? tôi làm ra cái gì? tôi đã gây những lỗi làm gì?
+tôi ...&lt;/p&gt;</summary><category term="year"></category><category term="year end"></category><category term="review"></category></entry><entry><title>Exploring Python decorators</title><link href="http://manhhomienbienthuy.bitbucket.org/2015/Dec/22/exploring-python-decorators.html" rel="alternate"></link><updated>2015-12-22T10:00:00+00:00</updated><author><name>Anh Tranngoc</name></author><id>tag:manhhomienbienthuy.bitbucket.org,2015-12-22:2015/Dec/22/exploring-python-decorators.html</id><summary type="html">&lt;p&gt;&lt;a href="https://www.python.org/dev/peps/pep-0318/"&gt;Decorator&lt;/a&gt; trong Python
 được sử dụng khá nhiều, tuy nhiên nó cũng hơi khó hiểu một chút.
 Decorator cho chúng ta một cú pháp đơn giản để gọi các hàm bậc cao
 (&lt;a href="http://en.wikipedia.org/wiki/Higher-order_function"&gt;higher-order functions&lt;/a&gt;).
@@ -83,7 +86,7 @@ là mùa đông. Một mùa đông lạnh giá. Một mùa đông buồn.&lt;/p&
 &lt;p&gt;Đầu năm 2013&lt;/p&gt;
 &lt;p&gt;Năm mới rồi, vậy là mình đã trải qua thời khắc chuyển giao năm cũ năm
 mới trên đất khách. Không có gì đặc biệt, có thể vì đây không phải Tết
-của mình, và những ngày này ngay cả với người Nhật hình ...&lt;/p&gt;</summary><category term="year"></category><category term="new year"></category></entry><entry><title>A bloomy weekend</title><link href="http://manhhomienbienthuy.bitbucket.org/2012/Oct/28/a-bloomy-weekend.html" rel="alternate"></link><updated>2012-10-28T10:00:00+00:00</updated><author><name>Anh Tranngoc</name></author><id>tag:manhhomienbienthuy.bitbucket.org,2012-10-28:2012/Oct/28/a-bloomy-weekend.html</id><summary type="html">&lt;p&gt;Một cuối tuần buồn&lt;/p&gt;
+của mình, và những ngày này ngay cả với người Nhật hình ...&lt;/p&gt;</summary><category term="year"></category><category term="new year"></category><category term="review"></category></entry><entry><title>A bloomy weekend</title><link href="http://manhhomienbienthuy.bitbucket.org/2012/Oct/28/a-bloomy-weekend.html" rel="alternate"></link><updated>2012-10-28T10:00:00+00:00</updated><author><name>Anh Tranngoc</name></author><id>tag:manhhomienbienthuy.bitbucket.org,2012-10-28:2012/Oct/28/a-bloomy-weekend.html</id><summary type="html">&lt;p&gt;Một cuối tuần buồn&lt;/p&gt;
 &lt;p&gt;Cuối tháng 10, 2012&lt;/p&gt;
 &lt;p&gt;Không có việc gì làm, hôm nay nhàn rỗi. Đúng là nhàn rỗi sinh nông
 nổi, có lẽ mình phải viết gì đó.&lt;/p&gt;
@@ -102,7 +105,7 @@ biết viết gì?&lt;/p&gt;
 &lt;p&gt;Cuối tháng 7, 2012&lt;/p&gt;
 &lt;p&gt;Đến bây giờ là đã hết học kỳ đầu tiên trên đất nước này. Kỳ thi đã
 qua, và chỉ còn chờ kết quả nữa thôi. Thời gian trôi cũng nhanh
-thật. Cứ thế này, ngày trở về cũng chẳng còn ...&lt;/p&gt;</summary><category term="semester"></category></entry><entry><title>Mt. Fuji climbing</title><link href="http://manhhomienbienthuy.bitbucket.org/2012/Aug/22/mt-fuji-climbing.html" rel="alternate"></link><updated>2012-08-22T10:00:00+00:00</updated><author><name>Anh Tranngoc</name></author><id>tag:manhhomienbienthuy.bitbucket.org,2012-08-22:2012/Aug/22/mt-fuji-climbing.html</id><summary type="html">&lt;p&gt;Leo núi Phú Sĩ&lt;/p&gt;
+thật. Cứ thế này, ngày trở về cũng chẳng còn ...&lt;/p&gt;</summary><category term="semester"></category><category term="review"></category></entry><entry><title>Mt. Fuji climbing</title><link href="http://manhhomienbienthuy.bitbucket.org/2012/Aug/22/mt-fuji-climbing.html" rel="alternate"></link><updated>2012-08-22T10:00:00+00:00</updated><author><name>Anh Tranngoc</name></author><id>tag:manhhomienbienthuy.bitbucket.org,2012-08-22:2012/Aug/22/mt-fuji-climbing.html</id><summary type="html">&lt;p&gt;Leo núi Phú Sĩ&lt;/p&gt;
 &lt;p&gt;Trung tuần tháng 8, 2012&lt;/p&gt;
 &lt;p&gt;Vừa trở về sau hành trình leo lên đỉnh núi Phú Sĩ. Viết cái gì đó cho
 chuyến đi này chứ nhỉ!! Chuyến đi này cũng không thấy mệt nhọc gì
@@ -111,7 +114,7 @@ lắm. Có lẽ do mới đi chơi Tokyo hai ngày ...&lt;/p&gt;</summary><categ
 &lt;p&gt;Lâu lắm rồi mới lại viết một entry. Dạo này bận quá, không có thời
 gian mà quan tâm blog nữa.&lt;/p&gt;
 &lt;p&gt;Đã cuối tháng 6 rồi, học kỳ cũng chỉ còn khoảng 1 tháng nữa là kết
-thúc. Cuối kỳ rồi nên cũng ...&lt;/p&gt;</summary><category term="semester"></category></entry><entry><title>Entry at June 12th, 2012</title><link href="http://manhhomienbienthuy.bitbucket.org/2012/Jun/12/entry-at-june-12th-2012.html" rel="alternate"></link><updated>2012-06-12T10:00:00+00:00</updated><author><name>Anh Tranngoc</name></author><id>tag:manhhomienbienthuy.bitbucket.org,2012-06-12:2012/Jun/12/entry-at-june-12th-2012.html</id><summary type="html">&lt;p&gt;Đột nhiên cảm thấy tương lai mờ mịt quá. Có vẻ như mình đang bận dần
+thúc. Cuối kỳ rồi nên cũng ...&lt;/p&gt;</summary><category term="semester"></category><category term="review"></category></entry><entry><title>Entry at June 12th, 2012</title><link href="http://manhhomienbienthuy.bitbucket.org/2012/Jun/12/entry-at-june-12th-2012.html" rel="alternate"></link><updated>2012-06-12T10:00:00+00:00</updated><author><name>Anh Tranngoc</name></author><id>tag:manhhomienbienthuy.bitbucket.org,2012-06-12:2012/Jun/12/entry-at-june-12th-2012.html</id><summary type="html">&lt;p&gt;Đột nhiên cảm thấy tương lai mờ mịt quá. Có vẻ như mình đang bận dần
 đều rồi. Phải làm việc cẩn thận thôi, không thể tiếp tục tình trạng
 này được. Từ đầu năm đến giờ, đã trải qua một nửa học kỳ rồi mà vẫn
 chưa làm được ...&lt;/p&gt;</summary><category term="life"></category></entry><entry><title>A new week</title><link href="http://manhhomienbienthuy.bitbucket.org/2012/Jun/06/a-new-week.html" rel="alternate"></link><updated>2012-06-06T10:00:00+00:00</updated><author><name>Anh Tranngoc</name></author><id>tag:manhhomienbienthuy.bitbucket.org,2012-06-06:2012/Jun/06/a-new-week.html</id><summary type="html">&lt;p&gt;Lại một tuần nữa&lt;/p&gt;
@@ -143,7 +146,7 @@ quá! Nước người ta là nước phát triển, nên kiểu làm ...&lt;/p&
 &lt;p&gt;Trung tuần tháng 3, 2012&lt;/p&gt;
 &lt;p&gt;Đã cuối tháng 3 rồi, và tôi sắp phải đi xa. Chính xác thì tôi còn hơn
 một tuần nữa còn ở Việt Nam nữa. Thời gian đã được quyết định. Rạng
-sáng ngày 26/3 tôi sẽ rời Việt Nam ...&lt;/p&gt;</summary><category term="Leaving"></category><category term="abroad"></category></entry><entry><title>Cold winter</title><link href="http://manhhomienbienthuy.bitbucket.org/2012/Jan/09/cold-winter.html" rel="alternate"></link><updated>2012-01-09T10:00:00+00:00</updated><author><name>Anh Tranngoc</name></author><id>tag:manhhomienbienthuy.bitbucket.org,2012-01-09:2012/Jan/09/cold-winter.html</id><summary type="html">&lt;p&gt;Mùa đông lạnh giá&lt;/p&gt;
+sáng ngày 26/3 tôi sẽ rời Việt Nam ...&lt;/p&gt;</summary><category term="Leaving"></category><category term="abroad"></category><category term="review"></category></entry><entry><title>Cold winter</title><link href="http://manhhomienbienthuy.bitbucket.org/2012/Jan/09/cold-winter.html" rel="alternate"></link><updated>2012-01-09T10:00:00+00:00</updated><author><name>Anh Tranngoc</name></author><id>tag:manhhomienbienthuy.bitbucket.org,2012-01-09:2012/Jan/09/cold-winter.html</id><summary type="html">&lt;p&gt;Mùa đông lạnh giá&lt;/p&gt;
 &lt;p&gt;Mùa đông 2011 – 2012&lt;/p&gt;
 &lt;p&gt;Thời tiết thật lạnh giá. Mùa đông năm nay, rét đậm rét hại kéo dài. Đã
 có lúc mình nghe nói nhiệt độ xuống thấp tới 4oC. Thật là những thái
