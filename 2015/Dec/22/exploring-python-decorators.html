@@ -1,200 +1,680 @@
 <!DOCTYPE html>
-<title>Exploring Python decorators - Anh Tranngoc's space</title> <meta charset=utf-8> <meta content="width=device-width, initial-scale=1" name=viewport> <link href=/theme/images/favicon.ico rel=icon type=image/x-icon> <meta content="Anh Tranngoc" name=Author> <meta content=general name=rating> <meta name=twitter:card content=product> <meta name=twitter:site content=@AnhTranngoc> <meta name=twitter:creator content=@AnhTranngoc> <meta content="Anh Tranngoc's space" property=og:site_name> <link href=http://manhhomienbienthuy.bitbucket.org/feeds/all.atom.xml type=application/atom+xml rel=alternate title="Anh Tranngoc's space Full Atom Feed"> <meta content="Decorator trong Python được sử dụng khá nhiều, tuy nhiên nó cũng hơi khó hiểu một chút. Decorator cho chúng ta một cú pháp đơn giản để gọi các hàm bậc cao (higher-order functions). Về mặt lý thuyết, một decorator là một hàm nhận tham số đầu vào là một ..." name=description> <meta content="Python, decorator, fundamental, blog, python, web, viet phuong, yeu, Anh Tranngoc" name=keywords> <meta name=twitter:title content="Exploring Python decorators - Anh Tranngoc's space"> <meta name=twitter:description content="Decorator trong Python được sử dụng khá nhiều, tuy nhiên nó cũng hơi khó hiểu một chút. Decorator cho chúng ta một cú pháp đơn giản để gọi các hàm bậc cao (higher-order functions). Về mặt lý thuyết, một decorator là một hàm nhận tham số đầu vào là một ..."> <meta content="Exploring Python decorators - Anh Tranngoc's space" property=og:title> <meta content=article property=og:type> <meta content=http://manhhomienbienthuy.bitbucket.org/2015/Dec/22/exploring-python-decorators.html property=og:url> <meta content="Decorator trong Python được sử dụng khá nhiều, tuy nhiên nó cũng hơi khó hiểu một chút. Decorator cho chúng ta một cú pháp đơn giản để gọi các hàm bậc cao (higher-order functions). Về mặt lý thuyết, một decorator là một hàm nhận tham số đầu vào là một ..." property=og:description> <meta content=http://manhhomienbienthuy.bitbucket.org/images/cover/decorator.png property=og:image> <meta name=twitter:image content=http://manhhomienbienthuy.bitbucket.org/images/cover/decorator.png> <link href=https://fonts.googleapis.com/css?family=Playfair+Display:400,700%7COpen+Sans:400,700%7CMontserrat%7CPacifico%7CRoboto+Mono&subset=latin,vietnamese rel=stylesheet> <link rel=stylesheet href=//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css> <link rel=stylesheet href=/theme/css/vpyeu.style.css?e0ba28d5> <script src=//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js></script> <link rel=stylesheet href=/theme/css/vpyeu.detail.css?750e2a5b> <div class="top_header clearfix"> <div class=ct-wrapper> <div class=nav-menu> <div class=vt_menu_toggle> <i class="fa fa-bars"></i> </div> <ul class="clearfix blog_menus"> <li><a href=/ >Home</a> <li><a href=/category/programming.html>Programming</a> <li><a href=/category/general.html>General</a> <li><a href=/category/life.html>Life</a> <li><a href=/category/travel.html>Travel</a> <li><a href=/categories.html>All categories</a> </ul> </div> <div class="right clearfix social_search"> <div class="social-wrap right"> <ul class=dslc-social> <li> <a href=https://twitter.com/AnhTranngoc target=_blank> <span class="fa fa-twitter"></span> </a> <li> <a href=https://www.facebook.com/manhhomienbienthuy target=_blank> <span class="fa fa-facebook"></span> </a> <li> <a href=https://www.youtube.com/user/manhhomienbienthuy target=_blank> <span class="fa fa-youtube-play"></span> </a> <li> <a href=https://github.com/manhhomienbienthuy target=_blank> <span class="fa fa-github"></span> </a> <li> <a href=https://instagram.com/manhhomienbienthuy/ target=_blank> <span class="fa fa-instagram"></span> </a> <li> <a href=/feeds/all.atom.xml target=_blank> <span class="fa fa-rss"></span> </a> <li> <a href=http://manhhomienbienthuy.github.io/ target=_blank> <span class="fa fa-link"></span> </a> </ul> </div> </div> </div> </div> <div class=clr></div><header class=blog_header id=blog_header> <div class="ct-wrapper clearfix"> <div class="header_wrapper clearfix"> <div class="header section" id=header> <div class="widget Header" id=Header1> <div id=header-inner> <a href=/ style="display: block"> <img alt="Anh Tranngoc's space" id=Header1_headerimg src=/theme/images/logo.png> </a> </div> </div> </div> </div> </div> </header> <div class=clr></div><div class="ct-wrapper clearfix"> <div class=outer-wrapper> <div class=main-wrapper> <div class="article section" id=content> <div class="widget Blog" id=Blog1> <div class="blog-posts hfeed"> <div class=post-outer> <div class="post hentry"> <h1 class="article_post_title entry-title"> Exploring Python decorators </h1> <div class="article_meta_container post-header"> <span class="article_author vcard"> <a href=/pages/about-me.html>Anh Tranngoc</a> <abbr class=fn> posted in <a href=/category/programming.html> <u>Programming</u> </a> </abbr> </span> <span class=article_timestamp> on December 22 2015</span> <span class="article_comment_link right"> <i class="fa fa-comments"></i> <a href=#disqus_thread data-disqus-identifier=/2015/Dec/22/exploring-python-decorators.html> Comments </a> </span> </div> <div class="post-body entry-content"> <div dir=ltr style="text-align: left;"> <div class=separator style="clear: both; text-align: center;"> <a href=#! style="margin-left: 1em; margin-right: 1em;"> <img src=/images/cover/decorator.png height=424 width=640 alt="Exploring Python decorators"> </a> </div> <p><a href=https://www.python.org/dev/peps/pep-0318/ >Decorator</a> trong Python được sử dụng khá nhiều, tuy nhiên nó cũng hơi khó hiểu một chút. Decorator cho chúng ta một cú pháp đơn giản để gọi các hàm bậc cao (<a href=http://en.wikipedia.org/wiki/Higher-order_function>higher-order functions</a>). Về mặt lý thuyết, một decorator là một hàm nhận tham số đầu vào là một hàm khác và mở rộng tính năng cho hàm đó mà không thay đổi nội dung của nó. Tuy nhiên, decorator không chỉ có vậy, nó thực sự còn làm nhiều việc khác nữa. Chúng ta sẽ dần dần khám phá trong bài viết này.</p> <p>Trong bài viết này, tôi sẽ giới thiệu một cách ngắn gọn và dễ hiểu về decorator, cách sử dụng chúng và cách tự viết một decorator cho riêng mình.</p> <blockquote> <p>Từ "decorator" được sử dụng trong Python có một chút biến đổi. Bạn hãy cẩn thận vì nó rất dễ gây nhầm lẫn với một design pattern cũng tên là <a href=https://en.wikipedia.org/wiki/Decorator_pattern>decorator</a>. Thực ra, chúng ta có thể sử dụng decorator trong Python để cài đặt decorator pattern. Nhưng có rất nhiều hạn chế trong cách làm này. Theo tôi thấy thì decorator của Python có nhiều nét giống với macro hơn.</p> </blockquote> <h1>Cơ sở lý thuyết</h1> <p>Trước khi bạn có thể hiểu các decorator, thì bạn cần hiểu một số khái niệm trước. Trong phần này, chúng ta sẽ tìm hiểu những khái niệm đó.</p> <h2>Các hàm làm việc như thế nào</h2> <p>Đương nhiên, các hàm sẽ trả về kết quả dựa vào tham số của nó:</p> <div class=codehilite><pre><span class=k>def</span> <span class=nf>foo</span><span class=p>(</span><span class=n>bar</span><span class=p>):</span>
-    <span class=k>return</span> <span class=n>bar</span> <span class=o>**</span> <span class=mi>2</span>
+<title>Exploring Python decorators - Anh Tranngoc's space</title> <meta charset=utf-8> <meta content="width=device-width, initial-scale=1" name=viewport> <link href=/theme/images/favicon.ico rel=icon type=image/x-icon> <meta content="Anh Tranngoc" name=Author> <meta content=general name=rating> <meta name=twitter:card content=product> <meta name=twitter:site content=@AnhTranngoc> <meta name=twitter:creator content=@AnhTranngoc> <meta content="Anh Tranngoc's space" property=og:site_name> <link href=http://manhhomienbienthuy.bitbucket.org/feeds/all.atom.xml type=application/atom+xml rel=alternate title="Anh Tranngoc's space Full Atom Feed"> <meta content="Decorator trong Python được sử dụng khá nhiều, tuy nhiên nó cũng hơi khó hiểu một chút. Decorator cho chúng ta một cú pháp đơn giản để gọi các hàm bậc cao (higher-order functions). Về mặt lý thuyết, một decorator là một hàm nhận tham số đầu vào là một ..." name=description> <meta content="Python, decorator, fundamental, blog, python, web, viet phuong, yeu, Anh Tranngoc" name=keywords> <meta name=twitter:title content="Exploring Python decorators - Anh Tranngoc's space"> <meta name=twitter:description content="Decorator trong Python được sử dụng khá nhiều, tuy nhiên nó cũng hơi khó hiểu một chút. Decorator cho chúng ta một cú pháp đơn giản để gọi các hàm bậc cao (higher-order functions). Về mặt lý thuyết, một decorator là một hàm nhận tham số đầu vào là một ..."> <meta content="Exploring Python decorators - Anh Tranngoc's space" property=og:title> <meta content=article property=og:type> <meta content=http://manhhomienbienthuy.bitbucket.org/2015/Dec/22/exploring-python-decorators.html property=og:url> <meta content="Decorator trong Python được sử dụng khá nhiều, tuy nhiên nó cũng hơi khó hiểu một chút. Decorator cho chúng ta một cú pháp đơn giản để gọi các hàm bậc cao (higher-order functions). Về mặt lý thuyết, một decorator là một hàm nhận tham số đầu vào là một ..." property=og:description> <meta content=http://manhhomienbienthuy.bitbucket.org/images/cover/decorator.png property=og:image> <meta name=twitter:image content=http://manhhomienbienthuy.bitbucket.org/images/cover/decorator.png> <link href=https://fonts.googleapis.com/css?family=Playfair+Display:400,700%7COpen+Sans:400,700%7CMontserrat%7CPacifico%7CRoboto+Mono&subset=latin,vietnamese rel=stylesheet> <link rel=stylesheet href=//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css> <link rel=stylesheet href=/theme/css/vpyeu.style.css?e0ba28d5> <script src=//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js></script> <link rel=stylesheet href=/theme/css/vpyeu.detail.css?750e2a5b> <div class="top_header clearfix"> <div class=ct-wrapper> <div class=nav-menu> <div class=vt_menu_toggle> <i class="fa fa-bars"></i> </div> <ul class="clearfix blog_menus"> <li><a href=/ >Home</a> <li><a href=/category/programming.html>Programming</a> <li><a href=/category/general.html>General</a> <li><a href=/category/life.html>Life</a> <li><a href=/category/travel.html>Travel</a> <li><a href=/categories.html>All categories</a> </ul> </div> <div class="right clearfix social_search"> <div class="social-wrap right"> <ul class=dslc-social> <li> <a href=https://twitter.com/AnhTranngoc target=_blank> <span class="fa fa-twitter"></span> </a> <li> <a href=https://www.facebook.com/manhhomienbienthuy target=_blank> <span class="fa fa-facebook"></span> </a> <li> <a href=https://www.youtube.com/user/manhhomienbienthuy target=_blank> <span class="fa fa-youtube-play"></span> </a> <li> <a href=https://github.com/manhhomienbienthuy target=_blank> <span class="fa fa-github"></span> </a> <li> <a href=https://instagram.com/manhhomienbienthuy/ target=_blank> <span class="fa fa-instagram"></span> </a> <li> <a href=/feeds/all.atom.xml target=_blank> <span class="fa fa-rss"></span> </a> <li> <a href=http://manhhomienbienthuy.github.io/ target=_blank> <span class="fa fa-link"></span> </a> </ul> </div> </div> </div> </div> <div class=clr></div><header class=blog_header id=blog_header> <div class="ct-wrapper clearfix"> <div class="header_wrapper clearfix"> <div class="header section" id=header> <div class="widget Header" id=Header1> <div id=header-inner> <a href=/ style="display: block"> <img alt="Anh Tranngoc's space" id=Header1_headerimg src=/theme/images/logo.png> </a> </div> </div> </div> </div> </div> </header> <div class=clr></div><div class="ct-wrapper clearfix"> <div class=outer-wrapper> <div class=main-wrapper> <div class="article section" id=content> <div class="widget Blog" id=Blog1> <div class="blog-posts hfeed"> <div class=post-outer> <div class="post hentry"> <h1 class="article_post_title entry-title"> Exploring Python decorators </h1> <div class="article_meta_container post-header"> <span class="article_author vcard"> <a href=/pages/about-me.html>Anh Tranngoc</a> <abbr class=fn> posted in <a href=/category/programming.html> <u>Programming</u> </a> </abbr> </span> <span class=article_timestamp> on December 22 2015</span> <span class="article_comment_link right"> <i class="fa fa-comments"></i> <a href=#disqus_thread data-disqus-identifier=/2015/Dec/22/exploring-python-decorators.html> Comments </a> </span> </div> <div class="post-body entry-content"> <div dir=ltr style="text-align: left;"> <div class=separator style="clear: both; text-align: center;"> <a href=#! style="margin-left: 1em; margin-right: 1em;"> <img src=/images/cover/decorator.png height=424 width=640 alt="Exploring Python decorators"> </a> </div> <p><a href=https://www.python.org/dev/peps/pep-0318/ >Decorator</a> trong Python được sử dụng khá nhiều, tuy nhiên nó cũng hơi khó hiểu một chút. Decorator cho chúng ta một cú pháp đơn giản để gọi các hàm bậc cao (<a href=http://en.wikipedia.org/wiki/Higher-order_function>higher-order functions</a>). Về mặt lý thuyết, một decorator là một hàm nhận tham số đầu vào là một hàm khác và mở rộng tính năng cho hàm đó mà không thay đổi nội dung của nó. Tuy nhiên, decorator không chỉ có vậy, nó thực sự còn làm nhiều việc khác nữa. Chúng ta sẽ dần dần khám phá trong bài viết này.</p> <p>Trong bài viết này, tôi sẽ giới thiệu một cách ngắn gọn và dễ hiểu về decorator, cách sử dụng chúng và cách tự viết một decorator cho riêng mình.</p> <blockquote> <p>Từ "decorator" được sử dụng trong Python có một chút biến đổi. Bạn hãy cẩn thận vì nó rất dễ gây nhầm lẫn với một design pattern cũng tên là <a href=https://en.wikipedia.org/wiki/Decorator_pattern>decorator</a>. Thực ra, chúng ta có thể sử dụng decorator trong Python để cài đặt decorator pattern. Nhưng có rất nhiều hạn chế trong cách làm này. Theo tôi thấy thì decorator của Python có nhiều nét giống với macro hơn.</p> </blockquote> <h1>Cơ sở lý thuyết</h1> <p>Trước khi bạn có thể hiểu các decorator, thì bạn cần hiểu một số khái niệm cơ bản của Python trước, trong phần này, chúng ta sẽ dần dần tìm hiểu những khái niệm đó.</p> <h2>Hàm</h2> <p>Hàm là một khái niệm rất cơ bản trong lập trình nói chung và Python nói riêng, nên tôi nghĩ không cần nói nhiều về nó. Đương nhiên các hàm sẽ trả về kết quả dựa trên tham số đầu vào của nó:</p> <div class=codehilite><pre><span class=gp>&gt;&gt;&gt; </span><span class=k>def</span> <span class=nf>greet</span><span class=p>(</span><span class=n>word</span><span class=o>=</span><span class=s2>&quot;Hello&quot;</span><span class=p>):</span>
+<span class=gp>... </span>    <span class=k>print</span><span class=p>(</span><span class=n>word</span><span class=p>)</span>
+<span class=gp>...</span>
+<span class=gp>&gt;&gt;&gt; </span><span class=n>greet</span><span class=p>()</span>
+<span class=go>Hello</span>
+<span class=gp>&gt;&gt;&gt; </span><span class=n>greet</span><span class=p>(</span><span class=s2>&quot;Hello, world&quot;</span><span class=p>)</span>
+<span class=go>Hello, world</span>
+<span class=go>&gt;&gt;&gt;</span>
+</pre></div> <p>Tôi nghĩ không cần phải nói nhiều về khái niệm này nữa, nó rất dễ hiểu. Nên chúng ta sẽ chuyển sang khái niệm tiếp theo.</p> <h2>Hàm cũng là đối tượng</h2> <p>Trong Python, hàm cũng là đối tượng, hơn nữa nó còn là đối tượng <a href=http://python-history.blogspot.com/2009/02/first-class-everything.html>first-class</a>. Điều đó cho rất nhiều kết quả quan trọng. Chúng ta sẽ tìm hiểu thông qua một số ví dụ sau:</p> <div class=codehilite><pre><span class=k>def</span> <span class=nf>shout</span><span class=p>(</span><span class=n>word</span><span class=o>=</span><span class=s2>&quot;aaa&quot;</span><span class=p>):</span>
+    <span class=k>return</span> <span class=n>word</span><span class=o>.</span><span class=n>upper</span><span class=p>()</span> <span class=o>+</span> <span class=s2>&quot;!&quot;</span>
 
-<span class=nb>print</span><span class=p>(</span><span class=n>foo</span><span class=p>(</span><span class=mi>2</span><span class=p>)</span> <span class=o>==</span> <span class=mi>4</span><span class=p>)</span>
-</pre></div> <p>Hàm trên rất dể hiểu phải không nào?</p> <h2>Các đối tượng first-class</h2> <p>Trong Python, các hàm là những đối tượng <a href=http://python-history.blogspot.com/2009/02/first-class-everything.html>first-class</a>. Điều đó có nghĩa là, các hàm này có thể được sử dụng như những tham số, giống như các giá trị thông thường khác (ví dụ string, int, float).</p> <div class=codehilite><pre><span class=k>def</span> <span class=nf>foo</span><span class=p>(</span><span class=n>bar</span><span class=p>):</span>
-    <span class=k>return</span> <span class=n>bar</span> <span class=o>+</span> <span class=mi>1</span>
+<span class=nb>print</span><span class=p>(</span><span class=n>shout</span><span class=p>())</span> <span class=c1># output: AAA!</span>
 
-<span class=nb>print</span><span class=p>(</span><span class=n>foo</span><span class=p>)</span>
-<span class=nb>print</span><span class=p>(</span><span class=n>foo</span><span class=p>(</span><span class=mi>2</span><span class=p>))</span>
-<span class=nb>print</span><span class=p>(</span><span class=nb>type</span><span class=p>(</span><span class=n>foo</span><span class=p>))</span>
+<span class=c1># Bởi vì hàm cũng là đối tượng nên chúng ta có thể gán nó cho các</span>
+<span class=c1># biến như những đối tượng khác.</span>
+<span class=n>scream</span> <span class=o>=</span> <span class=n>shout</span>
 
-<span class=k>def</span> <span class=nf>call_foo_with_arg</span><span class=p>(</span><span class=n>foo</span><span class=p>,</span> <span class=n>arg</span><span class=p>):</span>
-    <span class=k>return</span> <span class=n>foo</span><span class=p>(</span><span class=n>arg</span><span class=p>)</span>
+<span class=c1># Như bạn đã thấy rằng, chúng ta không dùng dấu ngoặc, bởi vì</span>
+<span class=c1># chúng ta không gọi hàm, mà chúng ta đang gán hàm cho biến khác</span>
+<span class=c1># (scream). Sau khi gán, chúng ta có thể gọi hàm shout từ biến</span>
+<span class=c1># scream.</span>
+<span class=nb>print</span><span class=p>(</span><span class=n>scream</span><span class=p>())</span> <span class=c1># output: AAA!</span>
 
-<span class=nb>print</span><span class=p>(</span><span class=n>call_foo_with_arg</span><span class=p>(</span><span class=n>foo</span><span class=p>,</span> <span class=mi>2</span><span class=p>))</span>
-</pre></div> <h2>Các hàm lồng nhau</h2> <p>Vì các hàm là các đối tượng first-class trong Python, nên bạn có thể định nghĩa một hàm bên trong một hàm khác. Những hàm như vậy gọi là các hàm lồng nhau.</p> <div class=codehilite><pre><span class=k>def</span> <span class=nf>parent</span><span class=p>():</span>
-    <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;This is parent() function&quot;</span><span class=p>)</span>
+<span class=c1># Không chỉ gán biến, chúng ta còn có thể xoá hàm như xoá những</span>
+<span class=c1># đối tượng thông thường khác.</span>
+<span class=k>del</span> <span class=n>shout</span>
+<span class=k>try</span><span class=p>:</span>
+    <span class=nb>print</span><span class=p>(</span><span class=n>shout</span><span class=p>())</span>
+<span class=k>except</span> <span class=ne>NameError</span> <span class=k>as</span> <span class=n>e</span><span class=p>:</span>
+    <span class=nb>print</span><span class=p>(</span><span class=n>e</span><span class=p>)</span>
+<span class=c1># output: name &#39;shout&#39; is not defined</span>
 
-    <span class=k>def</span> <span class=nf>first_child</span><span class=p>():</span>
-        <span class=k>return</span> <span class=s2>&quot;This is first_child() function&quot;</span>
+<span class=c1># Tuy nhiên, chúng ta vẫn có thể gọi hàm thông qua biến scream.</span>
+<span class=nb>print</span><span class=p>(</span><span class=n>scream</span><span class=p>())</span> <span class=c1># output: AAA!</span>
+</pre></div> <h2>Các hàm lồng nhau</h2> <p>Vì hàm là các đối tượng first-class (thực ra trong Python, mọi thứ đều là đối tượng first-class) nên nó có một đặc tính khá thú vị là nó có thể được định nghĩa bên trong một hàm khác. Các hàm như vậy gọi là các hàm lồng nhau.</p> <div class=codehilite><pre><span class=k>def</span> <span class=nf>talk</span><span class=p>():</span>
 
-    <span class=k>def</span> <span class=nf>second_child</span><span class=p>():</span>
-        <span class=k>return</span> <span class=s2>&quot;This is second_child() function&quot;</span>
+    <span class=c1># Bạn có thể định nghĩa các hàm bên trong hàm `talk`</span>
+    <span class=k>def</span> <span class=nf>whisper</span><span class=p>(</span><span class=n>word</span><span class=o>=</span><span class=s2>&quot;aaa&quot;</span><span class=p>):</span>
+        <span class=k>return</span> <span class=n>word</span><span class=o>.</span><span class=n>lower</span><span class=p>()</span> <span class=o>+</span> <span class=s2>&quot;...&quot;</span>
 
-    <span class=nb>print</span><span class=p>(</span><span class=n>first_child</span><span class=p>())</span>
-    <span class=nb>print</span><span class=p>(</span><span class=n>second_child</span><span class=p>())</span>
-</pre></div> <p>Điều gì sẽ xảy ra khi bạn gọi làm <code>parent()</code>? Tôi nghĩ nó không đến nỗi quá khó hiểu...</p> <div class=codehilite><pre><span class=go>This is parent() function</span>
-<span class=go>This is first_child() function</span>
-<span class=go>This is second_child() function</span>
-</pre></div> <p>Bây giờ, nếu bạn gọi làm <code>first_child()</code>, bạn sẽ nhận được thông báo lỗi:</p> <div class=codehilite><pre><span class=go>NameError: name &#39;first_child&#39; is not defined</span>
-</pre></div> <p><strong>Bài học rút ra</strong></p> <p>Bất cứ khi nào chúng ta gọi hàm <code>parent()</code>, hai hàm con là <code>first_child()</code> và <code>second_child()</code> cũng sẽ được gọi. Nhưng vì 2 hàm con này được bao bởi hàm <code>parent()</code> nên chúng không thể gọi từ bên ngoài hàm <code>parent()</code> được.</p> <h2>Một hàm trả kết quả là một hàm khác</h2> <p>Python cho phép bạn viết một hàm mà hàm đó trả kết quả về là một hàm khác. Hãy thay đổi code ở ví dụ trên một chút như sau:</p> <div class=codehilite><pre><span class=k>def</span> <span class=nf>parent</span><span class=p>(</span><span class=n>num</span><span class=p>):</span>
+    <span class=c1># Và sau đó sử dụng hàm này</span>
+    <span class=nb>print</span><span class=p>(</span><span class=n>whisper</span><span class=p>())</span>
 
-    <span class=k>def</span> <span class=nf>first_child</span><span class=p>():</span>
-        <span class=k>return</span> <span class=s2>&quot;This is first_child() function&quot;</span>
+<span class=c1># Bạn có thể gọi hàm talk, mỗi lần bạn gọi hàm này, hàm whisper</span>
+<span class=c1># sẽ được định nghĩa sau đó thực thi ở bên trong hàm talk.</span>
+<span class=n>talk</span><span class=p>()</span> <span class=c1># output: aaa...</span>
 
-    <span class=k>def</span> <span class=nf>second_child</span><span class=p>():</span>
-        <span class=k>return</span> <span class=s2>&quot;This is second_child() function&quot;</span>
+<span class=c1># Nhưng bạn không thể gọi hàm whisper từ bên ngoài.</span>
+<span class=k>try</span><span class=p>:</span>
+    <span class=nb>print</span><span class=p>(</span><span class=n>whisper</span><span class=p>())</span>
+<span class=k>except</span> <span class=ne>NameError</span> <span class=k>as</span> <span class=n>e</span><span class=p>:</span>
+    <span class=nb>print</span><span class=p>(</span><span class=n>e</span><span class=p>)</span>
+<span class=c1># output: name &#39;whisper&#39; is not defined</span>
+</pre></div> <p><strong>Bài học rút ra</strong></p> <p>Hàm là các đối tượng (hơn nữa là đối tượng first-class), vì vậy:</p> <ul> <li>Hàm có thể được gán cho các biến.</li> <li>Hàm có thể được định nghĩa trong một hàm khác.</li> </ul> <p>Vì những đặc điểm nên hàm còn <strong>có thể trả kết quả (<code>return</code>) là một hàm khác</strong>.</p> <h2>Một hàm trả kết quả là một hàm khác</h2> <p>Python cho phép bạn viết một hàm mà hàm đó trả kết quả về là một hàm khác. Ví dụ:</p> <div class=codehilite><pre><span class=k>def</span> <span class=nf>get_talk</span><span class=p>(</span><span class=n>kind</span><span class=o>=</span><span class=s2>&quot;shout&quot;</span><span class=p>):</span>
 
-    <span class=k>if</span> <span class=n>num</span> <span class=o>==</span> <span class=mi>10</span><span class=p>:</span>
-        <span class=k>return</span> <span class=n>first_child</span>
+    <span class=c1># Trước hết, chúng ta định nghĩa các hàm</span>
+    <span class=k>def</span> <span class=nf>shout</span><span class=p>(</span><span class=n>word</span><span class=o>=</span><span class=s2>&quot;aaa&quot;</span><span class=p>):</span>
+        <span class=k>return</span> <span class=n>word</span><span class=o>.</span><span class=n>upper</span><span class=p>()</span> <span class=o>+</span> <span class=s2>&quot;!&quot;</span>
+
+    <span class=k>def</span> <span class=nf>whisper</span><span class=p>(</span><span class=n>word</span><span class=o>=</span><span class=s2>&quot;aaa&quot;</span><span class=p>):</span>
+        <span class=k>return</span> <span class=n>word</span><span class=o>.</span><span class=n>lower</span><span class=p>()</span> <span class=o>+</span> <span class=s2>&quot;...&quot;</span>
+
+    <span class=c1># Bây giờ, chúng ta sẽ trả kết quả về những hàm này</span>
+    <span class=k>if</span> <span class=n>kind</span> <span class=o>==</span> <span class=s2>&quot;shout&quot;</span><span class=p>:</span>
+        <span class=c1># Chúng ta không sử dụng dấu ngoặc (), bởi vì chúng ta</span>
+        <span class=c1># không gọi những hàm này, mà chúng ta return đối tượng</span>
+        <span class=c1># tương ứng với các hàm.</span>
+        <span class=k>return</span> <span class=n>shout</span>
     <span class=k>else</span><span class=p>:</span>
-        <span class=k>return</span> <span class=n>second_child</span>
+        <span class=k>return</span> <span class=n>whisper</span>
 
-<span class=n>foo</span> <span class=o>=</span> <span class=n>parent</span><span class=p>(</span><span class=mi>10</span><span class=p>)</span>
-<span class=n>bar</span> <span class=o>=</span> <span class=n>parent</span><span class=p>(</span><span class=mi>20</span><span class=p>)</span>
+<span class=c1># Gọi những thứ trên như thế nào?</span>
 
-<span class=nb>print</span><span class=p>(</span><span class=n>foo</span><span class=p>)</span>
-<span class=nb>print</span><span class=p>(</span><span class=n>bar</span><span class=p>)</span>
+<span class=c1># Chúng ta gọi hàm và gán kết quả cho một biến</span>
+<span class=n>talk</span> <span class=o>=</span> <span class=n>get_talk</span><span class=p>()</span>
 
-<span class=nb>print</span><span class=p>(</span><span class=n>foo</span><span class=p>())</span>
-<span class=nb>print</span><span class=p>(</span><span class=n>bar</span><span class=p>())</span>
-</pre></div> <p>Output của 2 lệnh <code>print</code> đầu tiên sẽ là:</p> <div class=codehilite><pre><span class=go>&lt;function parent.&lt;locals&gt;.first_child at 0x7f3a6aa11b70&gt;</span>
-<span class=go>&lt;function parent.&lt;locals&gt;.second_child at 0x7f3a6aa11a60&gt;</span>
-</pre></div> <p>Đây đơn giản chỉ là thông tin cho chúng ta biết rằng <code>foo</code> đã được trỏ tới hàm <code>first_child()</code> và <code>bar</code> đã được trỏ tới hàm <code>second_child()</code>.</p> <p>Output của 2 hàm <code>print</code> tiếp theo đã chứng minh điều đó:</p> <div class=codehilite><pre><span class=go>This is first_child() function</span>
-<span class=go>This is second_child() function</span>
-</pre></div> <blockquote> <p>Bạn có để ý rằng, ở ví dụ trước, chúng ta gọi 2 hàm con từ trong hàm bố mẹ bằng cách gọi rất đầy đủ <code>first_child()</code>. Trong khi ở ví dụ này, khi trả về các hàm con, chúng ta trả về chính hàm đó chứ không phải kết quả của nó, nên chúng ta không dùng dấu ngoặc, ví dụ <code>first_child</code>. Bằng cách gọi này, những hàm này có thể được sử dụng trong tương lai.</p> </blockquote> <h1>Python decorator</h1> <p>Bây giờ, chúng ta đã sẵn sàng tìm hiểu về decorator trong Python. Hãy xem qua 2 ví dụ sau:</p> <p>Ví dụ 1:</p> <div class=codehilite><pre><span class=k>def</span> <span class=nf>my_decorator</span><span class=p>(</span><span class=n>some_function</span><span class=p>):</span>
+<span class=c1># Bạn có thể thấy talk bây giờ là một đối tượng hàm</span>
+<span class=nb>print</span><span class=p>(</span><span class=n>talk</span><span class=p>)</span> <span class=c1># output: &lt;function get_talk.&lt;locals&gt;.shout at</span>
+<span class=mh>0x101bdbae8</span><span class=o>&gt;</span>
 
+<span class=c1># Đối tượng hàm này là một trong hai hàm con của get_talk</span>
+<span class=nb>print</span><span class=p>(</span><span class=n>talk</span><span class=p>())</span> <span class=c1># output: AAA!</span>
+
+<span class=c1># Bạn có thể dùng cách gọi ngắn gọn hơn nếu đã thành thạo</span>
+<span class=nb>print</span><span class=p>(</span><span class=n>get_talk</span><span class=p>(</span><span class=s2>&quot;whisper&quot;</span><span class=p>))()</span> <span class=c1># output: aaa...</span>
+</pre></div> <p>Không chỉ có thể trả kết quả là một hàm, hàm còn thể được truyền vào hàm khác như là một tham số.</p> <div class=codehilite><pre><span class=k>def</span> <span class=nf>do_smth_before</span><span class=p>(</span><span class=n>func</span><span class=p>):</span>
+    <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;Something before calling function&quot;</span><span class=p>)</span>
+    <span class=nb>print</span><span class=p>(</span><span class=n>func</span><span class=p>())</span>
+
+<span class=nb>print</span><span class=p>(</span><span class=n>scream</span><span class=p>)</span>
+<span class=c1># output:</span>
+<span class=c1># Something before calling function</span>
+<span class=c1># AAA!</span>
+</pre></div> <p>Trên đây là những thứ cần thiết để hiểu về decorator của Python. Bạn sẽ thấy rằng, decorator là "wrapper" cho phép bạn chạy một số đoạn code trước hoặc sau hàm chính mà không thay đổi nội dung của nó.</p> <h1>Python decorator cơ bản</h1> <p>Khi có một hàm mà bạn muốn chạy một số code trước, hoặc sau hàm đó, bạn sẽ làm thế nào?</p> <h2>Làm bằng tay</h2> <p>Chúng ta có thể sử dụng kiến thức về các hàm lồng nhau ở trên, để giải quyết bài toán này.</p> <div class=codehilite><pre><span class=c1># Decorator là hàm nhận hàm khác làm tham số</span>
+<span class=k>def</span> <span class=nf>decorator_function</span><span class=p>(</span><span class=n>function_to_decorate</span><span class=p>):</span>
+
+    <span class=c1># Bên trong, chúng ta sẽ định nghĩa một &quot;wrapper&quot;. Hàm này sẽ</span>
+    <span class=c1># bao bọc xung quanh hàm gốc, vì thế chúng ta có thể chạy</span>
+    <span class=c1># code trước hoặc sau hàm gốc đó</span>
+    <span class=k>def</span> <span class=nf>wrapper_to_original_function</span><span class=p>():</span>
+        <span class=c1># Đây là code được thực thi TRƯỚC hàm gốc</span>
+        <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;Before calling function&quot;</span><span class=p>)</span>
+
+        <span class=c1># Gọi hàm gốc, đây là gọi và thực thi hàm nên chúng ta sẽ</span>
+        <span class=c1># dùng dấu ngoặc</span>
+        <span class=n>function_to_decorate</span><span class=p>()</span>
+
+        <span class=c1># Đây là code được thực thi SAU hàm gốc</span>
+        <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;After calling function&quot;</span><span class=p>)</span>
+
+    <span class=c1># Vào thời điểm này, hàm gốc vẫn CHƯA thực sự dược thực thi,</span>
+    <span class=c1># chúng ta sẽ return hàm wrapper mà chúng ta vừa tạo. Hàm này</span>
+    <span class=c1># chứa code được thực thi trước và sau hàm gốc, đặc biệt là</span>
+    <span class=c1># nó có thể được thực thi.</span>
+    <span class=k>return</span> <span class=n>wrapper_to_original_function</span>
+
+<span class=c1># Giả sử bạn có một hàm mà không muốn ai thay đổi nó</span>
+<span class=k>def</span> <span class=nf>a_function</span><span class=p>():</span>
+    <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;Do not modify it&quot;</span><span class=p>)</span>
+
+<span class=n>a_function</span><span class=p>()</span> <span class=c1># output: Do not modify it</span>
+
+<span class=c1># Bây giờ, bạn muốn mở rộng hành vi của hàm này, chạy một số code</span>
+<span class=c1># trước và sau nó, hãy sử dụng decorator_function. Truyền hàm này</span>
+<span class=c1># như là tham số của hàm decorator, nó sẽ tự động bao bọc hàm, và</span>
+<span class=c1># trả kết quả về là một hàm khác bạn có thể thực thi</span>
+<span class=n>a_decorated_function</span> <span class=o>=</span> <span class=n>decorator_function</span><span class=p>(</span><span class=n>a_function</span><span class=p>)</span>
+
+<span class=c1># Có thể bạn sẽ muốn chạy hàm a_decorated_function mỗi khi thực</span>
+<span class=c1># thi hàm a_function. Rất đơn giản, bạn chỉ cần override nó bằng</span>
+<span class=c1># hàm trả về của decorator_function</span>
+<span class=n>a_function</span> <span class=o>=</span> <span class=n>decorator_function</span><span class=p>(</span><span class=n>a_function</span><span class=p>)</span>
+
+<span class=n>a_function</span><span class=p>()</span>
+<span class=c1># output:</span>
+<span class=c1># Before calling function</span>
+<span class=c1># Do not modify it</span>
+<span class=c1># After calling function</span>
+
+<span class=c1># Đây chính là những gì mà decorator có thể làm</span>
+</pre></div> <h2>Decorator</h2> <p>Chúng có thể sử dụng cú pháp decorator của Python với ví dụ trên như sau:</p> <div class=codehilite><pre><span class=nd>@decorator_function</span>
+<span class=k>def</span> <span class=nf>a_function</span><span class=p>():</span>
+    <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;Do not modify it&quot;</span><span class=p>)</span>
+
+<span class=n>a_function</span><span class=p>()</span>
+<span class=c1># output:</span>
+<span class=c1># Before calling function</span>
+<span class=c1># Do not modify it</span>
+<span class=c1># After calling function</span>
+</pre></div> <p>Rất dễ hiểu phải không? Cú pháp <code>@decorator</code> (còn gọi là pie syntax) là cách viết ngắn gọn của:</p> <div class=codehilite><pre><span class=n>a_function</span> <span class=o>=</span> <span class=n>decorator_function</span><span class=p>(</span><span class=n>a_function</span><span class=p>)</span>
+</pre></div> <p>Thậm chí, bạn có thể sử dụng nhiều decorator cho một hàm, bởi kết quả trả về của decorator cũng là một hàm và nó hoàn toàn có thể được decorator bởi những decorator khác.</p> <div class=codehilite><pre><span class=k>def</span> <span class=nf>decorator1</span><span class=p>(</span><span class=n>func</span><span class=p>):</span>
     <span class=k>def</span> <span class=nf>wrapper</span><span class=p>():</span>
-        <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;Something happens before some_function&quot;</span><span class=p>)</span>
-        <span class=n>some_function</span><span class=p>()</span>
-        <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;Something happens after some_function&quot;</span><span class=p>)</span>
-
+        <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;*&quot;</span> <span class=o>*</span> <span class=mi>10</span><span class=p>)</span>
+        <span class=n>func</span><span class=p>()</span>
+        <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;*&quot;</span> <span class=o>*</span> <span class=mi>10</span><span class=p>)</span>
     <span class=k>return</span> <span class=n>wrapper</span>
 
-<span class=k>def</span> <span class=nf>just_some_function</span><span class=p>():</span>
-    <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;Hello, world!&quot;</span><span class=p>)</span>
-
-<span class=n>just_some_function</span> <span class=o>=</span> <span class=n>my_decorator</span><span class=p>(</span><span class=n>just_some_function</span><span class=p>)</span>
-<span class=n>just_some_function</span><span class=p>()</span>
-</pre></div> <p>Bạn có thể đoán được output của đoạn code trên hay không?</p> <div class=codehilite><pre><span class=go>Something happens before some_function</span>
-<span class=go>Hello, world!</span>
-<span class=go>Something happens after some_function</span>
-</pre></div> <p>Để hiểu được tại sao lại có output như trên, bạn có thể xem lại các ví dụ ở phần trước. Chúng ta chỉ đơn giản là áp dụng cơ sở lý thuyết mà chúng ta đã biết. Rất đơn giản, decorator cũng làm việc tương tự như vậy, đóng gói 1 hàm, mở rộng hành vi của hàm đó.</p> <p>Hãy thêm một chút xử lý nữa.</p> <p>Ví dụ 2:</p> <div class=codehilite><pre><span class=k>def</span> <span class=nf>my_decorator</span><span class=p>(</span><span class=n>some_function</span><span class=p>):</span>
-
+<span class=k>def</span> <span class=nf>decorator2</span><span class=p>(</span><span class=n>func</span><span class=p>):</span>
     <span class=k>def</span> <span class=nf>wrapper</span><span class=p>():</span>
-        <span class=n>num</span> <span class=o>=</span> <span class=mi>10</span>
-        <span class=k>if</span> <span class=n>num</span> <span class=o>==</span> <span class=mi>10</span><span class=p>:</span>
-            <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;YES!!&quot;</span><span class=p>)</span>
-        <span class=k>else</span><span class=p>:</span>
-            <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;NO!1&quot;</span><span class=p>)</span>
-        <span class=n>some_function</span><span class=p>()</span>
-        <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;Something happens after some_function&quot;</span><span class=p>)</span>
-
+        <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;=&quot;</span> <span class=o>*</span> <span class=mi>10</span><span class=p>)</span>
+        <span class=n>func</span><span class=p>()</span>
+        <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;=&quot;</span> <span class=o>*</span> <span class=mi>10</span><span class=p>)</span>
     <span class=k>return</span> <span class=n>wrapper</span>
 
-<span class=k>def</span> <span class=nf>just_some_function</span><span class=p>():</span>
-    <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;Hello, world!&quot;</span><span class=p>)</span>
+<span class=k>def</span> <span class=nf>some_func</span><span class=p>():</span>
+    <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;hello&quot;</span><span class=p>)</span>
 
-<span class=n>just_some_function</span> <span class=o>=</span> <span class=n>my_decorator</span><span class=p>(</span><span class=n>just_some_function</span><span class=p>)</span>
-<span class=n>just_some_function</span><span class=p>()</span>
-</pre></div> <p>Output của đoạn code trên sẽ là:</p> <div class=codehilite><pre><span class=go>YES!!</span>
-<span class=go>Hello, world!</span>
-<span class=go>Something happens after some_function</span>
-</pre></div> <h2>Cú pháp decorator của Python</h2> <p>Python cho phép bạn gọi decorator rất dễ dàng bằng cách sử dụng ký hiệu <code>@</code> (được gọi là "pie syntax")</p> <h3>Tạo một module cho decorator</h3> <div class=codehilite><pre><span class=k>def</span> <span class=nf>my_decorator</span><span class=p>(</span><span class=n>some_function</span><span class=p>):</span>
+<span class=n>some_func</span><span class=p>()</span> <span class=c1># output: hello</span>
+<span class=n>some_func</span> <span class=o>=</span> <span class=n>decorator1</span><span class=p>(</span><span class=n>decorator2</span><span class=p>(</span><span class=n>some_func</span><span class=p>))</span>
+<span class=n>some_func</span><span class=p>()</span>
+<span class=c1># output:</span>
+<span class=c1># **********</span>
+<span class=c1># ==========</span>
+<span class=c1># hello</span>
+<span class=c1># ==========</span>
+<span class=c1># **********</span>
+</pre></div> <p>Sử dụng cú pháp decorator của Python</p> <div class=codehilite><pre><span class=nd>@decorator1</span>
+<span class=nd>@decorator2</span>
+<span class=k>def</span> <span class=nf>some_func</span><span class=p>():</span>
+    <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;hello&quot;</span><span class=p>)</span>
 
-    <span class=k>def</span> <span class=nf>wrapper</span><span class=p>():</span>
-        <span class=n>num</span> <span class=o>=</span> <span class=mi>10</span>
-        <span class=k>if</span> <span class=n>num</span> <span class=o>==</span> <span class=mi>10</span><span class=p>:</span>
-            <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;YES!!&quot;</span><span class=p>)</span>
-        <span class=k>else</span><span class=p>:</span>
-            <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;NO!!&quot;</span><span class=p>)</span>
-        <span class=n>some_function</span><span class=p>()</span>
-        <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;Something happens after some_function&quot;</span><span class=p>)</span>
+<span class=n>some_func</span><span class=p>()</span>
+<span class=c1># output giống như lúc trước</span>
+<span class=c1># **********</span>
+<span class=c1># ==========</span>
+<span class=c1># hello</span>
+<span class=c1># ==========</span>
+<span class=c1># **********</span>
 
+<span class=c1># Thứ tự của decorator cũng CÓ ảnh hưởng đến kết quả</span>
+<span class=nd>@decorator2</span>
+<span class=nd>@decorator1</span>
+<span class=k>def</span> <span class=nf>some_func</span><span class=p>():</span>
+    <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;hello&quot;</span><span class=p>)</span>
+<span class=n>some_func</span><span class=p>()</span>
+<span class=c1># output lần này đã khác</span>
+<span class=c1># ==========</span>
+<span class=c1># **********</span>
+<span class=c1># hello</span>
+<span class=c1># **********</span>
+<span class=c1># ==========</span>
+</pre></div> <h1>Python decorator nâng cao</h1> <h2>Truyền tham số vào hàm được decorate</h2> <div class=codehilite><pre><span class=c1># Không có bí mật gì ở đây. Chúng ta chỉ cần cho hàm wrapper nhận</span>
+<span class=c1># tham số là được</span>
+
+<span class=k>def</span> <span class=nf>a_decorator_passing_arguments</span><span class=p>(</span><span class=n>function_to_decorate</span><span class=p>):</span>
+    <span class=k>def</span> <span class=nf>a_wrapper_accepting_arguments</span><span class=p>(</span><span class=n>arg1</span><span class=p>,</span> <span class=n>arg2</span><span class=p>):</span>
+        <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;I got args!&quot;</span><span class=p>,</span> <span class=n>arg1</span><span class=p>,</span> <span class=n>arg2</span><span class=p>)</span>
+        <span class=n>function_to_decorate</span><span class=p>(</span><span class=n>arg1</span><span class=p>,</span> <span class=n>arg2</span><span class=p>)</span>
+    <span class=k>return</span> <span class=n>a_wrapper_accepting_arguments</span>
+
+<span class=c1># Bởi vì khi chúng ta gọi hàm, thực ra là chúng ta gọi hàm được</span>
+<span class=c1># trả về bởi decorator (hàm wrapper), nên nếu chúng ta truyền</span>
+<span class=c1># tham số cho hàm này thì nó sẽ truyền cho hàm được decorate.</span>
+
+<span class=nd>@a_decorator_passing_arguments</span>
+<span class=k>def</span> <span class=nf>print_full_name</span><span class=p>(</span><span class=n>first_name</span><span class=p>,</span> <span class=n>last_name</span><span class=p>):</span>
+    <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;My name is&quot;</span><span class=p>,</span> <span class=n>first_name</span><span class=p>,</span> <span class=n>last_name</span><span class=p>)</span>
+
+<span class=n>print_full_name</span><span class=p>(</span><span class=s2>&quot;Anh&quot;</span><span class=p>,</span> <span class=s2>&quot;Tranngoc&quot;</span><span class=p>)</span>
+<span class=c1># outputs:</span>
+<span class=c1># I got args! Anh Tranngoc</span>
+<span class=c1># My name is Anh Tranngoc</span>
+</pre></div> <h1>Decorate một phương thức</h1> <p>Hàm và phương thức của Python rất giống nhau, ngoại trừ một điểm, phương thức thuộc về một class mà nó luôn luôn có tham số đầu tiên là <code>self</code> (đối tượng hiện tại).</p> <p>Vì vậy, chúng ta có thể viết decorator cho phương thức giống như decorator cho hàm, chỉ với lưu ý rằng cần truyền tham số <code>self</code> cho wrapper.</p> <div class=codehilite><pre><span class=k>def</span> <span class=nf>method_friendly_decorator</span><span class=p>(</span><span class=n>method_to_decorate</span><span class=p>):</span>
+    <span class=k>def</span> <span class=nf>wrapper</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>lie</span><span class=p>):</span>
+        <span class=n>lie</span> <span class=o>=</span> <span class=n>lie</span> <span class=o>-</span> <span class=mi>3</span> <span class=c1># very friendly, decrease age even more :-)</span>
+        <span class=k>return</span> <span class=n>method_to_decorate</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>lie</span><span class=p>)</span>
     <span class=k>return</span> <span class=n>wrapper</span>
 
-<span class=k>if</span> <span class=n>__name__</span> <span class=o>==</span> <span class=s2>&quot;__main__&quot;</span><span class=p>:</span>
-  <span class=n>my_decorator</span><span class=p>()</span>
-</pre></div> <p>Giả sử chúng ta lưu đoạn code trên vào 1 file tên là <code>decorator.py</code>. Dưới đây là cách chúng ta gọi một hàm với decorator:</p> <div class=codehilite><pre><span class=kn>from</span> <span class=nn>decorator</span> <span class=k>import</span> <span class=n>my_decorator</span>
+
+<span class=k>class</span> <span class=nc>Wife</span><span class=p>(</span><span class=nb>object</span><span class=p>):</span>
+
+    <span class=k>def</span> <span class=nf>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+        <span class=bp>self</span><span class=o>.</span><span class=n>age</span> <span class=o>=</span> <span class=mi>24</span>
+
+    <span class=nd>@method_friendly_decorator</span>
+    <span class=k>def</span> <span class=nf>say_your_age</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>lie</span><span class=p>):</span>
+        <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;I am </span><span class=si>%s</span><span class=s2>, what did you think?&quot;</span> <span class=o>%</span> <span class=p>(</span><span class=bp>self</span><span class=o>.</span><span class=n>age</span> <span class=o>+</span> <span class=n>lie</span><span class=p>))</span>
+
+<span class=n>vp</span> <span class=o>=</span> <span class=n>Wife</span><span class=p>()</span>
+<span class=n>vp</span><span class=o>.</span><span class=n>say_your_age</span><span class=p>(</span><span class=o>-</span><span class=mi>3</span><span class=p>)</span>
+<span class=c1># outputs: I am 18, what did you think?</span>
+</pre></div> <h2>Decorator tổng quát</h2> <p>Nếu bạn muốn xây dựng một decorator một cách tổng quát, có thể áp dụng cho mọi hàm với số lượng tham số khác nhau. Bạn chỉ cần sử dụng cú pháp <code>*args</code> và <code>**kwargs</code></p> <div class=codehilite><pre><span class=k>def</span> <span class=nf>decorator_passing_arbitrary_arguments</span><span class=p>(</span><span class=n>function_to_decorate</span><span class=p>):</span>
+    <span class=c1># Wrapper nhận mọi tham số đầu vào</span>
+    <span class=k>def</span> <span class=nf>wrapper_accepting_arbitrary_arguments</span><span class=p>(</span><span class=o>*</span><span class=n>args</span><span class=p>,</span> <span class=o>**</span><span class=n>kwargs</span><span class=p>):</span>
+        <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;Do I have args?:&quot;</span><span class=p>)</span>
+        <span class=nb>print</span><span class=p>(</span><span class=n>args</span><span class=p>)</span>
+        <span class=nb>print</span><span class=p>(</span><span class=n>kwargs</span><span class=p>)</span>
+        <span class=c1># Bây giờ truyền những tham số này cho hàm được decorate,</span>
+        <span class=c1># nhớ unpack chúng.</span>
+        <span class=n>function_to_decorate</span><span class=p>(</span><span class=o>*</span><span class=n>args</span><span class=p>,</span> <span class=o>**</span><span class=n>kwargs</span><span class=p>)</span>
+    <span class=k>return</span> <span class=n>wrapper_accepting_arbitrary_arguments</span>
+
+
+<span class=nd>@decorator_passing_arbitrary_arguments</span>
+<span class=k>def</span> <span class=nf>function_with_no_argument</span><span class=p>():</span>
+    <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;No arguments here&quot;</span><span class=p>)</span>
+
+<span class=n>function_with_no_argument</span><span class=p>()</span>
+<span class=c1># output:</span>
+<span class=c1># Do I have args?:</span>
+<span class=c1># ()</span>
+<span class=c1># {}</span>
+<span class=c1># No arguments here</span>
+
+<span class=nd>@decorator_passing_arbitrary_arguments</span>
+<span class=k>def</span> <span class=nf>function_with_arguments</span><span class=p>(</span><span class=n>a</span><span class=p>,</span> <span class=n>b</span><span class=p>,</span> <span class=n>c</span><span class=p>):</span>
+    <span class=nb>print</span><span class=p>(</span><span class=n>a</span><span class=p>,</span> <span class=n>b</span><span class=p>,</span> <span class=n>c</span><span class=p>)</span>
+
+<span class=n>function_with_arguments</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span> <span class=mi>2</span><span class=p>,</span> <span class=mi>3</span><span class=p>)</span>
+<span class=c1># output:</span>
+<span class=c1># Do I have args?:</span>
+<span class=c1># (1, 2, 3)</span>
+<span class=c1># {}</span>
+<span class=c1># 1 2 3</span>
+
+<span class=nd>@decorator_passing_arbitrary_arguments</span>
+<span class=k>def</span> <span class=nf>function_with_named_arguments</span><span class=p>(</span><span class=n>name</span><span class=p>,</span> <span class=n>occupation</span><span class=o>=</span><span class=s2>&quot;programmer&quot;</span><span class=p>):</span>
+    <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;</span><span class=si>%s</span><span class=s2> is a </span><span class=si>%s</span><span class=s2>&quot;</span> <span class=o>%</span> <span class=p>(</span><span class=n>name</span><span class=p>,</span> <span class=n>occupation</span><span class=p>))</span>
+
+<span class=n>function_with_named_arguments</span><span class=p>(</span><span class=s2>&quot;Ngoc Anh&quot;</span><span class=p>,</span> <span class=n>occupation</span><span class=o>=</span><span class=s2>&quot;developer&quot;</span><span class=p>)</span>
+<span class=c1># output:</span>
+<span class=c1># Do I have args?:</span>
+<span class=c1># (&#39;Ngoc Anh&#39;,)</span>
+<span class=c1># {&#39;occupation&#39;: &#39;developer&#39;}</span>
+<span class=c1># Ngoc Anh is a developer</span>
+
+<span class=k>class</span> <span class=nc>Husband</span><span class=p>(</span><span class=nb>object</span><span class=p>):</span>
+
+    <span class=k>def</span> <span class=nf>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+        <span class=bp>self</span><span class=o>.</span><span class=n>age</span> <span class=o>=</span> <span class=mi>25</span>
+
+    <span class=nd>@decorator_passing_arbitrary_arguments</span>
+    <span class=k>def</span> <span class=nf>say_your_age</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>lie</span><span class=o>=-</span><span class=mi>3</span><span class=p>):</span>
+        <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;I am </span><span class=si>%s</span><span class=s2>, what did you think ?&quot;</span> <span class=o>%</span> <span class=p>(</span><span class=bp>self</span><span class=o>.</span><span class=n>age</span> <span class=o>+</span> <span class=n>lie</span><span class=p>))</span>
+
+<span class=n>na</span> <span class=o>=</span> <span class=n>Husband</span><span class=p>()</span>
+<span class=n>na</span><span class=o>.</span><span class=n>say_your_age</span><span class=p>()</span>
+<span class=c1># output:</span>
+<span class=c1># Do I have args?:</span>
+<span class=c1># (&lt;__main__.Husband object at 0x7f1244b65278&gt;,)</span>
+<span class=c1># {}</span>
+<span class=c1># I am 22, what did you think ?</span>
+</pre></div> <h2>Truyền tham số cho chính decorator</h2> <p>Bây giờ, nếu bạn muốn truyền tham số cho chính decorator thì phải làm thế nào? Bởi vì decorator nhận tham số là một hàm nên bạn không thể truyền tham số cho nó được.</p> <p>Trước khi đến với giải pháp, chúng ta xem qua ví dụ sau:</p> <div class=codehilite><pre><span class=c1># Decorator cũng là hàm THÔNG THƯỜNG</span>
+<span class=k>def</span> <span class=nf>my_decorator</span><span class=p>(</span><span class=n>func</span><span class=p>):</span>
+    <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;This is an ordinary function&quot;</span><span class=p>)</span>
+
+    <span class=k>def</span> <span class=nf>wrapper</span><span class=p>():</span>
+        <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;This is function return by decorator&quot;</span><span class=p>)</span>
+        <span class=n>func</span><span class=p>()</span>
+    <span class=k>return</span> <span class=n>wrapper</span>
+
+<span class=c1># Do đó, bạn có thể gọi chúng là không cần dùng cú pháp `@`</span>
+<span class=k>def</span> <span class=nf>lazy_function</span><span class=p>():</span>
+    <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;lllllaaaaazzzzzyyyyy&quot;</span><span class=p>)</span>
+
+<span class=n>decorated_function</span> <span class=o>=</span> <span class=n>my_decorator</span><span class=p>(</span><span class=n>lazy_function</span><span class=p>)</span>
+<span class=c1># outputs: This is an ordinary function</span>
+
+<span class=c1># Output của đoạn code trên là &quot;This is an ordinary function&quot; bởi</span>
+<span class=c1># vì đơn giản là bạn vừa gọi hàm nên nó có kết quả như vậy. Không</span>
+<span class=c1># có gì khó hiểu ở đây cả.</span>
 
 <span class=nd>@my_decorator</span>
-<span class=k>def</span> <span class=nf>just_some_function</span><span class=p>():</span>
-  <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;Hello, world!&quot;</span><span class=p>)</span>
+<span class=k>def</span> <span class=nf>lazy_function</span><span class=p>():</span>
+    <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;lllllaaaaazzzzzyyyyy&quot;</span><span class=p>)</span>
 
-<span class=n>just_some_function</span><span class=p>()</span>
-</pre></div> <p>Khi bạn chạy đoạn code trên. Bạn sẽ nhận được kết quả giống hệt kết quả ở ví dụ trước.</p> <div class=codehilite><pre><span class=go>YES!!</span>
-<span class=go>Hello, world!</span>
-<span class=go>Something happens after some_function</span>
-</pre></div> <p>Vậy, cú pháp <code>@my_decorator</code> là cách gọi ngắn gọn của <code>just_some_function = my_decorator(just_some_function)</code>.</p> <h2>Ví dụ thực tế</h2> <p>Dưới đây là một số ví dụ decorator được dùng trong thực tế.</p> <h3>Decorator cho hàm không có tham số</h3> <p>Ví dụ này rất dễ hiểu, nó hoàn toàn áp dụng cơ sở lý thuyết ở trên chúng ta đã phân tích.</p> <div class=codehilite><pre><span class=kn>import</span> <span class=nn>time</span>
+<span class=c1># outputs: This is an ordinary function</span>
+</pre></div> <p>Hai cách làm cho kết quả giống hệt nhau. Đó là bởi vì khi bạn sử dụng cú pháp <code>@</code> thì Python sẽ gọi và thực thi hàm có tên là tên của decorator như thực thi một hàm thông thường.</p> <p>Điều này rất quan trọng, bởi vì bạn có thể dùng tên của decorator để <strong>trỏ tới chính hàm decorator đó hay không</strong>.</p> <div class=codehilite><pre><span class=k>def</span> <span class=nf>decorator_maker</span><span class=p>():</span>
 
-<span class=k>def</span> <span class=nf>timing_function</span><span class=p>(</span><span class=n>some_function</span><span class=p>):</span>
+    <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;Make decorator and excecute only once&quot;</span><span class=p>)</span>
+
+    <span class=k>def</span> <span class=nf>my_decorator</span><span class=p>(</span><span class=n>func</span><span class=p>):</span>
+        <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;I am a decorator!&quot;</span><span class=p>)</span>
+
+        <span class=k>def</span> <span class=nf>wrapped</span><span class=p>():</span>
+            <span class=nb>print</span> <span class=p>(</span><span class=s2>&quot;I am the wrapper around the decorated function.&quot;</span><span class=p>)</span>
+            <span class=n>func</span><span class=p>()</span>
+
+        <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;As the decorator, I return the wrapped function.&quot;</span><span class=p>)</span>
+
+        <span class=k>return</span> <span class=n>wrapped</span>
+
+    <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;As a decorator maker, I return a decorator&quot;</span><span class=p>)</span>
+    <span class=k>return</span> <span class=n>my_decorator</span>
+
+<span class=c1># Bây giờ, chúng ta sẽ tạo ra một decorator, đơn giản chỉ là gọi</span>
+<span class=c1># các hàm</span>
+<span class=n>new_decorator</span> <span class=o>=</span> <span class=n>decorator_maker</span><span class=p>()</span>
+<span class=c1># output:</span>
+<span class=c1># Make decorator and execute only once</span>
+<span class=c1># As a decorator maker, I return a decorator</span>
+
+<span class=c1># Sau đó là decorate hàm mà chúng ta muốn</span>
+<span class=k>def</span> <span class=nf>decorated_function</span><span class=p>():</span>
+    <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;I am the decorated function.&quot;</span><span class=p>)</span>
+
+<span class=n>decorated_function</span> <span class=o>=</span> <span class=n>new_decorator</span><span class=p>(</span><span class=n>decorated_function</span><span class=p>)</span>
+<span class=c1># output:</span>
+<span class=c1># I am a decorator!</span>
+<span class=c1># As the decorator, I return the wrapped function.</span>
+
+<span class=c1># Thử gọi hàm được decorate xem sao</span>
+<span class=n>decorated_function</span><span class=p>()</span>
+<span class=c1># output:</span>
+<span class=c1># I am the wrapper around the decorated function.</span>
+<span class=c1># I am the decorated function.</span>
+</pre></div> <p>Chúng ta có thể làm điều tương tự bằng cách bỏ qua các biến trung gian</p> <div class=codehilite><pre><span class=k>def</span> <span class=nf>decorated_function</span><span class=p>():</span>
+    <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;I am the decorated function.&quot;</span><span class=p>)</span>
+<span class=n>decorated_function</span> <span class=o>=</span> <span class=n>decorator_maker</span><span class=p>()(</span><span class=n>decorated_function</span><span class=p>)</span>
+<span class=c1># output:</span>
+<span class=c1># Make decorator and execute only once</span>
+<span class=c1># As a decorator maker, I return a decorator</span>
+<span class=c1># I am a decorator!</span>
+<span class=c1># As the decorator, I return the wrapped function.</span>
+
+<span class=c1># Gọi hàm được decorate</span>
+<span class=n>decorated_function</span><span class=p>()</span>
+<span class=c1># output:</span>
+<span class=c1># I am the wrapper around the decorated function.</span>
+<span class=c1># I am the decorated function.</span>
+</pre></div> <p>Thậm chí chúng ta có thể dùng cú pháp ngắn gọn hơn:</p> <div class=codehilite><pre><span class=nd>@decorator_maker</span><span class=p>()</span>
+<span class=k>def</span> <span class=nf>decorated_function</span><span class=p>():</span>
+    <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;I am the decorated function.&quot;</span><span class=p>)</span>
+<span class=c1># output:</span>
+<span class=c1># Make decorator and excecute only once</span>
+<span class=c1># As a decorator maker, I return a decorator</span>
+<span class=c1># I am a decorator!</span>
+<span class=c1># As the decorator, I return the wrapped function</span>
+
+<span class=c1># Thử gọi hàm xem sao</span>
+<span class=n>decorated_function</span><span class=p>()</span>
+<span class=c1># output:</span>
+<span class=c1># I am the wrapper around the decorated function.</span>
+<span class=c1># I am the decorated function.</span>
+</pre></div> <p>Rất đơn giản, chúng ta có thể gọi và thực thi hàm trong chính cú pháp <code>@</code>.</p> <p>Quay trở lại với bài toán của chúng ta, nếu chúng ta xây dựng một hàm trả kết quả về là một decorator thì chúng ta có thể truyền tham số cho hàm đó.</p> <div class=codehilite><pre><span class=k>def</span> <span class=nf>decorator_maker_with_arguments</span><span class=p>(</span><span class=n>decorator_arg1</span><span class=p>,</span> <span class=n>decorator_arg2</span><span class=p>):</span>
+
+    <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;I make decorators! And I accept arguments:&quot;</span><span class=p>,</span>
+          <span class=n>decorator_arg1</span><span class=p>,</span> <span class=n>decorator_arg2</span><span class=p>)</span>
+
+    <span class=k>def</span> <span class=nf>my_decorator</span><span class=p>(</span><span class=n>func</span><span class=p>):</span>
+        <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;I am the decorator. You passed me arguments:&quot;</span><span class=p>,</span>
+              <span class=n>decorator_arg1</span><span class=p>,</span> <span class=n>decorator_arg2</span><span class=p>)</span>
+
+        <span class=c1># Don&#39;t confuse decorator arguments and function arguments!</span>
+        <span class=k>def</span> <span class=nf>wrapped</span><span class=p>(</span><span class=n>function_arg1</span><span class=p>,</span> <span class=n>function_arg2</span><span class=p>):</span>
+            <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;I am the wrapper around the decorated function.</span><span class=se>\n</span><span class=s2>&quot;</span>
+                  <span class=s2>&quot;I can access all the variables</span><span class=se>\n</span><span class=s2>&quot;</span>
+                  <span class=s2>&quot;</span><span class=se>\t</span><span class=s2>- from the decorator: {0} {1}</span><span class=se>\n</span><span class=s2>&quot;</span>
+                  <span class=s2>&quot;</span><span class=se>\t</span><span class=s2>- from the function call: {2} {3}</span><span class=se>\n</span><span class=s2>&quot;</span>
+                  <span class=s2>&quot;Then I can pass them to the decorated function&quot;</span>
+                  <span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=n>decorator_arg1</span><span class=p>,</span> <span class=n>decorator_arg2</span><span class=p>,</span>
+                          <span class=n>function_arg1</span><span class=p>,</span> <span class=n>function_arg2</span><span class=p>))</span>
+            <span class=k>return</span> <span class=n>func</span><span class=p>(</span><span class=n>function_arg1</span><span class=p>,</span> <span class=n>function_arg2</span><span class=p>)</span>
+
+        <span class=k>return</span> <span class=n>wrapped</span>
+
+    <span class=k>return</span> <span class=n>my_decorator</span>
+
+
+<span class=nd>@decorator_maker_with_arguments</span><span class=p>(</span><span class=s2>&quot;Ngoc Anh&quot;</span><span class=p>,</span> <span class=s2>&quot;Viet Phuong&quot;</span><span class=p>)</span>
+<span class=k>def</span> <span class=nf>decorated_function_with_arguments</span><span class=p>(</span><span class=n>function_arg1</span><span class=p>,</span> <span class=n>function_arg2</span><span class=p>):</span>
+    <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;I am the decorated function with arguments&quot;</span><span class=p>,</span>
+          <span class=n>function_arg1</span><span class=p>,</span> <span class=n>function_arg2</span><span class=p>)</span>
+
+<span class=n>decorated_function_with_arguments</span><span class=p>(</span><span class=s2>&quot;wife&quot;</span><span class=p>,</span> <span class=s2>&quot;husband&quot;</span><span class=p>)</span>
+<span class=c1># output:</span>
+<span class=c1># I make decorators! And I accept arguments: Ngoc Anh Viet Phuong</span>
+<span class=c1># I am the decorator. You passed me arguments: Ngoc Anh Viet Phuong</span>
+<span class=c1># I am the wrapper around the decorated function.</span>
+<span class=c1># I can access all the variables</span>
+<span class=c1>#   - from the decorator: Ngoc Anh Viet Phuong</span>
+<span class=c1>#   - from the function call: wife husband</span>
+<span class=c1># Then I can pass them to the decorated function</span>
+<span class=c1># I am the decorated function with arguments wife husband</span>
+</pre></div> <p>Việc truyền tham số vào các hàm lồng nhau như vậy có sự giúp đỡ của closure. Bạn có thể tìm hiểu thêm về closure ở <a href=http://mrevelle.blogspot.com/2006/10/closure-on-closures.html>bài viết này</a></p> <p>Vậy là chúng ta đã có một hàm, và chúng ta có thể truyền tham số cho hàm đó và sử dụng nó làm decorator. Thậm chí chúng ta có thể dùng biến để truyền tham số.</p> <div class=codehilite><pre><span class=n>var1</span> <span class=o>=</span> <span class=s2>&quot;Ngoc Anh&quot;</span>
+<span class=n>var2</span> <span class=o>=</span> <span class=s2>&quot;Viet Phuong&quot;</span>
+
+<span class=nd>@decorator_maker_with_arguments</span><span class=p>(</span><span class=n>var1</span><span class=p>,</span> <span class=n>var2</span><span class=p>)</span>
+<span class=k>def</span> <span class=nf>decorated_function_with_arguments</span><span class=p>(</span><span class=n>function_arg1</span><span class=p>,</span> <span class=n>function_arg2</span><span class=p>):</span>
+    <span class=nb>print</span> <span class=p>(</span><span class=s2>&quot;I am the decorated function with arguments:&quot;</span>
+           <span class=n>function_arg1</span><span class=p>,</span> <span class=n>function_arg2</span><span class=p>)</span>
+
+<span class=n>var3</span> <span class=o>=</span> <span class=s2>&quot;wife&quot;</span>
+<span class=n>var4</span> <span class=o>=</span> <span class=s2>&quot;husband&quot;</span>
+<span class=n>decorated_function_with_arguments</span><span class=p>(</span><span class=n>var3</span><span class=p>,</span> <span class=n>var4</span><span class=p>)</span>
+<span class=c1># output:</span>
+<span class=c1># I make decorators! And I accept arguments: Ngoc Anh Viet Phuong</span>
+<span class=c1># I am the decorator. You passed me arguments: Ngoc Anh Viet Phuong</span>
+<span class=c1># I am the wrapper around the decorated function.</span>
+<span class=c1># I can access all the variables</span>
+<span class=c1>#   - from the decorator: Ngoc Anh Viet Phuong</span>
+<span class=c1>#   - from the function call: wife husband</span>
+<span class=c1># Then I can pass them to the decorated function</span>
+<span class=c1># I am the decorated function with arguments wife husband</span>
+</pre></div> <p>Với cách làm như trên, bạn có thể xây dựng decorator nhận tham số như những hàm thông thường khác. Bạn cũng có thể sử dụng <code>*args</code> và <code>**kwargs</code> nếu muốn. Tuy nhiên, cần lưu ý rằng, decorator chỉ được gọi <strong>duy nhất một lần</strong>. Khi một hàm đã được decorate rồi, bạn không thể thay đổi nó nữa. Bạn cũng không thể truyền tham số động được.</p> <h2>Decorate một decorator</h2> <p>Trong phần trước, tôi đã trình bày cách xây dựng một decorator nhận tham số đầu vào. Biện pháp là sử dụng thêm một hàm lồng nhau nữa. Tức là chúng ta đã bao bọc decorator bằng một hàm khác. Nghe quen thế nhỉ? Chính xác, đây chính là cách xây dựng một decorator.</p> <p>Đây là một trick khá thú vị, decorate một decorator. Bởi vì decorator cũng là hàm nên nó hoàn toàn có thể được decorate bởi những decorator khác.</p> <div class=codehilite><pre><span class=k>def</span> <span class=nf>decorator_with_args</span><span class=p>(</span><span class=n>decorator_to_enhance</span><span class=p>):</span>
     <span class=sd>&quot;&quot;&quot;</span>
-<span class=sd>    Outputs the time a function takes</span>
-<span class=sd>    to execute.</span>
+<span class=sd>    Hàm này sẽ được dùng làm decorator. Nó sẽ decorate một hàm mà</span>
+<span class=sd>    hàm đó cũng sẽ trở thành decorator. Decorator này cho phép</span>
+<span class=sd>    bạn xây dựng decorator có thể nhận bất kỳ tham số nào, mà</span>
+<span class=sd>    không cần nhớ cách thực hiện chúng.</span>
 <span class=sd>    &quot;&quot;&quot;</span>
 
-    <span class=k>def</span> <span class=nf>wrapper</span><span class=p>():</span>
-        <span class=n>t1</span> <span class=o>=</span> <span class=n>time</span><span class=o>.</span><span class=n>time</span><span class=p>()</span>
-        <span class=n>some_function</span><span class=p>()</span>
-        <span class=n>t2</span> <span class=o>=</span> <span class=n>time</span><span class=o>.</span><span class=n>time</span><span class=p>()</span>
-        <span class=k>return</span> <span class=s2>&quot;Time it took to run the function: &quot;</span> <span class=o>+</span> <span class=nb>str</span><span class=p>((</span><span class=n>t2</span><span class=o>-</span><span class=n>t1</span><span class=p>))</span> <span class=o>+</span> <span class=s2>&quot;</span><span class=se>\n</span><span class=s2>&quot;</span>
+    <span class=c1># We use the same trick we did to pass arguments</span>
+    <span class=k>def</span> <span class=nf>decorator_maker</span><span class=p>(</span><span class=o>*</span><span class=n>args</span><span class=p>,</span> <span class=o>**</span><span class=n>kwargs</span><span class=p>):</span>
+
+        <span class=c1># Chúng ta tạo ra một decorator nhận đầu vào là một hàm,</span>
+        <span class=c1># nhưng có thể truyền tham số từ maker.</span>
+        <span class=k>def</span> <span class=nf>decorator_wrapper</span><span class=p>(</span><span class=n>func</span><span class=p>):</span>
+
+            <span class=c1># Chúng ta return kết quả của decorator gốc, thực ra</span>
+            <span class=c1># nó cũng là hàm THÔNG THƯỜNG (nhưng return một hàm</span>
+            <span class=c1># khác). Lưu ý rằng, decorator phải sử dụng đúng</span>
+            <span class=c1># nguyên mẫu mới có thể chạy được.</span>
+            <span class=k>return</span> <span class=n>decorator_to_enhance</span><span class=p>(</span><span class=n>func</span><span class=p>,</span> <span class=o>*</span><span class=n>args</span><span class=p>,</span> <span class=o>**</span><span class=n>kwargs</span><span class=p>)</span>
+
+        <span class=k>return</span> <span class=n>decorator_wrapper</span>
+
+    <span class=k>return</span> <span class=n>decorator_maker</span>
+</pre></div> <p>Chúng ta có thể sử dụng nó như sau:</p> <div class=codehilite><pre><span class=c1># Chúng ta sẽ tạo ra một hàm dùng làm decorator. Và dùng</span>
+<span class=c1># decorator đã tạo ra ở trên cho hàm này. Nguyên mẫu hàm phải là</span>
+<span class=c1># decorator(func, *args, **kwargs) thì mới hoạt động được.</span>
+<span class=nd>@decorator_with_args</span>
+<span class=k>def</span> <span class=nf>decorated_decorator</span><span class=p>(</span><span class=n>func</span><span class=p>,</span> <span class=o>*</span><span class=n>args</span><span class=p>,</span> <span class=o>**</span><span class=n>kwargs</span><span class=p>):</span>
+    <span class=k>def</span> <span class=nf>wrapper</span><span class=p>(</span><span class=n>function_arg1</span><span class=p>,</span> <span class=n>function_arg2</span><span class=p>):</span>
+        <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;Decorated with&quot;</span><span class=p>,</span> <span class=n>args</span><span class=p>,</span> <span class=n>kwargs</span><span class=p>)</span>
+        <span class=k>return</span> <span class=n>func</span><span class=p>(</span><span class=n>function_arg1</span><span class=p>,</span> <span class=n>function_arg2</span><span class=p>)</span>
     <span class=k>return</span> <span class=n>wrapper</span>
 
-<span class=nd>@timing_function</span>
-<span class=k>def</span> <span class=nf>my_function</span><span class=p>():</span>
-    <span class=n>num_list</span> <span class=o>=</span> <span class=p>[]</span>
-    <span class=k>for</span> <span class=n>x</span> <span class=ow>in</span> <span class=p>(</span><span class=nb>range</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span><span class=mi>10000</span><span class=p>)):</span>
-        <span class=n>num_list</span><span class=o>.</span><span class=n>append</span><span class=p>(</span><span class=n>x</span><span class=p>)</span>
-    <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;</span><span class=se>\n</span><span class=s2>Sum of all the numbers: &quot;</span> <span class=o>+</span> <span class=nb>str</span><span class=p>((</span><span class=nb>sum</span><span class=p>(</span><span class=n>num_list</span><span class=p>))))</span>
+<span class=c1># Sau đó chúng ta có thể dùng decorator này với các hàm chúng a</span>
+<span class=c1># muốn và có thể truyền tham số tùy ý.</span>
 
-<span class=nb>print</span><span class=p>(</span><span class=n>my_function</span><span class=p>())</span>
-</pre></div> <p>Decorator trên sẽ trả kết quả là thời điểm trước khi bạn chạy <code>my_function()</code> và thời điểm sau khi hàm này đã kết thúc. Qua đó, bạn có thể nhìn thấy hàm <code>my_function()</code> chạy mất bao lâu.</p> <p>Bạn có thể thử nó trên máy của mình, và tôi tin bạn có thể hiểu được cách chúng hoạt động.</p> <h3>Decorator cho hàm có tham số</h3> <p>Dưới đây là một ví dụ khác. Hàm <code>print_number</code> của chúng ta cần tham số được truyền vào. Rất đơn giản, thêm tham số cho hàm <code>wrapper</code> bên trong decorator là hàm của chúng ta có thể gọi tham số này từ trong decorator.</p> <div class=codehilite><pre><span class=kn>from</span> <span class=nn>time</span> <span class=k>import</span> <span class=n>sleep</span>
+<span class=nd>@decorated_decorator</span><span class=p>(</span><span class=mi>42</span><span class=p>,</span> <span class=mi>404</span><span class=p>,</span> <span class=mi>1024</span><span class=p>)</span>
+<span class=k>def</span> <span class=nf>decorated_function</span><span class=p>(</span><span class=n>function_arg1</span><span class=p>,</span> <span class=n>function_arg2</span><span class=p>):</span>
+    <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;Hello&quot;</span><span class=p>,</span> <span class=n>function_arg1</span><span class=p>,</span> <span class=n>function_arg2</span><span class=p>)</span>
 
-<span class=k>def</span> <span class=nf>sleep_decorator</span><span class=p>(</span><span class=n>function</span><span class=p>):</span>
-    <span class=sd>&quot;&quot;&quot;Limits how fast the function is called.&quot;&quot;&quot;</span>
+<span class=n>decorated_function</span><span class=p>(</span><span class=s2>&quot;Universe and&quot;</span><span class=p>,</span> <span class=s2>&quot;everything&quot;</span><span class=p>)</span>
+<span class=c1># output:</span>
+<span class=c1># Decorated with (42, 404, 1024) {}</span>
+<span class=c1># Hello Universe and everything</span>
+</pre></div> <h2>Lưu ý</h2> <ul> <li>Decorator được giới thiệu từ phiên bản Python 2.4 nên bạn cần sử dụng Python đúng phiên bản mới có thể dùng được.</li> <li>Mặc dù cú pháp đơn giản, nhưng decorator không làm hàm nhanh hơn, thậm chí nó còn làm hàm chậm đi.</li> <li>Bạn không thể bỏ decorator cho một hàm. Một khi hàm đã được decorate rồi, thì nó sẽ được decorate mãi mãi.</li> <li>Vì decorator bao bọc các hàm nên rất khó để debug. Tuy nhiên, đã có giải pháp nếu bạn sử dụng Python 2.5 trở nên.</li> </ul> <p>Từ phiên bản 2.5 trở nên, Python có module <code>functools</code> trong đó có hàm <code>functools.wraps</code> giúp chúng ta copy tên, module, docstring, vv của hàm được decorate vào hàm wrapper của chúng ta.</p> <div class=codehilite><pre><span class=c1># Để debug, chúng a in ra tên của hàm</span>
+<span class=k>def</span> <span class=nf>foo</span><span class=p>():</span>
+    <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;foo&quot;</span><span class=p>)</span>
+
+<span class=nb>print</span><span class=p>(</span><span class=n>foo</span><span class=o>.</span><span class=n>__name__</span><span class=p>)</span> <span class=c1># output: foo</span>
+
+<span class=c1># Nếu dùng decorator, mọi thứ khác đi nhiều.</span>
+<span class=k>def</span> <span class=nf>bar</span><span class=p>(</span><span class=n>func</span><span class=p>):</span>
+    <span class=k>def</span> <span class=nf>wrapper</span><span class=p>():</span>
+        <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;bar&quot;</span><span class=p>)</span>
+        <span class=k>return</span> <span class=n>func</span><span class=p>()</span>
+    <span class=k>return</span> <span class=n>wrapper</span>
+
+<span class=nd>@bar</span>
+<span class=k>def</span> <span class=nf>foo</span><span class=p>():</span>
+    <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;foo&quot;</span><span class=p>)</span>
+
+<span class=nb>print</span><span class=p>(</span><span class=n>foo</span><span class=o>.</span><span class=n>__name__</span><span class=p>)</span> <span class=c1># output: wrapper</span>
+
+<span class=c1># &quot;functools&quot; có thể giúp chúng ta</span>
+
+<span class=kn>import</span> <span class=nn>functools</span>
+
+<span class=k>def</span> <span class=nf>bar</span><span class=p>(</span><span class=n>func</span><span class=p>):</span>
+    <span class=c1># Đây là wrapper bao bọc hàm được decorator. Tuy nhiên, sự kỳ</span>
+    <span class=c1># diệu ở đây là nhờ functools.</span>
+    <span class=nd>@functools</span><span class=o>.</span><span class=n>wraps</span><span class=p>(</span><span class=n>func</span><span class=p>)</span>
+    <span class=k>def</span> <span class=nf>wrapper</span><span class=p>():</span>
+        <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;bar&quot;</span><span class=p>)</span>
+        <span class=k>return</span> <span class=n>func</span><span class=p>()</span>
+    <span class=k>return</span> <span class=n>wrapper</span>
+
+<span class=nd>@bar</span>
+<span class=k>def</span> <span class=nf>foo</span><span class=p>():</span>
+    <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;foo&quot;</span><span class=p>)</span>
+
+<span class=nb>print</span><span class=p>(</span><span class=n>foo</span><span class=o>.</span><span class=n>__name__</span><span class=p>)</span> <span class=c1># output: foo</span>
+</pre></div> <h2>Decorator có thực sự cần thiết hay không?</h2> <p>Tất nhiên là cần thiết thì người ta mới có cú pháp cho decorator. Tuy nhiên, câu hỏi đặt ra là khi nào thì sử dụng decorator.</p> <p>Decorator có thể được sử dụng để debug mà không cần thay đổi hàm hay thư viện. Ví dụ chúng ta có thể dùng decorator để debug và đánh giá hiệu năng các tính năng mà không cần thay đổi code của chúng.</p> <div class=codehilite><pre><span class=k>def</span> <span class=nf>benchmark</span><span class=p>(</span><span class=n>func</span><span class=p>):</span>
+    <span class=sd>&quot;&quot;&quot;</span>
+<span class=sd>    Decorator in ra thời gian thực thi hàm</span>
+<span class=sd>    &quot;&quot;&quot;</span>
+    <span class=kn>import</span> <span class=nn>time</span>
 
     <span class=k>def</span> <span class=nf>wrapper</span><span class=p>(</span><span class=o>*</span><span class=n>args</span><span class=p>,</span> <span class=o>**</span><span class=n>kwargs</span><span class=p>):</span>
-        <span class=n>sleep</span><span class=p>(</span><span class=mi>2</span><span class=p>)</span>
-        <span class=k>return</span> <span class=n>function</span><span class=p>(</span><span class=o>*</span><span class=n>args</span><span class=p>,</span> <span class=o>**</span><span class=n>kwargs</span><span class=p>)</span>
+        <span class=n>t</span> <span class=o>=</span> <span class=n>time</span><span class=o>.</span><span class=n>clock</span><span class=p>()</span>
+        <span class=n>res</span> <span class=o>=</span> <span class=n>func</span><span class=p>(</span><span class=o>*</span><span class=n>args</span><span class=p>,</span> <span class=o>**</span><span class=n>kwargs</span><span class=p>)</span>
+        <span class=nb>print</span><span class=p>(</span><span class=n>func</span><span class=o>.</span><span class=n>__name__</span><span class=p>,</span> <span class=n>time</span><span class=o>.</span><span class=n>clock</span><span class=p>()</span> <span class=o>-</span> <span class=n>t</span><span class=p>)</span>
+        <span class=k>return</span> <span class=n>res</span>
     <span class=k>return</span> <span class=n>wrapper</span>
 
-<span class=nd>@sleep_decorator</span>
-<span class=k>def</span> <span class=nf>square_number</span><span class=p>(</span><span class=n>num</span><span class=p>):</span>
-    <span class=k>return</span> <span class=n>num</span> <span class=o>**</span> <span class=mi>2</span>
 
-<span class=nb>print</span><span class=p>(</span><span class=n>square_number</span><span class=p>(</span><span class=mi>222</span><span class=p>))</span>
+<span class=k>def</span> <span class=nf>logging</span><span class=p>(</span><span class=n>func</span><span class=p>):</span>
+    <span class=sd>&quot;&quot;&quot;</span>
+<span class=sd>    Decorator ghi log về hoạt động của code. Ở đây chỉ đơn giản</span>
+<span class=sd>    là in ra tên hàm nào đang được gọi.</span>
+<span class=sd>    &quot;&quot;&quot;</span>
+    <span class=k>def</span> <span class=nf>wrapper</span><span class=p>(</span><span class=o>*</span><span class=n>args</span><span class=p>,</span> <span class=o>**</span><span class=n>kwargs</span><span class=p>):</span>
+        <span class=n>res</span> <span class=o>=</span> <span class=n>func</span><span class=p>(</span><span class=o>*</span><span class=n>args</span><span class=p>,</span> <span class=o>**</span><span class=n>kwargs</span><span class=p>)</span>
+        <span class=nb>print</span><span class=p>(</span><span class=n>func</span><span class=o>.</span><span class=n>__name__</span><span class=p>,</span> <span class=n>args</span><span class=p>,</span> <span class=n>kwargs</span><span class=p>)</span>
+        <span class=k>return</span> <span class=n>res</span>
+    <span class=k>return</span> <span class=n>wrapper</span>
 
-<span class=k>for</span> <span class=n>x</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span><span class=mi>6</span><span class=p>):</span>
-    <span class=nb>print</span><span class=p>(</span><span class=n>square_number</span><span class=p>(</span><span class=n>x</span><span class=p>))</span>
-</pre></div> <p>Decorator trên dùng để giới hạn tốc độ của hàm. Sau 2 giây, hàm mới được gọi 1 lần. Bạn có thể thử nó.</p> <h3>Sử dụng <code>functools.wraps</code></h3> <p>Dưới đây là một ví dụ mà decorator được sử dụng nhiều nhất, đó là decorator <code>login_required()</code>. Decorator này để chắc chắn rằng người dùng đã đăng nhập và hệ thống và có quyền truy cập tới route được bảo mật (<code>/secret</code>).</p> <div class=codehilite><pre><span class=kn>from</span> <span class=nn>functools</span> <span class=k>import</span> <span class=n>wraps</span>
-<span class=kn>from</span> <span class=nn>flask</span> <span class=k>import</span> <span class=n>g</span><span class=p>,</span> <span class=n>request</span><span class=p>,</span> <span class=n>redirect</span><span class=p>,</span> <span class=n>url_for</span>
 
-<span class=k>def</span> <span class=nf>login_required</span><span class=p>(</span><span class=n>f</span><span class=p>):</span>
-    <span class=nd>@wraps</span><span class=p>(</span><span class=n>f</span><span class=p>)</span>
-    <span class=k>def</span> <span class=nf>decorated_function</span><span class=p>(</span><span class=o>*</span><span class=n>args</span><span class=p>,</span> <span class=o>**</span><span class=n>kwargs</span><span class=p>):</span>
-        <span class=k>if</span> <span class=n>g</span><span class=o>.</span><span class=n>user</span> <span class=ow>is</span> <span class=kc>None</span><span class=p>:</span>
-            <span class=k>return</span> <span class=n>redirect</span><span class=p>(</span><span class=n>url_for</span><span class=p>(</span><span class=s1>&#39;login&#39;</span><span class=p>,</span> <span class=nb>next</span><span class=o>=</span><span class=n>request</span><span class=o>.</span><span class=n>url</span><span class=p>))</span>
-        <span class=k>return</span> <span class=n>f</span><span class=p>(</span><span class=o>*</span><span class=n>args</span><span class=p>,</span> <span class=o>**</span><span class=n>kwargs</span><span class=p>)</span>
-    <span class=k>return</span> <span class=n>decorated_function</span>
+<span class=k>def</span> <span class=nf>counter</span><span class=p>(</span><span class=n>func</span><span class=p>):</span>
+    <span class=sd>&quot;&quot;&quot;</span>
+<span class=sd>    Decorator đếm và in ra số lần hàm được gọi trong chương</span>
+<span class=sd>    trình.</span>
+<span class=sd>    &quot;&quot;&quot;</span>
+    <span class=k>def</span> <span class=nf>wrapper</span><span class=p>(</span><span class=o>*</span><span class=n>args</span><span class=p>,</span> <span class=o>**</span><span class=n>kwargs</span><span class=p>):</span>
+        <span class=n>wrapper</span><span class=o>.</span><span class=n>count</span> <span class=o>=</span> <span class=n>wrapper</span><span class=o>.</span><span class=n>count</span> <span class=o>+</span> <span class=mi>1</span>
+        <span class=n>res</span> <span class=o>=</span> <span class=n>func</span><span class=p>(</span><span class=o>*</span><span class=n>args</span><span class=p>,</span> <span class=o>**</span><span class=n>kwargs</span><span class=p>)</span>
+        <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;{0} has been used: {1}x&quot;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span>
+            <span class=n>func</span><span class=o>.</span><span class=n>__name__</span><span class=p>,</span> <span class=n>wrapper</span><span class=o>.</span><span class=n>count</span><span class=p>))</span>
+        <span class=k>return</span> <span class=n>res</span>
+    <span class=n>wrapper</span><span class=o>.</span><span class=n>count</span> <span class=o>=</span> <span class=mi>0</span>
+    <span class=k>return</span> <span class=n>wrapper</span>
 
-<span class=nd>@app</span><span class=o>.</span><span class=n>route</span><span class=p>(</span><span class=s1>&#39;/secret&#39;</span><span class=p>)</span>
-<span class=nd>@login_required</span>
-<span class=k>def</span> <span class=nf>secret</span><span class=p>():</span>
-    <span class=k>pass</span>
-</pre></div> <p>Trong ví dụ trên tôi đã sử dụng decorator <a href=https://docs.python.org/2/library/functools.html#functools.wraps><code>functools.wraps()</code></a>. Decorator này đơn giản là <a href=[preserves](http://stackoverflow.com/questions/308999/what-does-functools-wraps-do)>bảo vệ</a> metadata của hàm được đóng gói.</p> <h3>Decorator có chứa tham số</h3> <p>Dưới đây là một ví dụ phức tạp hơn một chút. Chúng ta cần truyền tham số vào hàm decorator. Lấy ví dụ <code>sleep_decorator</code> ở trên, bây giờ chúng ta muốn truyền tham số là thời gian sleep. Để làm được việc này, trong lòng decorator chúng ta cần thêm 2 hàm lồng nhau nữa.</p> <div class=codehilite><pre><span class=kn>from</span> <span class=nn>time</span> <span class=k>import</span> <span class=n>sleep</span>
 
-<span class=k>def</span> <span class=nf>sleep_decorator</span><span class=p>(</span><span class=n>argument</span><span class=p>):</span>
-    <span class=sd>&quot;&quot;&quot;Limits how fast the function is called.&quot;&quot;&quot;</span>
+<span class=nd>@counter</span>
+<span class=nd>@benchmark</span>
+<span class=nd>@logging</span>
+<span class=k>def</span> <span class=nf>reverse_string</span><span class=p>(</span><span class=n>string</span><span class=p>):</span>
+    <span class=k>return</span> <span class=n>string</span><span class=p>[::</span><span class=o>-</span><span class=mi>1</span><span class=p>]</span>
 
-    <span class=k>def</span> <span class=nf>real_decorator</span><span class=p>(</span><span class=n>function</span><span class=p>):</span>
-        <span class=k>def</span> <span class=nf>wrapper</span><span class=p>(</span><span class=o>*</span><span class=n>args</span><span class=p>,</span> <span class=o>**</span><span class=n>kwargs</span><span class=p>):</span>
-            <span class=n>sleep</span><span class=p>(</span><span class=n>argument</span><span class=p>)</span>
-            <span class=k>return</span> <span class=n>function</span><span class=p>(</span><span class=o>*</span><span class=n>args</span><span class=p>,</span> <span class=o>**</span><span class=n>kwargs</span><span class=p>)</span>
-        <span class=k>return</span> <span class=n>wrapper</span>
-    <span class=k>return</span> <span class=n>real_decorator</span>
+<span class=nb>print</span><span class=p>(</span><span class=n>reverse_string</span><span class=p>(</span><span class=s2>&quot;Able was I ere I saw Elba&quot;</span><span class=p>))</span>
+<span class=nb>print</span><span class=p>(</span><span class=n>reverse_string</span><span class=p>(</span><span class=s2>&quot;Lorem ipsum dolor sit amet, et cetero complectitur &quot;</span>
+                     <span class=s2>&quot;mel, sea mundi delectus gubergren et. In pro postea &quot;</span>
+                     <span class=s2>&quot;ullamcorper, per dissentias vituperatoribus et. Sed &quot;</span>
+                     <span class=s2>&quot;saepe quaeque voluptaria et, et quod dolores &quot;</span>
+                     <span class=s2>&quot;voluptaria vel. An cum causae mediocritatem &quot;</span>
+                     <span class=s2>&quot;vituperatoribus. Est an nobis adversarium. Probo &quot;</span>
+                     <span class=s2>&quot;scripta omnesque ne sed, delicata volutpat no per.&quot;</span><span class=p>))</span>
 
-<span class=nd>@sleep_decorator</span><span class=p>(</span><span class=mi>2</span><span class=p>)</span>
-<span class=k>def</span> <span class=nf>square_number</span><span class=p>(</span><span class=n>num</span><span class=p>):</span>
-    <span class=k>return</span> <span class=n>num</span> <span class=o>**</span> <span class=mi>2</span>
+<span class=c1># output:</span>
+<span class=c1># reverse_string (&#39;Able was I ere I saw Elba&#39;,) {}</span>
+<span class=c1># wrapper 2.6999999999999247e-05</span>
+<span class=c1># wrapper has been used: 1x</span>
+<span class=c1># ablE was I ere I saw elbA</span>
+<span class=c1># reverse_string (&#39;Lorem ipsum dolor sit amet, et cetero complectitur mel, sea mundi delectus gubergren et. In pro postea ullamcorper, per dissentias vituperatoribus et. Sed saepe quaeque voluptaria et, et quod dolores voluptaria vel. An cum causae mediocritatem vituperatoribus. Est an nobis adversarium. Probo scripta omnesque ne sed, delicata volutpat no per.&#39;,) {}</span>
+<span class=c1># wrapper 1.2999999999999123e-05</span>
+<span class=c1># wrapper has been used: 2x</span>
+<span class=c1># .rep on taptulov ataciled ,des en euqsenmo atpircs oborP .muirasrevda sibon na tsE .subirotareputiv metatircoidem easuac muc nA .lev airatpulov serolod douq te ,te airatpulov euqeauq epeas deS .te subirotareputiv saitnessid rep ,reprocmallu aetsop orp nI .te nergrebug sutceled idnum aes ,lem rutitcelpmoc oretec te ,tema tis rolod muspi meroL</span>
+</pre></div> <p>Điều tuyệt với của decorator là bạn có thể dùng nó với bất cứ thứ gì mà không cần thay đổi nội dung.</p> <div class=codehilite><pre><span class=nd>@counter</span>
+<span class=nd>@benchmark</span>
+<span class=nd>@logging</span>
+<span class=k>def</span> <span class=nf>get_an_excuse</span><span class=p>():</span>
+    <span class=kn>import</span> <span class=nn>urllib.request</span>
+    <span class=kn>import</span> <span class=nn>re</span>
+    <span class=n>handle</span> <span class=o>=</span> <span class=n>urllib</span><span class=o>.</span><span class=n>request</span><span class=o>.</span><span class=n>urlopen</span><span class=p>(</span><span class=s2>&quot;http://programmingexcuses.com/&quot;</span><span class=p>)</span>
+    <span class=n>response</span> <span class=o>=</span> <span class=n>handle</span><span class=o>.</span><span class=n>read</span><span class=p>()</span><span class=o>.</span><span class=n>decode</span><span class=p>()</span>
+    <span class=k>return</span> <span class=n>re</span><span class=o>.</span><span class=n>search</span><span class=p>(</span><span class=s2>&quot;</span><span class=se>\n</span><span class=s2>.+&gt;([,&#39;.?!\w\s]+)&lt;/a&gt;&quot;</span><span class=p>,</span> <span class=n>response</span><span class=p>)</span><span class=o>.</span><span class=n>group</span><span class=p>(</span><span class=mi>1</span><span class=p>)</span>
 
-<span class=nb>print</span><span class=p>(</span><span class=n>print_number</span><span class=p>(</span><span class=mi>222</span><span class=p>))</span>
+<span class=nb>print</span><span class=p>(</span><span class=n>get_an_excuse</span><span class=p>())</span>
+<span class=nb>print</span><span class=p>(</span><span class=n>get_an_excuse</span><span class=p>())</span>
+<span class=c1># output:</span>
+<span class=c1># get_an_excuse () {}</span>
+<span class=c1># wrapper 0.07300399999999999</span>
+<span class=c1># wrapper has been used: 1x</span>
+<span class=c1># Our internet connection must not be working</span>
+<span class=c1># get_an_excuse () {}</span>
+<span class=c1># wrapper 0.0027760000000000007</span>
+<span class=c1># wrapper has been used: 2x</span>
+<span class=c1># That process requires human oversight that nobody was providing</span>
+</pre></div> <p>Python bản thân nó cũng có sẵn rất nhiều decorator như <code>@property</code>, <code>@classmethod</code>, v.v... Django cũng thường xuyên sử dụng decorator, nhất là khi phân quyền cho người dùng.</p> <p>Decorator là một công cụ rất mạnh mẽ, nên nếu sử dụng đúng, nó sẽ cho chúng ta những tiện ích tuyệt vời.</p> <h2>Bonus: Decorator mà vẫn giữ được hàm gốc</h2> <p>Như phần trước tôi đã nói, một hàm khi đã được decorate rồi thì chúng ta không thể bỏ decorator đi được. Bất cứ khi nào bạn gọi hàm, thực ra bạn đang gọi hàm đã được decorate.</p> <p>Nhưng nhiều trường hợp, bạn chỉ muốn thực thi hàm gốc thôi. Vậy phải làm thế nào? Không lẽ phải định nghĩa lại hàm.</p> <p>Thực ra có một trick để làm việc này. Nói chung nó rất dễ hiểu nên chắc chỉ cần nhìn code là hiểu ngay.</p> <div class=codehilite><pre><span class=k>def</span> <span class=nf>decorator_keep_original_function</span><span class=p>(</span><span class=n>function_to_decorate</span><span class=p>):</span>
 
-<span class=nd>@sleep_decorator</span><span class=p>(</span><span class=mi>3</span><span class=p>)</span>
-<span class=k>def</span> <span class=nf>cube_number</span><span class=p>(</span><span class=n>num</span><span class=p>):</span>
-    <span class=k>return</span> <span class=n>num</span> <span class=o>**</span> <span class=mi>3</span>
+    <span class=k>def</span> <span class=nf>wrapper</span><span class=p>(</span><span class=o>*</span><span class=n>args</span><span class=p>,</span> <span class=o>**</span><span class=n>kwargs</span><span class=p>):</span>
+        <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;This is decorated function&quot;</span><span class=p>)</span>
+        <span class=n>function_to_decorate</span><span class=p>(</span><span class=o>*</span><span class=n>args</span><span class=p>,</span> <span class=o>**</span><span class=n>kwargs</span><span class=p>)</span>
 
-<span class=k>for</span> <span class=n>x</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span><span class=mi>6</span><span class=p>):</span>
-    <span class=nb>print</span><span class=p>(</span><span class=n>cube_number</span><span class=p>(</span><span class=n>x</span><span class=p>))</span>
-</pre></div> <h1>Kết luận</h1> <p>Trên đây là những hiểu biết của tôi về decorator được dùng trong Python. Decorator là một công cụ rất hữu dụng và được sử dụng khá thường xuyên. Hy vọng bài viết cho bạn phần nào hiểu biết về decorator, cách viết và sử dụng chúng.</p> </div> <div style="clear: both;"></div> </div><div class=post-footer> <div class="meta post_tags"> <i class="fa fa-tags"></i> Tagged in: <a href=/tag/python.html rel=tag>Python</a> <a href=/tag/decorator.html rel=tag>decorator</a> <a href=/tag/fundamental.html rel=tag>fundamental</a> </div> <div class=share-wrapper> <div class=title>— Share It —</div> <ul class="entry-share-list clearfix"> <li class=facebook_share> <a href=https://www.facebook.com/sharer/sharer.php?u=http://manhhomienbienthuy.bitbucket.org/2015/Dec/22/exploring-python-decorators.html target=_blank> <span class=share-text>Facebook</span> </a> <li class=twitter_share> <a href=https://twitter.com/share?text=Exploring%20Python%20decorators&url=http://manhhomienbienthuy.bitbucket.org/2015/Dec/22/exploring-python-decorators.html&via=AnhTranngoc target=_blank> <span class=share-text>Twitter</span> </a> <li class=google_share> <a href=https://plus.google.com/share?url=http://manhhomienbienthuy.bitbucket.org/2015/Dec/22/exploring-python-decorators.html target=_blank> <span class=share-text>Google+</span> </a> <li class=linkedin_share> <a href=https://www.linkedin.com/shareArticle?url=http://manhhomienbienthuy.bitbucket.org/2015/Dec/22/exploring-python-decorators.html target=_blank> <span class=share-text>Linkedin</span> </a> <li class=pinterest_share> <a href=https://pinterest.com/pin/create/button/?url=http://manhhomienbienthuy.bitbucket.org/2015/Dec/22/exploring-python-decorators.html target=_blank> <span class=share-text>Pin It</span> </a> </ul> </div> </div> </div> <div class=blog-pager id=blog-pager> <span id=blog-pager-newer-link> <a class=blog-pager-newer-link href=/2015/Dec/31/the-year-in-review-2015.html id=Blog1_blog-pager-newer-link title="Newer Post"> Newer Post </a> </span> <span id=blog-pager-older-link> <a class=blog-pager-older-link href=/2015/Dec/20/the-editor-war-the-oldest-rivalry-in-computing.html id=Blog1_blog-pager-older-link title="Older Post"> Older Post </a> </span> </div> <div class=clear></div> <div id=comments class=comments> <div class=finally> <p><em>I apologise for any typos. If you notice a problem, please let me know.</em> <p>Thank you all for your attention. </div> <div id=disqus_thread></div> <script src=/theme/js/disqus.min.js?f01306de></script> <noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript rel=nofollow>comments powered by Disqus.</a></noscript> </div> <div style=clear:both;></div> </div> </div> <div class=clear></div> </div> </div> </div> <div class=sidebar-wrapper> <div class="sidebar col section" id=sidebar> <div class="widget HTML"> <div class=widget-content> <h2>Welcome</h2> <div> <img src=/theme/images/banner.gif alt=Welcome> </div> </div> </div><div class="widget HTML" id=HTML2> <div class=widget-content> <h2>Social Share</h2> <div class=sidebar_social_icons> <ul class=clearfix> <li class=facebook-social> <a href=https://www.facebook.com/sharer/sharer.php?u=http://manhhomienbienthuy.bitbucket.org target=_blank title=Facebook> <i class="fa fa-facebook ct-transition"></i> </a> <li class=twitter-social> <a target=_blank title=Twitter href=https://twitter.com/share?text=Anh%20Tranngoc%27s%20space&via=AnhTranngoc&url=http://manhhomienbienthuy.bitbucket.org> <i class="fa fa-twitter ct-transition"></i> </a> <li class=Linkedin-social> <a href=https://www.linkedin.com/shareArticle?mini=true&url=http://manhhomienbienthuy.bitbucket.org target=_blank title=Linkedin> <i class="fa fa-linkedin ct-transition"></i> </a> <li class=pinterest-social> <a href=https://pinterest.com/pin/create/button/?url=http://manhhomienbienthuy.bitbucket.org target=_blank title=Pinterest> <i class="fa fa-pinterest ct-transition"></i> </a> <li class=rss-social> <a href=/feeds/all.atom.xml target=_blank title="Atom Feed"> <i class="fa fa-rss ct-transition"></i> </a> </ul> </div> </div> </div><div class="widget PopularPosts" id=PopularPost2> <h2>Recent Posts</h2> <div class="widget-content popular-posts"> <ul> <li> <div class=item-content> <div class=item-thumbnail> <a href=/2016/Feb/02/django-abstract-base-classes-vs-multiple-table-inheritance.html> <img alt="Django: Abstract Base Classes vs Multiple Table Inheritance" src=/images/cover/inheritance.png height=72 width=72> </a> </div> <div class=item-title> <a href=/2016/Feb/02/django-abstract-base-classes-vs-multiple-table-inheritance.html>Django: Abstract Base Classes vs Multiple Table Inheritance</a> </div> </div> <div style="clear: both;"></div> <li> <div class=item-content> <div class=item-thumbnail> <a href=/2016/Jan/24/how-to-use-django-admin-and-when-should-not-use-it.html> <img alt="How to use Django admin and when should not use it" src=/images/cover/django-admin-login.png height=72 width=72> </a> </div> <div class=item-title> <a href=/2016/Jan/24/how-to-use-django-admin-and-when-should-not-use-it.html>How to use Django admin and when should not use it</a> </div> </div> <div style="clear: both;"></div> <li> <div class=item-content> <div class=item-thumbnail> <a href=/2016/Jan/11/advanced-web-scraping-and-crawling-with-scrapy-and-sqlalchemy.html> <img alt="Advanced Web scraping and crawling with Scrapy and SQLAlchemy" src=/images/cover/scraping.png height=72 width=72> </a> </div> <div class=item-title> <a href=/2016/Jan/11/advanced-web-scraping-and-crawling-with-scrapy-and-sqlalchemy.html>Advanced Web scraping and crawling with Scrapy and SQLAlchemy</a> </div> </div> <div style="clear: both;"></div> <li> <div class=item-content> <div class=item-thumbnail> <a href=/2016/Jan/05/python-iterator-generator.html> <img alt="Python iterator & generator" src=/images/cover/python-iterator.png height=72 width=72> </a> </div> <div class=item-title> <a href=/2016/Jan/05/python-iterator-generator.html>Python iterator & generator</a> </div> </div> <div style="clear: both;"></div> <li> <div class=item-content> <div class=item-thumbnail> <a href=/2015/Dec/31/the-year-in-review-2015.html> <img alt="The year in review 2015" src=/images/cover/year-end-review.jpg height=72 width=72> </a> </div> <div class=item-title> <a href=/2015/Dec/31/the-year-in-review-2015.html>The year in review 2015</a> </div> </div> <div style="clear: both;"></div> <li> <div class=item-content> <div class=item-thumbnail> <a href=/2015/Dec/22/exploring-python-decorators.html> <img alt="Exploring Python decorators" src=/images/cover/decorator.png height=72 width=72> </a> </div> <div class=item-title> <a href=/2015/Dec/22/exploring-python-decorators.html>Exploring Python decorators</a> </div> </div> <div style="clear: both;"></div> <li> <div class=item-content> <div class=item-thumbnail> <a href=/2015/Dec/20/the-editor-war-the-oldest-rivalry-in-computing.html> <img alt="The editor war - the oldest rivalry in computing" src=/images/cover/emacs-vim.png height=72 width=72> </a> </div> <div class=item-title> <a href=/2015/Dec/20/the-editor-war-the-oldest-rivalry-in-computing.html>The editor war - the oldest rivalry in computing</a> </div> </div> <div style="clear: both;"></div> <li> <div class=item-content> <div class=item-thumbnail> <a href=/2015/Dec/15/vim-and-python-a-match-made-in-heaven.html> <img alt="Vim and Python - a match made in heaven" src=/images/cover/vim-for-python.png height=72 width=72> </a> </div> <div class=item-title> <a href=/2015/Dec/15/vim-and-python-a-match-made-in-heaven.html>Vim and Python - a match made in heaven</a> </div> </div> <div style="clear: both;"></div> </ul> </div> </div><div class="widget Label" id=LabelWidget> <h2>Label Cloud</h2> <div class="widget-content list-label-widget-content"> <ul> <li> <a dir=ltr href=/tag/tdd.html>TDD</a> <li> <a dir=ltr href=/tag/fundamental.html>fundamental</a> <li> <a dir=ltr href=/tag/scrapy.html>Scrapy</a> <li> <a dir=ltr href=/tag/aws.html>AWS</a> <li> <a dir=ltr href=/tag/winter.html>winter</a> <li> <a dir=ltr href=/tag/vi.html>Vi</a> <li> <a dir=ltr href=/tag/leaving.html>Leaving</a> <li> <a dir=ltr href=/tag/review.html>review</a> <li> <a dir=ltr href=/tag/ie9.html>IE9</a> <li> <a dir=ltr href=/tag/new-year.html>new year</a> <li><a dir=ltr href=/tags.html>All tags</a> </ul> </div> </div><div class="widget BlogArchive" id=BlogArchive1> <h2>Blog Archive</h2> <div class=widget-content> <div id=ArchiveList> <div id=BlogArchive1_ArchiveList> <ul class=hierarchy> <li class="archivedate expanded"> <a class=toggle href=/2016/ > <span class="zippy toggle-open">▼&nbsp;</span> </a> <a class=post-count-link href=/2016/ > 2016 </a> <ul class=hierarchy> <li class="archivedate collapsed"> <a class=toggle href=/2016/Feb> <span class=zippy>►&nbsp;</span> </a> <a class=post-count-link href=/2016/Feb/ > February </a> </li> <li class="archivedate collapsed"> <a class=toggle href=/2016/Jan> <span class=zippy>►&nbsp;</span> </a> <a class=post-count-link href=/2016/Jan/ > January </a> </li> </ul> <li class="archivedate expanded"> <a class=toggle href=/2015/ > <span class="zippy toggle-open">▼&nbsp;</span> </a> <a class=post-count-link href=/2015/ > 2015 </a> <ul class=hierarchy> <li class="archivedate collapsed"> <a class=toggle href=/2015/Dec> <span class=zippy>►&nbsp;</span> </a> <a class=post-count-link href=/2015/Dec/ > December </a> </li> <li class="archivedate collapsed"> <a class=toggle href=/2015/Nov> <span class=zippy>►&nbsp;</span> </a> <a class=post-count-link href=/2015/Nov/ > November </a> </li> <li class="archivedate collapsed"> <a class=toggle href=/2015/Oct> <span class=zippy>►&nbsp;</span> </a> <a class=post-count-link href=/2015/Oct/ > October </a> </li> <li class="archivedate collapsed"> <a class=toggle href=/2015/Sep> <span class=zippy>►&nbsp;</span> </a> <a class=post-count-link href=/2015/Sep/ > September </a> </li> <li class="archivedate collapsed"> <a class=toggle href=/2015/Aug> <span class=zippy>►&nbsp;</span> </a> <a class=post-count-link href=/2015/Aug/ > August </a> </li> <li class="archivedate collapsed"> <a class=toggle href=/2015/Jul> <span class=zippy>►&nbsp;</span> </a> <a class=post-count-link href=/2015/Jul/ > July </a> </li> </ul> <li class="archivedate expanded"> <a class=toggle href=/2014/ > <span class="zippy toggle-open">▼&nbsp;</span> </a> <a class=post-count-link href=/2014/ > 2014 </a> <ul class=hierarchy> <li class="archivedate collapsed"> <a class=toggle href=/2014/Jul> <span class=zippy>►&nbsp;</span> </a> <a class=post-count-link href=/2014/Jul/ > July </a> </li> </ul> <li class="archivedate expanded"> <a class=toggle href=/2013/ > <span class="zippy toggle-open">▼&nbsp;</span> </a> <a class=post-count-link href=/2013/ > 2013 </a> <ul class=hierarchy> <li class="archivedate collapsed"> <a class=toggle href=/2013/Apr> <span class=zippy>►&nbsp;</span> </a> <a class=post-count-link href=/2013/Apr/ > April </a> </li> <li class="archivedate collapsed"> <a class=toggle href=/2013/Feb> <span class=zippy>►&nbsp;</span> </a> <a class=post-count-link href=/2013/Feb/ > February </a> </li> <li class="archivedate collapsed"> <a class=toggle href=/2013/Jan> <span class=zippy>►&nbsp;</span> </a> <a class=post-count-link href=/2013/Jan/ > January </a> </li> </ul> <li class="archivedate expanded"> <a class=toggle href=/2012/ > <span class="zippy toggle-open">▼&nbsp;</span> </a> <a class=post-count-link href=/2012/ > 2012 </a> <ul class=hierarchy> <li class="archivedate collapsed"> <a class=toggle href=/2012/Oct> <span class=zippy>►&nbsp;</span> </a> <a class=post-count-link href=/2012/Oct/ > October </a> </li> <li class="archivedate collapsed"> <a class=toggle href=/2012/Aug> <span class=zippy>►&nbsp;</span> </a> <a class=post-count-link href=/2012/Aug/ > August </a> </li> <li class="archivedate collapsed"> <a class=toggle href=/2012/Jul> <span class=zippy>►&nbsp;</span> </a> <a class=post-count-link href=/2012/Jul/ > July </a> </li> <li class="archivedate collapsed"> <a class=toggle href=/2012/Jun> <span class=zippy>►&nbsp;</span> </a> <a class=post-count-link href=/2012/Jun/ > June </a> </li> <li class="archivedate collapsed"> <a class=toggle href=/2012/May> <span class=zippy>►&nbsp;</span> </a> <a class=post-count-link href=/2012/May/ > May </a> </li> <li class="archivedate collapsed"> <a class=toggle href=/2012/Apr> <span class=zippy>►&nbsp;</span> </a> <a class=post-count-link href=/2012/Apr/ > April </a> </li> <li class="archivedate collapsed"> <a class=toggle href=/2012/Mar> <span class=zippy>►&nbsp;</span> </a> <a class=post-count-link href=/2012/Mar/ > March </a> </li> <li class="archivedate collapsed"> <a class=toggle href=/2012/Jan> <span class=zippy>►&nbsp;</span> </a> <a class=post-count-link href=/2012/Jan/ > January </a> </li> </ul> <li class="archivedate expanded"> <a class=toggle href=/2011/ > <span class="zippy toggle-open">▼&nbsp;</span> </a> <a class=post-count-link href=/2011/ > 2011 </a> <ul class=hierarchy> <li class="archivedate collapsed"> <a class=toggle href=/2011/Oct> <span class=zippy>►&nbsp;</span> </a> <a class=post-count-link href=/2011/Oct/ > October </a> </li> </ul> <li class="archivedate expanded"> <a class=toggle href=/2010/ > <span class="zippy toggle-open">▼&nbsp;</span> </a> <a class=post-count-link href=/2010/ > 2010 </a> <ul class=hierarchy> <li class="archivedate collapsed"> <a class=toggle href=/2010/Oct> <span class=zippy>►&nbsp;</span> </a> <a class=post-count-link href=/2010/Oct/ > October </a> </li> </ul> </ul> </div> </div> <div class=clear></div> </div> </div> </div> </div> <div class=clr></div> </div> </div> <div id=footer> <div class=ct-wrapper> <div class="footer section" id=footer1> <div class="widget HTML" id=HTML5> <h2>About Me</h2> <div class=widget-content> <div id=logo> <a href=/ title="Anh Tranngoc's space"> <img alt="Anh Tranngoc's space" height=80 src=/theme/images/logo_white.png> </a> <div class="margin margin-30"></div> <p>Copyright © 2010 - 2016 <a href=/pages/about-me.html>Anh Tranngoc</a>. <p>This work is licensed under a <a href=http://creativecommons.org/licenses/by-nd/4.0/ target=_blank> Creative Commons Attribution-NoDerivatives 4.0 International license</a>. <p>Theme based on <a href=http://vanice-veethemes.blogspot.in/ target=_blank> Vanice modern </a> designed by <a href=//www.veethemes.com target=_blank> VeeThemes.com</a>. <p>Icons from <a href=http://fontawesome.io/ target=_blank> Font Awesome by Dave Gandy</a>. <p>Updated at: <a target=_blank href=http://www.timeanddate.com/worldclock/fixedtime.html?iso=20160203T035407> 2016/02/03 03:54:07 UTC+00:00 </a> </div> </div> </div> </div><div class="footer section" id=footer2> <div class=widget> <h2>Photostream</h2> <div class=widget-content> <div> <script src=http://www.flickr.com/badge_code.gne?count=16&display=random&size=square&nsid=91555822@N08&raw=1></script> </div> </div> </div> </div><div class="footer section" id=footer3> <div class="widget HTML" id=HTML4> <h2>Twitter timeline</h2> <div class=widget-content> <div id=blog_newsletter> <a class=twitter-timeline href=https://twitter.com/AnhTranngoc data-widget-id=639309521052037120> Tweets by @AnhTranngoc </a> </div> </div> </div> </div> <div class=clr></div> <div class="margin margin-30"></div> </div> </div> <div class="footer_credits clearfix"> <div class=ct-wrapper> <div class="clearfix left"> Created with ♥ of Viet Phuong. Powered by <a href=http://blog.getpelican.com/ target=_blank>Pelican</a>. </div> <div class="right footer_menu"> <ul class=blog_footer_menu> <li><a href=/ >Home</a> <li><a href=/pages/contact-me.html>Contact</a> <li><a href=/pages/about-me.html>About</a> <li><a href=#blog_header id=smooth_scroll>Top ↑</a> </ul> </div> </div> </div> <script src=/theme/js/vpyeu.min.js?799456af></script> <script id=dsq-count-scr src=https://manhhomienbienthuy.disqus.com/count.js async></script>
+    <span class=c1># Chúng ta sẽ lưu hàm gốc chưa được decorate như là một</span>
+    <span class=c1># thuộc tính của hàm mới.</span>
+    <span class=n>wrapper</span><span class=o>.</span><span class=n>_original_function</span> <span class=o>=</span> <span class=n>function_to_decorate</span>
+    <span class=k>return</span> <span class=n>wrapper</span>
+
+
+<span class=nd>@decorator_keep_original_function</span>
+<span class=k>def</span> <span class=nf>some_function</span><span class=p>():</span>
+    <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;This is original function&quot;</span><span class=p>)</span>
+
+<span class=c1># Gọi hàm đã được decorate</span>
+<span class=n>some_function</span><span class=p>()</span>
+<span class=c1># output:</span>
+<span class=c1># This is decorated function</span>
+<span class=c1># This is original function</span>
+
+<span class=c1># Chúng ta vẫn có thể gọi hàm gốc chưa decorate</span>
+<span class=n>some_function</span><span class=o>.</span><span class=n>_original_function</span><span class=p>()</span>
+<span class=c1># output:</span>
+<span class=c1># This is original function</span>
+</pre></div> <p>Có một cách khác, đó là sử dụng <code>__closure__</code> để lấy lại nội dung của hàm gốc. Cách này chỉ hoạt động nếu chúng ta có sử dụng closure. Lưu ý rằng, không phải tất cả các hàm lồng nhau đều là closure.</p> <div class=codehilite><pre><span class=k>def</span> <span class=nf>undecorator</span><span class=p>(</span><span class=n>decorated_function</span><span class=p>):</span>
+    <span class=c1># Python &lt; 2.6 sử dụng `func_closure` thay thế cho</span>
+    <span class=c1># `__closure__`</span>
+    <span class=k>return</span> <span class=n>decorated_function</span><span class=o>.</span><span class=n>__closure__</span><span class=p>[</span><span class=mi>0</span><span class=p>]</span><span class=o>.</span><span class=n>cell_contents</span>
+
+
+<span class=k>def</span> <span class=nf>decorator_to_undo</span><span class=p>(</span><span class=n>function_to_decorate</span><span class=p>):</span>
+
+    <span class=k>def</span> <span class=nf>wrapper</span><span class=p>(</span><span class=o>*</span><span class=n>args</span><span class=p>,</span> <span class=o>**</span><span class=n>kwargs</span><span class=p>):</span>
+        <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;This is decorated function&quot;</span><span class=p>)</span>
+        <span class=n>function_to_decorate</span><span class=p>(</span><span class=o>*</span><span class=n>args</span><span class=p>,</span> <span class=o>**</span><span class=n>kwargs</span><span class=p>)</span>
+
+    <span class=k>return</span> <span class=n>wrapper</span>
+
+
+<span class=nd>@decorator_to_undo</span>
+<span class=k>def</span> <span class=nf>some_function</span><span class=p>():</span>
+    <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;This is original function&quot;</span><span class=p>)</span>
+
+<span class=c1># Hàm đã được decorate</span>
+<span class=n>some_function</span><span class=p>()</span>
+<span class=c1># output:</span>
+<span class=c1># This is decorated function</span>
+<span class=c1># This is original function</span>
+
+<span class=c1># Thử undecorate xem sao</span>
+<span class=n>undecorator</span><span class=p>(</span><span class=n>some_function</span><span class=p>)()</span>
+<span class=c1># output:</span>
+<span class=c1># This is original function</span>
+<span class=c1># =&gt; Đây chính là điều chúng ta mong đợi.</span>
+</pre></div> <h1>Kết luận</h1> <p>Trên đây là những hiểu biết của tôi về decorator được dùng trong Python. Decorator là một công cụ rất hữu dụng và được sử dụng khá thường xuyên. Hy vọng bài viết cho bạn phần nào hiểu biết về decorator, cách viết và sử dụng chúng.</p> </div> <div style="clear: both;"></div> </div><div class=post-footer> <div class="meta post_tags"> <i class="fa fa-tags"></i> Tagged in: <a href=/tag/python.html rel=tag>Python</a> <a href=/tag/decorator.html rel=tag>decorator</a> <a href=/tag/fundamental.html rel=tag>fundamental</a> </div> <div class=share-wrapper> <div class=title>— Share It —</div> <ul class="entry-share-list clearfix"> <li class=facebook_share> <a href=https://www.facebook.com/sharer/sharer.php?u=http://manhhomienbienthuy.bitbucket.org/2015/Dec/22/exploring-python-decorators.html target=_blank> <span class=share-text>Facebook</span> </a> <li class=twitter_share> <a href=https://twitter.com/share?text=Exploring%20Python%20decorators&url=http://manhhomienbienthuy.bitbucket.org/2015/Dec/22/exploring-python-decorators.html&via=AnhTranngoc target=_blank> <span class=share-text>Twitter</span> </a> <li class=google_share> <a href=https://plus.google.com/share?url=http://manhhomienbienthuy.bitbucket.org/2015/Dec/22/exploring-python-decorators.html target=_blank> <span class=share-text>Google+</span> </a> <li class=linkedin_share> <a href=https://www.linkedin.com/shareArticle?url=http://manhhomienbienthuy.bitbucket.org/2015/Dec/22/exploring-python-decorators.html target=_blank> <span class=share-text>Linkedin</span> </a> <li class=pinterest_share> <a href=https://pinterest.com/pin/create/button/?url=http://manhhomienbienthuy.bitbucket.org/2015/Dec/22/exploring-python-decorators.html target=_blank> <span class=share-text>Pin It</span> </a> </ul> </div> </div> </div> <div class=blog-pager id=blog-pager> <span id=blog-pager-newer-link> <a class=blog-pager-newer-link href=/2015/Dec/31/the-year-in-review-2015.html id=Blog1_blog-pager-newer-link title="Newer Post"> Newer Post </a> </span> <span id=blog-pager-older-link> <a class=blog-pager-older-link href=/2015/Dec/20/the-editor-war-the-oldest-rivalry-in-computing.html id=Blog1_blog-pager-older-link title="Older Post"> Older Post </a> </span> </div> <div class=clear></div> <div id=comments class=comments> <div class=finally> <p><em>I apologise for any typos. If you notice a problem, please let me know.</em> <p>Thank you all for your attention. </div> <div id=disqus_thread></div> <script src=/theme/js/disqus.min.js?f01306de></script> <noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript rel=nofollow>comments powered by Disqus.</a></noscript> </div> <div style=clear:both;></div> </div> </div> <div class=clear></div> </div> </div> </div> <div class=sidebar-wrapper> <div class="sidebar col section" id=sidebar> <div class="widget HTML"> <div class=widget-content> <h2>Welcome</h2> <div> <img src=/theme/images/banner.gif alt=Welcome> </div> </div> </div><div class="widget HTML" id=HTML2> <div class=widget-content> <h2>Social Share</h2> <div class=sidebar_social_icons> <ul class=clearfix> <li class=facebook-social> <a href=https://www.facebook.com/sharer/sharer.php?u=http://manhhomienbienthuy.bitbucket.org target=_blank title=Facebook> <i class="fa fa-facebook ct-transition"></i> </a> <li class=twitter-social> <a target=_blank title=Twitter href=https://twitter.com/share?text=Anh%20Tranngoc%27s%20space&via=AnhTranngoc&url=http://manhhomienbienthuy.bitbucket.org> <i class="fa fa-twitter ct-transition"></i> </a> <li class=Linkedin-social> <a href=https://www.linkedin.com/shareArticle?mini=true&url=http://manhhomienbienthuy.bitbucket.org target=_blank title=Linkedin> <i class="fa fa-linkedin ct-transition"></i> </a> <li class=pinterest-social> <a href=https://pinterest.com/pin/create/button/?url=http://manhhomienbienthuy.bitbucket.org target=_blank title=Pinterest> <i class="fa fa-pinterest ct-transition"></i> </a> <li class=rss-social> <a href=/feeds/all.atom.xml target=_blank title="Atom Feed"> <i class="fa fa-rss ct-transition"></i> </a> </ul> </div> </div> </div><div class="widget PopularPosts" id=PopularPost2> <h2>Recent Posts</h2> <div class="widget-content popular-posts"> <ul> <li> <div class=item-content> <div class=item-thumbnail> <a href=/2016/Feb/02/django-abstract-base-classes-vs-multiple-table-inheritance.html> <img alt="Django: Abstract Base Classes vs Multiple Table Inheritance" src=/images/cover/inheritance.png height=72 width=72> </a> </div> <div class=item-title> <a href=/2016/Feb/02/django-abstract-base-classes-vs-multiple-table-inheritance.html>Django: Abstract Base Classes vs Multiple Table Inheritance</a> </div> </div> <div style="clear: both;"></div> <li> <div class=item-content> <div class=item-thumbnail> <a href=/2016/Jan/24/how-to-use-django-admin-and-when-should-not-use-it.html> <img alt="How to use Django admin and when should not use it" src=/images/cover/django-admin-login.png height=72 width=72> </a> </div> <div class=item-title> <a href=/2016/Jan/24/how-to-use-django-admin-and-when-should-not-use-it.html>How to use Django admin and when should not use it</a> </div> </div> <div style="clear: both;"></div> <li> <div class=item-content> <div class=item-thumbnail> <a href=/2016/Jan/11/advanced-web-scraping-and-crawling-with-scrapy-and-sqlalchemy.html> <img alt="Advanced Web scraping and crawling with Scrapy and SQLAlchemy" src=/images/cover/scraping.png height=72 width=72> </a> </div> <div class=item-title> <a href=/2016/Jan/11/advanced-web-scraping-and-crawling-with-scrapy-and-sqlalchemy.html>Advanced Web scraping and crawling with Scrapy and SQLAlchemy</a> </div> </div> <div style="clear: both;"></div> <li> <div class=item-content> <div class=item-thumbnail> <a href=/2016/Jan/05/python-iterator-generator.html> <img alt="Python iterator & generator" src=/images/cover/python-iterator.png height=72 width=72> </a> </div> <div class=item-title> <a href=/2016/Jan/05/python-iterator-generator.html>Python iterator & generator</a> </div> </div> <div style="clear: both;"></div> <li> <div class=item-content> <div class=item-thumbnail> <a href=/2015/Dec/31/the-year-in-review-2015.html> <img alt="The year in review 2015" src=/images/cover/year-end-review.jpg height=72 width=72> </a> </div> <div class=item-title> <a href=/2015/Dec/31/the-year-in-review-2015.html>The year in review 2015</a> </div> </div> <div style="clear: both;"></div> <li> <div class=item-content> <div class=item-thumbnail> <a href=/2015/Dec/22/exploring-python-decorators.html> <img alt="Exploring Python decorators" src=/images/cover/decorator.png height=72 width=72> </a> </div> <div class=item-title> <a href=/2015/Dec/22/exploring-python-decorators.html>Exploring Python decorators</a> </div> </div> <div style="clear: both;"></div> <li> <div class=item-content> <div class=item-thumbnail> <a href=/2015/Dec/20/the-editor-war-the-oldest-rivalry-in-computing.html> <img alt="The editor war - the oldest rivalry in computing" src=/images/cover/emacs-vim.png height=72 width=72> </a> </div> <div class=item-title> <a href=/2015/Dec/20/the-editor-war-the-oldest-rivalry-in-computing.html>The editor war - the oldest rivalry in computing</a> </div> </div> <div style="clear: both;"></div> <li> <div class=item-content> <div class=item-thumbnail> <a href=/2015/Dec/15/vim-and-python-a-match-made-in-heaven.html> <img alt="Vim and Python - a match made in heaven" src=/images/cover/vim-for-python.png height=72 width=72> </a> </div> <div class=item-title> <a href=/2015/Dec/15/vim-and-python-a-match-made-in-heaven.html>Vim and Python - a match made in heaven</a> </div> </div> <div style="clear: both;"></div> </ul> </div> </div><div class="widget Label" id=LabelWidget> <h2>Label Cloud</h2> <div class="widget-content list-label-widget-content"> <ul> <li> <a dir=ltr href=/tag/coding-style.html>coding style</a> <li> <a dir=ltr href=/tag/viet-nam.html>Viet Nam</a> <li> <a dir=ltr href=/tag/fix.html>fix</a> <li> <a dir=ltr href=/tag/weekend.html>weekend</a> <li> <a dir=ltr href=/tag/leaving.html>Leaving</a> <li> <a dir=ltr href=/tag/multi-table.html>Multi-table</a> <li> <a dir=ltr href=/tag/macbook-pro.html>MacBook Pro</a> <li> <a dir=ltr href=/tag/self-printing.html>self printing</a> <li> <a dir=ltr href=/tag/year-end.html>year end</a> <li> <a dir=ltr href=/tag/paradoxes.html>paradoxes</a> <li><a dir=ltr href=/tags.html>All tags</a> </ul> </div> </div><div class="widget BlogArchive" id=BlogArchive1> <h2>Blog Archive</h2> <div class=widget-content> <div id=ArchiveList> <div id=BlogArchive1_ArchiveList> <ul class=hierarchy> <li class="archivedate expanded"> <a class=toggle href=/2016/ > <span class="zippy toggle-open">▼&nbsp;</span> </a> <a class=post-count-link href=/2016/ > 2016 </a> <ul class=hierarchy> <li class="archivedate collapsed"> <a class=toggle href=/2016/Feb> <span class=zippy>►&nbsp;</span> </a> <a class=post-count-link href=/2016/Feb/ > February </a> </li> <li class="archivedate collapsed"> <a class=toggle href=/2016/Jan> <span class=zippy>►&nbsp;</span> </a> <a class=post-count-link href=/2016/Jan/ > January </a> </li> </ul> <li class="archivedate expanded"> <a class=toggle href=/2015/ > <span class="zippy toggle-open">▼&nbsp;</span> </a> <a class=post-count-link href=/2015/ > 2015 </a> <ul class=hierarchy> <li class="archivedate collapsed"> <a class=toggle href=/2015/Dec> <span class=zippy>►&nbsp;</span> </a> <a class=post-count-link href=/2015/Dec/ > December </a> </li> <li class="archivedate collapsed"> <a class=toggle href=/2015/Nov> <span class=zippy>►&nbsp;</span> </a> <a class=post-count-link href=/2015/Nov/ > November </a> </li> <li class="archivedate collapsed"> <a class=toggle href=/2015/Oct> <span class=zippy>►&nbsp;</span> </a> <a class=post-count-link href=/2015/Oct/ > October </a> </li> <li class="archivedate collapsed"> <a class=toggle href=/2015/Sep> <span class=zippy>►&nbsp;</span> </a> <a class=post-count-link href=/2015/Sep/ > September </a> </li> <li class="archivedate collapsed"> <a class=toggle href=/2015/Aug> <span class=zippy>►&nbsp;</span> </a> <a class=post-count-link href=/2015/Aug/ > August </a> </li> <li class="archivedate collapsed"> <a class=toggle href=/2015/Jul> <span class=zippy>►&nbsp;</span> </a> <a class=post-count-link href=/2015/Jul/ > July </a> </li> </ul> <li class="archivedate expanded"> <a class=toggle href=/2014/ > <span class="zippy toggle-open">▼&nbsp;</span> </a> <a class=post-count-link href=/2014/ > 2014 </a> <ul class=hierarchy> <li class="archivedate collapsed"> <a class=toggle href=/2014/Jul> <span class=zippy>►&nbsp;</span> </a> <a class=post-count-link href=/2014/Jul/ > July </a> </li> </ul> <li class="archivedate expanded"> <a class=toggle href=/2013/ > <span class="zippy toggle-open">▼&nbsp;</span> </a> <a class=post-count-link href=/2013/ > 2013 </a> <ul class=hierarchy> <li class="archivedate collapsed"> <a class=toggle href=/2013/Apr> <span class=zippy>►&nbsp;</span> </a> <a class=post-count-link href=/2013/Apr/ > April </a> </li> <li class="archivedate collapsed"> <a class=toggle href=/2013/Feb> <span class=zippy>►&nbsp;</span> </a> <a class=post-count-link href=/2013/Feb/ > February </a> </li> <li class="archivedate collapsed"> <a class=toggle href=/2013/Jan> <span class=zippy>►&nbsp;</span> </a> <a class=post-count-link href=/2013/Jan/ > January </a> </li> </ul> <li class="archivedate expanded"> <a class=toggle href=/2012/ > <span class="zippy toggle-open">▼&nbsp;</span> </a> <a class=post-count-link href=/2012/ > 2012 </a> <ul class=hierarchy> <li class="archivedate collapsed"> <a class=toggle href=/2012/Oct> <span class=zippy>►&nbsp;</span> </a> <a class=post-count-link href=/2012/Oct/ > October </a> </li> <li class="archivedate collapsed"> <a class=toggle href=/2012/Aug> <span class=zippy>►&nbsp;</span> </a> <a class=post-count-link href=/2012/Aug/ > August </a> </li> <li class="archivedate collapsed"> <a class=toggle href=/2012/Jul> <span class=zippy>►&nbsp;</span> </a> <a class=post-count-link href=/2012/Jul/ > July </a> </li> <li class="archivedate collapsed"> <a class=toggle href=/2012/Jun> <span class=zippy>►&nbsp;</span> </a> <a class=post-count-link href=/2012/Jun/ > June </a> </li> <li class="archivedate collapsed"> <a class=toggle href=/2012/May> <span class=zippy>►&nbsp;</span> </a> <a class=post-count-link href=/2012/May/ > May </a> </li> <li class="archivedate collapsed"> <a class=toggle href=/2012/Apr> <span class=zippy>►&nbsp;</span> </a> <a class=post-count-link href=/2012/Apr/ > April </a> </li> <li class="archivedate collapsed"> <a class=toggle href=/2012/Mar> <span class=zippy>►&nbsp;</span> </a> <a class=post-count-link href=/2012/Mar/ > March </a> </li> <li class="archivedate collapsed"> <a class=toggle href=/2012/Jan> <span class=zippy>►&nbsp;</span> </a> <a class=post-count-link href=/2012/Jan/ > January </a> </li> </ul> <li class="archivedate expanded"> <a class=toggle href=/2011/ > <span class="zippy toggle-open">▼&nbsp;</span> </a> <a class=post-count-link href=/2011/ > 2011 </a> <ul class=hierarchy> <li class="archivedate collapsed"> <a class=toggle href=/2011/Oct> <span class=zippy>►&nbsp;</span> </a> <a class=post-count-link href=/2011/Oct/ > October </a> </li> </ul> <li class="archivedate expanded"> <a class=toggle href=/2010/ > <span class="zippy toggle-open">▼&nbsp;</span> </a> <a class=post-count-link href=/2010/ > 2010 </a> <ul class=hierarchy> <li class="archivedate collapsed"> <a class=toggle href=/2010/Oct> <span class=zippy>►&nbsp;</span> </a> <a class=post-count-link href=/2010/Oct/ > October </a> </li> </ul> </ul> </div> </div> <div class=clear></div> </div> </div> </div> </div> <div class=clr></div> </div> </div> <div id=footer> <div class=ct-wrapper> <div class="footer section" id=footer1> <div class="widget HTML" id=HTML5> <h2>About Me</h2> <div class=widget-content> <div id=logo> <a href=/ title="Anh Tranngoc's space"> <img alt="Anh Tranngoc's space" height=80 src=/theme/images/logo_white.png> </a> <div class="margin margin-30"></div> <p>Copyright © 2010 - 2016 <a href=/pages/about-me.html>Anh Tranngoc</a>. <p>This work is licensed under a <a href=http://creativecommons.org/licenses/by-nd/4.0/ target=_blank> Creative Commons Attribution-NoDerivatives 4.0 International license</a>. <p>Theme based on <a href=http://vanice-veethemes.blogspot.in/ target=_blank> Vanice modern </a> designed by <a href=//www.veethemes.com target=_blank> VeeThemes.com</a>. <p>Icons from <a href=http://fontawesome.io/ target=_blank> Font Awesome by Dave Gandy</a>. <p>Updated at: <a target=_blank href=http://www.timeanddate.com/worldclock/fixedtime.html?iso=20160204T063419> 2016/02/04 06:34:19 UTC+00:00 </a> </div> </div> </div> </div><div class="footer section" id=footer2> <div class=widget> <h2>Photostream</h2> <div class=widget-content> <div> <script src=http://www.flickr.com/badge_code.gne?count=16&display=random&size=square&nsid=91555822@N08&raw=1></script> </div> </div> </div> </div><div class="footer section" id=footer3> <div class="widget HTML" id=HTML4> <h2>Twitter timeline</h2> <div class=widget-content> <div id=blog_newsletter> <a class=twitter-timeline href=https://twitter.com/AnhTranngoc data-widget-id=639309521052037120> Tweets by @AnhTranngoc </a> </div> </div> </div> </div> <div class=clr></div> <div class="margin margin-30"></div> </div> </div> <div class="footer_credits clearfix"> <div class=ct-wrapper> <div class="clearfix left"> Created with ♥ of Viet Phuong. Powered by <a href=http://blog.getpelican.com/ target=_blank>Pelican</a>. </div> <div class="right footer_menu"> <ul class=blog_footer_menu> <li><a href=/ >Home</a> <li><a href=/pages/contact-me.html>Contact</a> <li><a href=/pages/about-me.html>About</a> <li><a href=#blog_header id=smooth_scroll>Top ↑</a> </ul> </div> </div> </div> <script src=/theme/js/vpyeu.min.js?799456af></script> <script id=dsq-count-scr src=https://manhhomienbienthuy.disqus.com/count.js async></script>
