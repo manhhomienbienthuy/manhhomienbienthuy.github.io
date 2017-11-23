@@ -1,6 +1,7 @@
 .webassets-cache
 theme/js/*
 theme/css/*
+theme/webassets-external/*
 !theme/css/vpyeu.*.css
 !theme/js/vpyeu.*.js
 !theme/js/disqus.min.js
