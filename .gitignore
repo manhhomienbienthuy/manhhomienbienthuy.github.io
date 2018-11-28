@@ -2,10 +2,11 @@
 theme/js/*
 theme/css/*
 theme/webassets-external/*
-!theme/css/vpyeu.*.css
-!theme/js/vpyeu.*.js
+!theme/css/vpyeu.min.css
+!theme/js/vpyeu.min.js
 !theme/js/disqus.min.js
 archives.html
 author/
 authors.html
+categories.html
 .DS_Store
