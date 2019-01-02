@@ -6,7 +6,7 @@ theme/webassets-external/*
 !theme/js/vpyeu.min.js
 !theme/js/disqus.min.js
 archives.html
-author/
-authors.html
-categories.html
+author*
+categor*.html
+tag*
 .DS_Store
