@@ -1,0 +1,10 @@
+/* AUTHOR */
+    nickname: manhhomienbienthuy / naa
+    Contact: manhhomienbienthuy [at] yahoo dot com dot vn
+    Twitter: @_naa_4f
+    From: Hanoi, Vietnam
+
+/* SITE */
+    Language: English / Vietnamese
+    Standards: HTML5, CSS3
+    Components: jQuery, isotope, imagesLoaded, twitter widget, disqus
