@@ -1,0 +1,399 @@
+<!DOCTYPE html><title>Funny FizzBuzz with Python - manhhomienbienthuy's space</title> <meta charset=utf-8> <meta name=viewport content="width=device-width, initial-scale=1"> <link rel=apple-touch-icon href=/theme/images/icon-touch.png> <link rel=icon sizes=192x192 href=/theme/images/icon-touch.png> <link rel="shortcut icon" href=/theme/images/favicon.ico> <link rel=author href=/humans.txt> <meta name=msapplication-TileImage content=/theme/images/icon-tile.png> <meta name=twitter:dnt content=on> <meta name=Author content=manhhomienbienthuy> <meta name=rating content=general> <meta name=twitter:card content=product> <meta name=twitter:site content=@_naa_4f> <meta name=twitter:creator content=@_naa_4f> <link href=/feeds/all.atom.xml type=application/atom+xml rel=alternate title="manhhomienbienthuy's space Full Atom Feed"> <meta name=description content="Bài toán FizzBuzz thì quá kinh điển rồi, có lẽ ai học lập trình cũng đã từng làm quen với bài toán này ít nhất một lần. Trong bài viết này, tôi sẽ tổng hợp một số các khác nhau để giải bài toán này với ngôn ngữ Python. Mục …"> <meta name=keywords content="Python, FizzBuzz, fundamentals, fun, funny code, simple problem, blog, naa, manhhomienbienthuy, pelican, static site generator"> <meta name=twitter:title content="Funny FizzBuzz with Python - manhhomienbienthuy's space"> <meta name=twitter:description content="Bài toán FizzBuzz thì quá kinh điển rồi, có lẽ ai học lập trình cũng đã từng làm quen với bài toán này ít nhất một lần. Trong bài viết này, tôi sẽ tổng hợp một số các khác nhau để giải bài toán này với ngôn ngữ Python. Mục …"> <meta name=twitter:image content=/https://i.imgur.com/tMAH8RC.jpg> <link rel=stylesheet href=//cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css> <link rel=stylesheet href=//maxcdn.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.min.css> <link rel=stylesheet href=/theme/css/vpyeu.min.css?5d2c7d5e> <header> <div class=navbar> <div class=wrapper> <div class=nav-menu> <div class=menu-toggle> <i class="fa fa-reorder"></i> </div> <ul class=menus> <li><a href=/ >Home</a> <li><a href=/category/general.html> General <li><a href=/category/life.html> Life <li><a href=/category/programming.html class=current> Programming <li><a href=/category/travel.html> Travel </ul> </div><div class="right links"> <ul> <li> <a href=https://twitter.com/_naa_4f target=_blank> <i class="fa fa-twitter"></i> </a> <li> <a href=https://instagram.com/manhhomienbienthuy/ target=_blank> <i class="fa fa-instagram"></i> </a> <li> <a href=https://www.facebook.com/manhhomienbienthuy target=_blank> <i class="fa fa-facebook"></i> </a> <li> <a href=https://github.com/manhhomienbienthuy target=_blank> <i class="fa fa-github"></i> </a> <li> <a href=/feeds/all.atom.xml target=_blank> <i class="fa fa-rss"></i> </a> </ul> </div> </div> </div><noscript> <div class="warning head-warn"> <div class=wrapper> <p><strong>Notice:</strong> While JavaScript is not essential for this website, your interaction with the content will be limited. Please turn JavaScript on for the full experience. </div> </div> </noscript><div class=banner> <div class=wrapper> <a href=/ > <img alt="manhhomienbienthuy's space" src=/theme/images/logo.png> </a> </div> </div></header> <main> <div class=wrapper> <div class=main-wrapper> <div class=entry> <div class=entry-detail> <div class=post> <h1 class=title> Funny FizzBuzz with Python </h1> <div class=meta> Posted in <a href=/category/programming.html>Programming</a> on January 11, 2019 by <a href=/pages/about-me.html>manhhomienbienthuy</a> <span class=right> <i class="fa fa-comments"></i> <a href=#disqus_thread data-disqus-identifier=/2019/Jan/11/funny-fizzbuzz-with-python.html> Comments </a> </span> </div> <div class=post-body> <img src=https://i.imgur.com/tMAH8RC.jpg alt="Funny FizzBuzz with Python"> <p><a href=http://wiki.c2.com/?FizzBuzzTest>Bài toán FizzBuzz</a> thì quá kinh điển rồi, có lẽ ai học lập trình cũng đã từng làm quen với bài toán này ít nhất một lần. Trong bài viết này, tôi sẽ tổng hợp một số các khác nhau để giải bài toán này với ngôn ngữ Python. Mục đích vui vẻ là chính, cải thiện suy nghĩ đã đình trệ nhiều ngày là phụ.</p> <h1 id=simple>Simple<a class=headerlink href=#simple title="Permanent link">&para;</a></h1> <div class=codehilite><pre><span></span><span class=nb>print</span><span class=p>(</span><span class=s1>&#39;1</span><span class=se>\n</span><span class=s1>2</span><span class=se>\n</span><span class=s1>Fizz</span><span class=se>\n</span><span class=s1>4</span><span class=se>\n</span><span class=s1>Buzz</span><span class=se>\n</span><span class=s1>Fizz</span><span class=se>\n</span><span class=s1>7</span><span class=se>\n</span><span class=s1>8</span><span class=se>\n</span><span class=s1>Fizz</span><span class=se>\n</span><span class=s1>Buzz</span><span class=se>\n</span><span class=s1>11</span><span class=se>\n</span><span class=s1>Fizz</span><span class=se>\n</span><span class=s1>13</span><span class=se>\n</span><span class=s1>14</span><span class=se>\n</span><span class=s1>Fizzbuzz</span><span class=se>\n</span><span class=s1>16</span><span class=se>\n</span><span class=s1>17</span><span class=se>\n</span><span class=s1>Fizz</span><span class=se>\n</span><span class=s1>19</span><span class=se>\n</span><span class=s1>Buzz</span><span class=se>\n</span><span class=s1>Fizz</span><span class=se>\n</span><span class=s1>22</span><span class=se>\n</span><span class=s1>23</span><span class=se>\n</span><span class=s1>Fizz</span><span class=se>\n</span><span class=s1>Buzz</span><span class=se>\n</span><span class=s1>26</span><span class=se>\n</span><span class=s1>Fizz</span><span class=se>\n</span><span class=s1>28</span><span class=se>\n</span><span class=s1>29</span><span class=se>\n</span><span class=s1>Fizzbuzz</span><span class=se>\n</span><span class=s1>31</span><span class=se>\n</span><span class=s1>32</span><span class=se>\n</span><span class=s1>Fizz</span><span class=se>\n</span><span class=s1>34</span><span class=se>\n</span><span class=s1>Buzz</span><span class=se>\n</span><span class=s1>Fizz</span><span class=se>\n</span><span class=s1>37</span><span class=se>\n</span><span class=s1>38</span><span class=se>\n</span><span class=s1>Fizz</span><span class=se>\n</span><span class=s1>Buzz</span><span class=se>\n</span><span class=s1>41</span><span class=se>\n</span><span class=s1>Fizz</span><span class=se>\n</span><span class=s1>43</span><span class=se>\n</span><span class=s1>44</span><span class=se>\n</span><span class=s1>Fizzbuzz</span><span class=se>\n</span><span class=s1>46</span><span class=se>\n</span><span class=s1>47</span><span class=se>\n</span><span class=s1>Fizz</span><span class=se>\n</span><span class=s1>49</span><span class=se>\n</span><span class=s1>Buzz</span><span class=se>\n</span><span class=s1>Fizz</span><span class=se>\n</span><span class=s1>52</span><span class=se>\n</span><span class=s1>53</span><span class=se>\n</span><span class=s1>Fizz</span><span class=se>\n</span><span class=s1>Buzz</span><span class=se>\n</span><span class=s1>56</span><span class=se>\n</span><span class=s1>Fizz</span><span class=se>\n</span><span class=s1>58</span><span class=se>\n</span><span class=s1>59</span><span class=se>\n</span><span class=s1>Fizzbuzz</span><span class=se>\n</span><span class=s1>61</span><span class=se>\n</span><span class=s1>62</span><span class=se>\n</span><span class=s1>Fizz</span><span class=se>\n</span><span class=s1>64</span><span class=se>\n</span><span class=s1>Buzz</span><span class=se>\n</span><span class=s1>Fizz</span><span class=se>\n</span><span class=s1>67</span><span class=se>\n</span><span class=s1>68</span><span class=se>\n</span><span class=s1>Fizz</span><span class=se>\n</span><span class=s1>Buzz</span><span class=se>\n</span><span class=s1>71</span><span class=se>\n</span><span class=s1>Fizz</span><span class=se>\n</span><span class=s1>73</span><span class=se>\n</span><span class=s1>74</span><span class=se>\n</span><span class=s1>Fizzbuzz</span><span class=se>\n</span><span class=s1>76</span><span class=se>\n</span><span class=s1>77</span><span class=se>\n</span><span class=s1>Fizz</span><span class=se>\n</span><span class=s1>79</span><span class=se>\n</span><span class=s1>Buzz</span><span class=se>\n</span><span class=s1>Fizz</span><span class=se>\n</span><span class=s1>82</span><span class=se>\n</span><span class=s1>83</span><span class=se>\n</span><span class=s1>Fizz</span><span class=se>\n</span><span class=s1>Buzz</span><span class=se>\n</span><span class=s1>86</span><span class=se>\n</span><span class=s1>Fizz</span><span class=se>\n</span><span class=s1>88</span><span class=se>\n</span><span class=s1>89</span><span class=se>\n</span><span class=s1>Fizzbuzz</span><span class=se>\n</span><span class=s1>91</span><span class=se>\n</span><span class=s1>92</span><span class=se>\n</span><span class=s1>Fizz</span><span class=se>\n</span><span class=s1>94</span><span class=se>\n</span><span class=s1>Buzz</span><span class=se>\n</span><span class=s1>Fizz</span><span class=se>\n</span><span class=s1>97</span><span class=se>\n</span><span class=s1>98</span><span class=se>\n</span><span class=s1>Fizz</span><span class=se>\n</span><span class=s1>Buzz&#39;</span><span class=p>)</span>
+</pre></div> <h1 id=normal>Normal<a class=headerlink href=#normal title="Permanent link">&para;</a></h1> <div class=codehilite><pre><span></span><span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span> <span class=mi>101</span><span class=p>):</span>
+    <span class=k>if</span> <span class=n>i</span> <span class=o>%</span> <span class=mi>15</span> <span class=o>==</span> <span class=mi>0</span><span class=p>:</span>
+        <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;FizzBuzz&quot;</span><span class=p>)</span>
+    <span class=k>elif</span> <span class=n>i</span> <span class=o>%</span> <span class=mi>5</span> <span class=o>==</span> <span class=mi>0</span><span class=p>:</span>
+        <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;Buzz&quot;</span><span class=p>)</span>
+    <span class=k>elif</span> <span class=n>i</span> <span class=o>%</span> <span class=mi>3</span> <span class=o>==</span> <span class=mi>0</span><span class=p>:</span>
+        <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;Fizz&quot;</span><span class=p>)</span>
+    <span class=k>else</span><span class=p>:</span>
+        <span class=nb>print</span><span class=p>(</span><span class=n>i</span><span class=p>)</span>
+</pre></div> <h1 id=recursive-function>Recursive function<a class=headerlink href=#recursive-function title="Permanent link">&para;</a></h1> <div class=codehilite><pre><span></span><span class=k>def</span> <span class=nf>count</span><span class=p>(</span><span class=n>num</span><span class=p>):</span>
+    <span class=k>if</span> <span class=n>num</span> <span class=o>&gt;=</span> <span class=mi>1</span><span class=p>:</span>
+        <span class=n>count</span><span class=p>(</span><span class=n>num</span> <span class=o>-</span> <span class=mi>1</span><span class=p>)</span>
+        <span class=n>fizz_buzz</span><span class=p>(</span><span class=n>num</span><span class=p>)</span>
+
+
+<span class=k>def</span> <span class=nf>fizz_buzz</span><span class=p>(</span><span class=n>num</span><span class=p>):</span>
+    <span class=k>if</span> <span class=n>num</span> <span class=o>%</span> <span class=mi>15</span> <span class=o>==</span> <span class=mi>0</span><span class=p>:</span>
+        <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;FizzBuzz&quot;</span><span class=p>)</span>
+    <span class=k>elif</span> <span class=n>num</span> <span class=o>%</span> <span class=mi>3</span> <span class=o>==</span> <span class=mi>0</span><span class=p>:</span>
+        <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;Fizz&quot;</span><span class=p>)</span>
+    <span class=k>elif</span> <span class=n>num</span> <span class=o>%</span> <span class=mi>5</span> <span class=o>==</span> <span class=mi>0</span><span class=p>:</span>
+        <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;Buzz&quot;</span><span class=p>)</span>
+    <span class=k>else</span><span class=p>:</span>
+        <span class=nb>print</span><span class=p>(</span><span class=n>num</span><span class=p>)</span>
+
+
+<span class=n>count</span><span class=p>(</span><span class=mi>100</span><span class=p>)</span>
+</pre></div> <h1 id=no-repetition>No repetition<a class=headerlink href=#no-repetition title="Permanent link">&para;</a></h1> <div class=codehilite><pre><span></span><span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span> <span class=mi>101</span><span class=p>):</span>
+    <span class=n>msg</span> <span class=o>=</span> <span class=s2>&quot;&quot;</span>
+    <span class=k>if</span> <span class=n>i</span> <span class=o>%</span> <span class=mi>3</span> <span class=o>==</span> <span class=mi>0</span><span class=p>:</span>
+        <span class=n>msg</span> <span class=o>+=</span> <span class=s2>&quot;Fizz&quot;</span>
+    <span class=k>if</span> <span class=n>i</span> <span class=o>%</span> <span class=mi>5</span> <span class=o>==</span> <span class=mi>0</span><span class=p>:</span>
+        <span class=n>msg</span> <span class=o>+=</span> <span class=s2>&quot;Buzz&quot;</span>
+    <span class=nb>print</span><span class=p>(</span><span class=n>msg</span> <span class=ow>or</span> <span class=n>num</span><span class=p>)</span>
+</pre></div> <h1 id=oop>OOP<a class=headerlink href=#oop title="Permanent link">&para;</a></h1> <div class=codehilite><pre><span></span><span class=k>class</span> <span class=nc>FizzBuzz</span><span class=p>:</span>
+    <span class=k>def</span> <span class=nf>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>num</span><span class=p>):</span>
+        <span class=bp>self</span><span class=o>.</span><span class=n>num</span> <span class=o>=</span> <span class=n>num</span>
+
+    <span class=k>def</span> <span class=nf>count</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+        <span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span> <span class=bp>self</span><span class=o>.</span><span class=n>num</span> <span class=o>+</span> <span class=mi>1</span><span class=p>):</span>
+            <span class=bp>self</span><span class=o>.</span><span class=n>fizz_buzz</span><span class=p>(</span><span class=n>i</span><span class=p>)</span>
+
+    <span class=k>def</span> <span class=nf>fizz_buzz</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>num</span><span class=p>):</span>
+        <span class=k>if</span> <span class=n>num</span> <span class=o>%</span> <span class=mi>15</span> <span class=o>==</span> <span class=mi>0</span><span class=p>:</span>
+            <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;FizzBuzz&quot;</span><span class=p>)</span>
+        <span class=k>elif</span> <span class=n>num</span> <span class=o>%</span> <span class=mi>3</span> <span class=o>==</span> <span class=mi>0</span><span class=p>:</span>
+            <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;Fizz&quot;</span><span class=p>)</span>
+        <span class=k>elif</span> <span class=n>num</span> <span class=o>%</span> <span class=mi>5</span> <span class=o>==</span> <span class=mi>0</span><span class=p>:</span>
+            <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;Buzz&quot;</span><span class=p>)</span>
+        <span class=k>else</span><span class=p>:</span>
+            <span class=nb>print</span><span class=p>(</span><span class=n>num</span><span class=p>)</span>
+
+
+<span class=n>FizzBuzz</span><span class=p>(</span><span class=mi>100</span><span class=p>)</span><span class=o>.</span><span class=n>count</span><span class=p>()</span>
+</pre></div> <h1 id=lazy>Lazy<a class=headerlink href=#lazy title="Permanent link">&para;</a></h1> <div class=codehilite><pre><span></span><span class=kn>import</span> <span class=nn>itertools</span>
+
+
+<span class=k>class</span> <span class=nc>FizzBuzzRule</span><span class=p>(</span><span class=nb>object</span><span class=p>):</span>
+    <span class=nd>@classmethod</span>
+    <span class=k>def</span> <span class=nf>say</span><span class=p>(</span><span class=bp>cls</span><span class=p>,</span> <span class=n>word</span><span class=p>):</span>
+        <span class=k>return</span> <span class=bp>cls</span><span class=p>(</span><span class=n>word</span><span class=p>)</span>
+
+    <span class=k>def</span> <span class=nf>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>word</span><span class=p>):</span>
+        <span class=bp>self</span><span class=o>.</span><span class=n>word</span> <span class=o>=</span> <span class=n>word</span>
+
+    <span class=k>def</span> <span class=nf>for_multiples_of</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>number</span><span class=p>):</span>
+        <span class=k>return</span> <span class=n>itertools</span><span class=o>.</span><span class=n>cycle</span><span class=p>((</span><span class=o>*</span><span class=n>itertools</span><span class=o>.</span><span class=n>repeat</span><span class=p>(</span><span class=s1>&#39;&#39;</span><span class=p>,</span> <span class=n>number</span> <span class=o>-</span> <span class=mi>1</span><span class=p>),</span> <span class=bp>self</span><span class=o>.</span><span class=n>word</span><span class=p>))</span>
+
+
+<span class=n>numbers</span> <span class=o>=</span> <span class=n>itertools</span><span class=o>.</span><span class=n>count</span><span class=p>(</span><span class=mi>1</span><span class=p>)</span>
+<span class=n>fizzes</span> <span class=o>=</span> <span class=n>FizzBuzzRule</span><span class=o>.</span><span class=n>say</span><span class=p>(</span><span class=s1>&#39;Fizz&#39;</span><span class=p>)</span><span class=o>.</span><span class=n>for_multiples_of</span><span class=p>(</span><span class=mi>3</span><span class=p>)</span>
+<span class=n>buzzes</span> <span class=o>=</span> <span class=n>FizzBuzzRule</span><span class=o>.</span><span class=n>say</span><span class=p>(</span><span class=s1>&#39;Buzz&#39;</span><span class=p>)</span><span class=o>.</span><span class=n>for_multiples_of</span><span class=p>(</span><span class=mi>5</span><span class=p>)</span>
+<span class=n>fizzbuzz_generator</span> <span class=o>=</span> <span class=p>(</span><span class=n>f</span><span class=s1>&#39;</span><span class=si>{fizz}{buzz}</span><span class=s1>&#39;</span> <span class=ow>or</span> <span class=n>n</span>
+                      <span class=k>for</span> <span class=n>n</span><span class=p>,</span> <span class=n>fizz</span><span class=p>,</span> <span class=n>buzz</span>
+                      <span class=ow>in</span> <span class=nb>zip</span><span class=p>(</span><span class=n>numbers</span><span class=p>,</span> <span class=n>fizzes</span><span class=p>,</span> <span class=n>buzzes</span><span class=p>))</span>
+<span class=k>for</span> <span class=n>word</span> <span class=ow>in</span> <span class=n>itertools</span><span class=o>.</span><span class=n>islice</span><span class=p>(</span><span class=n>fizzbuzz_generator</span><span class=p>,</span> <span class=mi>100</span><span class=p>):</span>
+    <span class=nb>print</span><span class=p>(</span><span class=n>word</span><span class=p>)</span>
+</pre></div> <h1 id=lazy-short-code>Lazy short code<a class=headerlink href=#lazy-short-code title="Permanent link">&para;</a></h1> <div class=codehilite><pre><span></span><span class=kn>from</span> <span class=nn>itertools</span> <span class=k>import</span> <span class=n>cycle</span><span class=p>,</span> <span class=n>count</span><span class=p>,</span> <span class=n>islice</span>
+
+<span class=n>fizzes</span> <span class=o>=</span> <span class=n>cycle</span><span class=p>([</span><span class=s2>&quot;&quot;</span><span class=p>]</span> <span class=o>*</span> <span class=mi>2</span> <span class=o>+</span> <span class=p>[</span><span class=s2>&quot;Fizz&quot;</span><span class=p>])</span>
+<span class=n>buzzes</span> <span class=o>=</span> <span class=n>cycle</span><span class=p>([</span><span class=s2>&quot;&quot;</span><span class=p>]</span> <span class=o>*</span> <span class=mi>4</span> <span class=o>+</span> <span class=p>[</span><span class=s2>&quot;Buzz&quot;</span><span class=p>])</span>
+<span class=n>both</span> <span class=o>=</span> <span class=p>(</span><span class=n>f</span> <span class=o>+</span> <span class=n>b</span> <span class=k>for</span> <span class=n>f</span><span class=p>,</span> <span class=n>b</span> <span class=ow>in</span> <span class=nb>zip</span><span class=p>(</span><span class=n>fizzes</span><span class=p>,</span> <span class=n>buzzes</span><span class=p>))</span>
+<span class=n>fizzbuzz</span> <span class=o>=</span> <span class=p>(</span><span class=n>word</span> <span class=ow>or</span> <span class=n>n</span> <span class=k>for</span> <span class=n>word</span><span class=p>,</span> <span class=n>n</span> <span class=ow>in</span> <span class=nb>zip</span><span class=p>(</span><span class=n>both</span><span class=p>,</span> <span class=n>count</span><span class=p>(</span><span class=mi>1</span><span class=p>)))</span>
+
+<span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=n>islice</span><span class=p>(</span><span class=n>fizzbuzz</span><span class=p>,</span> <span class=mi>100</span><span class=p>):</span>
+    <span class=nb>print</span><span class=p>(</span><span class=n>i</span><span class=p>)</span>
+</pre></div> <h1 id=generator>Generator<a class=headerlink href=#generator title="Permanent link">&para;</a></h1> <div class=codehilite><pre><span></span><span class=k>for</span> <span class=n>n</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span> <span class=mi>101</span><span class=p>):</span>
+    <span class=n>fb</span> <span class=o>=</span> <span class=s1>&#39;&#39;</span><span class=o>.</span><span class=n>join</span><span class=p>(</span><span class=n>denom</span><span class=p>[</span><span class=mi>1</span><span class=p>]</span> <span class=k>if</span> <span class=n>n</span> <span class=o>%</span> <span class=n>denom</span><span class=p>[</span><span class=mi>0</span><span class=p>]</span> <span class=o>==</span> <span class=mi>0</span> <span class=k>else</span> <span class=s1>&#39;&#39;</span>
+                 <span class=k>for</span> <span class=n>denom</span> <span class=ow>in</span> <span class=p>[(</span><span class=mi>3</span><span class=p>,</span> <span class=s1>&#39;Fizz&#39;</span><span class=p>),</span> <span class=p>(</span><span class=mi>5</span><span class=p>,</span> <span class=s1>&#39;Buzz&#39;</span><span class=p>)])</span>
+    <span class=nb>print</span><span class=p>(</span><span class=n>fb</span> <span class=ow>or</span> <span class=n>n</span><span class=p>)</span>
+</pre></div> <h1 id=short-code>Short code<a class=headerlink href=#short-code title="Permanent link">&para;</a></h1> <div class=codehilite><pre><span></span><span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span> <span class=mi>101</span><span class=p>):</span>
+    <span class=nb>print</span><span class=p>(</span>
+        <span class=s2>&quot;FizzBuzz&quot;</span> <span class=k>if</span> <span class=n>i</span> <span class=o>%</span> <span class=mi>15</span> <span class=o>==</span> <span class=mi>0</span> <span class=k>else</span>
+        <span class=s2>&quot;Buzz&quot;</span> <span class=k>if</span> <span class=n>i</span> <span class=o>%</span> <span class=mi>5</span> <span class=o>==</span> <span class=mi>0</span> <span class=k>else</span>
+        <span class=s2>&quot;Fizz&quot;</span> <span class=k>if</span> <span class=n>i</span> <span class=o>%</span> <span class=mi>3</span> <span class=o>==</span> <span class=mi>0</span> <span class=k>else</span>
+        <span class=nb>str</span><span class=p>(</span><span class=n>i</span><span class=p>)</span>
+    <span class=p>)</span>
+</pre></div> <h1 id=shorter-code>Shorter code<a class=headerlink href=#shorter-code title="Permanent link">&para;</a></h1> <div class=codehilite><pre><span></span><span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span> <span class=mi>101</span><span class=p>):</span>
+    <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;Fizz&quot;</span> <span class=o>*</span> <span class=p>(</span><span class=n>i</span> <span class=o>%</span> <span class=mi>3</span> <span class=o>==</span> <span class=mi>0</span><span class=p>)</span> <span class=o>+</span> <span class=s2>&quot;Buzz&quot;</span> <span class=o>*</span> <span class=p>(</span><span class=n>i</span> <span class=o>%</span> <span class=mi>5</span> <span class=o>==</span> <span class=mi>0</span><span class=p>)</span> <span class=ow>or</span> <span class=n>i</span><span class=p>)</span>
+</pre></div> <h1 id=shorter-another-version>Shorter another version<a class=headerlink href=#shorter-another-version title="Permanent link">&para;</a></h1> <div class=codehilite><pre><span></span><span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>100</span><span class=p>):</span>
+    <span class=nb>print</span><span class=p>(</span><span class=n>i</span> <span class=o>%</span> <span class=mi>3</span> <span class=o>//</span> <span class=mi>2</span> <span class=o>*</span> <span class=s1>&#39;Fizz&#39;</span> <span class=o>+</span> <span class=n>i</span> <span class=o>%</span> <span class=mi>5</span> <span class=o>//</span> <span class=mi>4</span> <span class=o>*</span> <span class=s1>&#39;Buzz&#39;</span> <span class=ow>or</span> <span class=n>i</span> <span class=o>+</span> <span class=mi>1</span><span class=p>)</span>
+</pre></div> <h1 id=one-line>One line<a class=headerlink href=#one-line title="Permanent link">&para;</a></h1> <div class=codehilite><pre><span></span><span class=nb>print</span><span class=p>(</span><span class=s1>&#39;</span><span class=se>\n</span><span class=s1>&#39;</span><span class=o>.</span><span class=n>join</span><span class=p>(</span><span class=s2>&quot;Fizzbuzz&quot;</span> <span class=k>if</span> <span class=n>i</span> <span class=o>%</span> <span class=mi>15</span><span class=o>==</span><span class=mi>0</span> <span class=k>else</span> <span class=s2>&quot;Fizz&quot;</span> <span class=k>if</span> <span class=n>i</span> <span class=o>%</span> <span class=mi>3</span><span class=o>==</span><span class=mi>0</span> <span class=k>else</span> <span class=s2>&quot;Buzz&quot;</span> <span class=k>if</span> <span class=n>i</span> <span class=o>%</span> <span class=mi>5</span><span class=o>==</span><span class=mi>0</span> <span class=k>else</span> <span class=nb>str</span><span class=p>(</span><span class=n>i</span><span class=p>)</span> <span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span> <span class=mi>101</span><span class=p>)))</span>
+</pre></div> <h1 id=brain-hacking>Brain hacking<a class=headerlink href=#brain-hacking title="Permanent link">&para;</a></h1> <div class=codehilite><pre><span></span><span class=nb>print</span><span class=p>(</span><span class=s1>&#39;</span><span class=se>\n</span><span class=s1>&#39;</span><span class=o>.</span><span class=n>join</span><span class=p>((</span><span class=n>x</span> <span class=o>%</span> <span class=mi>3</span> <span class=o>&lt;</span> <span class=mi>1</span><span class=p>)</span> <span class=o>*</span> <span class=s1>&#39;Fizz&#39;</span> <span class=o>+</span> <span class=p>(</span><span class=n>x</span> <span class=o>%</span> <span class=mi>5</span> <span class=o>&lt;</span> <span class=mi>1</span><span class=p>)</span> <span class=o>*</span> <span class=s1>&#39;Buzz&#39;</span> <span class=ow>or</span> <span class=nb>str</span><span class=p>(</span><span class=n>x</span><span class=p>)</span> <span class=k>for</span> <span class=n>x</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span> <span class=mi>101</span><span class=p>)))</span>
+</pre></div> <h1 id=brains-hacking>Brains hacking<a class=headerlink href=#brains-hacking title="Permanent link">&para;</a></h1> <div class=codehilite><pre><span></span><span class=k>for</span> <span class=n>thing</span> <span class=ow>in</span> <span class=nb>map</span><span class=p>(</span>
+    <span class=k>lambda</span> <span class=n>x</span><span class=p>:</span> <span class=s1>&#39;</span><span class=si>{}{}</span><span class=s1>&#39;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span>
+        <span class=nb>next</span><span class=p>(</span><span class=nb>map</span><span class=p>(</span><span class=k>lambda</span> <span class=n>y</span><span class=p>:</span> <span class=s1>&#39;Fizz&#39;</span> <span class=k>if</span> <span class=n>x</span> <span class=o>%</span> <span class=mi>3</span> <span class=o>==</span> <span class=mi>0</span> <span class=k>else</span> <span class=s1>&#39;&#39;</span><span class=p>,</span> <span class=p>[</span><span class=n>x</span><span class=p>])),</span>
+        <span class=nb>next</span><span class=p>(</span><span class=nb>map</span><span class=p>(</span><span class=k>lambda</span> <span class=n>y</span><span class=p>:</span> <span class=s1>&#39;Buzz&#39;</span> <span class=k>if</span> <span class=n>x</span> <span class=o>%</span> <span class=mi>5</span> <span class=o>==</span> <span class=mi>0</span> <span class=k>else</span> <span class=s1>&#39;&#39;</span><span class=p>,</span> <span class=p>[</span><span class=n>x</span><span class=p>]))</span>
+    <span class=p>)</span> <span class=k>if</span> <span class=p>(</span><span class=kc>True</span> <span class=ow>in</span> <span class=p>[</span><span class=nb>bool</span><span class=p>(</span><span class=n>x</span> <span class=o>%</span> <span class=n>n</span> <span class=o>==</span> <span class=mi>0</span><span class=p>)</span> <span class=k>for</span> <span class=n>n</span> <span class=ow>in</span> <span class=p>[</span><span class=mi>3</span><span class=p>,</span> <span class=mi>5</span><span class=p>]])</span> <span class=k>else</span> <span class=n>x</span><span class=p>,</span>
+    <span class=nb>range</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span> <span class=mi>101</span><span class=p>)</span>
+<span class=p>):</span>
+    <span class=nb>print</span><span class=p>(</span><span class=n>thing</span><span class=p>)</span>
+</pre></div> <h1 id=perl-style>Perl style<a class=headerlink href=#perl-style title="Permanent link">&para;</a></h1> <div class=codehilite><pre><span></span><span class=n>t</span><span class=p>,</span> <span class=n>f</span><span class=p>,</span> <span class=n>b</span><span class=p>,</span> <span class=n>p</span> <span class=o>=</span> <span class=mi>3</span><span class=p>,</span> <span class=s2>&quot;zFzi&quot;</span><span class=p>,</span> <span class=s2>&quot;zuzB&quot;</span><span class=p>,</span> <span class=mi>5</span>
+<span class=n>y</span><span class=p>,</span> <span class=n>z</span> <span class=o>=</span> <span class=mi>2</span><span class=p>,</span> <span class=mi>0</span>
+<span class=nb>list</span><span class=p>(</span><span class=nb>map</span><span class=p>(</span>
+    <span class=nb>print</span><span class=p>,</span>
+    <span class=p>[</span><span class=nb>next</span><span class=p>(</span><span class=nb>filter</span><span class=p>(</span><span class=k>lambda</span> <span class=n>i</span><span class=p>:</span> <span class=nb>isinstance</span><span class=p>(</span><span class=n>i</span><span class=p>,</span> <span class=nb>str</span><span class=p>),</span> <span class=p>((</span><span class=n>i</span> <span class=o>%</span> <span class=n>t</span><span class=p>,</span> <span class=n>i</span> <span class=o>%</span> <span class=n>p</span><span class=p>)</span><span class=o>.</span><span class=n>count</span><span class=p>(</span><span class=n>z</span><span class=p>)</span> <span class=o>!=</span> <span class=n>y</span> <span class=ow>or</span> <span class=s1>&#39;&#39;</span><span class=o>.</span><span class=n>join</span><span class=p>(</span>
+        <span class=nb>sorted</span><span class=p>(</span><span class=n>f</span><span class=p>))</span> <span class=o>+</span> <span class=s1>&#39;&#39;</span><span class=o>.</span><span class=n>join</span><span class=p>(</span><span class=nb>sorted</span><span class=p>(</span><span class=n>b</span><span class=p>)),</span> <span class=n>i</span> <span class=o>%</span> <span class=n>t</span> <span class=ow>or</span> <span class=s1>&#39;&#39;</span><span class=o>.</span><span class=n>join</span><span class=p>(</span><span class=nb>sorted</span><span class=p>(</span><span class=n>f</span><span class=p>)),</span> <span class=n>i</span> <span class=o>%</span> <span class=n>p</span> <span class=ow>or</span> <span class=s1>&#39;&#39;</span><span class=o>.</span><span class=n>join</span><span class=p>(</span><span class=nb>sorted</span><span class=p>(</span><span class=n>b</span><span class=p>)),</span> <span class=nb>str</span><span class=p>(</span><span class=n>i</span><span class=p>))))</span> <span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span> <span class=p>(</span><span class=n>y</span> <span class=o>*</span> <span class=n>p</span><span class=p>)</span> <span class=o>**</span> <span class=n>y</span> <span class=o>+</span> <span class=mi>1</span><span class=p>)]</span>
+<span class=p>))</span>
+</pre></div> <h1 id=dict-miracle>Dict miracle<a class=headerlink href=#dict-miracle title="Permanent link">&para;</a></h1> <div class=codehilite><pre><span></span><span class=n>FIZZ_BUZZ</span> <span class=o>=</span> <span class=p>{</span>
+    <span class=mi>3</span><span class=p>:</span> <span class=s2>&quot;Fizz&quot;</span><span class=p>,</span>
+    <span class=mi>5</span><span class=p>:</span> <span class=s2>&quot;Buzz&quot;</span><span class=p>,</span>
+    <span class=mi>15</span><span class=p>:</span> <span class=s2>&quot;FizzBuzz&quot;</span>
+<span class=p>}</span>
+
+
+<span class=k>def</span> <span class=nf>fizz_buzz</span><span class=p>():</span>
+    <span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span> <span class=mi>101</span><span class=p>):</span>
+        <span class=nb>print</span><span class=p>(</span><span class=n>FIZZ_BUZZ</span><span class=o>.</span><span class=n>get</span><span class=p>(</span>
+            <span class=mi>15</span> <span class=o>*</span> <span class=p>(</span><span class=ow>not</span> <span class=n>i</span> <span class=o>%</span> <span class=mi>15</span><span class=p>)</span> <span class=ow>or</span> <span class=mi>5</span> <span class=o>*</span> <span class=p>(</span><span class=ow>not</span> <span class=n>i</span> <span class=o>%</span> <span class=mi>5</span><span class=p>)</span> <span class=ow>or</span> <span class=mi>3</span> <span class=o>*</span> <span class=p>(</span><span class=ow>not</span> <span class=n>i</span> <span class=o>%</span> <span class=mi>3</span><span class=p>),</span>
+            <span class=n>i</span>
+        <span class=p>))</span>
+
+
+<span class=n>fizz_buzz</span><span class=p>()</span>
+</pre></div> <h1 id=interview-version>Interview version<a class=headerlink href=#interview-version title="Permanent link">&para;</a></h1> <div class=codehilite><pre><span></span><span class=k>for</span> <span class=n>n</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span> <span class=mi>101</span><span class=p>):</span>
+    <span class=nb>print</span><span class=p>(</span><span class=s1>&#39;FizzBuzz&#39;</span><span class=p>[</span><span class=n>n</span> <span class=o>%</span> <span class=o>-</span><span class=mi>3</span> <span class=o>&amp;</span> <span class=mi>4</span><span class=p>:</span> <span class=mi>12</span> <span class=o>&amp;</span> <span class=mi>8</span> <span class=o>-</span> <span class=p>(</span><span class=n>n</span> <span class=o>%</span> <span class=o>-</span><span class=mi>5</span> <span class=o>&amp;</span> <span class=mi>4</span><span class=p>)]</span> <span class=ow>or</span> <span class=n>n</span><span class=p>)</span>
+</pre></div> <h1 id=just-for-fun>Just for fun<a class=headerlink href=#just-for-fun title="Permanent link">&para;</a></h1> <div class=codehilite><pre><span></span><span class=k>def</span> <span class=nf>get_index</span><span class=p>(</span><span class=n>i</span><span class=p>):</span>
+    <span class=k>return</span> <span class=nb>bool</span><span class=p>(</span><span class=n>i</span> <span class=o>%</span> <span class=mi>3</span><span class=p>)</span><span class=o>+</span><span class=mi>2</span><span class=o>*</span><span class=nb>bool</span><span class=p>(</span><span class=n>i</span> <span class=o>%</span> <span class=mi>5</span><span class=p>)</span> <span class=k>if</span> <span class=n>i</span> <span class=o>!=</span> <span class=mi>0</span> <span class=k>else</span> <span class=mi>3</span>
+
+
+<span class=k>def</span> <span class=nf>afb</span><span class=p>(</span><span class=n>x</span><span class=p>):</span>
+    <span class=k>return</span> <span class=p>(</span><span class=s1>&#39;fizzbuzz&#39;</span><span class=p>,</span> <span class=s1>&#39;buzz&#39;</span><span class=p>,</span> <span class=s1>&#39;fizz&#39;</span><span class=p>,</span> <span class=nb>str</span><span class=p>(</span><span class=n>x</span><span class=p>))[</span><span class=n>get_index</span><span class=p>(</span><span class=n>x</span><span class=p>)]</span>
+
+
+<span class=k>def</span> <span class=nf>fizzbuzz</span><span class=p>(</span><span class=n>inpt</span><span class=p>):</span>
+    <span class=k>return</span> <span class=nb>print</span><span class=p>(</span><span class=s1>&#39;</span><span class=se>\n</span><span class=s1>&#39;</span><span class=o>.</span><span class=n>join</span><span class=p>([</span><span class=n>afb</span><span class=p>(</span><span class=n>i</span><span class=p>)</span> <span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=n>inpt</span><span class=p>]))</span>
+
+
+<span class=n>fizzbuzz</span><span class=p>(</span><span class=nb>range</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span> <span class=mi>101</span><span class=p>))</span>
+</pre></div> <h1 id=enterprise-version>Enterprise version<a class=headerlink href=#enterprise-version title="Permanent link">&para;</a></h1> <div class=codehilite><pre><span></span><span class=kn>from</span> <span class=nn>abc</span> <span class=k>import</span> <span class=n>ABCMeta</span><span class=p>,</span> <span class=n>abstractmethod</span>
+<span class=kn>import</span> <span class=nn>enum</span>
+
+
+<span class=k>class</span> <span class=nc>SomethingerBase</span><span class=p>(</span><span class=n>metaclass</span><span class=o>=</span><span class=n>ABCMeta</span><span class=p>):</span>
+    <span class=nd>@abstractmethod</span>
+    <span class=k>def</span> <span class=nf>set_at</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>value</span><span class=p>):</span>
+        <span class=k>pass</span>
+
+    <span class=nd>@abstractmethod</span>
+    <span class=k>def</span> <span class=nf>step</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+        <span class=k>pass</span>
+
+    <span class=nd>@abstractmethod</span>
+    <span class=k>def</span> <span class=nf>is_something</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+        <span class=k>pass</span>
+
+
+<span class=k>class</span> <span class=nc>ActorBase</span><span class=p>(</span><span class=n>metaclass</span><span class=o>=</span><span class=n>ABCMeta</span><span class=p>):</span>
+    <span class=nd>@abstractmethod</span>
+    <span class=k>def</span> <span class=nf>canact</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+        <span class=k>pass</span>
+
+    <span class=nd>@abstractmethod</span>
+    <span class=k>def</span> <span class=nf>act</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>value</span><span class=p>):</span>
+        <span class=k>pass</span>
+
+    <span class=nd>@abstractmethod</span>
+    <span class=k>def</span> <span class=nf>execute</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>func</span><span class=p>):</span>
+        <span class=k>pass</span>
+
+    <span class=nd>@abstractmethod</span>
+    <span class=k>def</span> <span class=nf>get_actor_cannot_act_exception</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+        <span class=k>pass</span>
+
+
+<span class=k>class</span> <span class=nc>FizzerBuzzerInterface</span><span class=p>(</span><span class=n>SomethingerBase</span><span class=p>):</span>
+    <span class=nd>@abstractmethod</span>
+    <span class=k>def</span> <span class=nf>is_fizzy</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+        <span class=k>pass</span>
+
+    <span class=nd>@abstractmethod</span>
+    <span class=k>def</span> <span class=nf>is_buzzy</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+        <span class=k>pass</span>
+
+    <span class=nd>@abstractmethod</span>
+    <span class=k>def</span> <span class=nf>get_at</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+        <span class=k>pass</span>
+
+
+<span class=k>class</span> <span class=nc>Fizzer</span><span class=p>:</span>
+    <span class=k>def</span> <span class=nf>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+        <span class=bp>self</span><span class=o>.</span><span class=n>_at</span> <span class=o>=</span> <span class=kc>None</span>
+
+    <span class=k>def</span> <span class=nf>set_at</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>value</span><span class=p>):</span>
+        <span class=bp>self</span><span class=o>.</span><span class=n>_at</span> <span class=o>=</span> <span class=n>value</span>
+
+    <span class=k>def</span> <span class=nf>step</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+        <span class=bp>self</span><span class=o>.</span><span class=n>_at</span> <span class=o>+=</span> <span class=mi>1</span>
+        <span class=bp>self</span><span class=o>.</span><span class=n>_at</span> <span class=o>%=</span> <span class=mi>3</span>
+
+    <span class=k>def</span> <span class=nf>is_fizzy</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+        <span class=k>return</span> <span class=ow>not</span> <span class=bp>self</span><span class=o>.</span><span class=n>_at</span>
+
+
+<span class=k>class</span> <span class=nc>FizzerSomethingerAdaptor</span><span class=p>(</span><span class=n>SomethingerBase</span><span class=p>):</span>
+    <span class=k>def</span> <span class=nf>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>fizzer</span><span class=p>):</span>
+        <span class=bp>self</span><span class=o>.</span><span class=n>fizzer</span> <span class=o>=</span> <span class=n>fizzer</span>
+
+    <span class=k>def</span> <span class=nf>set_at</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>value</span><span class=p>):</span>
+        <span class=bp>self</span><span class=o>.</span><span class=n>fizzer</span><span class=o>.</span><span class=n>set_at</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>value</span><span class=p>)</span>
+
+    <span class=k>def</span> <span class=nf>step</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+        <span class=bp>self</span><span class=o>.</span><span class=n>fizzer</span><span class=o>.</span><span class=n>step</span><span class=p>()</span>
+
+    <span class=k>def</span> <span class=nf>is_something</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+        <span class=k>return</span> <span class=bp>self</span><span class=o>.</span><span class=n>fizzer</span><span class=o>.</span><span class=n>is_fizzy</span><span class=p>()</span>
+
+
+<span class=k>class</span> <span class=nc>Buzzer</span><span class=p>:</span>
+    <span class=k>def</span> <span class=nf>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+        <span class=bp>self</span><span class=o>.</span><span class=n>_at</span> <span class=o>=</span> <span class=kc>None</span>
+
+    <span class=k>def</span> <span class=nf>set_at</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>value</span><span class=p>):</span>
+        <span class=bp>self</span><span class=o>.</span><span class=n>_at</span> <span class=o>=</span> <span class=n>value</span>
+
+    <span class=k>def</span> <span class=nf>step</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+        <span class=bp>self</span><span class=o>.</span><span class=n>_at</span> <span class=o>+=</span> <span class=mi>1</span>
+        <span class=bp>self</span><span class=o>.</span><span class=n>_at</span> <span class=o>%=</span> <span class=mi>5</span>
+
+    <span class=k>def</span> <span class=nf>is_buzzy</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+        <span class=k>return</span> <span class=ow>not</span> <span class=bp>self</span><span class=o>.</span><span class=n>_at</span>
+
+
+<span class=k>class</span> <span class=nc>BuzzerSomethingerAdaptor</span><span class=p>(</span><span class=n>SomethingerBase</span><span class=p>):</span>
+    <span class=k>def</span> <span class=nf>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>fizzer</span><span class=p>):</span>
+        <span class=bp>self</span><span class=o>.</span><span class=n>buzzer</span> <span class=o>=</span> <span class=n>fizzer</span>
+
+    <span class=k>def</span> <span class=nf>set_at</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>value</span><span class=p>):</span>
+        <span class=bp>self</span><span class=o>.</span><span class=n>buzzer</span><span class=o>.</span><span class=n>set_at</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>value</span><span class=p>)</span>
+
+    <span class=k>def</span> <span class=nf>step</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+        <span class=bp>self</span><span class=o>.</span><span class=n>buzzer</span><span class=o>.</span><span class=n>step</span><span class=p>()</span>
+
+    <span class=k>def</span> <span class=nf>is_something</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+        <span class=k>return</span> <span class=bp>self</span><span class=o>.</span><span class=n>buzzer</span><span class=o>.</span><span class=n>is_buzzy</span><span class=p>()</span>
+
+
+<span class=k>class</span> <span class=nc>FizzerBuzzer</span><span class=p>:</span>
+    <span class=k>def</span> <span class=nf>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>fizzer_somethinger</span><span class=p>,</span> <span class=n>buzzer_somethinger</span><span class=p>):</span>
+        <span class=bp>self</span><span class=o>.</span><span class=n>_at</span> <span class=o>=</span> <span class=kc>None</span>
+        <span class=k>if</span> <span class=ow>not</span> <span class=nb>isinstance</span><span class=p>(</span><span class=n>fizzer_somethinger</span><span class=p>,</span> <span class=n>SomethingerBase</span><span class=p>):</span>
+            <span class=k>raise</span> <span class=ne>ValueError</span><span class=p>(</span><span class=s2>&quot;Got </span><span class=si>{!r}</span><span class=s2> expected </span><span class=si>{!r}</span><span class=s2>&quot;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span>
+                <span class=nb>type</span><span class=p>(</span><span class=n>fizzer_somethinger</span><span class=p>),</span> <span class=n>SomethingerBase</span><span class=p>))</span>
+        <span class=k>if</span> <span class=ow>not</span> <span class=nb>isinstance</span><span class=p>(</span><span class=n>buzzer_somethinger</span><span class=p>,</span> <span class=n>SomethingerBase</span><span class=p>):</span>
+            <span class=k>raise</span> <span class=ne>ValueError</span><span class=p>(</span><span class=s2>&quot;Got </span><span class=si>{!r}</span><span class=s2> expected </span><span class=si>{!r}</span><span class=s2>&quot;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span>
+                <span class=nb>type</span><span class=p>(</span><span class=n>buzzer_somethinger</span><span class=p>),</span> <span class=n>SomethingerBase</span><span class=p>))</span>
+        <span class=bp>self</span><span class=o>.</span><span class=n>fizzer_somethinger</span> <span class=o>=</span> <span class=n>fizzer_somethinger</span>
+        <span class=bp>self</span><span class=o>.</span><span class=n>buzzer_somethinger</span> <span class=o>=</span> <span class=n>buzzer_somethinger</span>
+
+    <span class=k>def</span> <span class=nf>set_at</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>value</span><span class=p>):</span>
+        <span class=bp>self</span><span class=o>.</span><span class=n>_at</span> <span class=o>=</span> <span class=n>value</span>
+
+    <span class=k>def</span> <span class=nf>step</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+        <span class=bp>self</span><span class=o>.</span><span class=n>_at</span> <span class=o>+=</span> <span class=mi>1</span>
+        <span class=bp>self</span><span class=o>.</span><span class=n>fizzer_somethinger</span><span class=o>.</span><span class=n>step</span><span class=p>()</span>
+        <span class=bp>self</span><span class=o>.</span><span class=n>buzzer_somethinger</span><span class=o>.</span><span class=n>step</span><span class=p>()</span>
+
+    <span class=k>def</span> <span class=nf>is_fizzy</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+        <span class=k>return</span> <span class=bp>self</span><span class=o>.</span><span class=n>fizzer_somethinger</span><span class=o>.</span><span class=n>is_something</span><span class=p>()</span>
+
+    <span class=k>def</span> <span class=nf>is_buzzy</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+        <span class=k>return</span> <span class=bp>self</span><span class=o>.</span><span class=n>buzzer_somethinger</span><span class=o>.</span><span class=n>is_something</span><span class=p>()</span>
+
+    <span class=k>def</span> <span class=nf>is_something</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+        <span class=k>return</span> <span class=bp>self</span><span class=o>.</span><span class=n>is_fizzy</span><span class=p>()</span> <span class=ow>or</span> <span class=bp>self</span><span class=o>.</span><span class=n>is_buzzy</span><span class=p>()</span>
+
+    <span class=k>def</span> <span class=nf>get_at</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+        <span class=k>return</span> <span class=bp>self</span><span class=o>.</span><span class=n>_at</span>
+
+
+<span class=k>class</span> <span class=nc>FizzBuzzRunner</span><span class=p>:</span>
+    <span class=k>class</span> <span class=nc>StateEnum</span><span class=p>(</span><span class=n>enum</span><span class=o>.</span><span class=n>IntEnum</span><span class=p>):</span>
+        <span class=n>state_number</span> <span class=o>=</span> <span class=mi>0</span>
+        <span class=n>state_fizz</span> <span class=o>=</span> <span class=mi>1</span>
+        <span class=n>state_buzz</span> <span class=o>=</span> <span class=mi>2</span>
+        <span class=n>state_fizzbuzz</span> <span class=o>=</span> <span class=mi>3</span>
+
+    <span class=k>def</span> <span class=nf>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>fizzerbuzzer</span><span class=p>,</span> <span class=n>actor</span><span class=p>):</span>
+        <span class=k>if</span> <span class=ow>not</span> <span class=nb>isinstance</span><span class=p>(</span><span class=n>fizzerbuzzer</span><span class=p>,</span> <span class=n>FizzerBuzzer</span><span class=p>):</span>
+            <span class=k>raise</span> <span class=ne>ValueError</span><span class=p>(</span><span class=s2>&quot;Got </span><span class=si>{!r}</span><span class=s2> expected </span><span class=si>{!r}</span><span class=s2>&quot;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span>
+                <span class=nb>type</span><span class=p>(</span><span class=n>fizzerbuzzer</span><span class=p>),</span> <span class=n>FizzerBuzzer</span><span class=p>))</span>
+        <span class=k>if</span> <span class=ow>not</span> <span class=nb>isinstance</span><span class=p>(</span><span class=n>actor</span><span class=p>,</span> <span class=n>ActorBase</span><span class=p>):</span>
+            <span class=k>raise</span> <span class=ne>ValueError</span><span class=p>(</span><span class=s2>&quot;Got </span><span class=si>{!r}</span><span class=s2> expected </span><span class=si>{!r}</span><span class=s2>&quot;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span>
+                <span class=nb>type</span><span class=p>(</span><span class=n>actor</span><span class=p>),</span> <span class=n>ActorBase</span><span class=p>))</span>
+        <span class=bp>self</span><span class=o>.</span><span class=n>fizzerbuzzer</span> <span class=o>=</span> <span class=n>fizzerbuzzer</span>
+        <span class=bp>self</span><span class=o>.</span><span class=n>actor</span> <span class=o>=</span> <span class=n>actor</span>
+
+    <span class=k>def</span> <span class=nf>gen_state</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+        <span class=n>result_state</span> <span class=o>=</span> <span class=bp>self</span><span class=o>.</span><span class=n>StateEnum</span><span class=o>.</span><span class=n>state_number</span>
+        <span class=k>if</span> <span class=bp>self</span><span class=o>.</span><span class=n>fizzerbuzzer</span><span class=o>.</span><span class=n>is_something</span><span class=p>():</span>
+            <span class=k>if</span> <span class=bp>self</span><span class=o>.</span><span class=n>fizzerbuzzer</span><span class=o>.</span><span class=n>is_fizzy</span><span class=p>():</span>
+                <span class=n>result_state</span> <span class=o>|=</span> <span class=bp>self</span><span class=o>.</span><span class=n>StateEnum</span><span class=o>.</span><span class=n>state_fizz</span>
+            <span class=k>if</span> <span class=bp>self</span><span class=o>.</span><span class=n>fizzerbuzzer</span><span class=o>.</span><span class=n>is_buzzy</span><span class=p>():</span>
+                <span class=n>result_state</span> <span class=o>|=</span> <span class=bp>self</span><span class=o>.</span><span class=n>StateEnum</span><span class=o>.</span><span class=n>state_buzz</span>
+        <span class=k>return</span> <span class=n>result_state</span>
+
+    <span class=k>def</span> <span class=nf>get_state_function</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>result_state</span><span class=p>):</span>
+        <span class=k>if</span> <span class=n>result_state</span> <span class=o>==</span> <span class=bp>self</span><span class=o>.</span><span class=n>StateEnum</span><span class=o>.</span><span class=n>state_number</span><span class=p>:</span>
+            <span class=k>return</span> <span class=bp>self</span><span class=o>.</span><span class=n>state_number</span>
+        <span class=k>if</span> <span class=n>result_state</span> <span class=o>==</span> <span class=bp>self</span><span class=o>.</span><span class=n>StateEnum</span><span class=o>.</span><span class=n>state_fizz</span><span class=p>:</span>
+            <span class=k>return</span> <span class=bp>self</span><span class=o>.</span><span class=n>state_fizz</span>
+        <span class=k>if</span> <span class=n>result_state</span> <span class=o>==</span> <span class=bp>self</span><span class=o>.</span><span class=n>StateEnum</span><span class=o>.</span><span class=n>state_buzz</span><span class=p>:</span>
+            <span class=k>return</span> <span class=bp>self</span><span class=o>.</span><span class=n>state_buzz</span>
+        <span class=k>if</span> <span class=n>result_state</span> <span class=o>==</span> <span class=bp>self</span><span class=o>.</span><span class=n>StateEnum</span><span class=o>.</span><span class=n>state_fizzbuzz</span><span class=p>:</span>
+            <span class=k>return</span> <span class=bp>self</span><span class=o>.</span><span class=n>state_fizzbuzz</span>
+
+    <span class=k>def</span> <span class=nf>step</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+        <span class=bp>self</span><span class=o>.</span><span class=n>fizzerbuzzer</span><span class=o>.</span><span class=n>step</span><span class=p>()</span>
+        <span class=n>result_state</span> <span class=o>=</span> <span class=bp>self</span><span class=o>.</span><span class=n>gen_state</span><span class=p>()</span>
+        <span class=n>state_executor</span> <span class=o>=</span> <span class=bp>self</span><span class=o>.</span><span class=n>get_state_function</span><span class=p>(</span><span class=n>result_state</span><span class=p>)</span>
+        <span class=k>if</span> <span class=ow>not</span> <span class=bp>self</span><span class=o>.</span><span class=n>actor</span><span class=o>.</span><span class=n>canact</span><span class=p>():</span>
+            <span class=k>raise</span> <span class=n>actor</span><span class=o>.</span><span class=n>get_actor_cannot_act_exception</span><span class=p>()</span>
+        <span class=bp>self</span><span class=o>.</span><span class=n>actor</span><span class=o>.</span><span class=n>execute</span><span class=p>(</span><span class=n>state_executor</span><span class=p>)</span>
+
+    <span class=k>def</span> <span class=nf>state_fizzbuzz</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>act</span><span class=p>):</span>
+        <span class=n>act</span><span class=p>(</span><span class=s2>&quot;FizzBuzz&quot;</span><span class=p>)</span>
+
+    <span class=k>def</span> <span class=nf>state_fizz</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>act</span><span class=p>):</span>
+        <span class=n>act</span><span class=p>(</span><span class=s2>&quot;Fizz&quot;</span><span class=p>)</span>
+
+    <span class=k>def</span> <span class=nf>state_buzz</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>act</span><span class=p>):</span>
+        <span class=n>act</span><span class=p>(</span><span class=s2>&quot;Buzz&quot;</span><span class=p>)</span>
+
+    <span class=k>def</span> <span class=nf>state_number</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>act</span><span class=p>):</span>
+        <span class=n>act</span><span class=p>(</span><span class=bp>self</span><span class=o>.</span><span class=n>fizzerbuzzer</span><span class=o>.</span><span class=n>get_at</span><span class=p>())</span>
+
+    <span class=k>def</span> <span class=nf>step_n</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>n</span><span class=p>):</span>
+        <span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=n>n</span><span class=p>):</span>
+            <span class=bp>self</span><span class=o>.</span><span class=n>step</span><span class=p>()</span>
+
+
+<span class=k>def</span> <span class=nf>main</span><span class=p>():</span>
+    <span class=n>fizzer</span> <span class=o>=</span> <span class=n>Fizzer</span><span class=p>()</span>
+    <span class=n>fizzer</span><span class=o>.</span><span class=n>set_at</span><span class=p>(</span><span class=mi>0</span><span class=p>)</span>
+    <span class=n>fizzer_somethinger</span> <span class=o>=</span> <span class=n>FizzerSomethingerAdaptor</span><span class=p>(</span><span class=n>fizzer</span><span class=p>)</span>
+    <span class=n>buzzer</span> <span class=o>=</span> <span class=n>Buzzer</span><span class=p>()</span>
+    <span class=n>buzzer</span><span class=o>.</span><span class=n>set_at</span><span class=p>(</span><span class=mi>0</span><span class=p>)</span>
+    <span class=n>buzzer_somethinger</span> <span class=o>=</span> <span class=n>BuzzerSomethingerAdaptor</span><span class=p>(</span><span class=n>buzzer</span><span class=p>)</span>
+    <span class=n>fizzerbuzzer</span> <span class=o>=</span> <span class=n>FizzerBuzzer</span><span class=p>(</span><span class=n>fizzer_somethinger</span><span class=p>,</span> <span class=n>buzzer_somethinger</span><span class=p>)</span>
+    <span class=n>fizzerbuzzer</span><span class=o>.</span><span class=n>set_at</span><span class=p>(</span><span class=mi>0</span><span class=p>)</span>
+
+    <span class=k>class</span> <span class=nc>PrintActor</span><span class=p>(</span><span class=n>ActorBase</span><span class=p>):</span>
+        <span class=k>class</span> <span class=nc>_ActorCannotActException</span><span class=p>(</span><span class=ne>ValueError</span><span class=p>):</span>
+            <span class=k>pass</span>
+
+        <span class=k>def</span> <span class=nf>canact</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+            <span class=k>return</span> <span class=kc>True</span>
+
+        <span class=k>def</span> <span class=nf>act</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>value</span><span class=p>):</span>
+            <span class=nb>print</span><span class=p>(</span><span class=n>value</span><span class=p>)</span>
+
+        <span class=k>def</span> <span class=nf>execute</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>func</span><span class=p>):</span>
+            <span class=n>func</span><span class=p>(</span><span class=bp>self</span><span class=o>.</span><span class=n>act</span><span class=p>)</span>
+
+        <span class=k>def</span> <span class=nf>get_actor_cannot_act_exception</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+            <span class=k>return</span> <span class=bp>self</span><span class=o>.</span><span class=n>_ActorCannotActException</span>
+    <span class=n>fizzbuzzrunner</span> <span class=o>=</span> <span class=n>FizzBuzzRunner</span><span class=p>(</span><span class=n>fizzerbuzzer</span><span class=p>,</span> <span class=n>PrintActor</span><span class=p>())</span>
+    <span class=n>fizzbuzzrunner</span><span class=o>.</span><span class=n>step_n</span><span class=p>(</span><span class=mi>100</span><span class=p>)</span>
+
+
+<span class=n>main</span><span class=p>()</span>
+</pre></div> </div> <div class=post-footer> <div class=tags> <i class="fa fa-tags"></i> <span>#Python</span> <span>#FizzBuzz</span> <span>#fundamentals</span> <span>#fun</span> <span>#funny code</span> <span>#simple problem</span> </div> </div> </div><div class=blog-pager> <span class=older-link> <a href=/2018/Dec/31/the-year-in-review-2018.html> Older Post </a> </span> </div><div class=comments> <div class=finally> <p><em>I apologise for any typos. If you notice a problem, please let me know.</em> <p>Thank you all for your attention. </div> <div id=disqus_thread></div> <script src=/theme/js/disqus.min.js?81e8a5f5></script> <noscript> Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript> comments powered by Disqus. </a> </noscript> </div></div> </div> </div> <div class=sidebar-wrapper> <div class=widget> <h2>Welcome</h2> <div> <img src=/theme/images/banner.gif alt=Welcome> </div> </div><div class="widget recent-posts"> <h2>Recent Posts</h2> <ul> <li> <a href=/2019/Jan/11/funny-fizzbuzz-with-python.html> <img alt="Funny FizzBuzz with Python" src=https://i.imgur.com/tMAH8RC.jpg> </a> <a href=/2019/Jan/11/funny-fizzbuzz-with-python.html>Funny FizzBuzz with Python</a> <li> <a href=/2018/Dec/31/the-year-in-review-2018.html> <img alt="The year in review 2018" src=https://i.imgur.com/WSUpSOX.jpg> </a> <a href=/2018/Dec/31/the-year-in-review-2018.html>The year in review 2018</a> <li> <a href=/2018/Dec/20/html5-web-worker-data-transferring.html> <img alt="HTML5 web worker: data transferring" src=https://i.imgur.com/1zRqA1K.jpg> </a> <a href=/2018/Dec/20/html5-web-worker-data-transferring.html>HTML5 web worker: data transferring</a> <li> <a href=/2018/Nov/25/markdown-editor-reviews.html> <img alt="Markdown editor reviews" src=https://i.imgur.com/xkpeATF.png> </a> <a href=/2018/Nov/25/markdown-editor-reviews.html>Markdown editor reviews</a> <li> <a href=/2018/Nov/20/html5-web-worker-the-fundamentals.html> <img alt="HTML5 web worker: the fundamentals" src=https://i.imgur.com/1zRqA1K.jpg> </a> <a href=/2018/Nov/20/html5-web-worker-the-fundamentals.html>HTML5 web worker: the fundamentals</a> </ul> </div><div class="widget labels"> <h2>Blog Archive</h2> <ul> <li> <a href=/2019/ > 2019 </a> <li> <a href=/2018/ > 2018 </a> <li> <a href=/2017/ > 2017 </a> <li> <a href=/2016/ > 2016 </a> <li> <a href=/2015/ > 2015 </a> <li> <a href=/2014/ > 2014 </a> <li> <a href=/2013/ > 2013 </a> <li> <a href=/2012/ > 2012 </a> <li> <a href=/2011/ > 2011 </a> <li> <a href=/2010/ > 2010 </a> </ul> </div><div class=widget> <h2>Twitter timeline</h2> <a class=twitter-timeline data-height=500 data-dnt=true data-theme=light href=https://twitter.com/_naa_4f data-chrome="noheader nofooter transparent noborders"> Tweets by manhhomienbienthuy </a> </div> </div> </div> <a href=# class="smooth-scroll back-to-top"> <i class="fa fa-arrow-circle-up fa-3x"></i> </a> </main> <footer> <div class=infos> <div class=wrapper> <div class=widget> <a href=/ title="manhhomienbienthuy's space" class=logo> <img alt="manhhomienbienthuy's space" src=/theme/images/logo_white.png> </a> <span class=right>I'm a hacker, enter my world...</span> </div><div class=widget> <p> Created with all my ♥ and soul, dedicated to my love, yunachan <p> Powered by <a href=http://blog.getpelican.com/ target=_blank>Pelican</a>, which takes great advantage of <a href=https://www.python.org/ target=_blank>Python</a> <p> This site content is licensed under a <a href=https://creativecommons.org/licenses/by-nc-nd/4.0/ target=_blank> CC BY-NC-ND 4.0 </a> License. <p> Updated at <a target=_blank href="http://www.timeanddate.com/worldclock/fixedtime.html?iso=2019-01-17T02:17:02"> 2019-01-17 02:17:02 </a> </div><div class=widget> <p> Hosting by <a href=https://manhhomienbienthuy.bitbucket.io/ >Bitbucket</a> and <a href=https://manhhomienbienthuy.github.io/ >Github</a>, image hosting by <a href=https://manhhomienbienthuy.imgur.com/ target=_blank>imgur</a>, <a href=https://instagram.com/manhhomienbienthuy/ target=_blank>Instagram</a> and <a href=https://photos.google.com/ target=_blank>Google Photo</a> <p> Theme based on <a href=https://vanice-veethemes.blogspot.com/ target=_blank>Vanice theme</a>, icons from <a href=https://fontawesome.com/ target=_blank>Font Awesome</a>, comments powered by <a href=https://disqus.com/home/forums/manhhomienbienthuy/ target=_blank>Disqus</a> </div> </div> </div> <div class=credits> <div class=wrapper> <div class=left> <!--
+          Regarding copyright, in general, standalone pages (as
+          opposed to files generated as part of manuals) on the GNU
+          web server should be under CC BY-ND 4.0.  Please do NOT
+          change or remove this without talking with the webmasters or
+          licensing team first.  Please make sure the copyright date
+          is consistent with the document.  For web pages, it is ok to
+          list just the latest year the document was modified, or
+          published.
+
+          If you wish to list earlier years, that is ok too.  Either
+          "2001, 2002, 2003" or "2001-2003" are ok for specifying
+          years, as long as each year in the range is in fact a
+          copyrightable year, i.e., a year in which the document was
+          published (including being publicly visible on the web or in
+          a revision control system).
+        --> Copyright © 2010-2019 <a href=/pages/about-me.html><strong>manhhomienbienthuy</strong></a>. All rights reserved. </div> <div class=right> <ul> <li><a href=/ >Home</a> <li><a href=/pages/about-me.html>About</a> <li><a href=# class=smooth-scroll>Top ↑</a> </ul> </div> </div> </div></footer> <script src=https://code.jquery.com/jquery-3.2.1.js></script> <script src=//cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js></script> <script src=//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.2/imagesloaded.pkgd.min.js></script> <script src=/theme/js/vpyeu.min.js?d72c87bd></script> <script id=dsq-count-scr src=https://manhhomienbienthuy.disqus.com/count.js async></script>
