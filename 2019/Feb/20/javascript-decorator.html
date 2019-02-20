@@ -1,0 +1,254 @@
+<!DOCTYPE html><title>JavaScript decorator - manhhomienbienthuy's space</title> <meta charset=utf-8> <meta name=viewport content="width=device-width, initial-scale=1"> <link rel=apple-touch-icon href=/theme/images/icon-touch.png> <link rel=icon sizes=192x192 href=/theme/images/icon-touch.png> <link rel="shortcut icon" href=/theme/images/favicon.ico> <link rel=author href=/humans.txt> <meta name=msapplication-TileImage content=/theme/images/icon-tile.png> <meta name=twitter:dnt content=on> <meta name=Author content=manhhomienbienthuy> <meta name=rating content=general> <meta name=twitter:card content=product> <meta name=twitter:site content=@_naa_4f> <meta name=twitter:creator content=@_naa_4f> <link href=/feeds/all.atom.xml type=application/atom+xml rel=alternate title="manhhomienbienthuy's space Full Atom Feed"> <meta name=description content="Trong một bài viết cũng khá lâu rồi, chúng ta đã tìm hiểu về decorator trong Python. Gần đây, sau một thời gian tìm hiểu ngôn ngữ JavaScript, thì tôi phát hiện ra, JavaScript cũng có thể sử dụng decorator, với một cú pháp không khác nhau là mấy. Có …"> <meta name=keywords content="JavaScript, fundamentals, call, apply, built-in, blog, naa, manhhomienbienthuy, pelican, static site generator"> <meta name=twitter:title content="JavaScript decorator - manhhomienbienthuy's space"> <meta name=twitter:description content="Trong một bài viết cũng khá lâu rồi, chúng ta đã tìm hiểu về decorator trong Python. Gần đây, sau một thời gian tìm hiểu ngôn ngữ JavaScript, thì tôi phát hiện ra, JavaScript cũng có thể sử dụng decorator, với một cú pháp không khác nhau là mấy. Có …"> <meta name=twitter:image content=/https://i.imgur.com/Sh3yLI0.png> <link rel=stylesheet href=//cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css> <link rel=stylesheet href=//maxcdn.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.min.css> <link rel=stylesheet href=/theme/css/vpyeu.min.css?5d2c7d5e> <header> <div class=navbar> <div class=wrapper> <div class=nav-menu> <div class=menu-toggle> <i class="fa fa-reorder"></i> </div> <ul class=menus> <li><a href=/ >Home</a> <li><a href=/category/general.html> General <li><a href=/category/life.html> Life <li><a href=/category/programming.html class=current> Programming <li><a href=/category/travel.html> Travel </ul> </div><div class="right links"> <ul> <li> <a href=https://twitter.com/_naa_4f target=_blank> <i class="fa fa-twitter"></i> </a> <li> <a href=https://instagram.com/manhhomienbienthuy/ target=_blank> <i class="fa fa-instagram"></i> </a> <li> <a href=https://www.facebook.com/manhhomienbienthuy target=_blank> <i class="fa fa-facebook"></i> </a> <li> <a href=https://github.com/manhhomienbienthuy target=_blank> <i class="fa fa-github"></i> </a> <li> <a href=/feeds/all.atom.xml target=_blank> <i class="fa fa-rss"></i> </a> </ul> </div> </div> </div><noscript> <div class="warning head-warn"> <div class=wrapper> <p><strong>Notice:</strong> While JavaScript is not essential for this website, your interaction with the content will be limited. Please turn JavaScript on for the full experience. </div> </div> </noscript><div class=banner> <div class=wrapper> <a href=/ > <img alt="manhhomienbienthuy's space" src=/theme/images/logo.png> </a> </div> </div></header> <main> <div class=wrapper> <div class=main-wrapper> <div class=entry> <div class=entry-detail> <div class=post> <h1 class=title> JavaScript decorator </h1> <div class=meta> Posted in <a href=/category/programming.html>Programming</a> on February 20, 2019 by <a href=/pages/about-me.html>manhhomienbienthuy</a> <span class=right> <i class="fa fa-comments"></i> <a href=#disqus_thread data-disqus-identifier=/2019/Feb/20/javascript-decorator.html> Comments </a> </span> </div> <div class=post-body> <img src=https://i.imgur.com/Sh3yLI0.png alt="JavaScript decorator"> <p>Trong một <a href=../../../2015/Dec/22/exploring-python-decorators.html>bài viết cũng khá lâu rồi</a>, chúng ta đã tìm hiểu về decorator trong Python. Gần đây, sau một thời gian tìm hiểu ngôn ngữ JavaScript, thì tôi phát hiện ra, JavaScript cũng có thể sử dụng decorator, với một cú pháp không khác nhau là mấy.</p> <p>Có thể đây là kiến thức cơ bản mà nhiều người đã quen thuộc từ lâu, nhưng với tôi nó vẫn cứ là kiến thức mới. Thế nên, tôi viết ra đây để coi như bản thân đã học được một điều gì đó.</p> <h1 id=function-decorator>Function decorator<a class=headerlink href=#function-decorator title="Permanent link">&para;</a></h1> <p>Việc các ngôn ngữ lập trình có tư tưởng thiết kế tương tự nhau, ngôn ngữ này có thể cài đặt tính năng của ngôn ngữ kia thì cũng không phải chuyện gì quá xa lạ.</p> <p>Với JavaScript, nó cũng có tư tưởng thiết kế cho phép một hàm có thể được sử dụng như một object thông thường. Chugns ta cũng có thể truyền hàm thành tham số cho hàm khác, gán nó vào một object và rất nhiều thứ khác nữa.</p> <p>Do đó, chúng ta có thể cài đặt decorator cho JavaScript tương tự như cách mà chúng ta làm với Python. Hãy xem xét một ví dụ như sau:</p> <p>Giả sử chúng ta có một hàm <code>calc(x, y)</code> chẳng hạn, đây là một hàm tính toán rất tốn thời gian và bộ nhớ. Có thể lấy ví dụ đây là hàm tính toán cho hàm số <a href=http://mathworld.wolfram.com/AckermannFunction.html>Ackermann</a> chẳng hạn.</p> <p>Hàm này có một đặc điểm, là dù rất phức tạp trong tính toán, lại tốn nhiều thời gian và bộ nhớ để cho ra kết quả, thế nhưng nó lại "có tính ổn định cao". Có nghĩa là với những tham số đầu vào giống nhau, hàm sẽ luôn cho kết quả giống nhau.</p> <p>Với những hàm có tính chất như vậy, để chương trình hoạt động hiệu quả hơn, chúng ta sẽ cần phải tìm cách cache giá trị của những hàm đó lại, tránh trường hợp phải tính đi tính lại những kết quả giống nhau.</p> <p>Lúc này, chúng ta có thể sử dụng kỹ thuật tương tự như decorator của Python, để cache giá trị của hàm, mà không cần thay đổi hàm đó.</p> <p>Dưới đây là một đoạn code mô phỏng điều đó (chỉ mô phỏng thôi, lập trình hàm Ackermann thật sợ máy tính không chịu nổi):</p> <div class=codehilite><pre><span></span><span class=kd>function</span> <span class=nx>calc</span><span class=p>(</span><span class=nx>x</span><span class=p>)</span> <span class=p>{</span>
+    <span class=c1>// Xử lý ở đây có thể rất tốn thời gian và bộ nhớ</span>
+    <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=sb>`Calc with </span><span class=si>${</span><span class=nx>x</span><span class=si>}</span><span class=sb>`</span><span class=p>);</span>
+    <span class=k>return</span> <span class=nx>x</span><span class=p>;</span>
+<span class=p>}</span>
+
+<span class=kd>function</span> <span class=nx>cachingDecorator</span><span class=p>(</span><span class=nx>func</span><span class=p>)</span> <span class=p>{</span>
+    <span class=kr>const</span> <span class=nx>cache</span> <span class=o>=</span> <span class=k>new</span> <span class=nx>Map</span><span class=p>();</span>
+
+    <span class=k>return</span> <span class=kd>function</span><span class=p>(</span><span class=nx>x</span><span class=p>)</span> <span class=p>{</span>
+        <span class=k>if</span> <span class=p>(</span><span class=nx>cache</span><span class=p>.</span><span class=nx>has</span><span class=p>(</span><span class=nx>x</span><span class=p>))</span> <span class=p>{</span>
+            <span class=k>return</span> <span class=nx>cache</span><span class=p>.</span><span class=nx>get</span><span class=p>(</span><span class=nx>x</span><span class=p>);</span>
+        <span class=p>}</span>
+
+        <span class=kr>const</span> <span class=nx>result</span> <span class=o>=</span> <span class=nx>func</span><span class=p>(</span><span class=nx>x</span><span class=p>);</span>
+        <span class=nx>cache</span><span class=p>.</span><span class=nx>set</span><span class=p>(</span><span class=nx>x</span><span class=p>,</span> <span class=nx>result</span><span class=p>);</span>
+
+        <span class=k>return</span> <span class=nx>result</span><span class=p>;</span>
+    <span class=p>};</span>
+<span class=p>}</span>
+
+<span class=nx>calc</span> <span class=o>=</span> <span class=nx>cachingDecorator</span><span class=p>(</span><span class=nx>calc</span><span class=p>);</span>
+<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>calc</span><span class=p>(</span><span class=mi>1</span><span class=p>));</span>
+</pre></div> <p>Giờ đây, chúng ta có thể gọi thực thi hàm và xem kết quả:</p> <div class=codehilite><pre><span></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>calc</span><span class=p>(</span><span class=mi>1</span><span class=p>))</span>
+<span class=c1>// Calc with 1</span>
+<span class=c1>// 1</span>
+<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>calc</span><span class=p>(</span><span class=mi>1</span><span class=p>))</span>
+<span class=c1>// 1</span>
+</pre></div> <p>Như vậy, trong ví dụ trên, chúng ta có thể thấy rằng, trong lần gọi <code>calc(1)</code> thứ hai, không hề có lời gọi hàm nào cả (không có <code>Calc with 1</code> được in ra), tức là chúng ta đã cache thành công kết quả của hàm này.　　Và hàm <code>cachingDecorator</code> thực sự đã hoạt động như một decorator: một hàm nhận đầu vào là một hàm khác, và thay đổi hoạt động của hàm đó.</p> <p>Việc hoạt động của một decorator có lẽ không cần phải giải thích nhiều nữa rồi. Nó rất đơn giản, nhận vào một hàm và trả về một hàm, trong đó hàm đầu vào sẽ được "bao" bởi các logic cần thiết của decorator.</p> <p>Một decorator như <code>cachingDecorator</code> có thể được dùng cho bất cứ một hàm nào khác. Đây là một điều rất quan trọng của decorator, chúng ta có thể áp dụng nó cho bất cứ hàm nào mà chúng ta muốn.</p> <p>Bằng cách tách biệt decorator và hàm chính, chúng ta tách biệt được logic của hàm và các xử lý ngoài lề. Dưới đây là một số lợi ích mà chúng ta sẽ thu được khi xử dụng decorator.</p> <ul> <li>Decorator có thể tái sử dụng, chúng ta có thể áp dụng nó cho bất cứ hàm nào chúng ta muốn.</li> <li>Logic của decorator là riêng biệt với logic của hàm, nhờ đó, chúng ta không cần làm phức tạp thêm logic vốn đã rất phức tạp của hàm cần decorate rồi.</li> <li>Chúng ta có thể dùng nhiều decorator với một hàm nếu cần thiết.</li> </ul> <p>Tuy nhiên, cách tạo decorator như trên cũng chưa phải là tốt lắm, vì JavaScript không có cú pháp ngắn gọn giúp chúng ta làm việc này. Nhiều bài viết trên Internet có nói về cú pháp tương tự như Python, bằng cách sử dụng <code>@cachingDecator</code> nhưng tôi đã thử và không thành công.</p> <h1 id=method-decorator>Method decorator<a class=headerlink href=#method-decorator title="Permanent link">&para;</a></h1> <p>Cách thức sử dụng decorator như ở trên tuy rất hiệu quả, nhưng nó chỉ áp dụng được với hàm mà thôi. Chúng ta không thể dùng cách đó với các phương thức của một đối tượng được.</p> <p>Trong ví dụ dưới đây, phương thức sẽ không hoạt động sau khi decorate.</p> <div class=codehilite><pre><span></span><span class=kr>const</span> <span class=nx>worker</span> <span class=o>=</span> <span class=p>{</span>
+    <span class=nx>multiplier</span><span class=o>:</span> <span class=mi>1</span><span class=p>,</span>
+    <span class=nx>calc</span><span class=o>:</span> <span class=kd>function</span><span class=p>(</span><span class=nx>x</span><span class=p>)</span> <span class=p>{</span>
+        <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=sb>`Calc with </span><span class=si>${</span><span class=nx>x</span><span class=si>}</span><span class=sb>`</span><span class=p>);</span>
+        <span class=k>return</span> <span class=nx>x</span> <span class=o>*</span> <span class=k>this</span><span class=p>.</span><span class=nx>multiplier</span><span class=p>;</span>
+    <span class=p>}</span>
+<span class=p>}</span>
+
+<span class=kd>function</span> <span class=nx>cachingDecorator</span><span class=p>(</span><span class=nx>func</span><span class=p>)</span> <span class=p>{</span>
+    <span class=kr>const</span> <span class=nx>cache</span> <span class=o>=</span> <span class=k>new</span> <span class=nx>Map</span><span class=p>();</span>
+
+    <span class=k>return</span> <span class=kd>function</span><span class=p>(</span><span class=nx>x</span><span class=p>)</span> <span class=p>{</span>
+        <span class=k>if</span> <span class=p>(</span><span class=nx>cache</span><span class=p>.</span><span class=nx>has</span><span class=p>(</span><span class=nx>x</span><span class=p>))</span> <span class=p>{</span>
+            <span class=k>return</span> <span class=nx>cache</span><span class=p>.</span><span class=nx>get</span><span class=p>(</span><span class=nx>x</span><span class=p>);</span>
+        <span class=p>}</span>
+        <span class=kr>const</span> <span class=nx>result</span> <span class=o>=</span> <span class=nx>func</span><span class=p>(</span><span class=nx>x</span><span class=p>);</span>
+        <span class=nx>cache</span><span class=p>.</span><span class=nx>set</span><span class=p>(</span><span class=nx>x</span><span class=p>,</span> <span class=nx>result</span><span class=p>);</span>
+
+        <span class=k>return</span> <span class=nx>result</span><span class=p>;</span>
+    <span class=p>};</span>
+<span class=p>}</span>
+</pre></div> <p>Chúng ta có thể thử và thấy rằng, decorator lúc này đã không còn có tác dụng nữa.</p> <div class=codehilite><pre><span></span><span class=nx>worker</span><span class=p>.</span><span class=nx>calc</span><span class=p>(</span><span class=mi>1</span><span class=p>)</span>
+<span class=c1>// Calc with 1</span>
+<span class=c1>// 1</span>
+<span class=nx>worker</span><span class=p>.</span><span class=nx>calc</span> <span class=o>=</span> <span class=nx>cachingDecorator</span><span class=p>(</span><span class=nx>worker</span><span class=p>.</span><span class=nx>calc</span><span class=p>);</span>
+<span class=nx>worker</span><span class=p>.</span><span class=nx>calc</span><span class=p>(</span><span class=mi>1</span><span class=p>)</span>
+<span class=c1>// Calc with 1</span>
+<span class=c1>// NaN</span>
+</pre></div> <p>Như kết quả trên, chúng ta có thể thấy, sau khi dùng decorator, phương thức không còn hoạt động được nữa. Lý do là vì, ngữ cảnh của phương thức đã thay đổi, sau khi chúng ta truyền nó vào trong decorator.</p> <p>Sau khi truyền vào decorator, phương thức sẽ mất ngữ cảnh hiện tại và không thể truy cập đến <code>this</code> được nữa (<code>this</code> lúc này là <code>window</code> chứ không phải là <code>worker</code> nữa). Cách gọi phương thức trong decorator như này tương tự như cách chúng ta làm như sau:</p> <div class=codehilite><pre><span></span><span class=kr>const</span> <span class=nx>func</span> <span class=o>=</span> <span class=nx>worker</span><span class=p>.</span><span class=nx>calc</span><span class=p>;</span>
+<span class=nx>func</span><span class=p>(</span><span class=mi>1</span><span class=p>);</span>
+</pre></div> <p>Việc gọi hàm như vậy sẽ khiến phương thức mất đi ngữ cảnh. Đây là điểm khác biệt rất quan trọng giữa JavaScript và Python. (Với Python, chúng ta có thể gán biến cho một phương thức mà khi gọi vẫn có ngữ cảnh bình thường.)</p> <div class=codehilite><pre><span></span><span class=gp>&gt;&gt;&gt; </span><span class=k>class</span> <span class=nc>Foo</span><span class=p>:</span>
+<span class=gp>... </span>    <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+<span class=gp>... </span>        <span class=bp>self</span><span class=o>.</span><span class=n>x</span> <span class=o>=</span> <span class=mi>1</span>
+<span class=gp>... </span>    <span class=k>def</span> <span class=nf>calc</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>y</span><span class=p>):</span>
+<span class=gp>... </span>        <span class=k>print</span><span class=p>(</span><span class=s1>&#39;calc&#39;</span><span class=p>,</span> <span class=n>y</span><span class=p>);</span>
+<span class=gp>... </span>        <span class=k>return</span> <span class=n>y</span> <span class=o>*</span> <span class=bp>self</span><span class=o>.</span><span class=n>x</span>
+<span class=gp>...</span>
+<span class=gp>&gt;&gt;&gt; </span><span class=n>foo</span> <span class=o>=</span> <span class=n>Foo</span><span class=p>()</span>
+<span class=gp>&gt;&gt;&gt; </span><span class=n>foo</span><span class=o>.</span><span class=n>calc</span><span class=p>(</span><span class=mi>1</span><span class=p>)</span>
+<span class=go>calc 1</span>
+<span class=go>1</span>
+<span class=gp>&gt;&gt;&gt; </span><span class=n>func</span> <span class=o>=</span> <span class=n>foo</span><span class=o>.</span><span class=n>calc</span>
+<span class=gp>&gt;&gt;&gt; </span><span class=n>func</span><span class=p>(</span><span class=mi>1</span><span class=p>)</span>
+<span class=go>calc 1</span>
+<span class=go>1</span>
+</pre></div> <p>Vì sự khác biệt này, nên việc sử dụng decorator với các phương thức của một đối tượng không còn dễ dàng như việc decorate một hàm nữa. Ngay cả khi sử dụng fat arrow function (hàm không phát sinh ngữ cảnh) cũng không có tác dụng:</p> <div class=codehilite><pre><span></span><span class=kr>const</span> <span class=nx>worker</span> <span class=o>=</span> <span class=p>{</span>
+    <span class=nx>multiplier</span><span class=o>:</span> <span class=mi>1</span><span class=p>,</span>
+    <span class=nx>calc</span><span class=o>:</span> <span class=kd>function</span><span class=p>(</span><span class=nx>x</span><span class=p>)</span> <span class=p>{</span>
+        <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=sb>`Calc with </span><span class=si>${</span><span class=nx>x</span><span class=si>}</span><span class=sb>`</span><span class=p>);</span>
+        <span class=k>return</span> <span class=nx>x</span> <span class=o>*</span> <span class=k>this</span><span class=p>.</span><span class=nx>multiplier</span><span class=p>;</span>
+    <span class=p>}</span>
+<span class=p>}</span>
+
+<span class=nx>cachingDecorator</span> <span class=o>=</span> <span class=p>(</span><span class=nx>func</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
+    <span class=kr>const</span> <span class=nx>cache</span> <span class=o>=</span> <span class=k>new</span> <span class=nx>Map</span><span class=p>();</span>
+
+    <span class=k>return</span> <span class=p>(</span><span class=nx>x</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
+        <span class=k>if</span> <span class=p>(</span><span class=nx>cache</span><span class=p>.</span><span class=nx>has</span><span class=p>(</span><span class=nx>x</span><span class=p>))</span> <span class=p>{</span>
+            <span class=k>return</span> <span class=nx>cache</span><span class=p>.</span><span class=nx>get</span><span class=p>(</span><span class=nx>x</span><span class=p>);</span>
+        <span class=p>}</span>
+        <span class=kr>const</span> <span class=nx>result</span> <span class=o>=</span> <span class=nx>func</span><span class=p>(</span><span class=nx>x</span><span class=p>);</span>
+        <span class=nx>cache</span><span class=p>.</span><span class=nx>set</span><span class=p>(</span><span class=nx>x</span><span class=p>,</span> <span class=nx>result</span><span class=p>);</span>
+
+        <span class=k>return</span> <span class=nx>result</span><span class=p>;</span>
+    <span class=p>};</span>
+<span class=p>}</span>
+<span class=nx>worker</span><span class=p>.</span><span class=nx>calc</span> <span class=o>=</span> <span class=nx>cachingDecorator</span><span class=p>(</span><span class=nx>worker</span><span class=p>.</span><span class=nx>calc</span><span class=p>);</span>
+<span class=nx>worker</span><span class=p>.</span><span class=nx>calc</span><span class=p>(</span><span class=mi>1</span><span class=p>)</span>
+</pre></div> <p>Nhưng vẫn có những cách giúp chúng ta làm việc đó.</p> <h2 id=su-dung-functionprototypebind>Sử dụng <code>Function.prototype.bind</code><a class=headerlink href=#su-dung-functionprototypebind title="Permanent link">&para;</a></h2> <p>Phương thức <a href=https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind><code>Function.prototype.bind</code></a> sẽ tạo ra một hàm mới, mà khi gọi hàm đó, nó sẽ luôn có ngữ cảnh (<code>this</code>) là giá trị được "bind".</p> <div class=codehilite><pre><span></span><span class=kr>const</span> <span class=nx>foo</span> <span class=o>=</span> <span class=p>{</span>
+    <span class=nx>x</span><span class=o>:</span> <span class=mi>1</span><span class=p>,</span>
+    <span class=nx>getX</span><span class=o>:</span> <span class=kd>function</span><span class=p>()</span> <span class=p>{</span>
+        <span class=k>return</span> <span class=k>this</span><span class=p>.</span><span class=nx>x</span><span class=p>;</span>
+    <span class=p>}</span>
+<span class=p>}</span>
+
+<span class=kr>const</span> <span class=nx>func</span> <span class=o>=</span> <span class=nx>foo</span><span class=p>.</span><span class=nx>getX</span><span class=p>;</span>
+<span class=nx>func</span><span class=p>();</span>
+<span class=c1>// undefined</span>
+<span class=kr>const</span> <span class=nx>boundFunc</span> <span class=o>=</span> <span class=nx>foo</span><span class=p>.</span><span class=nx>getX</span><span class=p>.</span><span class=nx>bind</span><span class=p>(</span><span class=nx>foo</span><span class=p>);</span>
+<span class=nx>boundFunc</span><span class=p>();</span>
+<span class=c1>// 1</span>
+</pre></div> <p>Bằng cách sử dụng phương thức này, chúng ta có thể "dính chặt" ngữ cảnh của phương thức cho do có truyền nó đi đâu chăng nữa. Chúng ta có thể áp dụng nó mới decorator như sau:</p> <div class=codehilite><pre><span></span><span class=kr>const</span> <span class=nx>worker</span> <span class=o>=</span> <span class=p>{</span>
+    <span class=nx>multiplier</span><span class=o>:</span> <span class=mi>1</span><span class=p>,</span>
+    <span class=nx>calc</span><span class=o>:</span> <span class=kd>function</span><span class=p>(</span><span class=nx>x</span><span class=p>)</span> <span class=p>{</span>
+        <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=sb>`Calc with </span><span class=si>${</span><span class=nx>x</span><span class=si>}</span><span class=sb>`</span><span class=p>);</span>
+        <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=k>this</span><span class=p>);</span>
+        <span class=k>return</span> <span class=nx>x</span> <span class=o>*</span> <span class=k>this</span><span class=p>.</span><span class=nx>multiplier</span><span class=p>;</span>
+    <span class=p>}</span>
+<span class=p>}</span>
+
+<span class=kd>function</span> <span class=nx>cachingDecorator</span><span class=p>(</span><span class=nx>func</span><span class=p>)</span> <span class=p>{</span>
+    <span class=kr>const</span> <span class=nx>cache</span> <span class=o>=</span> <span class=k>new</span> <span class=nx>Map</span><span class=p>();</span>
+
+    <span class=k>return</span> <span class=kd>function</span><span class=p>(</span><span class=nx>x</span><span class=p>)</span> <span class=p>{</span>
+        <span class=k>if</span> <span class=p>(</span><span class=nx>cache</span><span class=p>.</span><span class=nx>has</span><span class=p>(</span><span class=nx>x</span><span class=p>))</span> <span class=p>{</span>
+            <span class=k>return</span> <span class=nx>cache</span><span class=p>.</span><span class=nx>get</span><span class=p>(</span><span class=nx>x</span><span class=p>);</span>
+        <span class=p>}</span>
+        <span class=kr>const</span> <span class=nx>result</span> <span class=o>=</span> <span class=nx>func</span><span class=p>(</span><span class=nx>x</span><span class=p>);</span>
+        <span class=nx>cache</span><span class=p>.</span><span class=nx>set</span><span class=p>(</span><span class=nx>x</span><span class=p>,</span> <span class=nx>result</span><span class=p>);</span>
+
+        <span class=k>return</span> <span class=nx>result</span><span class=p>;</span>
+    <span class=p>};</span>
+<span class=p>}</span>
+<span class=nx>worker</span><span class=p>.</span><span class=nx>calc</span> <span class=o>=</span> <span class=nx>cachingDecorator</span><span class=p>(</span><span class=nx>worker</span><span class=p>.</span><span class=nx>calc</span><span class=p>.</span><span class=nx>bind</span><span class=p>(</span><span class=nx>worker</span><span class=p>));</span>
+<span class=nx>worker</span><span class=p>.</span><span class=nx>calc</span><span class=p>(</span><span class=mi>1</span><span class=p>);</span>
+<span class=c1>// Calc with 1</span>
+<span class=c1>// 1</span>
+<span class=nx>worker</span><span class=p>.</span><span class=nx>calc</span><span class=p>(</span><span class=mi>1</span><span class=p>);</span> <span class=c1>// Lần gọi này kết quả đã được cache</span>
+<span class=c1>// 1</span>
+</pre></div> <p>Tuy nhiên, cách sử dụng <code>bind</code> như này hơi rườm rà một chút, do mỗi lần gọi decorator chúng ta phải bind một lần. Chưa kể, việc bind như vậy sẽ sinh ra một hàm mới, có thể gây tốn bộ nhớ nên gọi nhiều lần.</p> <h2 id=su-dung-functionprototypecall>Sử dụng <code>Function.prototype.call</code><a class=headerlink href=#su-dung-functionprototypecall title="Permanent link">&para;</a></h2> <p>Có một phương thức đặc biệt của JavaScript cho phép chúng ta gọi một hàm với ngữ cảnh của nó, đó chính là <a href=https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call><code>Function.prototype.call</code></a></p> <p>Phương thức này cho phép chúng ta có thể gọi hàm, đồng thời truyền ngữ cảnh cho nó một cách tường minh. Ví dụ, chúng ta có thể gọi một hàm theo hai cách sau:</p> <div class=codehilite><pre><span></span><span class=nx>func</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span> <span class=mi>2</span><span class=p>,</span> <span class=mi>3</span><span class=p>);</span>
+<span class=nx>func</span><span class=p>.</span><span class=nx>call</span><span class=p>(</span><span class=nx>obj</span><span class=p>,</span> <span class=mi>1</span><span class=p>,</span> <span class=mi>2</span><span class=p>,</span> <span class=mi>3</span><span class=p>)</span>
+</pre></div> <p>Chúng đều gọi hàm <code>func</code> với các tham số <code>1, 2, 3</code>, sự khác biệt duy nhất là <code>func.call</code> truyền thêm một tham số làm ngữ cảnh cho hàm. Về cơ bản, tham số này không có nhiều ý nghĩa, trừ khi hàm của chúng ta cần tham chiếu đến <code>this</code>.</p> <p>Hãy xem xét ví dụ sau cho dễ hiểu:</p> <div class=codehilite><pre><span></span><span class=kd>function</span> <span class=nx>fullName</span><span class=p>()</span> <span class=p>{</span>
+    <span class=k>return</span> <span class=sb>`</span><span class=si>${</span><span class=k>this</span><span class=p>.</span><span class=nx>firstName</span><span class=si>}</span><span class=sb> </span><span class=si>${</span><span class=k>this</span><span class=p>.</span><span class=nx>lastName</span><span class=si>}</span><span class=sb>`</span><span class=p>;</span>
+<span class=p>}</span>
+
+<span class=kr>const</span> <span class=nx>user1</span> <span class=o>=</span> <span class=p>{</span><span class=nx>firstName</span><span class=o>:</span> <span class=s1>&#39;foo&#39;</span><span class=p>,</span> <span class=nx>lastName</span><span class=o>:</span> <span class=s1>&#39;bar&#39;</span><span class=p>};</span>
+<span class=kr>const</span> <span class=nx>user2</span> <span class=o>=</span> <span class=p>{</span><span class=nx>firstName</span><span class=o>:</span> <span class=s1>&#39;Foo&#39;</span><span class=p>,</span> <span class=nx>lastName</span><span class=o>:</span> <span class=s1>&#39;Bar&#39;</span><span class=p>};</span>
+
+<span class=nx>fullName</span><span class=p>.</span><span class=nx>call</span><span class=p>(</span><span class=nx>user1</span><span class=p>);</span>
+<span class=c1>// foo bar</span>
+<span class=nx>fullName</span><span class=p>.</span><span class=nx>call</span><span class=p>(</span><span class=nx>user2</span><span class=p>);</span>
+<span class=c1>// Foo Bar</span>
+</pre></div> <p>Bằng cách sử dụng cách gọi hàm như vậy, chúng ta vẫn có thể decorator một phương thức được, bằng cách truyền ngữ cảnh đúng cho nó:</p> <div class=codehilite><pre><span></span><span class=kr>const</span> <span class=nx>worker</span> <span class=o>=</span> <span class=p>{</span>
+    <span class=nx>multiplier</span><span class=o>:</span> <span class=mi>1</span><span class=p>,</span>
+    <span class=nx>calc</span><span class=o>:</span> <span class=kd>function</span><span class=p>(</span><span class=nx>x</span><span class=p>)</span> <span class=p>{</span>
+        <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=sb>`Calc with </span><span class=si>${</span><span class=nx>x</span><span class=si>}</span><span class=sb>`</span><span class=p>);</span>
+        <span class=k>return</span> <span class=nx>x</span> <span class=o>*</span> <span class=k>this</span><span class=p>.</span><span class=nx>multiplier</span><span class=p>;</span>
+    <span class=p>}</span>
+<span class=p>}</span>
+
+<span class=kd>function</span> <span class=nx>cachingDecorator</span><span class=p>(</span><span class=nx>func</span><span class=p>)</span> <span class=p>{</span>
+    <span class=kr>const</span> <span class=nx>cache</span> <span class=o>=</span> <span class=k>new</span> <span class=nx>Map</span><span class=p>();</span>
+
+    <span class=k>return</span> <span class=kd>function</span><span class=p>(</span><span class=nx>x</span><span class=p>)</span> <span class=p>{</span>
+        <span class=k>if</span> <span class=p>(</span><span class=nx>cache</span><span class=p>.</span><span class=nx>has</span><span class=p>(</span><span class=nx>x</span><span class=p>))</span> <span class=p>{</span>
+            <span class=k>return</span> <span class=nx>cache</span><span class=p>.</span><span class=nx>get</span><span class=p>(</span><span class=nx>x</span><span class=p>);</span>
+        <span class=p>}</span>
+        <span class=kr>const</span> <span class=nx>result</span> <span class=o>=</span> <span class=nx>func</span><span class=p>.</span><span class=nx>call</span><span class=p>(</span><span class=k>this</span><span class=p>,</span> <span class=nx>x</span><span class=p>);</span>
+        <span class=nx>cache</span><span class=p>.</span><span class=nx>set</span><span class=p>(</span><span class=nx>x</span><span class=p>,</span> <span class=nx>result</span><span class=p>);</span>
+
+        <span class=k>return</span> <span class=nx>result</span><span class=p>;</span>
+    <span class=p>};</span>
+<span class=p>}</span>
+<span class=nx>worker</span><span class=p>.</span><span class=nx>calc</span> <span class=o>=</span> <span class=nx>cachingDecorator</span><span class=p>(</span><span class=nx>worker</span><span class=p>.</span><span class=nx>calc</span><span class=p>);</span>
+<span class=nx>worker</span><span class=p>.</span><span class=nx>calc</span><span class=p>(</span><span class=mi>1</span><span class=p>);</span>
+<span class=c1>// Calc with 1</span>
+<span class=c1>// 1</span>
+<span class=nx>worker</span><span class=p>.</span><span class=nx>calc</span><span class=p>(</span><span class=mi>1</span><span class=p>);</span> <span class=c1>// Lần gọi này kết quả đã được cache</span>
+<span class=c1>// 1</span>
+</pre></div> <p>Đây là một cách khá hay, cho phép chúng ta decorate một phương thức, nhưng nhược điểm của nó là chúng ta cần biết chính xác số tham số của hàm cần decorate. Với những decorator mang tính khái quát hơn, chúng ta cần một phương thức khác.</p> <h1 id=xay-dung-decorator-tong-quat>Xây dựng decorator tổng quát<a class=headerlink href=#xay-dung-decorator-tong-quat title="Permanent link">&para;</a></h1> <p>Trở lại với ví dụ của chúng ta, giờ đây, giả sử chúng ta cần phải viết lại <code>cachingDecorator</code> sao cho nó có thể support các hàm có 2 tham số, nhưng vẫn đảm bảo hoạt động với các hàm có 1 tham số.</p> <p>Ví dụ, chúng ta cần cache thêm một phương thức như thế này:</p> <div class=codehilite><pre><span></span><span class=kd>function</span> <span class=nx>foo</span><span class=p>(</span><span class=nx>min</span><span class=p>,</span> <span class=nx>max</span><span class=p>)</span> <span class=p>{</span>
+    <span class=k>return</span> <span class=nx>min</span> <span class=o>+</span> <span class=nx>max</span><span class=p>;</span>
+<span class=p>}</span>
+</pre></div> <p>và như thế này:</p> <div class=codehilite><pre><span></span><span class=kr>const</span> <span class=nx>anotherWorker</span> <span class=o>=</span> <span class=p>{</span>
+    <span class=nx>calc</span><span class=p>(</span><span class=nx>x</span><span class=p>,</span> <span class=nx>y</span><span class=p>,</span> <span class=nx>z</span><span class=p>)</span><span class=o>:</span>
+        <span class=k>return</span> <span class=nx>x</span> <span class=o>+</span> <span class=nx>y</span> <span class=o>+</span> <span class=nx>z</span><span class=p>;</span>
+    <span class=p>}</span>
+<span class=p>}</span>
+</pre></div> <p>Trong trường hợp này, chúng ta cần giải quyết hai vấn đề.</p> <p>Vấn đề đâu tiên là làm thế nào để sử dụng nhiều giá trị (<code>min, max</code>) để làm key cho đối tượng <code>cache</code>. Trong trường hợp đơn giản, chúng ta dùng luôn giá trị của tham số làm key. Nhưng giờ đây, chúng ta cần phải có một phương thức khác, do đối tượng thuộc class <code>Map</code> không hỗ trợ việc dùng các giá trị phức tạp.</p> <p>Để giải quyết vấn đề này, chúng ta có thể dùng nhiều cách. Đầu tiên là tự cài đặt (hoặc dùng thư viện) để xử lý các tham số, cho ra một giá trị duy nhất với các đầu vào khác nhau. Một cách khác là sử dụng <code>Map</code> lồng nhau, ví dụ, <code>cache.set(min)</code> sẽ lưu một <code>Map</code> vào giá trị của nó, lúc này chúng ta cần gọi kết quả bằng cách <code>cache.get(min).get(max)</code>.</p> <p>Tuy nhiên, trong trường hợp cụ thể của chúng ta, chúng ta có thể sử dụng một phương pháp đơn giản, đó là sử dụng string <code>min,max</code> là key của <code>Map</code>.</p> <p>Vấn đề thứ hai, quan trọng hơn, là chúng ta phải tìm cách truyền tham số cho hàm trong decorator. Khi trước, chúng ta biết chính xác hàm chỉ có 1 tham số nên việc cài đặt còn đơn giản. Giờ đây chúng ta cần cài đặt decorator sao cho nó có thể nhận nhiều tham số hơn (mà vẫn support hàm có 1 tham số).</p> <p><a href=https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply><code>Function.prototype.apply</code></a> chính là phương thức cho phép chúng ta có thể cài đặt các decorator một cách khái quát. Một ví dụ rất điển hình mà các lập trình viên vẫn hay dùng, đó là:</p> <div class=codehilite><pre><span></span><span class=kr>const</span> <span class=nx>numbers</span> <span class=o>=</span> <span class=p>[</span><span class=mi>4</span><span class=p>,</span> <span class=mi>6</span><span class=p>,</span> <span class=mi>7</span><span class=p>,</span> <span class=mi>2</span><span class=p>,</span> <span class=mi>3</span><span class=p>];</span>
+
+<span class=kr>const</span> <span class=nx>max</span> <span class=o>=</span> <span class=nb>Math</span><span class=p>.</span><span class=nx>max</span><span class=p>.</span><span class=nx>apply</span><span class=p>(</span><span class=kc>null</span><span class=p>,</span> <span class=nx>numbers</span><span class=p>);</span>
+<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>max</span><span class=p>);</span>
+
+<span class=kr>const</span> <span class=nx>min</span> <span class=o>=</span> <span class=nb>Math</span><span class=p>.</span><span class=nx>min</span><span class=p>.</span><span class=nx>apply</span><span class=p>(</span><span class=kc>null</span><span class=p>,</span> <span class=nx>numbers</span><span class=p>);</span>
+<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>min</span><span class=p>);</span>
+</pre></div> <p>Đây là một cách giúp chúng ta có thể truyền tham số một cách khá tuỳ ý vào các hàm hoặc phương thức. Ngoài ra, JavaScript còn một cú pháp khác (mới xuất hiện gần đây) cũng cho phép chúng ta làm điều tương tự. Đó là sử dụng ellipsis, ví dụ:</p> <div class=codehilite><pre><span></span><span class=nb>Math</span><span class=p>.</span><span class=nx>max</span><span class=p>(...</span><span class=nx>numbers</span><span class=p>);</span>
+</pre></div> <p>Thế nhưng, nếu với các hàm cần tham chiếu đến <code>this</code> thì chúng ta cần kết hợp cú pháp ellipsis với <code>call</code> theo kiểu:</p> <div class=codehilite><pre><span></span><span class=nb>Math</span><span class=p>.</span><span class=nx>max</span><span class=p>.</span><span class=nx>call</span><span class=p>(</span><span class=kc>null</span><span class=p>,</span> <span class=p>...</span><span class=nx>numbers</span><span class=p>);</span>
+</pre></div> <p>Sử dụng <code>call</code> hay <code>apply</code> thì về mặt code cũng không khác nhau là mấy (ngoài từ <code>call</code> thì dài hơn một chút), nhưng về mặt hiệu năng, <code>apply</code> có vẻ cho kết quả tốt hơn, do nó cần ít thao tác hơn.</p> <p>Lưu ý rằng, trong hai cách làm này, chúng ta cần các giá trị được truyền vào phải được lưu vào trong một mảng, hoặc một đối tượng có tính chất gần giống như mảng.</p> <p>Chúng ta có thể khái quát hoá như sau:</p> <div class=codehilite><pre><span></span><span class=kr>const</span> <span class=nx>worker</span> <span class=o>=</span> <span class=p>{</span>
+    <span class=nx>calc</span><span class=p>(</span><span class=nx>min</span><span class=p>,</span> <span class=nx>max</span><span class=p>)</span> <span class=p>{</span>
+        <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=sb>`Calc with </span><span class=si>${</span><span class=nx>min</span><span class=si>}</span><span class=sb>, </span><span class=si>${</span><span class=nx>max</span><span class=si>}</span><span class=sb>`</span><span class=p>);</span>
+        <span class=k>return</span> <span class=nx>min</span> <span class=o>+</span> <span class=nx>max</span><span class=p>;</span>
+    <span class=p>}</span>
+<span class=p>}</span>
+
+<span class=kd>function</span> <span class=nx>cachingDecorator</span><span class=p>(</span><span class=nx>func</span><span class=p>,</span> <span class=nx>hash</span><span class=p>)</span> <span class=p>{</span>
+    <span class=kd>let</span> <span class=nx>cache</span> <span class=o>=</span> <span class=k>new</span> <span class=nx>Map</span><span class=p>();</span>
+
+    <span class=k>return</span> <span class=kd>function</span><span class=p>(...</span><span class=nx>args</span><span class=p>)</span> <span class=p>{</span>
+        <span class=kd>let</span> <span class=nx>key</span> <span class=o>=</span> <span class=nx>hash</span><span class=p>(</span><span class=nx>args</span><span class=p>);</span>
+        <span class=k>if</span> <span class=p>(</span><span class=nx>cache</span><span class=p>.</span><span class=nx>has</span><span class=p>(</span><span class=nx>key</span><span class=p>))</span> <span class=p>{</span>
+            <span class=k>return</span> <span class=nx>cache</span><span class=p>.</span><span class=nx>get</span><span class=p>(</span><span class=nx>key</span><span class=p>);</span>
+        <span class=p>}</span>
+
+        <span class=kd>let</span> <span class=nx>result</span> <span class=o>=</span> <span class=nx>func</span><span class=p>.</span><span class=nx>apply</span><span class=p>(</span><span class=k>this</span><span class=p>,</span> <span class=nx>args</span><span class=p>);</span>
+        <span class=nx>cache</span><span class=p>.</span><span class=nx>set</span><span class=p>(</span><span class=nx>key</span><span class=p>,</span> <span class=nx>result</span><span class=p>);</span>
+
+        <span class=k>return</span> <span class=nx>result</span><span class=p>;</span>
+    <span class=p>};</span>
+<span class=p>}</span>
+
+<span class=kd>function</span> <span class=nx>hash</span><span class=p>(...</span><span class=nx>args</span><span class=p>)</span> <span class=p>{</span>
+    <span class=k>return</span> <span class=nx>args</span><span class=p>.</span><span class=nx>join</span><span class=p>();</span>
+<span class=p>}</span>
+
+<span class=nx>worker</span><span class=p>.</span><span class=nx>calc</span> <span class=o>=</span> <span class=nx>cachingDecorator</span><span class=p>(</span><span class=nx>worker</span><span class=p>.</span><span class=nx>calc</span><span class=p>,</span> <span class=nx>hash</span><span class=p>);</span>
+<span class=nx>worker</span><span class=p>.</span><span class=nx>calc</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span> <span class=mi>2</span><span class=p>);</span>
+<span class=c1>// Calc with 1, 2</span>
+<span class=c1>// 3</span>
+<span class=nx>worker</span><span class=p>.</span><span class=nx>calc</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span> <span class=mi>2</span><span class=p>);</span> <span class=c1>// Lần gọi này kết quả đã được cache</span>
+<span class=c1>// 3</span>
+</pre></div> <p>Với cách làm này, chúng ta có thể sử dụng decorator <code>cachingDecorator</code> với bất cứ hàm nào và bất cứ phương thức nào cũng không vấn đề gì, cho dù những hàm hay phương thức đó cần bao nhiêu tham số đi chăng nữa.</p> <p>Việc tương thích ngược với hàm đầu tiên của chúng ta cũng không gặp khó khăn gì</p> <div class=codehilite><pre><span></span><span class=kd>function</span> <span class=nx>calc</span><span class=p>(</span><span class=nx>x</span><span class=p>)</span> <span class=p>{</span>
+    <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=sb>`Calc with </span><span class=si>${</span><span class=nx>x</span><span class=si>}</span><span class=sb>`</span><span class=p>);</span>
+    <span class=k>return</span> <span class=nx>x</span><span class=p>;</span>
+<span class=p>}</span>
+<span class=nx>calc</span> <span class=o>=</span> <span class=nx>cachingDecator</span><span class=p>(</span><span class=nx>calc</span><span class=p>,</span> <span class=nx>hash</span><span class=p>);</span>
+<span class=nx>calc</span><span class=p>(</span><span class=mi>1</span><span class=p>);</span>
+<span class=c1>// Calc with 1</span>
+<span class=c1>// 1</span>
+<span class=nx>worker</span><span class=p>.</span><span class=nx>calc</span><span class=p>(</span><span class=mi>1</span><span class=p>);</span> <span class=c1>// Lần gọi này kết quả đã được cache</span>
+<span class=c1>// 1</span>
+</pre></div> <p>Chỉ có một lưu ý nhỏ, là mỗi khi áp dụng decorator này ở đâu, chúng ta cần phải xây dựng một hàm để tính key cho <code>Map</code> từ các tham số. Trong ví dụ trên, hàm đó chỉ đơn giản là <code>join</code> các tham số tạo thành một string mà thôi.</p> <h1 id=ket-luan>Kết luận<a class=headerlink href=#ket-luan title="Permanent link">&para;</a></h1> <p>Decorator thực sự là một phương pháp tốt, giúp chúng ta thay đổi hành vi của các hàm, phương thức mà không tác động gì vào source code của chúng.</p> <p>Chỉ có một lưu ý nhỏ khi sử dụng decorator, đó là nó sẽ tạo một wrapper cho hàm được decorate, do đó, một số thuộc tính của hàm gốc sẽ không thể sử dụng được nữa. Do đó, chúng ta phải hết sức cẩn thận nếu cần đến các thuộc tính này (dù thực tế nhu cầu đó cũng không cao lắm).</p> </div> <div class=post-footer> <div class=tags> <i class="fa fa-tags"></i> <span>#JavaScript</span> <span>#fundamentals</span> <span>#call</span> <span>#apply</span> <span>#built-in</span> </div> </div> </div><div class=blog-pager> <span class=older-link> <a href=/2019/Jan/28/phu-yen-travel.html> Older Post </a> </span> </div><div class=comments> <div class=finally> <p><em>I apologise for any typos. If you notice a problem, please let me know.</em> <p>Thank you all for your attention. </div> <div id=disqus_thread></div> <script src=/theme/js/disqus.min.js?81e8a5f5></script> <noscript> Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript> comments powered by Disqus. </a> </noscript> </div></div> </div> </div> <div class=sidebar-wrapper> <div class=widget> <h2>Welcome</h2> <div> <img src=/theme/images/banner.gif alt=Welcome> </div> </div><div class="widget recent-posts"> <h2>Recent Posts</h2> <ul> <li> <a href=/2019/Feb/20/javascript-decorator.html> <img alt="JavaScript decorator" src=https://i.imgur.com/Sh3yLI0.png> </a> <a href=/2019/Feb/20/javascript-decorator.html>JavaScript decorator</a> <li> <a href=/2019/Jan/28/phu-yen-travel.html> <img alt="Phu Yen travel" src=https://i.imgur.com/Tuh1YAk.jpg> </a> <a href=/2019/Jan/28/phu-yen-travel.html>Phu Yen travel</a> <li> <a href=/2019/Jan/20/cors.html> <img alt=CORS src=https://i.imgur.com/ez23P9O.png> </a> <a href=/2019/Jan/20/cors.html>CORS</a> <li> <a href=/2019/Jan/11/funny-fizzbuzz-with-python.html> <img alt="Funny FizzBuzz with Python" src=https://i.imgur.com/tMAH8RC.jpg> </a> <a href=/2019/Jan/11/funny-fizzbuzz-with-python.html>Funny FizzBuzz with Python</a> <li> <a href=/2018/Dec/31/the-year-in-review-2018.html> <img alt="The year in review 2018" src=https://i.imgur.com/WSUpSOX.jpg> </a> <a href=/2018/Dec/31/the-year-in-review-2018.html>The year in review 2018</a> </ul> </div><div class="widget labels"> <h2>Blog Archive</h2> <ul> <li> <a href=/2019/ > 2019 </a> <li> <a href=/2018/ > 2018 </a> <li> <a href=/2017/ > 2017 </a> <li> <a href=/2016/ > 2016 </a> <li> <a href=/2015/ > 2015 </a> <li> <a href=/2014/ > 2014 </a> <li> <a href=/2013/ > 2013 </a> <li> <a href=/2012/ > 2012 </a> <li> <a href=/2011/ > 2011 </a> <li> <a href=/2010/ > 2010 </a> </ul> </div><div class=widget> <h2>Twitter timeline</h2> <a class=twitter-timeline data-height=500 data-dnt=true data-theme=light href=https://twitter.com/_naa_4f data-chrome="noheader nofooter transparent noborders"> Tweets by manhhomienbienthuy </a> </div> </div> </div> <a href=# class="smooth-scroll back-to-top"> <i class="fa fa-arrow-circle-up fa-3x"></i> </a> </main> <footer> <div class=infos> <div class=wrapper> <div class=widget> <a href=/ title="manhhomienbienthuy's space" class=logo> <img alt="manhhomienbienthuy's space" src=/theme/images/logo_white.png> </a> <span class=right>I'm a hacker, enter my world...</span> </div><div class=widget> <p> Created with all my ♥ and soul, dedicated to my love, yunachan <p> Powered by <a href=http://blog.getpelican.com/ target=_blank>Pelican</a>, which takes great advantage of <a href=https://www.python.org/ target=_blank>Python</a> <p> This site content is licensed under a <a href=https://creativecommons.org/licenses/by-nc-nd/4.0/ target=_blank> CC BY-NC-ND 4.0 </a> License. <p> Updated at <a target=_blank href="http://www.timeanddate.com/worldclock/fixedtime.html?iso=2019-02-20T04:21:49"> 2019-02-20 04:21:49 </a> </div><div class=widget> <p> Hosting by <a href=https://manhhomienbienthuy.bitbucket.io/ >Bitbucket</a> and <a href=https://manhhomienbienthuy.github.io/ >Github</a>, image hosting by <a href=https://manhhomienbienthuy.imgur.com/ target=_blank>imgur</a>, <a href=https://instagram.com/manhhomienbienthuy/ target=_blank>Instagram</a> and <a href=https://photos.google.com/ target=_blank>Google Photo</a> <p> Theme based on <a href=https://vanice-veethemes.blogspot.com/ target=_blank>Vanice theme</a>, icons from <a href=https://fontawesome.com/ target=_blank>Font Awesome</a>, comments powered by <a href=https://disqus.com/home/forums/manhhomienbienthuy/ target=_blank>Disqus</a> </div> </div> </div> <div class=credits> <div class=wrapper> <div class=left> <!--
+          Regarding copyright, in general, standalone pages (as
+          opposed to files generated as part of manuals) on the GNU
+          web server should be under CC BY-ND 4.0.  Please do NOT
+          change or remove this without talking with the webmasters or
+          licensing team first.  Please make sure the copyright date
+          is consistent with the document.  For web pages, it is ok to
+          list just the latest year the document was modified, or
+          published.
+
+          If you wish to list earlier years, that is ok too.  Either
+          "2001, 2002, 2003" or "2001-2003" are ok for specifying
+          years, as long as each year in the range is in fact a
+          copyrightable year, i.e., a year in which the document was
+          published (including being publicly visible on the web or in
+          a revision control system).
+        --> Copyright © 2010-2019 <a href=/pages/about-me.html><strong>manhhomienbienthuy</strong></a>. All rights reserved. </div> <div class=right> <ul> <li><a href=/ >Home</a> <li><a href=/pages/about-me.html>About</a> <li><a href=# class=smooth-scroll>Top ↑</a> </ul> </div> </div> </div></footer> <script src=https://code.jquery.com/jquery-3.2.1.js></script> <script src=//cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js></script> <script src=//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.2/imagesloaded.pkgd.min.js></script> <script src=/theme/js/vpyeu.min.js?d72c87bd></script> <script id=dsq-count-scr src=https://manhhomienbienthuy.disqus.com/count.js async></script>
