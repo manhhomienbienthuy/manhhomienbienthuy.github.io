@@ -8,13 +8,13 @@
         <span class=nb>print</span><span class=p>(</span><span class=s2>"Fizz"</span><span class=p>)</span>
     <span class=k>else</span><span class=p>:</span>
         <span class=nb>print</span><span class=p>(</span><span class=n>i</span><span class=p>)</span>
-</code></pre></div><h2 class="group font-semibold mt-8 mb-4 pb-2 border-b border-gray-100 dark:border-gray-700 text-3xl text-gray-900 dark:text-gray-100" id=recursive-function><a class="md:opacity-0 group-hover:opacity-100 float-left -ml-5 pr-1 leading-none" title="Permanent link" href=#recursive-function> <svg class="size-4 inline-block" viewbox="0 0 24 24" fill=none height=16 stroke=currentColor width=16 xmlns=http://www.w3.org/2000/svg><path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap=round stroke-linejoin=round stroke-width=2></path></svg> </a>Recursive function</h2><div class="chl my-4 p-4 bg-gray-100 dark:bg-gray-900 overflow-auto"><pre class=text-sm><code><span class=k>def</span><span class=w> </span><span class=nf>count</span><span class=p>(</span><span class=n>num</span><span class=p>):</span>
+</code></pre></div><h2 class="group font-semibold mt-8 mb-4 pb-2 border-b border-gray-100 dark:border-gray-700 text-3xl text-gray-900 dark:text-gray-100" id=recursive-function><a class="md:opacity-0 group-hover:opacity-100 float-left -ml-5 pr-1 leading-none" title="Permanent link" href=#recursive-function> <svg class="size-4 inline-block" viewbox="0 0 24 24" fill=none height=16 stroke=currentColor width=16 xmlns=http://www.w3.org/2000/svg><path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap=round stroke-linejoin=round stroke-width=2></path></svg> </a>Recursive function</h2><div class="chl my-4 p-4 bg-gray-100 dark:bg-gray-900 overflow-auto"><pre class=text-sm><code><span class=k>def</span> <span class=nf>count</span><span class=p>(</span><span class=n>num</span><span class=p>):</span>
     <span class=k>if</span> <span class=n>num</span> <span class=o>>=</span> <span class=mi>1</span><span class=p>:</span>
         <span class=n>count</span><span class=p>(</span><span class=n>num</span> <span class=o>-</span> <span class=mi>1</span><span class=p>)</span>
         <span class=n>fizz_buzz</span><span class=p>(</span><span class=n>num</span><span class=p>)</span>
 
 
-<span class=k>def</span><span class=w> </span><span class=nf>fizz_buzz</span><span class=p>(</span><span class=n>num</span><span class=p>):</span>
+<span class=k>def</span> <span class=nf>fizz_buzz</span><span class=p>(</span><span class=n>num</span><span class=p>):</span>
     <span class=k>if</span> <span class=n>num</span> <span class=o>%</span> <span class=mi>15</span> <span class=o>==</span> <span class=mi>0</span><span class=p>:</span>
         <span class=nb>print</span><span class=p>(</span><span class=s2>"FizzBuzz"</span><span class=p>)</span>
     <span class=k>elif</span> <span class=n>num</span> <span class=o>%</span> <span class=mi>3</span> <span class=o>==</span> <span class=mi>0</span><span class=p>:</span>
@@ -33,15 +33,15 @@
     <span class=k>if</span> <span class=n>i</span> <span class=o>%</span> <span class=mi>5</span> <span class=o>==</span> <span class=mi>0</span><span class=p>:</span>
         <span class=n>msg</span> <span class=o>+=</span> <span class=s2>"Buzz"</span>
     <span class=nb>print</span><span class=p>(</span><span class=n>msg</span> <span class=ow>or</span> <span class=n>num</span><span class=p>)</span>
-</code></pre></div><h2 class="group font-semibold mt-8 mb-4 pb-2 border-b border-gray-100 dark:border-gray-700 text-3xl text-gray-900 dark:text-gray-100" id=oop><a class="md:opacity-0 group-hover:opacity-100 float-left -ml-5 pr-1 leading-none" title="Permanent link" href=#oop> <svg class="size-4 inline-block" viewbox="0 0 24 24" fill=none height=16 stroke=currentColor width=16 xmlns=http://www.w3.org/2000/svg><path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap=round stroke-linejoin=round stroke-width=2></path></svg> </a>OOP</h2><div class="chl my-4 p-4 bg-gray-100 dark:bg-gray-900 overflow-auto"><pre class=text-sm><code><span class=k>class</span><span class=w> </span><span class=nc>FizzBuzz</span><span class=p>:</span>
-    <span class=k>def</span><span class=w> </span><span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>num</span><span class=p>):</span>
+</code></pre></div><h2 class="group font-semibold mt-8 mb-4 pb-2 border-b border-gray-100 dark:border-gray-700 text-3xl text-gray-900 dark:text-gray-100" id=oop><a class="md:opacity-0 group-hover:opacity-100 float-left -ml-5 pr-1 leading-none" title="Permanent link" href=#oop> <svg class="size-4 inline-block" viewbox="0 0 24 24" fill=none height=16 stroke=currentColor width=16 xmlns=http://www.w3.org/2000/svg><path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap=round stroke-linejoin=round stroke-width=2></path></svg> </a>OOP</h2><div class="chl my-4 p-4 bg-gray-100 dark:bg-gray-900 overflow-auto"><pre class=text-sm><code><span class=k>class</span> <span class=nc>FizzBuzz</span><span class=p>:</span>
+    <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>num</span><span class=p>):</span>
         <span class=bp>self</span><span class=o>.</span><span class=n>num</span> <span class=o>=</span> <span class=n>num</span>
 
-    <span class=k>def</span><span class=w> </span><span class=nf>count</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+    <span class=k>def</span> <span class=nf>count</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
         <span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span> <span class=bp>self</span><span class=o>.</span><span class=n>num</span> <span class=o>+</span> <span class=mi>1</span><span class=p>):</span>
             <span class=bp>self</span><span class=o>.</span><span class=n>fizz_buzz</span><span class=p>(</span><span class=n>i</span><span class=p>)</span>
 
-    <span class=k>def</span><span class=w> </span><span class=nf>fizz_buzz</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>num</span><span class=p>):</span>
+    <span class=k>def</span> <span class=nf>fizz_buzz</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>num</span><span class=p>):</span>
         <span class=k>if</span> <span class=n>num</span> <span class=o>%</span> <span class=mi>15</span> <span class=o>==</span> <span class=mi>0</span><span class=p>:</span>
             <span class=nb>print</span><span class=p>(</span><span class=s2>"FizzBuzz"</span><span class=p>)</span>
         <span class=k>elif</span> <span class=n>num</span> <span class=o>%</span> <span class=mi>3</span> <span class=o>==</span> <span class=mi>0</span><span class=p>:</span>
@@ -53,18 +53,18 @@
 
 
 <span class=n>FizzBuzz</span><span class=p>(</span><span class=mi>100</span><span class=p>)</span><span class=o>.</span><span class=n>count</span><span class=p>()</span>
-</code></pre></div><h2 class="group font-semibold mt-8 mb-4 pb-2 border-b border-gray-100 dark:border-gray-700 text-3xl text-gray-900 dark:text-gray-100" id=lazy><a class="md:opacity-0 group-hover:opacity-100 float-left -ml-5 pr-1 leading-none" title="Permanent link" href=#lazy> <svg class="size-4 inline-block" viewbox="0 0 24 24" fill=none height=16 stroke=currentColor width=16 xmlns=http://www.w3.org/2000/svg><path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap=round stroke-linejoin=round stroke-width=2></path></svg> </a>Lazy</h2><div class="chl my-4 p-4 bg-gray-100 dark:bg-gray-900 overflow-auto"><pre class=text-sm><code><span class=kn>import</span><span class=w> </span><span class=nn>itertools</span>
+</code></pre></div><h2 class="group font-semibold mt-8 mb-4 pb-2 border-b border-gray-100 dark:border-gray-700 text-3xl text-gray-900 dark:text-gray-100" id=lazy><a class="md:opacity-0 group-hover:opacity-100 float-left -ml-5 pr-1 leading-none" title="Permanent link" href=#lazy> <svg class="size-4 inline-block" viewbox="0 0 24 24" fill=none height=16 stroke=currentColor width=16 xmlns=http://www.w3.org/2000/svg><path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap=round stroke-linejoin=round stroke-width=2></path></svg> </a>Lazy</h2><div class="chl my-4 p-4 bg-gray-100 dark:bg-gray-900 overflow-auto"><pre class=text-sm><code><span class=kn>import</span> <span class=nn>itertools</span>
 
 
-<span class=k>class</span><span class=w> </span><span class=nc>FizzBuzzRule</span><span class=p>(</span><span class=nb>object</span><span class=p>):</span>
+<span class=k>class</span> <span class=nc>FizzBuzzRule</span><span class=p>(</span><span class=nb>object</span><span class=p>):</span>
     <span class=nd>@classmethod</span>
-    <span class=k>def</span><span class=w> </span><span class=nf>say</span><span class=p>(</span><span class=bp>cls</span><span class=p>,</span> <span class=n>word</span><span class=p>):</span>
+    <span class=k>def</span> <span class=nf>say</span><span class=p>(</span><span class=bp>cls</span><span class=p>,</span> <span class=n>word</span><span class=p>):</span>
         <span class=k>return</span> <span class=bp>cls</span><span class=p>(</span><span class=n>word</span><span class=p>)</span>
 
-    <span class=k>def</span><span class=w> </span><span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>word</span><span class=p>):</span>
+    <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>word</span><span class=p>):</span>
         <span class=bp>self</span><span class=o>.</span><span class=n>word</span> <span class=o>=</span> <span class=n>word</span>
 
-    <span class=k>def</span><span class=w> </span><span class=nf>for_multiples_of</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>number</span><span class=p>):</span>
+    <span class=k>def</span> <span class=nf>for_multiples_of</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>number</span><span class=p>):</span>
         <span class=k>return</span> <span class=n>itertools</span><span class=o>.</span><span class=n>cycle</span><span class=p>((</span><span class=o>*</span><span class=n>itertools</span><span class=o>.</span><span class=n>repeat</span><span class=p>(</span><span class=s1>''</span><span class=p>,</span> <span class=n>number</span> <span class=o>-</span> <span class=mi>1</span><span class=p>),</span> <span class=bp>self</span><span class=o>.</span><span class=n>word</span><span class=p>))</span>
 
 
@@ -76,7 +76,7 @@
                       <span class=ow>in</span> <span class=nb>zip</span><span class=p>(</span><span class=n>numbers</span><span class=p>,</span> <span class=n>fizzes</span><span class=p>,</span> <span class=n>buzzes</span><span class=p>))</span>
 <span class=k>for</span> <span class=n>word</span> <span class=ow>in</span> <span class=n>itertools</span><span class=o>.</span><span class=n>islice</span><span class=p>(</span><span class=n>fizzbuzz_generator</span><span class=p>,</span> <span class=mi>100</span><span class=p>):</span>
     <span class=nb>print</span><span class=p>(</span><span class=n>word</span><span class=p>)</span>
-</code></pre></div><h2 class="group font-semibold mt-8 mb-4 pb-2 border-b border-gray-100 dark:border-gray-700 text-3xl text-gray-900 dark:text-gray-100" id=lazy-short-code><a class="md:opacity-0 group-hover:opacity-100 float-left -ml-5 pr-1 leading-none" title="Permanent link" href=#lazy-short-code> <svg class="size-4 inline-block" viewbox="0 0 24 24" fill=none height=16 stroke=currentColor width=16 xmlns=http://www.w3.org/2000/svg><path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap=round stroke-linejoin=round stroke-width=2></path></svg> </a>Lazy short code</h2><div class="chl my-4 p-4 bg-gray-100 dark:bg-gray-900 overflow-auto"><pre class=text-sm><code><span class=kn>from</span><span class=w> </span><span class=nn>itertools</span><span class=w> </span><span class=kn>import</span> <span class=n>cycle</span><span class=p>,</span> <span class=n>count</span><span class=p>,</span> <span class=n>islice</span>
+</code></pre></div><h2 class="group font-semibold mt-8 mb-4 pb-2 border-b border-gray-100 dark:border-gray-700 text-3xl text-gray-900 dark:text-gray-100" id=lazy-short-code><a class="md:opacity-0 group-hover:opacity-100 float-left -ml-5 pr-1 leading-none" title="Permanent link" href=#lazy-short-code> <svg class="size-4 inline-block" viewbox="0 0 24 24" fill=none height=16 stroke=currentColor width=16 xmlns=http://www.w3.org/2000/svg><path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap=round stroke-linejoin=round stroke-width=2></path></svg> </a>Lazy short code</h2><div class="chl my-4 p-4 bg-gray-100 dark:bg-gray-900 overflow-auto"><pre class=text-sm><code><span class=kn>from</span> <span class=nn>itertools</span> <span class=kn>import</span> <span class=n>cycle</span><span class=p>,</span> <span class=n>count</span><span class=p>,</span> <span class=n>islice</span>
 
 <span class=n>fizzes</span> <span class=o>=</span> <span class=n>cycle</span><span class=p>([</span><span class=s2>""</span><span class=p>]</span> <span class=o>*</span> <span class=mi>2</span> <span class=o>+</span> <span class=p>[</span><span class=s2>"Fizz"</span><span class=p>])</span>
 <span class=n>buzzes</span> <span class=o>=</span> <span class=n>cycle</span><span class=p>([</span><span class=s2>""</span><span class=p>]</span> <span class=o>*</span> <span class=mi>4</span> <span class=o>+</span> <span class=p>[</span><span class=s2>"Buzz"</span><span class=p>])</span>
@@ -124,7 +124,7 @@
 <span class=p>}</span>
 
 
-<span class=k>def</span><span class=w> </span><span class=nf>fizz_buzz</span><span class=p>():</span>
+<span class=k>def</span> <span class=nf>fizz_buzz</span><span class=p>():</span>
     <span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span> <span class=mi>101</span><span class=p>):</span>
         <span class=nb>print</span><span class=p>(</span><span class=n>FIZZ_BUZZ</span><span class=o>.</span><span class=n>get</span><span class=p>(</span>
             <span class=mi>15</span> <span class=o>*</span> <span class=p>(</span><span class=ow>not</span> <span class=n>i</span> <span class=o>%</span> <span class=mi>15</span><span class=p>)</span> <span class=ow>or</span> <span class=mi>5</span> <span class=o>*</span> <span class=p>(</span><span class=ow>not</span> <span class=n>i</span> <span class=o>%</span> <span class=mi>5</span><span class=p>)</span> <span class=ow>or</span> <span class=mi>3</span> <span class=o>*</span> <span class=p>(</span><span class=ow>not</span> <span class=n>i</span> <span class=o>%</span> <span class=mi>3</span><span class=p>),</span>
@@ -135,129 +135,129 @@
 <span class=n>fizz_buzz</span><span class=p>()</span>
 </code></pre></div><h2 class="group font-semibold mt-8 mb-4 pb-2 border-b border-gray-100 dark:border-gray-700 text-3xl text-gray-900 dark:text-gray-100" id=interview-version><a class="md:opacity-0 group-hover:opacity-100 float-left -ml-5 pr-1 leading-none" title="Permanent link" href=#interview-version> <svg class="size-4 inline-block" viewbox="0 0 24 24" fill=none height=16 stroke=currentColor width=16 xmlns=http://www.w3.org/2000/svg><path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap=round stroke-linejoin=round stroke-width=2></path></svg> </a>Interview version</h2><div class="chl my-4 p-4 bg-gray-100 dark:bg-gray-900 overflow-auto"><pre class=text-sm><code><span class=k>for</span> <span class=n>n</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span> <span class=mi>101</span><span class=p>):</span>
     <span class=nb>print</span><span class=p>(</span><span class=s1>'FizzBuzz'</span><span class=p>[</span><span class=n>n</span> <span class=o>%</span> <span class=o>-</span><span class=mi>3</span> <span class=o>&</span> <span class=mi>4</span><span class=p>:</span> <span class=mi>12</span> <span class=o>&</span> <span class=mi>8</span> <span class=o>-</span> <span class=p>(</span><span class=n>n</span> <span class=o>%</span> <span class=o>-</span><span class=mi>5</span> <span class=o>&</span> <span class=mi>4</span><span class=p>)]</span> <span class=ow>or</span> <span class=n>n</span><span class=p>)</span>
-</code></pre></div><h2 class="group font-semibold mt-8 mb-4 pb-2 border-b border-gray-100 dark:border-gray-700 text-3xl text-gray-900 dark:text-gray-100" id=just-for-fun><a class="md:opacity-0 group-hover:opacity-100 float-left -ml-5 pr-1 leading-none" title="Permanent link" href=#just-for-fun> <svg class="size-4 inline-block" viewbox="0 0 24 24" fill=none height=16 stroke=currentColor width=16 xmlns=http://www.w3.org/2000/svg><path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap=round stroke-linejoin=round stroke-width=2></path></svg> </a>Just for fun</h2><div class="chl my-4 p-4 bg-gray-100 dark:bg-gray-900 overflow-auto"><pre class=text-sm><code><span class=k>def</span><span class=w> </span><span class=nf>get_index</span><span class=p>(</span><span class=n>i</span><span class=p>):</span>
+</code></pre></div><h2 class="group font-semibold mt-8 mb-4 pb-2 border-b border-gray-100 dark:border-gray-700 text-3xl text-gray-900 dark:text-gray-100" id=just-for-fun><a class="md:opacity-0 group-hover:opacity-100 float-left -ml-5 pr-1 leading-none" title="Permanent link" href=#just-for-fun> <svg class="size-4 inline-block" viewbox="0 0 24 24" fill=none height=16 stroke=currentColor width=16 xmlns=http://www.w3.org/2000/svg><path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap=round stroke-linejoin=round stroke-width=2></path></svg> </a>Just for fun</h2><div class="chl my-4 p-4 bg-gray-100 dark:bg-gray-900 overflow-auto"><pre class=text-sm><code><span class=k>def</span> <span class=nf>get_index</span><span class=p>(</span><span class=n>i</span><span class=p>):</span>
     <span class=k>return</span> <span class=nb>bool</span><span class=p>(</span><span class=n>i</span> <span class=o>%</span> <span class=mi>3</span><span class=p>)</span><span class=o>+</span><span class=mi>2</span><span class=o>*</span><span class=nb>bool</span><span class=p>(</span><span class=n>i</span> <span class=o>%</span> <span class=mi>5</span><span class=p>)</span> <span class=k>if</span> <span class=n>i</span> <span class=o>!=</span> <span class=mi>0</span> <span class=k>else</span> <span class=mi>3</span>
 
 
-<span class=k>def</span><span class=w> </span><span class=nf>afb</span><span class=p>(</span><span class=n>x</span><span class=p>):</span>
+<span class=k>def</span> <span class=nf>afb</span><span class=p>(</span><span class=n>x</span><span class=p>):</span>
     <span class=k>return</span> <span class=p>(</span><span class=s1>'fizzbuzz'</span><span class=p>,</span> <span class=s1>'buzz'</span><span class=p>,</span> <span class=s1>'fizz'</span><span class=p>,</span> <span class=nb>str</span><span class=p>(</span><span class=n>x</span><span class=p>))[</span><span class=n>get_index</span><span class=p>(</span><span class=n>x</span><span class=p>)]</span>
 
 
-<span class=k>def</span><span class=w> </span><span class=nf>fizzbuzz</span><span class=p>(</span><span class=n>inpt</span><span class=p>):</span>
+<span class=k>def</span> <span class=nf>fizzbuzz</span><span class=p>(</span><span class=n>inpt</span><span class=p>):</span>
     <span class=k>return</span> <span class=nb>print</span><span class=p>(</span><span class=s1>'</span><span class=se>\n</span><span class=s1>'</span><span class=o>.</span><span class=n>join</span><span class=p>([</span><span class=n>afb</span><span class=p>(</span><span class=n>i</span><span class=p>)</span> <span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=n>inpt</span><span class=p>]))</span>
 
 
 <span class=n>fizzbuzz</span><span class=p>(</span><span class=nb>range</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span> <span class=mi>101</span><span class=p>))</span>
-</code></pre></div><h2 class="group font-semibold mt-8 mb-4 pb-2 border-b border-gray-100 dark:border-gray-700 text-3xl text-gray-900 dark:text-gray-100" id=enterprise-version><a class="md:opacity-0 group-hover:opacity-100 float-left -ml-5 pr-1 leading-none" title="Permanent link" href=#enterprise-version> <svg class="size-4 inline-block" viewbox="0 0 24 24" fill=none height=16 stroke=currentColor width=16 xmlns=http://www.w3.org/2000/svg><path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap=round stroke-linejoin=round stroke-width=2></path></svg> </a>Enterprise version</h2><div class="chl my-4 p-4 bg-gray-100 dark:bg-gray-900 overflow-auto"><pre class=text-sm><code><span class=kn>from</span><span class=w> </span><span class=nn>abc</span><span class=w> </span><span class=kn>import</span> <span class=n>ABCMeta</span><span class=p>,</span> <span class=n>abstractmethod</span>
-<span class=kn>import</span><span class=w> </span><span class=nn>enum</span>
+</code></pre></div><h2 class="group font-semibold mt-8 mb-4 pb-2 border-b border-gray-100 dark:border-gray-700 text-3xl text-gray-900 dark:text-gray-100" id=enterprise-version><a class="md:opacity-0 group-hover:opacity-100 float-left -ml-5 pr-1 leading-none" title="Permanent link" href=#enterprise-version> <svg class="size-4 inline-block" viewbox="0 0 24 24" fill=none height=16 stroke=currentColor width=16 xmlns=http://www.w3.org/2000/svg><path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap=round stroke-linejoin=round stroke-width=2></path></svg> </a>Enterprise version</h2><div class="chl my-4 p-4 bg-gray-100 dark:bg-gray-900 overflow-auto"><pre class=text-sm><code><span class=kn>from</span> <span class=nn>abc</span> <span class=kn>import</span> <span class=n>ABCMeta</span><span class=p>,</span> <span class=n>abstractmethod</span>
+<span class=kn>import</span> <span class=nn>enum</span>
 
 
-<span class=k>class</span><span class=w> </span><span class=nc>SomethingerBase</span><span class=p>(</span><span class=n>metaclass</span><span class=o>=</span><span class=n>ABCMeta</span><span class=p>):</span>
+<span class=k>class</span> <span class=nc>SomethingerBase</span><span class=p>(</span><span class=n>metaclass</span><span class=o>=</span><span class=n>ABCMeta</span><span class=p>):</span>
     <span class=nd>@abstractmethod</span>
-    <span class=k>def</span><span class=w> </span><span class=nf>set_at</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>value</span><span class=p>):</span>
+    <span class=k>def</span> <span class=nf>set_at</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>value</span><span class=p>):</span>
         <span class=k>pass</span>
 
     <span class=nd>@abstractmethod</span>
-    <span class=k>def</span><span class=w> </span><span class=nf>step</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+    <span class=k>def</span> <span class=nf>step</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
         <span class=k>pass</span>
 
     <span class=nd>@abstractmethod</span>
-    <span class=k>def</span><span class=w> </span><span class=nf>is_something</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+    <span class=k>def</span> <span class=nf>is_something</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
         <span class=k>pass</span>
 
 
-<span class=k>class</span><span class=w> </span><span class=nc>ActorBase</span><span class=p>(</span><span class=n>metaclass</span><span class=o>=</span><span class=n>ABCMeta</span><span class=p>):</span>
+<span class=k>class</span> <span class=nc>ActorBase</span><span class=p>(</span><span class=n>metaclass</span><span class=o>=</span><span class=n>ABCMeta</span><span class=p>):</span>
     <span class=nd>@abstractmethod</span>
-    <span class=k>def</span><span class=w> </span><span class=nf>canact</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
-        <span class=k>pass</span>
-
-    <span class=nd>@abstractmethod</span>
-    <span class=k>def</span><span class=w> </span><span class=nf>act</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>value</span><span class=p>):</span>
+    <span class=k>def</span> <span class=nf>canact</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
         <span class=k>pass</span>
 
     <span class=nd>@abstractmethod</span>
-    <span class=k>def</span><span class=w> </span><span class=nf>execute</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>func</span><span class=p>):</span>
+    <span class=k>def</span> <span class=nf>act</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>value</span><span class=p>):</span>
         <span class=k>pass</span>
 
     <span class=nd>@abstractmethod</span>
-    <span class=k>def</span><span class=w> </span><span class=nf>get_actor_cannot_act_exception</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
-        <span class=k>pass</span>
-
-
-<span class=k>class</span><span class=w> </span><span class=nc>FizzerBuzzerInterface</span><span class=p>(</span><span class=n>SomethingerBase</span><span class=p>):</span>
-    <span class=nd>@abstractmethod</span>
-    <span class=k>def</span><span class=w> </span><span class=nf>is_fizzy</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+    <span class=k>def</span> <span class=nf>execute</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>func</span><span class=p>):</span>
         <span class=k>pass</span>
 
     <span class=nd>@abstractmethod</span>
-    <span class=k>def</span><span class=w> </span><span class=nf>is_buzzy</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+    <span class=k>def</span> <span class=nf>get_actor_cannot_act_exception</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+        <span class=k>pass</span>
+
+
+<span class=k>class</span> <span class=nc>FizzerBuzzerInterface</span><span class=p>(</span><span class=n>SomethingerBase</span><span class=p>):</span>
+    <span class=nd>@abstractmethod</span>
+    <span class=k>def</span> <span class=nf>is_fizzy</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
         <span class=k>pass</span>
 
     <span class=nd>@abstractmethod</span>
-    <span class=k>def</span><span class=w> </span><span class=nf>get_at</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+    <span class=k>def</span> <span class=nf>is_buzzy</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+        <span class=k>pass</span>
+
+    <span class=nd>@abstractmethod</span>
+    <span class=k>def</span> <span class=nf>get_at</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
         <span class=k>pass</span>
 
 
-<span class=k>class</span><span class=w> </span><span class=nc>Fizzer</span><span class=p>:</span>
-    <span class=k>def</span><span class=w> </span><span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+<span class=k>class</span> <span class=nc>Fizzer</span><span class=p>:</span>
+    <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
         <span class=bp>self</span><span class=o>.</span><span class=n>_at</span> <span class=o>=</span> <span class=kc>None</span>
 
-    <span class=k>def</span><span class=w> </span><span class=nf>set_at</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>value</span><span class=p>):</span>
+    <span class=k>def</span> <span class=nf>set_at</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>value</span><span class=p>):</span>
         <span class=bp>self</span><span class=o>.</span><span class=n>_at</span> <span class=o>=</span> <span class=n>value</span>
 
-    <span class=k>def</span><span class=w> </span><span class=nf>step</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+    <span class=k>def</span> <span class=nf>step</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
         <span class=bp>self</span><span class=o>.</span><span class=n>_at</span> <span class=o>+=</span> <span class=mi>1</span>
         <span class=bp>self</span><span class=o>.</span><span class=n>_at</span> <span class=o>%=</span> <span class=mi>3</span>
 
-    <span class=k>def</span><span class=w> </span><span class=nf>is_fizzy</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+    <span class=k>def</span> <span class=nf>is_fizzy</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
         <span class=k>return</span> <span class=ow>not</span> <span class=bp>self</span><span class=o>.</span><span class=n>_at</span>
 
 
-<span class=k>class</span><span class=w> </span><span class=nc>FizzerSomethingerAdaptor</span><span class=p>(</span><span class=n>SomethingerBase</span><span class=p>):</span>
-    <span class=k>def</span><span class=w> </span><span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>fizzer</span><span class=p>):</span>
+<span class=k>class</span> <span class=nc>FizzerSomethingerAdaptor</span><span class=p>(</span><span class=n>SomethingerBase</span><span class=p>):</span>
+    <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>fizzer</span><span class=p>):</span>
         <span class=bp>self</span><span class=o>.</span><span class=n>fizzer</span> <span class=o>=</span> <span class=n>fizzer</span>
 
-    <span class=k>def</span><span class=w> </span><span class=nf>set_at</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>value</span><span class=p>):</span>
+    <span class=k>def</span> <span class=nf>set_at</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>value</span><span class=p>):</span>
         <span class=bp>self</span><span class=o>.</span><span class=n>fizzer</span><span class=o>.</span><span class=n>set_at</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>value</span><span class=p>)</span>
 
-    <span class=k>def</span><span class=w> </span><span class=nf>step</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+    <span class=k>def</span> <span class=nf>step</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
         <span class=bp>self</span><span class=o>.</span><span class=n>fizzer</span><span class=o>.</span><span class=n>step</span><span class=p>()</span>
 
-    <span class=k>def</span><span class=w> </span><span class=nf>is_something</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+    <span class=k>def</span> <span class=nf>is_something</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
         <span class=k>return</span> <span class=bp>self</span><span class=o>.</span><span class=n>fizzer</span><span class=o>.</span><span class=n>is_fizzy</span><span class=p>()</span>
 
 
-<span class=k>class</span><span class=w> </span><span class=nc>Buzzer</span><span class=p>:</span>
-    <span class=k>def</span><span class=w> </span><span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+<span class=k>class</span> <span class=nc>Buzzer</span><span class=p>:</span>
+    <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
         <span class=bp>self</span><span class=o>.</span><span class=n>_at</span> <span class=o>=</span> <span class=kc>None</span>
 
-    <span class=k>def</span><span class=w> </span><span class=nf>set_at</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>value</span><span class=p>):</span>
+    <span class=k>def</span> <span class=nf>set_at</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>value</span><span class=p>):</span>
         <span class=bp>self</span><span class=o>.</span><span class=n>_at</span> <span class=o>=</span> <span class=n>value</span>
 
-    <span class=k>def</span><span class=w> </span><span class=nf>step</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+    <span class=k>def</span> <span class=nf>step</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
         <span class=bp>self</span><span class=o>.</span><span class=n>_at</span> <span class=o>+=</span> <span class=mi>1</span>
         <span class=bp>self</span><span class=o>.</span><span class=n>_at</span> <span class=o>%=</span> <span class=mi>5</span>
 
-    <span class=k>def</span><span class=w> </span><span class=nf>is_buzzy</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+    <span class=k>def</span> <span class=nf>is_buzzy</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
         <span class=k>return</span> <span class=ow>not</span> <span class=bp>self</span><span class=o>.</span><span class=n>_at</span>
 
 
-<span class=k>class</span><span class=w> </span><span class=nc>BuzzerSomethingerAdaptor</span><span class=p>(</span><span class=n>SomethingerBase</span><span class=p>):</span>
-    <span class=k>def</span><span class=w> </span><span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>fizzer</span><span class=p>):</span>
+<span class=k>class</span> <span class=nc>BuzzerSomethingerAdaptor</span><span class=p>(</span><span class=n>SomethingerBase</span><span class=p>):</span>
+    <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>fizzer</span><span class=p>):</span>
         <span class=bp>self</span><span class=o>.</span><span class=n>buzzer</span> <span class=o>=</span> <span class=n>fizzer</span>
 
-    <span class=k>def</span><span class=w> </span><span class=nf>set_at</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>value</span><span class=p>):</span>
+    <span class=k>def</span> <span class=nf>set_at</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>value</span><span class=p>):</span>
         <span class=bp>self</span><span class=o>.</span><span class=n>buzzer</span><span class=o>.</span><span class=n>set_at</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>value</span><span class=p>)</span>
 
-    <span class=k>def</span><span class=w> </span><span class=nf>step</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+    <span class=k>def</span> <span class=nf>step</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
         <span class=bp>self</span><span class=o>.</span><span class=n>buzzer</span><span class=o>.</span><span class=n>step</span><span class=p>()</span>
 
-    <span class=k>def</span><span class=w> </span><span class=nf>is_something</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+    <span class=k>def</span> <span class=nf>is_something</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
         <span class=k>return</span> <span class=bp>self</span><span class=o>.</span><span class=n>buzzer</span><span class=o>.</span><span class=n>is_buzzy</span><span class=p>()</span>
 
 
-<span class=k>class</span><span class=w> </span><span class=nc>FizzerBuzzer</span><span class=p>:</span>
-    <span class=k>def</span><span class=w> </span><span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>fizzer_somethinger</span><span class=p>,</span> <span class=n>buzzer_somethinger</span><span class=p>):</span>
+<span class=k>class</span> <span class=nc>FizzerBuzzer</span><span class=p>:</span>
+    <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>fizzer_somethinger</span><span class=p>,</span> <span class=n>buzzer_somethinger</span><span class=p>):</span>
         <span class=bp>self</span><span class=o>.</span><span class=n>_at</span> <span class=o>=</span> <span class=kc>None</span>
         <span class=k>if</span> <span class=ow>not</span> <span class=nb>isinstance</span><span class=p>(</span><span class=n>fizzer_somethinger</span><span class=p>,</span> <span class=n>SomethingerBase</span><span class=p>):</span>
             <span class=k>raise</span> <span class=ne>ValueError</span><span class=p>(</span><span class=s2>"Got </span><span class=si>{!r}</span><span class=s2> expected </span><span class=si>{!r}</span><span class=s2>"</span><span class=o>.</span><span class=n>format</span><span class=p>(</span>
@@ -268,35 +268,35 @@
         <span class=bp>self</span><span class=o>.</span><span class=n>fizzer_somethinger</span> <span class=o>=</span> <span class=n>fizzer_somethinger</span>
         <span class=bp>self</span><span class=o>.</span><span class=n>buzzer_somethinger</span> <span class=o>=</span> <span class=n>buzzer_somethinger</span>
 
-    <span class=k>def</span><span class=w> </span><span class=nf>set_at</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>value</span><span class=p>):</span>
+    <span class=k>def</span> <span class=nf>set_at</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>value</span><span class=p>):</span>
         <span class=bp>self</span><span class=o>.</span><span class=n>_at</span> <span class=o>=</span> <span class=n>value</span>
 
-    <span class=k>def</span><span class=w> </span><span class=nf>step</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+    <span class=k>def</span> <span class=nf>step</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
         <span class=bp>self</span><span class=o>.</span><span class=n>_at</span> <span class=o>+=</span> <span class=mi>1</span>
         <span class=bp>self</span><span class=o>.</span><span class=n>fizzer_somethinger</span><span class=o>.</span><span class=n>step</span><span class=p>()</span>
         <span class=bp>self</span><span class=o>.</span><span class=n>buzzer_somethinger</span><span class=o>.</span><span class=n>step</span><span class=p>()</span>
 
-    <span class=k>def</span><span class=w> </span><span class=nf>is_fizzy</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+    <span class=k>def</span> <span class=nf>is_fizzy</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
         <span class=k>return</span> <span class=bp>self</span><span class=o>.</span><span class=n>fizzer_somethinger</span><span class=o>.</span><span class=n>is_something</span><span class=p>()</span>
 
-    <span class=k>def</span><span class=w> </span><span class=nf>is_buzzy</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+    <span class=k>def</span> <span class=nf>is_buzzy</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
         <span class=k>return</span> <span class=bp>self</span><span class=o>.</span><span class=n>buzzer_somethinger</span><span class=o>.</span><span class=n>is_something</span><span class=p>()</span>
 
-    <span class=k>def</span><span class=w> </span><span class=nf>is_something</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+    <span class=k>def</span> <span class=nf>is_something</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
         <span class=k>return</span> <span class=bp>self</span><span class=o>.</span><span class=n>is_fizzy</span><span class=p>()</span> <span class=ow>or</span> <span class=bp>self</span><span class=o>.</span><span class=n>is_buzzy</span><span class=p>()</span>
 
-    <span class=k>def</span><span class=w> </span><span class=nf>get_at</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+    <span class=k>def</span> <span class=nf>get_at</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
         <span class=k>return</span> <span class=bp>self</span><span class=o>.</span><span class=n>_at</span>
 
 
-<span class=k>class</span><span class=w> </span><span class=nc>FizzBuzzRunner</span><span class=p>:</span>
-    <span class=k>class</span><span class=w> </span><span class=nc>StateEnum</span><span class=p>(</span><span class=n>enum</span><span class=o>.</span><span class=n>IntEnum</span><span class=p>):</span>
+<span class=k>class</span> <span class=nc>FizzBuzzRunner</span><span class=p>:</span>
+    <span class=k>class</span> <span class=nc>StateEnum</span><span class=p>(</span><span class=n>enum</span><span class=o>.</span><span class=n>IntEnum</span><span class=p>):</span>
         <span class=n>state_number</span> <span class=o>=</span> <span class=mi>0</span>
         <span class=n>state_fizz</span> <span class=o>=</span> <span class=mi>1</span>
         <span class=n>state_buzz</span> <span class=o>=</span> <span class=mi>2</span>
         <span class=n>state_fizzbuzz</span> <span class=o>=</span> <span class=mi>3</span>
 
-    <span class=k>def</span><span class=w> </span><span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>fizzerbuzzer</span><span class=p>,</span> <span class=n>actor</span><span class=p>):</span>
+    <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>fizzerbuzzer</span><span class=p>,</span> <span class=n>actor</span><span class=p>):</span>
         <span class=k>if</span> <span class=ow>not</span> <span class=nb>isinstance</span><span class=p>(</span><span class=n>fizzerbuzzer</span><span class=p>,</span> <span class=n>FizzerBuzzer</span><span class=p>):</span>
             <span class=k>raise</span> <span class=ne>ValueError</span><span class=p>(</span><span class=s2>"Got </span><span class=si>{!r}</span><span class=s2> expected </span><span class=si>{!r}</span><span class=s2>"</span><span class=o>.</span><span class=n>format</span><span class=p>(</span>
                 <span class=nb>type</span><span class=p>(</span><span class=n>fizzerbuzzer</span><span class=p>),</span> <span class=n>FizzerBuzzer</span><span class=p>))</span>
@@ -306,7 +306,7 @@
         <span class=bp>self</span><span class=o>.</span><span class=n>fizzerbuzzer</span> <span class=o>=</span> <span class=n>fizzerbuzzer</span>
         <span class=bp>self</span><span class=o>.</span><span class=n>actor</span> <span class=o>=</span> <span class=n>actor</span>
 
-    <span class=k>def</span><span class=w> </span><span class=nf>gen_state</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+    <span class=k>def</span> <span class=nf>gen_state</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
         <span class=n>result_state</span> <span class=o>=</span> <span class=bp>self</span><span class=o>.</span><span class=n>StateEnum</span><span class=o>.</span><span class=n>state_number</span>
         <span class=k>if</span> <span class=bp>self</span><span class=o>.</span><span class=n>fizzerbuzzer</span><span class=o>.</span><span class=n>is_something</span><span class=p>():</span>
             <span class=k>if</span> <span class=bp>self</span><span class=o>.</span><span class=n>fizzerbuzzer</span><span class=o>.</span><span class=n>is_fizzy</span><span class=p>():</span>
@@ -315,7 +315,7 @@
                 <span class=n>result_state</span> <span class=o>|=</span> <span class=bp>self</span><span class=o>.</span><span class=n>StateEnum</span><span class=o>.</span><span class=n>state_buzz</span>
         <span class=k>return</span> <span class=n>result_state</span>
 
-    <span class=k>def</span><span class=w> </span><span class=nf>get_state_function</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>result_state</span><span class=p>):</span>
+    <span class=k>def</span> <span class=nf>get_state_function</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>result_state</span><span class=p>):</span>
         <span class=k>if</span> <span class=n>result_state</span> <span class=o>==</span> <span class=bp>self</span><span class=o>.</span><span class=n>StateEnum</span><span class=o>.</span><span class=n>state_number</span><span class=p>:</span>
             <span class=k>return</span> <span class=bp>self</span><span class=o>.</span><span class=n>state_number</span>
         <span class=k>if</span> <span class=n>result_state</span> <span class=o>==</span> <span class=bp>self</span><span class=o>.</span><span class=n>StateEnum</span><span class=o>.</span><span class=n>state_fizz</span><span class=p>:</span>
@@ -325,7 +325,7 @@
         <span class=k>if</span> <span class=n>result_state</span> <span class=o>==</span> <span class=bp>self</span><span class=o>.</span><span class=n>StateEnum</span><span class=o>.</span><span class=n>state_fizzbuzz</span><span class=p>:</span>
             <span class=k>return</span> <span class=bp>self</span><span class=o>.</span><span class=n>state_fizzbuzz</span>
 
-    <span class=k>def</span><span class=w> </span><span class=nf>step</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+    <span class=k>def</span> <span class=nf>step</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
         <span class=bp>self</span><span class=o>.</span><span class=n>fizzerbuzzer</span><span class=o>.</span><span class=n>step</span><span class=p>()</span>
         <span class=n>result_state</span> <span class=o>=</span> <span class=bp>self</span><span class=o>.</span><span class=n>gen_state</span><span class=p>()</span>
         <span class=n>state_executor</span> <span class=o>=</span> <span class=bp>self</span><span class=o>.</span><span class=n>get_state_function</span><span class=p>(</span><span class=n>result_state</span><span class=p>)</span>
@@ -333,24 +333,24 @@
             <span class=k>raise</span> <span class=n>actor</span><span class=o>.</span><span class=n>get_actor_cannot_act_exception</span><span class=p>()</span>
         <span class=bp>self</span><span class=o>.</span><span class=n>actor</span><span class=o>.</span><span class=n>execute</span><span class=p>(</span><span class=n>state_executor</span><span class=p>)</span>
 
-    <span class=k>def</span><span class=w> </span><span class=nf>state_fizzbuzz</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>act</span><span class=p>):</span>
+    <span class=k>def</span> <span class=nf>state_fizzbuzz</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>act</span><span class=p>):</span>
         <span class=n>act</span><span class=p>(</span><span class=s2>"FizzBuzz"</span><span class=p>)</span>
 
-    <span class=k>def</span><span class=w> </span><span class=nf>state_fizz</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>act</span><span class=p>):</span>
+    <span class=k>def</span> <span class=nf>state_fizz</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>act</span><span class=p>):</span>
         <span class=n>act</span><span class=p>(</span><span class=s2>"Fizz"</span><span class=p>)</span>
 
-    <span class=k>def</span><span class=w> </span><span class=nf>state_buzz</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>act</span><span class=p>):</span>
+    <span class=k>def</span> <span class=nf>state_buzz</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>act</span><span class=p>):</span>
         <span class=n>act</span><span class=p>(</span><span class=s2>"Buzz"</span><span class=p>)</span>
 
-    <span class=k>def</span><span class=w> </span><span class=nf>state_number</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>act</span><span class=p>):</span>
+    <span class=k>def</span> <span class=nf>state_number</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>act</span><span class=p>):</span>
         <span class=n>act</span><span class=p>(</span><span class=bp>self</span><span class=o>.</span><span class=n>fizzerbuzzer</span><span class=o>.</span><span class=n>get_at</span><span class=p>())</span>
 
-    <span class=k>def</span><span class=w> </span><span class=nf>step_n</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>n</span><span class=p>):</span>
+    <span class=k>def</span> <span class=nf>step_n</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>n</span><span class=p>):</span>
         <span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=n>n</span><span class=p>):</span>
             <span class=bp>self</span><span class=o>.</span><span class=n>step</span><span class=p>()</span>
 
 
-<span class=k>def</span><span class=w> </span><span class=nf>main</span><span class=p>():</span>
+<span class=k>def</span> <span class=nf>main</span><span class=p>():</span>
     <span class=n>fizzer</span> <span class=o>=</span> <span class=n>Fizzer</span><span class=p>()</span>
     <span class=n>fizzer</span><span class=o>.</span><span class=n>set_at</span><span class=p>(</span><span class=mi>0</span><span class=p>)</span>
     <span class=n>fizzer_somethinger</span> <span class=o>=</span> <span class=n>FizzerSomethingerAdaptor</span><span class=p>(</span><span class=n>fizzer</span><span class=p>)</span>
@@ -360,20 +360,20 @@
     <span class=n>fizzerbuzzer</span> <span class=o>=</span> <span class=n>FizzerBuzzer</span><span class=p>(</span><span class=n>fizzer_somethinger</span><span class=p>,</span> <span class=n>buzzer_somethinger</span><span class=p>)</span>
     <span class=n>fizzerbuzzer</span><span class=o>.</span><span class=n>set_at</span><span class=p>(</span><span class=mi>0</span><span class=p>)</span>
 
-    <span class=k>class</span><span class=w> </span><span class=nc>PrintActor</span><span class=p>(</span><span class=n>ActorBase</span><span class=p>):</span>
-        <span class=k>class</span><span class=w> </span><span class=nc>_ActorCannotActException</span><span class=p>(</span><span class=ne>ValueError</span><span class=p>):</span>
+    <span class=k>class</span> <span class=nc>PrintActor</span><span class=p>(</span><span class=n>ActorBase</span><span class=p>):</span>
+        <span class=k>class</span> <span class=nc>_ActorCannotActException</span><span class=p>(</span><span class=ne>ValueError</span><span class=p>):</span>
             <span class=k>pass</span>
 
-        <span class=k>def</span><span class=w> </span><span class=nf>canact</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+        <span class=k>def</span> <span class=nf>canact</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
             <span class=k>return</span> <span class=kc>True</span>
 
-        <span class=k>def</span><span class=w> </span><span class=nf>act</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>value</span><span class=p>):</span>
+        <span class=k>def</span> <span class=nf>act</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>value</span><span class=p>):</span>
             <span class=nb>print</span><span class=p>(</span><span class=n>value</span><span class=p>)</span>
 
-        <span class=k>def</span><span class=w> </span><span class=nf>execute</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>func</span><span class=p>):</span>
+        <span class=k>def</span> <span class=nf>execute</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>func</span><span class=p>):</span>
             <span class=n>func</span><span class=p>(</span><span class=bp>self</span><span class=o>.</span><span class=n>act</span><span class=p>)</span>
 
-        <span class=k>def</span><span class=w> </span><span class=nf>get_actor_cannot_act_exception</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+        <span class=k>def</span> <span class=nf>get_actor_cannot_act_exception</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
             <span class=k>return</span> <span class=bp>self</span><span class=o>.</span><span class=n>_ActorCannotActException</span>
     <span class=n>fizzbuzzrunner</span> <span class=o>=</span> <span class=n>FizzBuzzRunner</span><span class=p>(</span><span class=n>fizzerbuzzer</span><span class=p>,</span> <span class=n>PrintActor</span><span class=p>())</span>
     <span class=n>fizzbuzzrunner</span><span class=o>.</span><span class=n>step_n</span><span class=p>(</span><span class=mi>100</span><span class=p>)</span>

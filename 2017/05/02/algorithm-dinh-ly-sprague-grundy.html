@@ -10,14 +10,14 @@ Mex({Grundy (n-1), Grundy (n-2), Grundy (n-3)})</code><p class=my-4>Thông thư�
 Grundy(4) = 0
 Grundy(5) = 1
 </code></pre></div><p class=my-4>Tiếp theo là <code class="bg-gray-100 p-0.5 dark:bg-gray-900 text-[90%]">XOR</code> của các số Grundy mà chúng ta đã tính được:<div class="chl my-4 p-4 bg-gray-100 dark:bg-gray-900 overflow-auto"><pre class=text-sm><code>3 XOR 4 XOR 5 = 2
-</code></pre></div><p class=my-4>Với kết quả trên, chúng ta sẽ biết chắc chắn rằng, người chơi đầu tiên sẽ là người chiến thắng.<p class=my-4>Nếu chúng ta trong một cuộc thi lập trình, số viên đá trong mỗi đống và đưa ra output là người giành chiến thắng trong trò chơi đó, chúng ta có thể sử dụng dụng định lý Sprague – Grundy với code như sau:<div class="chl my-4 p-4 bg-gray-100 dark:bg-gray-900 overflow-auto"><pre class=text-sm><code><span class=k>def</span><span class=w> </span><span class=nf>mex</span><span class=p>(</span><span class=n>a_set</span><span class=p>):</span>
+</code></pre></div><p class=my-4>Với kết quả trên, chúng ta sẽ biết chắc chắn rằng, người chơi đầu tiên sẽ là người chiến thắng.<p class=my-4>Nếu chúng ta trong một cuộc thi lập trình, số viên đá trong mỗi đống và đưa ra output là người giành chiến thắng trong trò chơi đó, chúng ta có thể sử dụng dụng định lý Sprague – Grundy với code như sau:<div class="chl my-4 p-4 bg-gray-100 dark:bg-gray-900 overflow-auto"><pre class=text-sm><code><span class=k>def</span> <span class=nf>mex</span><span class=p>(</span><span class=n>a_set</span><span class=p>):</span>
     <span class=n>m</span> <span class=o>=</span> <span class=mi>0</span>
     <span class=k>while</span> <span class=n>m</span> <span class=ow>in</span> <span class=n>a_set</span><span class=p>:</span>
         <span class=n>m</span> <span class=o>+=</span> <span class=mi>1</span>
     <span class=k>return</span> <span class=n>m</span>
 
 
-<span class=k>def</span><span class=w> </span><span class=nf>grundy</span><span class=p>(</span><span class=n>n</span><span class=p>,</span> <span class=n>grundies</span><span class=p>):</span>
+<span class=k>def</span> <span class=nf>grundy</span><span class=p>(</span><span class=n>n</span><span class=p>,</span> <span class=n>grundies</span><span class=p>):</span>
     <span class=n>grundies</span><span class=p>[</span><span class=mi>0</span><span class=p>]</span> <span class=o>=</span> <span class=mi>0</span>
     <span class=n>grundies</span><span class=p>[</span><span class=mi>1</span><span class=p>]</span> <span class=o>=</span> <span class=mi>1</span>
     <span class=n>grundies</span><span class=p>[</span><span class=mi>2</span><span class=p>]</span> <span class=o>=</span> <span class=mi>2</span>
@@ -31,7 +31,7 @@ Grundy(5) = 1
     <span class=n>grundies</span><span class=p>[</span><span class=n>n</span><span class=p>]</span> <span class=o>=</span> <span class=n>mex</span><span class=p>(</span><span class=n>a_set</span><span class=p>)</span>
     <span class=k>return</span> <span class=n>grundies</span><span class=p>[</span><span class=n>n</span><span class=p>]</span>
 
-<span class=k>def</span><span class=w> </span><span class=nf>winner</span><span class=p>(</span><span class=n>piles</span><span class=p>,</span> <span class=n>grundies</span><span class=p>,</span> <span class=n>n</span><span class=p>):</span>
+<span class=k>def</span> <span class=nf>winner</span><span class=p>(</span><span class=n>piles</span><span class=p>,</span> <span class=n>grundies</span><span class=p>,</span> <span class=n>n</span><span class=p>):</span>
     <span class=n>xor_val</span> <span class=o>=</span> <span class=n>grundies</span><span class=p>[</span><span class=n>piles</span><span class=p>[</span><span class=mi>0</span><span class=p>]]</span>
 
     <span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span> <span class=n>n</span><span class=p>):</span>
