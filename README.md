@@ -8,6 +8,6 @@ Tôi là manhhomienbienthuy, nickname khác là naa.
 
 ---
 
-Copyright © 2016-2025 [manhhomienbienthuy](https://manhhomienbienthuy.github.io/)
+Copyright © 2016-2026 [manhhomienbienthuy](https://manhhomienbienthuy.github.io/)
 
 ![pages-build-deployment](https://github.com/manhhomienbienthuy/manhhomienbienthuy.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)
