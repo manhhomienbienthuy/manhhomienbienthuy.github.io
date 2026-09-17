@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>manhhomienbienthuy</title><link href="https://manhhomienbienthuy.github.io/" rel="alternate"/><link href="https://manhhomienbienthuy.github.io/feeds/atom.xml" rel="self"/><id>https://manhhomienbienthuy.github.io/</id><updated>2026-08-28T05:01:45+00:00</updated><subtitle>Đây là thế giới của manhhomienbienthuy (naa). Chào mừng đến với thế giới của tôi!</subtitle><entry><title>Những lỗi “nhỏ nhưng đau” khi dùng C++ trong competitive programming</title><link href="https://manhhomienbienthuy.github.io/2026/07/14/nhung-loi-nho-nhung-dau-khi-dung-c-trong-competitive-programming.html" rel="alternate"/><published>2026-07-14T16:15:31+09:00</published><updated>2026-08-28T05:01:45+00:00</updated><author><name>manhhomienbienthuy</name></author><id>tag:manhhomienbienthuy.github.io,2026-07-14:/2026/07/14/nhung-loi-nho-nhung-dau-khi-dung-c-trong-competitive-programming.html</id><summary type="html">Đến với competitive programming từ nền tảng Python và JavaScript, tôi từng nghĩ rằng logic đúng là đủ. Nhưng C++ lại là một “thế giới khác” – nơi những chi tiết nhỏ như kiểu dữ liệu, thứ tự toán tử hay cách đọc input có thể quyết định AC hay WA […]</summary><content type="html">&lt;p&gt;Đến với competitive programming từ nền tảng Python và JavaScript, tôi
+<feed xmlns="http://www.w3.org/2005/Atom"><title>manhhomienbienthuy</title><link href="https://manhhomienbienthuy.github.io/" rel="alternate"/><link href="https://manhhomienbienthuy.github.io/feeds/atom.xml" rel="self"/><id>https://manhhomienbienthuy.github.io/</id><updated>2026-09-17T12:01:20+00:00</updated><subtitle>Đây là thế giới của manhhomienbienthuy (naa). Chào mừng đến với thế giới của tôi!</subtitle><entry><title>Những lỗi “nhỏ nhưng đau” khi dùng C++ trong competitive programming</title><link href="https://manhhomienbienthuy.github.io/2026/07/14/nhung-loi-nho-nhung-dau-khi-dung-c-trong-competitive-programming.html" rel="alternate"/><published>2026-07-14T16:15:31+09:00</published><updated>2026-08-28T05:01:45+00:00</updated><author><name>manhhomienbienthuy</name></author><id>tag:manhhomienbienthuy.github.io,2026-07-14:/2026/07/14/nhung-loi-nho-nhung-dau-khi-dung-c-trong-competitive-programming.html</id><summary type="html">Đến với competitive programming từ nền tảng Python và JavaScript, tôi từng nghĩ rằng logic đúng là đủ. Nhưng C++ lại là một “thế giới khác” – nơi những chi tiết nhỏ như kiểu dữ liệu, thứ tự toán tử hay cách đọc input có thể quyết định AC hay WA […]</summary><content type="html">&lt;p&gt;Đến với competitive programming từ nền tảng Python và JavaScript, tôi
 từng nghĩ rằng logic đúng là đủ. Nhưng C++ lại là một “thế giới khác”
 – nơi những chi tiết nhỏ như kiểu dữ liệu, thứ tự toán tử hay cách đọc
 input có thể quyết định AC hay WA. Trong quá trình làm quen, tôi liên
@@ -8133,7 +8133,7 @@ thể giúp màn hình phòng tránh hiện tương burn in. Tuy nhiên, như đ
 nói ở trên, những tính năng hiện đại hơn như tự động tắt màn hình cũng
 có thể làm được điều này. Không chỉ phòng tránh bị burn in, nó còn
 giúp tiết kiệm năng lượng. Rõ ràng, tính năng tự động tắt màn hình cho
-thấy nhiều ưu điểm hơn hẳn screen saver.&lt;/p&gt;</content><category term="Tổng hợp"/><category term="screen"/><category term="saver"/><category term="display"/><category term="history"/><category term="monitor"/><category term="os"/><category term="operating system"/><category term="settings"/></entry><entry><title>Sơ lược về lịch sử bàn phím</title><link href="https://manhhomienbienthuy.github.io/2023/08/15/so-luoc-ve-lich-su-ban-phim.html" rel="alternate"/><published>2023-08-15T10:41:58+09:00</published><updated>2025-06-05T09:22:54+00:00</updated><author><name>manhhomienbienthuy</name></author><id>tag:manhhomienbienthuy.github.io,2023-08-15:/2023/08/15/so-luoc-ve-lich-su-ban-phim.html</id><summary type="html">Bàn phím (keyboard) là một phần tất yếu của máy tính. Bàn phím đã trải qua nhiều cột mốc đáng nhớ trong suốt lịch sử của nó, dù thời gian không quá nhiều. Trải qua những cột mốc quan trọng này, bàn phím mở dần sang các trang sử mới […]</summary><content type="html">&lt;p&gt;Bàn phím (keyboard) là một phần tất yếu của máy tính. Bàn phím đã trải
+thấy nhiều ưu điểm hơn hẳn screen saver.&lt;/p&gt;</content><category term="Tổng hợp"/><category term="screen"/><category term="saver"/><category term="display"/><category term="history"/><category term="monitor"/><category term="os"/><category term="operating system"/><category term="settings"/></entry><entry><title>Sơ lược về lịch sử bàn phím</title><link href="https://manhhomienbienthuy.github.io/2023/08/15/so-luoc-ve-lich-su-ban-phim.html" rel="alternate"/><published>2023-08-15T10:41:58+09:00</published><updated>2026-09-17T12:01:20+00:00</updated><author><name>manhhomienbienthuy</name></author><id>tag:manhhomienbienthuy.github.io,2023-08-15:/2023/08/15/so-luoc-ve-lich-su-ban-phim.html</id><summary type="html">Bàn phím (keyboard) là một phần tất yếu của máy tính. Bàn phím đã trải qua nhiều cột mốc đáng nhớ trong suốt lịch sử của nó, dù thời gian không quá nhiều. Trải qua những cột mốc quan trọng này, bàn phím mở dần sang các trang sử mới […]</summary><content type="html">&lt;p&gt;Bàn phím (keyboard) là một phần tất yếu của máy tính. Bàn phím đã trải
 qua nhiều cột mốc đáng nhớ trong suốt lịch sử của nó, dù thời gian
 không quá nhiều. Trải qua những cột mốc quan trọng này, bàn phím mở
 dần sang các trang sử mới để đưa chúng ta đến với thế hệ bàn phím hiện
@@ -8154,6 +8154,7 @@ nay.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;a href="#ban-phim-co-tro-lai"&gt;Bàn phím cơ trở lại&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#switch-quang-hoc"&gt;Switch quang học&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#switch-he-hall-effect"&gt;Switch HE (Hall Effect)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#su-thay-oi-ve-ngoai-hinh-va-ket-noi"&gt;Sự thay đổi về ngoại hình và kết nối&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -8602,6 +8603,33 @@ sản xuất như Razer lại đang nghiên cứu và sản xuất switch quang 
 của riêng mình và trang bị chúng cho những mẫu bàn phím gaming cao
 cấp. Hiện tại switch được đánh giá là chưa thể mang lại cảm giác gõ
 tốt như switch cơ nhưng chúng vẫn đang tiếp tục được cải tiến.&lt;/p&gt;
+&lt;h3 id="switch-he-hall-effect"&gt;&lt;a class="headerlink" href="#switch-he-hall-effect" title="Permanent link"&gt;
+&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/a&gt;Switch HE (Hall Effect)&lt;/h3&gt;
+&lt;p&gt;Bàn phím cơ HE là một dòng bàn phím sử dụng công nghệ cảm biến dựa vào
+hiệu ứng Hall (Hall Effect, do nhà vật lý Edwin Hall phát hiện năm
+1879) để nhận biết các thao tác nhấn phím.&lt;/p&gt;
+&lt;p&gt;Cấu tạo của một chiếc switch HE sẽ khá tương đồng với switch cơ và chỉ
+khác nhau ở điểm: switch cơ truyền thống sử dụng tiếp điểm cơ học để
+đóng mạch, switch HE sử dụng một nam châm nhỏ bên trong mỗi switch và
+một cảm biến HE để phát hiện sự thay đổi dòng điện mỗi khi nhấn phím.&lt;/p&gt;
+&lt;p&gt;Switch HE mang lại cảm giác gõ vô cùng mượt, vì không có tiếp xúc,
+không có ma sát. Tuy nhiên, chính điều này cũng bị một số dân chơi
+phím đánh giá thấp vì không mang lại cảm xúc cho người dùng.&lt;/p&gt;
+&lt;p&gt;Ngoài ra, switch HE cho phép tùy biến thời điểm nhận tín hiệu, từ cực
+kỳ ngắn (gần như ngay khi nhấn phím) đến dài nhất là hết hành trình.&lt;/p&gt;
+&lt;p&gt;Cũng vì cơ chế hoạt động dựa trên hiệu ứng Hall, switch HE có điểm trả
+về là ngay khi người dùng nhả phím, chứ không cần chờ switch bật ngược
+về điểm reset như switch cơ truyền thống. Điều này giúp bàn phím HE có
+thể thao tác liên tục các phím với thời gian chờ ngắn hơn hẳn các
+switch khác. Đây chính là tính năng rapid trigger nổi tiếng của loại
+switch này.&lt;/p&gt;
+&lt;p&gt;Rapid trigger có thể coi như là một trick “hack game” hợp pháp trong
+các giải đấu CS:GO. Với các gamer chuyên nghiệp thì bàn phím HE giờ
+đây là thứ không thể thiếu, có thể đem lại lợi thế lớn trong những
+khoảnh khắc quan trọng.&lt;/p&gt;
 &lt;h3 id="su-thay-oi-ve-ngoai-hinh-va-ket-noi"&gt;&lt;a class="headerlink" href="#su-thay-oi-ve-ngoai-hinh-va-ket-noi" title="Permanent link"&gt;
 &lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
 &lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
@@ -18755,7 +18783,7 @@ này:&lt;/p&gt;
 &lt;p&gt;Vậy là xong, mọi request đến server sẽ không được chuyển đổi tự động
 nữa mà nhận luôn dữ liệu thô (dưới dạng url encoded với các dấu &lt;code&gt;%&lt;/code&gt;).&lt;/p&gt;
 &lt;figure&gt;&lt;img alt="works" decoding="async" height="270" loading="lazy" src="https://img-9gag-fun.9cache.com/photo/ayXgMwq_700bwp.webp" width="360"/&gt;
-&lt;figcaption&gt;Nguồn: &lt;a href="https://9gag.com/gag/ayXgMwq" rel="noopener noreferrer" target="_blank"&gt;9gag&lt;/a&gt;&lt;/figcaption&gt;&lt;/figure&gt;</content><category term="Lập trình"/><category term="Node.js"/><category term="JavaScript"/><category term="encoding"/><category term="unicode"/><category term="utf-8"/><category term="Shift_JIS"/><category term="converting"/></entry><entry><title>Khai phím đầu năm: Tổng hợp hiểu biết về bàn phím cơ</title><link href="https://manhhomienbienthuy.github.io/2022/01/04/khai-phim-dau-nam-tong-hop-hieu-biet-ve-ban-phim-co.html" rel="alternate"/><published>2022-01-04T16:31:00+00:00</published><updated>2025-06-05T09:22:54+00:00</updated><author><name>manhhomienbienthuy</name></author><id>tag:manhhomienbienthuy.github.io,2022-01-04:/2022/01/04/khai-phim-dau-nam-tong-hop-hieu-biet-ve-ban-phim-co.html</id><summary type="html">Bàn phím butterfly của MacBook (đời 2017 – do khách hàng cung cấp) thực sự là quá chán, đúng như những gì người ta vẫn kêu ca bấy lâu nay. Thậm chí nó còn chán hơn cả bàn phím Chiclet của chiếc MacBook Pro đời Tống tôi mua cách đây đã […]</summary><content type="html">&lt;p&gt;Bàn phím butterfly của MacBook (đời 2017 – do khách hàng cung cấp)
+&lt;figcaption&gt;Nguồn: &lt;a href="https://9gag.com/gag/ayXgMwq" rel="noopener noreferrer" target="_blank"&gt;9gag&lt;/a&gt;&lt;/figcaption&gt;&lt;/figure&gt;</content><category term="Lập trình"/><category term="Node.js"/><category term="JavaScript"/><category term="encoding"/><category term="unicode"/><category term="utf-8"/><category term="Shift_JIS"/><category term="converting"/></entry><entry><title>Khai phím đầu năm: Tổng hợp hiểu biết về bàn phím cơ</title><link href="https://manhhomienbienthuy.github.io/2022/01/04/khai-phim-dau-nam-tong-hop-hieu-biet-ve-ban-phim-co.html" rel="alternate"/><published>2022-01-04T16:31:00+00:00</published><updated>2026-09-17T12:01:20+00:00</updated><author><name>manhhomienbienthuy</name></author><id>tag:manhhomienbienthuy.github.io,2022-01-04:/2022/01/04/khai-phim-dau-nam-tong-hop-hieu-biet-ve-ban-phim-co.html</id><summary type="html">Bàn phím butterfly của MacBook (đời 2017 – do khách hàng cung cấp) thực sự là quá chán, đúng như những gì người ta vẫn kêu ca bấy lâu nay. Thậm chí nó còn chán hơn cả bàn phím Chiclet của chiếc MacBook Pro đời Tống tôi mua cách đây đã […]</summary><content type="html">&lt;p&gt;Bàn phím butterfly của MacBook (đời 2017 – do khách hàng cung cấp)
 thực sự là quá chán, đúng như những gì người ta vẫn kêu ca bấy lâu
 nay. Thậm chí nó còn chán hơn cả bàn phím Chiclet của chiếc MacBook
 Pro đời Tống tôi mua cách đây đã 10 năm. Vì vậy tôi có nhu cầu mua một
@@ -19734,6 +19762,10 @@ cũng là một trong những lý do vì sao nhiều người thích linear hơn
 chọn một con linear board làm daily driver. Đến đây thì mấy con khấc
 bé như brown lại phát huy được cái điểm là dễ dùng hơn trong thời gian
 dài mà không bị mỏi.&lt;/p&gt;
+&lt;p&gt;Hay như Cherry Black, ai cũng nói nó sạn, dù là Vintage Black hay
+Hyperglide Black cũng đều có độ sạn nhất định. Thế nhưng rất nhiều
+người chọn switch end game là Cherry Black cũng vì cảm giác gõ sạn đó
+cùng âm thanh đặc trưng của vật liệu làm switch.&lt;/p&gt;
 &lt;p&gt;Nói chung là cần trải nghiệm cho biết bản thân cần gì. Có điều kiện
 thì dễ rồi, cứ mua về dùng thử để biết cái nào hợp với mình. Nếu không
 có điều kiện như thế thì cũng có những showroom cho chúng ta trải
