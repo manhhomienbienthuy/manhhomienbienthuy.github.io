@@ -8609,8 +8609,8 @@ tốt như switch cơ nhưng chúng vẫn đang tiếp tục được cải ti�
 &lt;/svg&gt;
 &lt;/a&gt;Switch HE (Hall Effect)&lt;/h3&gt;
 &lt;p&gt;Bàn phím cơ HE là một dòng bàn phím sử dụng công nghệ cảm biến dựa vào
-hiệu ứng Hall (Hall Effect, do nhà vật lý Edwin Hall phát hiện năm
-1879) để nhận biết các thao tác nhấn phím.&lt;/p&gt;
+hiệu ứng Hall (Hall Effect) do nhà vật lý Edwin Hall phát hiện năm
+1879 để nhận biết các thao tác nhấn phím.&lt;/p&gt;
 &lt;p&gt;Cấu tạo của một chiếc switch HE sẽ khá tương đồng với switch cơ và chỉ
 khác nhau ở điểm: switch cơ truyền thống sử dụng tiếp điểm cơ học để
 đóng mạch, switch HE sử dụng một nam châm nhỏ bên trong mỗi switch và
@@ -8620,16 +8620,20 @@ không có ma sát. Tuy nhiên, chính điều này cũng bị một số dân c
 phím đánh giá thấp vì không mang lại cảm xúc cho người dùng.&lt;/p&gt;
 &lt;p&gt;Ngoài ra, switch HE cho phép tùy biến thời điểm nhận tín hiệu, từ cực
 kỳ ngắn (gần như ngay khi nhấn phím) đến dài nhất là hết hành trình.&lt;/p&gt;
-&lt;p&gt;Cũng vì cơ chế hoạt động dựa trên hiệu ứng Hall, switch HE có điểm trả
-về là ngay khi người dùng nhả phím, chứ không cần chờ switch bật ngược
-về điểm reset như switch cơ truyền thống. Điều này giúp bàn phím HE có
-thể thao tác liên tục các phím với thời gian chờ ngắn hơn hẳn các
-switch khác. Đây chính là tính năng rapid trigger nổi tiếng của loại
-switch này.&lt;/p&gt;
-&lt;p&gt;Rapid trigger có thể coi như là một trick “hack game” hợp pháp trong
-các giải đấu CS:GO. Với các gamer chuyên nghiệp thì bàn phím HE giờ
-đây là thứ không thể thiếu, có thể đem lại lợi thế lớn trong những
-khoảnh khắc quan trọng.&lt;/p&gt;
+&lt;p&gt;Cũng vì cơ chế hoạt động dựa trên hiệu ứng Hall mà không có tiếp điểm
+như switch cơ, switch HE ghi nhận điểm nhả phím là ngay khi người dùng
+nhả tay, chứ không cần chờ switch bật ngược về reset. Ví dụ bạn đặt
+điểm nhận phím ở 1.2mm, bạn thả tay ở 2.4mm phím vẫn nhận là bạn thả
+tay. Với switch cơ truyền thống, bắt buộc bạn phải thả tay lên gần tới
+điểm nhận phím mới nhận tín hiệu bạn đã thả tay khỏi phím. Đây chính
+là tính năng rapid trigger nổi tiếng của loại switch này.&lt;/p&gt;
+&lt;p&gt;Điều này giúp bàn phím HE có thể thao tác liên tục các phím với thời
+gian chờ ngắn hơn hẳn các switch khác. Thậm chí cùng một phím cũng có
+thể thao tác liên tục trong thời gian cực kỳ nhanh. Rapid trigger có
+thể coi như là một trick “hack game” hợp pháp trong các giải đấu FPS
+(như CS2). Với các gamer chuyên nghiệp thì bàn phím HE giờ đây là thứ
+không thể thiếu, có thể đem lại lợi thế lớn trong những khoảnh khắc
+quan trọng.&lt;/p&gt;
 &lt;h3 id="su-thay-oi-ve-ngoai-hinh-va-ket-noi"&gt;&lt;a class="headerlink" href="#su-thay-oi-ve-ngoai-hinh-va-ket-noi" title="Permanent link"&gt;
 &lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
 &lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
