@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>manhhomienbienthuy</title><link href="https://manhhomienbienthuy.github.io/" rel="alternate"/><link href="https://manhhomienbienthuy.github.io/feeds/atom.xml" rel="self"/><id>https://manhhomienbienthuy.github.io/</id><updated>2026-09-17T12:01:20+00:00</updated><subtitle>Đây là thế giới của manhhomienbienthuy (naa). Chào mừng đến với thế giới của tôi!</subtitle><entry><title>Những lỗi “nhỏ nhưng đau” khi dùng C++ trong competitive programming</title><link href="https://manhhomienbienthuy.github.io/2026/07/14/nhung-loi-nho-nhung-dau-khi-dung-c-trong-competitive-programming.html" rel="alternate"/><published>2026-07-14T16:15:31+09:00</published><updated>2026-08-28T05:01:45+00:00</updated><author><name>manhhomienbienthuy</name></author><id>tag:manhhomienbienthuy.github.io,2026-07-14:/2026/07/14/nhung-loi-nho-nhung-dau-khi-dung-c-trong-competitive-programming.html</id><summary type="html">Đến với competitive programming từ nền tảng Python và JavaScript, tôi từng nghĩ rằng logic đúng là đủ. Nhưng C++ lại là một “thế giới khác” – nơi những chi tiết nhỏ như kiểu dữ liệu, thứ tự toán tử hay cách đọc input có thể quyết định AC hay WA […]</summary><content type="html">&lt;p&gt;Đến với competitive programming từ nền tảng Python và JavaScript, tôi
+<feed xmlns="http://www.w3.org/2005/Atom"><title>manhhomienbienthuy</title><link href="https://manhhomienbienthuy.github.io/" rel="alternate"/><link href="https://manhhomienbienthuy.github.io/feeds/atom.xml" rel="self"/><id>https://manhhomienbienthuy.github.io/</id><updated>2026-09-18T01:48:29+00:00</updated><subtitle>Đây là thế giới của manhhomienbienthuy (naa). Chào mừng đến với thế giới của tôi!</subtitle><entry><title>Những lỗi “nhỏ nhưng đau” khi dùng C++ trong competitive programming</title><link href="https://manhhomienbienthuy.github.io/2026/07/14/nhung-loi-nho-nhung-dau-khi-dung-c-trong-competitive-programming.html" rel="alternate"/><published>2026-07-14T16:15:31+09:00</published><updated>2026-08-28T05:01:45+00:00</updated><author><name>manhhomienbienthuy</name></author><id>tag:manhhomienbienthuy.github.io,2026-07-14:/2026/07/14/nhung-loi-nho-nhung-dau-khi-dung-c-trong-competitive-programming.html</id><summary type="html">Đến với competitive programming từ nền tảng Python và JavaScript, tôi từng nghĩ rằng logic đúng là đủ. Nhưng C++ lại là một “thế giới khác” – nơi những chi tiết nhỏ như kiểu dữ liệu, thứ tự toán tử hay cách đọc input có thể quyết định AC hay WA […]</summary><content type="html">&lt;p&gt;Đến với competitive programming từ nền tảng Python và JavaScript, tôi
 từng nghĩ rằng logic đúng là đủ. Nhưng C++ lại là một “thế giới khác”
 – nơi những chi tiết nhỏ như kiểu dữ liệu, thứ tự toán tử hay cách đọc
 input có thể quyết định AC hay WA. Trong quá trình làm quen, tôi liên
@@ -4197,7 +4197,7 @@ biến hầu như không gặp phải.&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Do đó, &lt;code&gt;eval&lt;/code&gt; chỉ nên được sử dụng trong một số trường hợp nhất định,
 khi mà cú pháp lệnh của shell không thể gán cho biến (pipeline, chuyển
-hướng, v.v…).&lt;/p&gt;</content><category term="Lập trình"/><category term="bash"/><category term="shell"/><category term="shell script"/><category term="script"/><category term="variable"/><category term="expansion"/><category term="expand"/><category term="command"/><category term="execute"/><category term="programming"/><category term="scripting"/><category term="terminal"/><category term="Unix"/><category term="Linux"/></entry><entry><title>Tính toán song song trong Node.js</title><link href="https://manhhomienbienthuy.github.io/2024/06/18/tinh-toan-song-song-trong-nodejs.html" rel="alternate"/><published>2024-06-18T17:30:35+09:00</published><updated>2025-06-16T08:28:38+00:00</updated><author><name>manhhomienbienthuy</name></author><id>tag:manhhomienbienthuy.github.io,2024-06-18:/2024/06/18/tinh-toan-song-song-trong-nodejs.html</id><summary type="html">Máy tính ngày càng mạnh hơn, CPU có nhiều lõi hơn, tốc độ và khả năng tính toán ngày càng tốt hơn. Cùng với sự phát triển của phần cứng, phần mềm cũng ngày càng phức tạp hơn. Để tối ưu sức mạnh phần cứng, các phần mềm cũng được […]</summary><content type="html">&lt;p&gt;Máy tính ngày càng mạnh hơn, CPU có nhiều lõi hơn, tốc độ và khả năng
+hướng, v.v…).&lt;/p&gt;</content><category term="Lập trình"/><category term="bash"/><category term="shell"/><category term="shell script"/><category term="script"/><category term="variable"/><category term="expansion"/><category term="expand"/><category term="command"/><category term="execute"/><category term="programming"/><category term="scripting"/><category term="terminal"/><category term="Unix"/><category term="Linux"/></entry><entry><title>Tính toán song song trong Node.js</title><link href="https://manhhomienbienthuy.github.io/2024/06/18/tinh-toan-song-song-trong-nodejs.html" rel="alternate"/><published>2024-06-18T17:30:35+09:00</published><updated>2026-09-18T01:48:29+00:00</updated><author><name>manhhomienbienthuy</name></author><id>tag:manhhomienbienthuy.github.io,2024-06-18:/2024/06/18/tinh-toan-song-song-trong-nodejs.html</id><summary type="html">Máy tính ngày càng mạnh hơn, CPU có nhiều lõi hơn, tốc độ và khả năng tính toán ngày càng tốt hơn. Cùng với sự phát triển của phần cứng, phần mềm cũng ngày càng phức tạp hơn. Để tối ưu sức mạnh phần cứng, các phần mềm cũng được […]</summary><content type="html">&lt;p&gt;Máy tính ngày càng mạnh hơn, CPU có nhiều lõi hơn, tốc độ và khả năng
 tính toán ngày càng tốt hơn. Cùng với sự phát triển của phần cứng,
 phần mềm cũng ngày càng phức tạp hơn. Để tối ưu sức mạnh phần cứng,
 các phần mềm cũng được phát triển để thực hiện nhiều tính toán song
@@ -4246,7 +4246,7 @@ systems are very reasonable to develop in Node.js.&lt;/p&gt;
 &lt;p&gt;Multithread nghĩa là một chương trình có thể thực hiện song song nhiều
 thread xong một tiến trình (process). Các thread được thực thi độc lập
 nhưng chia sẻ chung tài nguyên của tiến trình đó.&lt;/p&gt;
-&lt;figure&gt;&lt;img alt="multithread" decoding="async" height="270" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Multithreaded_process.svg/813px-Multithreaded_process.svg.png" width="360"/&gt;
+&lt;figure&gt;&lt;img alt="multithread" decoding="async" height="270" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Multithreaded_process.svg" width="360"/&gt;
 &lt;figcaption&gt;Nguồn: &lt;a href="https://en.wikipedia.org/wiki/File:Multithreaded_process.svg" rel="noopener noreferrer" target="_blank"&gt;Wikimedia Commons&lt;/a&gt;&lt;/figcaption&gt;&lt;/figure&gt;
 &lt;p&gt;Để hiểu rõ hơn về multithread, trước hết cần hiểu về single thread.
 Trong một tiến trình mà chỉ có 1 thread (single thread), các thao tác
@@ -5618,7 +5618,7 @@ CSS module trong việc xây dựng các ứng dụng React. Những người th
 thạo JavaScript có thể yêu thích CSS-in-JS hơn còn những người đã quen
 với CSS hay SCSS sẽ muốn sử dụng CSS module.&lt;/p&gt;
 &lt;p&gt;Mỗi công cụ có những đặc điểm riêng, tùy vào ứng dụng cụ thể mà lập
-trình viên có thể lựa chọn công cụ nào phù hợp.&lt;/p&gt;</content><category term="Lập trình"/><category term="CSS"/><category term="JS"/><category term="JavaScript"/><category term="CSS in JS"/><category term="CSS module"/><category term="comparison"/><category term="React"/><category term="stylesheet"/><category term="optimization"/><category term="performance"/></entry><entry><title>Bí ẩn layout QWERTY</title><link href="https://manhhomienbienthuy.github.io/2023/12/12/bi-an-layout-qwerty.html" rel="alternate"/><published>2023-12-12T11:16:48+09:00</published><updated>2025-06-05T09:22:54+00:00</updated><author><name>manhhomienbienthuy</name></author><id>tag:manhhomienbienthuy.github.io,2023-12-12:/2023/12/12/bi-an-layout-qwerty.html</id><summary type="html">QWERTY là layout bàn phím phổ biến nhất thế giới, xuất hiện mọi nơi từ bàn phím vật lý trên máy tính đến bàn phím ảo trên điện thoại di động. Tên của layout được đặt tên theo 6 chữ cái đầu tiên ở góc trên cùng, bên trái. Thế […]</summary><content type="html">&lt;p&gt;QWERTY là layout bàn phím phổ biến nhất thế giới, xuất hiện mọi nơi từ
+trình viên có thể lựa chọn công cụ nào phù hợp.&lt;/p&gt;</content><category term="Lập trình"/><category term="CSS"/><category term="JS"/><category term="JavaScript"/><category term="CSS in JS"/><category term="CSS module"/><category term="comparison"/><category term="React"/><category term="stylesheet"/><category term="optimization"/><category term="performance"/></entry><entry><title>Bí ẩn layout QWERTY</title><link href="https://manhhomienbienthuy.github.io/2023/12/12/bi-an-layout-qwerty.html" rel="alternate"/><published>2023-12-12T11:16:48+09:00</published><updated>2026-09-18T01:48:29+00:00</updated><author><name>manhhomienbienthuy</name></author><id>tag:manhhomienbienthuy.github.io,2023-12-12:/2023/12/12/bi-an-layout-qwerty.html</id><summary type="html">QWERTY là layout bàn phím phổ biến nhất thế giới, xuất hiện mọi nơi từ bàn phím vật lý trên máy tính đến bàn phím ảo trên điện thoại di động. Tên của layout được đặt tên theo 6 chữ cái đầu tiên ở góc trên cùng, bên trái. Thế […]</summary><content type="html">&lt;p&gt;QWERTY là layout bàn phím phổ biến nhất thế giới, xuất hiện mọi nơi từ
 bàn phím vật lý trên máy tính đến bàn phím ảo trên điện thoại di động.
 Tên của layout được đặt tên theo 6 chữ cái đầu tiên ở góc trên cùng,
 bên trái. Thế nhưng nguồn gốc của nó lại là một bí ẩn của lịch sử.&lt;/p&gt;
@@ -5642,7 +5642,7 @@ Sang thế kỷ 20, điều này lại một lần nữa thay đổi với sự 
 máy tính số. Thế nhưng, dù công nghệ phát triển thế nào, chúng ta vẫn
 đang sử dụng layout QWERTY. Layout này phổ biến tới mức, nó được coi
 là layout tiêu chuẩn với hàng tỷ thiết bị sử dụng.&lt;/p&gt;
-&lt;figure&gt;&lt;img alt="qwerty" decoding="async" height="270" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/KB_United_States.svg/800px-KB_United_States.svg.png" width="360"/&gt;
+&lt;figure&gt;&lt;img alt="qwerty" decoding="async" height="270" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/d/da/KB_United_States.svg" width="360"/&gt;
 &lt;figcaption&gt;Nguồn: &lt;a href="https://commons.wikimedia.org/wiki/File:KB_United_States.svg" rel="noopener noreferrer" target="_blank"&gt;Wikimedia Common&lt;/a&gt;&lt;/figcaption&gt;&lt;/figure&gt;
 &lt;p&gt;Điều bí ẩn ở đây là không ai biết tại sao các ký tự lại được sắp xếp
 như vậy. Tôi đã tìm đọc tương đối nhiều các bài viết về lịch sử layout
@@ -8133,7 +8133,7 @@ thể giúp màn hình phòng tránh hiện tương burn in. Tuy nhiên, như đ
 nói ở trên, những tính năng hiện đại hơn như tự động tắt màn hình cũng
 có thể làm được điều này. Không chỉ phòng tránh bị burn in, nó còn
 giúp tiết kiệm năng lượng. Rõ ràng, tính năng tự động tắt màn hình cho
-thấy nhiều ưu điểm hơn hẳn screen saver.&lt;/p&gt;</content><category term="Tổng hợp"/><category term="screen"/><category term="saver"/><category term="display"/><category term="history"/><category term="monitor"/><category term="os"/><category term="operating system"/><category term="settings"/></entry><entry><title>Sơ lược về lịch sử bàn phím</title><link href="https://manhhomienbienthuy.github.io/2023/08/15/so-luoc-ve-lich-su-ban-phim.html" rel="alternate"/><published>2023-08-15T10:41:58+09:00</published><updated>2026-09-17T12:01:20+00:00</updated><author><name>manhhomienbienthuy</name></author><id>tag:manhhomienbienthuy.github.io,2023-08-15:/2023/08/15/so-luoc-ve-lich-su-ban-phim.html</id><summary type="html">Bàn phím (keyboard) là một phần tất yếu của máy tính. Bàn phím đã trải qua nhiều cột mốc đáng nhớ trong suốt lịch sử của nó, dù thời gian không quá nhiều. Trải qua những cột mốc quan trọng này, bàn phím mở dần sang các trang sử mới […]</summary><content type="html">&lt;p&gt;Bàn phím (keyboard) là một phần tất yếu của máy tính. Bàn phím đã trải
+thấy nhiều ưu điểm hơn hẳn screen saver.&lt;/p&gt;</content><category term="Tổng hợp"/><category term="screen"/><category term="saver"/><category term="display"/><category term="history"/><category term="monitor"/><category term="os"/><category term="operating system"/><category term="settings"/></entry><entry><title>Sơ lược về lịch sử bàn phím</title><link href="https://manhhomienbienthuy.github.io/2023/08/15/so-luoc-ve-lich-su-ban-phim.html" rel="alternate"/><published>2023-08-15T10:41:58+09:00</published><updated>2026-09-18T01:48:29+00:00</updated><author><name>manhhomienbienthuy</name></author><id>tag:manhhomienbienthuy.github.io,2023-08-15:/2023/08/15/so-luoc-ve-lich-su-ban-phim.html</id><summary type="html">Bàn phím (keyboard) là một phần tất yếu của máy tính. Bàn phím đã trải qua nhiều cột mốc đáng nhớ trong suốt lịch sử của nó, dù thời gian không quá nhiều. Trải qua những cột mốc quan trọng này, bàn phím mở dần sang các trang sử mới […]</summary><content type="html">&lt;p&gt;Bàn phím (keyboard) là một phần tất yếu của máy tính. Bàn phím đã trải
 qua nhiều cột mốc đáng nhớ trong suốt lịch sử của nó, dù thời gian
 không quá nhiều. Trải qua những cột mốc quan trọng này, bàn phím mở
 dần sang các trang sử mới để đưa chúng ta đến với thế hệ bàn phím hiện
@@ -8172,7 +8172,7 @@ tính là máy tính mainframe (chủ yếu được bán bởi IBM) và cách h
 động của chúng theo kiểu xử lý loạt (batch process). Đầu vào và đầu ra
 của máy tính được lưu trữ bằng bìa đục lỗ (việc đọc ghi những tấm bìa
 đục lỗ này do một thiết bị khác đảm nhiệm).&lt;/p&gt;
-&lt;figure&gt;&lt;img alt="punch" decoding="async" height="270" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/IBM_Electronic_Data_Processing_Machine_-_GPN-2000-001881.jpg/606px-IBM_Electronic_Data_Processing_Machine_-_GPN-2000-001881.jpg" width="360"/&gt;
+&lt;figure&gt;&lt;img alt="punch" decoding="async" height="270" loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/IBM_Electronic_Data_Processing_Machine_-_GPN-2000-001881.jpg/960px-IBM_Electronic_Data_Processing_Machine_-_GPN-2000-001881.jpg" width="360"/&gt;
 &lt;figcaption&gt;Nguồn: &lt;a href="https://commons.wikimedia.org/wiki/File:IBM_Electronic_Data_Processing_Machine_-_GPN-2000-001881.jpg" rel="noopener noreferrer" target="_blank"&gt;Wikimedia Commons&lt;/a&gt;&lt;/figcaption&gt;&lt;/figure&gt;
 &lt;p&gt;Mặc dù máy tính thì chưa có bàn phím, nhưng “bàn phím” vẫn được sử
 dụng ở máy đục lỗ, ví dụ như máy &lt;a href="http://www.columbia.edu/cu/computinghistory/026.html" rel="noopener noreferrer" target="_blank"&gt;IBM
@@ -8327,7 +8327,7 @@ bị như vậy có giá chỉ khoảng $800 (một số mẫu chất lượng c
 thiện tốt như DEC VT-100 có giá cao hơn, hoảng $1,550). Hầu hết các
 thiết bị này sử dụng layout bàn phím giống với máy teletype (các phím
 modifier vẫn chưa được cho xuống hàng dưới cùng cạnh dấu cách).&lt;/p&gt;
-&lt;figure&gt;&lt;img alt="VT-100" decoding="async" height="270" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/DEC_VT100_terminal.jpg/541px-DEC_VT100_terminal.jpg" width="360"/&gt;
+&lt;figure&gt;&lt;img alt="VT-100" decoding="async" height="270" loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/DEC_VT100_terminal.jpg/960px-DEC_VT100_terminal.jpg" width="360"/&gt;
 &lt;figcaption&gt;Nguồn: &lt;a href="https://commons.wikimedia.org/wiki/File:DEC_VT100_terminal.jpg" rel="noopener noreferrer" target="_blank"&gt;Wikimedia Commons&lt;/a&gt;&lt;/figcaption&gt;&lt;/figure&gt;
 &lt;p&gt;Một vài ngoại lệ có thể kể đến VT-220 sử dụng bàn phím rời LK201 như
 hình dưới đây. Bàn phím này có nhiều thiết kế kinh điển, đặc biệt là
@@ -8357,7 +8357,7 @@ bàn phím đến từ vũ trụ chứ không phải bàn phím của hành tinh
 có rất nhiều phím modifier khác nhau (⎈ Control, ◆ Meta, ❖ Super, ✦
 Hyper) với một layout cực kỳ phức tạp. Những phím modifier trên bàn
 phím này là cảm hứng của các phím modifier trên bàn phím sau này.&lt;/p&gt;
-&lt;figure&gt;&lt;img alt="space-cadet" decoding="async" height="270" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Space-cadet.jpg/640px-Space-cadet.jpg" width="360"/&gt;
+&lt;figure&gt;&lt;img alt="space-cadet" decoding="async" height="270" loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Space-cadet.jpg/960px-Space-cadet.jpg" width="360"/&gt;
 &lt;figcaption&gt;Nguồn: &lt;a href="https://commons.wikimedia.org/wiki/File:Space-cadet.jpg" rel="noopener noreferrer" target="_blank"&gt;Wikimedia Commons&lt;/a&gt;&lt;/figcaption&gt;&lt;/figure&gt;
 &lt;p&gt;Layout bàn phím này cũng là cảm hứng của phần mềm Emacs. Trước đây tôi
 cứ thắc mắc tại sao phím tắt của Emacs lại phức tạp đến thế. Giờ đây,
@@ -8381,20 +8381,20 @@ vì máy tính sẽ phải thực hiện nhiều xử lý phức tạp hơn (nh�
 đầu ra, điều khiển màn hình để hiển thị, v.v…). Nhưng các máy tính
 gia đình đã làm được. Thậm chí, chúng cho phép người dùng có thể sử
 dụng màn hình ti vi (với một bộ chuyển đổi) làm màn hình.&lt;/p&gt;
-&lt;figure&gt;&lt;img alt="Apple II" decoding="async" height="270" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Apple_II-IMG_7064.jpg/640px-Apple_II-IMG_7064.jpg" width="360"/&gt;
+&lt;figure&gt;&lt;img alt="Apple II" decoding="async" height="270" loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Apple_II-IMG_7064.jpg/960px-Apple_II-IMG_7064.jpg" width="360"/&gt;
 &lt;figcaption&gt;Nguồn: &lt;a href="https://commons.wikimedia.org/wiki/File:Apple_II-IMG_7064.jpg" rel="noopener noreferrer" target="_blank"&gt;Wikimedia Commons&lt;/a&gt;&lt;/figcaption&gt;&lt;/figure&gt;
 &lt;p&gt;Mẫu máy tính bán chạy nhất mọi thời đại, Commodore 64 (C64) được tung
 ra thị trường vào năm 1982. Mẫu máy tính này dùng layout bàn phím
 giống với hầu hết các video terminal. Không có nhiều phím modifier,
 dấu cách vẫn đứng một mình một hàng. Đặc biệt, máy tính C64 sử dụng
 phím ShiftLock chứ không phải CapsLock.&lt;/p&gt;
-&lt;figure&gt;&lt;img alt="c64" decoding="async" height="270" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Commodore-64-Computer-FL.jpg/640px-Commodore-64-Computer-FL.jpg" width="360"/&gt;
+&lt;figure&gt;&lt;img alt="c64" decoding="async" height="270" loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/Commodore-64-Computer-FL.jpg/960px-Commodore-64-Computer-FL.jpg" width="360"/&gt;
 &lt;figcaption&gt;Nguồn: &lt;a href="https://en.wikipedia.org/wiki/File:Commodore-64-Computer-FL.jpg" rel="noopener noreferrer" target="_blank"&gt;Wikimedia Commons&lt;/a&gt;&lt;/figcaption&gt;&lt;/figure&gt;
 &lt;p&gt;Năm 1981, IBM PC, chiếc máy tính cá nhân đầu tiên của IBM cũng là ông
 tổ của mọi máy tính cá nhân hiện đại được công bố ra thị trường. Thiết
 kế của IBM PC với các khe cắm mở rộng thực sự là cuộc cách mạng trong
 ngành máy tính.&lt;/p&gt;
-&lt;figure&gt;&lt;img alt="IBM PC" decoding="async" height="270" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Ibm_pc_5150.jpg/645px-Ibm_pc_5150.jpg" width="360"/&gt;
+&lt;figure&gt;&lt;img alt="IBM PC" decoding="async" height="270" loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Ibm_pc_5150.jpg/960px-Ibm_pc_5150.jpg" width="360"/&gt;
 &lt;figcaption&gt;Nguồn: &lt;a href="https://commons.wikimedia.org/wiki/File:Ibm_pc_5150.jpg" rel="noopener noreferrer" target="_blank"&gt;Wikimedia Commons&lt;/a&gt;&lt;/figcaption&gt;&lt;/figure&gt;
 &lt;p&gt;IBM PC đã thiết lập tiêu chuẩn phần cứng cũng như phần mềm cho toàn bộ
 thị trường máy tính cá nhân kể từ khi nó xuất hiện. Các sản phẩm
@@ -8418,7 +8418,7 @@ với cảm giác gõ tốt, phản hồi xúc giác và độ chính xác cao. 
 layout bàn phím đã đạt đến cảnh giới chúng ta sử dụng ngày nay, ngoại
 trừ việc thiếu hụt phím Windows vì lúc đó máy tính sử dụng hệ điều
 hành DOS 😄.&lt;/p&gt;
-&lt;figure&gt;&lt;img alt="model M" decoding="async" height="270" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/IBM_Model_M.png/640px-IBM_Model_M.png" width="360"/&gt;
+&lt;figure&gt;&lt;img alt="model M" decoding="async" height="270" loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/IBM_Model_M.png/960px-IBM_Model_M.png" width="360"/&gt;
 &lt;figcaption&gt;Nguồn: &lt;a href="https://commons.wikimedia.org/wiki/File:IBM_Model_M.png" rel="noopener noreferrer" target="_blank"&gt;Wikimedia Commons&lt;/a&gt;&lt;/figcaption&gt;&lt;/figure&gt;
 &lt;p&gt;Sau sự xuất hiện của IBM Model M, layout bàn phím máy tính gần như đã
 cố định theo layout của IBM. Thỉnh thoảng vẫn có đôi chút thay đổi,
@@ -8433,7 +8433,7 @@ JIS của Apple.&lt;/p&gt;
 tính riêng, máy Macintosh. Hầu hết các dòng máy tính của Apple sử dụng
 bàn phím cơ học với switch đến từ Alps. Điểm đặc biệt của bàn phím
 Apple là chúng luôn sử dụng layout rất nhỏ gọn.&lt;/p&gt;
-&lt;figure&gt;&lt;img alt="macintosh" decoding="async" height="270" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Computer_macintosh_128k%2C_1984_%28all_about_Apple_onlus%29.jpg/650px-Computer_macintosh_128k%2C_1984_%28all_about_Apple_onlus%29.jpg" width="360"/&gt;
+&lt;figure&gt;&lt;img alt="macintosh" decoding="async" height="270" loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Computer_macintosh_128k%2C_1984_%28all_about_Apple_onlus%29.jpg/960px-Computer_macintosh_128k%2C_1984_%28all_about_Apple_onlus%29.jpg" width="360"/&gt;
 &lt;figcaption&gt;Nguồn: &lt;a href="https://commons.wikimedia.org/wiki/File:Computer_macintosh_128k,_1984_(all_about_Apple_onlus).jpg" rel="noopener noreferrer" target="_blank"&gt;Wikimedia Commons&lt;/a&gt;&lt;/figcaption&gt;&lt;/figure&gt;
 &lt;p&gt;Vào thời điểm này, màu be và xám là những màu sắc duy nhất của bàn
 phím (đã có lúc tôi nghĩ do lâu năm mà các bàn phím cũ có màu đó, hóa
@@ -12147,7 +12147,7 @@ này&lt;/a&gt; của các kỹ sư làm việc ở
 Google đã mô tả rất kĩ những phương pháp liên quan đến những ứng dụng
 nặng về JavaScript như React. Một số phương pháp khác có thể áp dụng
 là: streaming server rendering, trisomorphic rendering, dynamic
-rendering (render nội dung khác nhau cho người dùng và bot).&lt;/p&gt;</content><category term="Tổng hợp"/><category term="JavaScript"/><category term="React"/><category term="SEO"/><category term="search engine"/><category term="optimization"/></entry><entry><title>Hóa ra “Enter” và “Return” lại khác nhau</title><link href="https://manhhomienbienthuy.github.io/2023/02/09/hoa-ra-enter-va-return-lai-khac-nhau.html" rel="alternate"/><published>2023-02-09T09:49:45+00:00</published><updated>2023-03-01T02:40:02+00:00</updated><author><name>manhhomienbienthuy</name></author><id>tag:manhhomienbienthuy.github.io,2023-02-09:/2023/02/09/hoa-ra-enter-va-return-lai-khac-nhau.html</id><summary type="html">Từ ngày có bàn phím rời tôi để ý rằng, phím Enter trên bàn phím của tôi được gọi là Return trên máy Mac. Lúc đầu tôi không suy nghĩ nhiều lắm, vì vốn bàn phím dành cho Windows và macOS đã khác nhau nhiều phím rồi, thêm một phím […]</summary><content type="html">&lt;p&gt;Từ ngày có bàn phím rời tôi để ý rằng, phím Enter trên bàn phím của
+rendering (render nội dung khác nhau cho người dùng và bot).&lt;/p&gt;</content><category term="Tổng hợp"/><category term="JavaScript"/><category term="React"/><category term="SEO"/><category term="search engine"/><category term="optimization"/></entry><entry><title>Hóa ra “Enter” và “Return” lại khác nhau</title><link href="https://manhhomienbienthuy.github.io/2023/02/09/hoa-ra-enter-va-return-lai-khac-nhau.html" rel="alternate"/><published>2023-02-09T09:49:45+00:00</published><updated>2026-09-18T01:48:29+00:00</updated><author><name>manhhomienbienthuy</name></author><id>tag:manhhomienbienthuy.github.io,2023-02-09:/2023/02/09/hoa-ra-enter-va-return-lai-khac-nhau.html</id><summary type="html">Từ ngày có bàn phím rời tôi để ý rằng, phím Enter trên bàn phím của tôi được gọi là Return trên máy Mac. Lúc đầu tôi không suy nghĩ nhiều lắm, vì vốn bàn phím dành cho Windows và macOS đã khác nhau nhiều phím rồi, thêm một phím […]</summary><content type="html">&lt;p&gt;Từ ngày có bàn phím rời tôi để ý rằng, phím Enter trên bàn phím của
 tôi được gọi là Return trên máy Mac. Lúc đầu tôi không suy nghĩ nhiều
 lắm, vì vốn bàn phím dành cho Windows và macOS đã khác nhau nhiều phím
 rồi, thêm một phím nữa cũng không nhiều hay ít hơn là bao 😄. Thế
@@ -12221,7 +12221,7 @@ Feed) dùng để xuống dòng trong soạn thảo văn bản, một phím khá
 yêu cầu cho máy tính là cần thiết. Bàn phím trên những video terminal
 này bố trí phím Enter ở bên phải phím cách còn phím Return lúc này vẫn
 ở vị trí cũ.&lt;/p&gt;
-&lt;figure&gt;&lt;img alt="IBM-3277" decoding="async" height="270" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/IBM_3277_Model_2_terminal.jpg/640px-IBM_3277_Model_2_terminal.jpg" width="360"/&gt;
+&lt;figure&gt;&lt;img alt="IBM-3277" decoding="async" height="270" loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/IBM_3277_Model_2_terminal.jpg/960px-IBM_3277_Model_2_terminal.jpg" width="360"/&gt;
 &lt;figcaption&gt;Nguồn: &lt;a href="https://commons.wikimedia.org/wiki/File:IBM_3277_Model_2_terminal.jpg" rel="noopener noreferrer" target="_blank"&gt;Wikimedia Commons&lt;/a&gt;&lt;/figcaption&gt;&lt;/figure&gt;
 &lt;p&gt;Những năm 1980, lịch sử ngành máy tính xuất hiện các máy tính gia đình
 cỡ nhỏ. Những máy tính này thường dùng bàn phím với form nhỏ nên số
@@ -12236,7 +12236,7 @@ Enter (và cả Line Feed). Cụ thể là với các dòng code có số ở đ
 sẽ được máy tính lưu lại (hoạt động tương tự Return), còn các dòng
 không có số sẽ được thực thi ngay (hoạt động như Enter). Rất nhiều máy
 tính đã sử dụng cách kết hợp này.&lt;/p&gt;
-&lt;figure&gt;&lt;img alt="C64" decoding="async" height="270" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Commodore-64-Computer-FL.jpg/640px-Commodore-64-Computer-FL.jpg" width="360"/&gt;
+&lt;figure&gt;&lt;img alt="C64" decoding="async" height="270" loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/Commodore-64-Computer-FL.jpg/960px-Commodore-64-Computer-FL.jpg" width="360"/&gt;
 &lt;figcaption&gt;Nguồn: &lt;a href="https://commons.wikimedia.org/wiki/File:Commodore-64-Computer-FL.jpg" rel="noopener noreferrer" target="_blank"&gt;Wikimedia Commons&lt;/a&gt;&lt;/figcaption&gt;&lt;/figure&gt;
 &lt;p&gt;Dần dần máy tính được dùng phổ biến hơn, phím Return cũng dần chuyển
 thành Enter. Không rõ lý do tại sao phím đó lại là Enter mà không giữ
@@ -18787,7 +18787,7 @@ này:&lt;/p&gt;
 &lt;p&gt;Vậy là xong, mọi request đến server sẽ không được chuyển đổi tự động
 nữa mà nhận luôn dữ liệu thô (dưới dạng url encoded với các dấu &lt;code&gt;%&lt;/code&gt;).&lt;/p&gt;
 &lt;figure&gt;&lt;img alt="works" decoding="async" height="270" loading="lazy" src="https://img-9gag-fun.9cache.com/photo/ayXgMwq_700bwp.webp" width="360"/&gt;
-&lt;figcaption&gt;Nguồn: &lt;a href="https://9gag.com/gag/ayXgMwq" rel="noopener noreferrer" target="_blank"&gt;9gag&lt;/a&gt;&lt;/figcaption&gt;&lt;/figure&gt;</content><category term="Lập trình"/><category term="Node.js"/><category term="JavaScript"/><category term="encoding"/><category term="unicode"/><category term="utf-8"/><category term="Shift_JIS"/><category term="converting"/></entry><entry><title>Khai phím đầu năm: Tổng hợp hiểu biết về bàn phím cơ</title><link href="https://manhhomienbienthuy.github.io/2022/01/04/khai-phim-dau-nam-tong-hop-hieu-biet-ve-ban-phim-co.html" rel="alternate"/><published>2022-01-04T16:31:00+00:00</published><updated>2026-09-17T12:01:20+00:00</updated><author><name>manhhomienbienthuy</name></author><id>tag:manhhomienbienthuy.github.io,2022-01-04:/2022/01/04/khai-phim-dau-nam-tong-hop-hieu-biet-ve-ban-phim-co.html</id><summary type="html">Bàn phím butterfly của MacBook (đời 2017 – do khách hàng cung cấp) thực sự là quá chán, đúng như những gì người ta vẫn kêu ca bấy lâu nay. Thậm chí nó còn chán hơn cả bàn phím Chiclet của chiếc MacBook Pro đời Tống tôi mua cách đây đã […]</summary><content type="html">&lt;p&gt;Bàn phím butterfly của MacBook (đời 2017 – do khách hàng cung cấp)
+&lt;figcaption&gt;Nguồn: &lt;a href="https://9gag.com/gag/ayXgMwq" rel="noopener noreferrer" target="_blank"&gt;9gag&lt;/a&gt;&lt;/figcaption&gt;&lt;/figure&gt;</content><category term="Lập trình"/><category term="Node.js"/><category term="JavaScript"/><category term="encoding"/><category term="unicode"/><category term="utf-8"/><category term="Shift_JIS"/><category term="converting"/></entry><entry><title>Khai phím đầu năm: Tổng hợp hiểu biết về bàn phím cơ</title><link href="https://manhhomienbienthuy.github.io/2022/01/04/khai-phim-dau-nam-tong-hop-hieu-biet-ve-ban-phim-co.html" rel="alternate"/><published>2022-01-04T16:31:00+00:00</published><updated>2026-09-18T01:48:29+00:00</updated><author><name>manhhomienbienthuy</name></author><id>tag:manhhomienbienthuy.github.io,2022-01-04:/2022/01/04/khai-phim-dau-nam-tong-hop-hieu-biet-ve-ban-phim-co.html</id><summary type="html">Bàn phím butterfly của MacBook (đời 2017 – do khách hàng cung cấp) thực sự là quá chán, đúng như những gì người ta vẫn kêu ca bấy lâu nay. Thậm chí nó còn chán hơn cả bàn phím Chiclet của chiếc MacBook Pro đời Tống tôi mua cách đây đã […]</summary><content type="html">&lt;p&gt;Bàn phím butterfly của MacBook (đời 2017 – do khách hàng cung cấp)
 thực sự là quá chán, đúng như những gì người ta vẫn kêu ca bấy lâu
 nay. Thậm chí nó còn chán hơn cả bàn phím Chiclet của chiếc MacBook
 Pro đời Tống tôi mua cách đây đã 10 năm. Vì vậy tôi có nhu cầu mua một
@@ -19258,8 +19258,8 @@ tồn tại một số nhược điểm sau:&lt;/p&gt;
 &lt;/a&gt;Cấu tạo bàn phím cơ&lt;/h2&gt;
 &lt;p&gt;Dù có nhiều biến thể khác nhau, nhưng về cơ bản, bàn phím cơ có cấu
 tạo gồm các thành phần như hình dưới đây:&lt;/p&gt;
-&lt;figure&gt;&lt;img alt="keyboard" decoding="async" height="270" loading="lazy" src="https://yeuphancung.com/wp-content/uploads/2021/09/khai-niem-ban-phim-co.jpg" width="360"/&gt;
-&lt;figcaption&gt;Nguồn: &lt;a href="https://yeuphancung.com/tip-mua-ban-phim-co/" rel="noopener noreferrer" target="_blank"&gt;Yêu phần cứng&lt;/a&gt;&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img alt="keyboard" decoding="async" height="270" loading="lazy" src="https://maketecheasier.com/wp-content/uploads/2019/08/custom-mechanical-keyboard-guide-parts.jpg" width="360"/&gt;
+&lt;figcaption&gt;Nguồn: &lt;a href="https://maketecheasier.com/build-custom-mechanical-keyboard-part-1/" rel="noopener noreferrer" target="_blank"&gt;make tech easier&lt;/a&gt;&lt;/figcaption&gt;&lt;/figure&gt;
 &lt;h2 id="form-factor-layout"&gt;&lt;a class="headerlink" href="#form-factor-layout" title="Permanent link"&gt;
 &lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
 &lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
@@ -19396,8 +19396,8 @@ layout dùng trên bàn phím HHKB. Layout này chỉ liên quan đến hàng d�
 cùng, đúng như tên gọi của nó, là không có phím Windows, thay vào đó
 sẽ là hai chỗ trống, đồng thời phím cách sẽ dài hơn bình thường (7u
 thay vì 6.25u như tiêu chuẩn).&lt;/p&gt;
-&lt;figure&gt;&lt;img alt="wkl" decoding="async" height="270" loading="lazy" src="https://wiki.1upkeyboards.com/lib/exe/fetch.php?cache=&amp;amp;w=820&amp;amp;h=279&amp;amp;tok=8117df&amp;amp;media=knowledge_base:layouts:wkl60.jpg" width="360"/&gt;
-&lt;figcaption&gt;Nguồn: &lt;a href="https://wiki.1upkeyboards.com/doku.php?id=knowledge_base:keyboard_layouts" rel="noopener noreferrer" target="_blank"&gt;1upkeyboards Wiki&lt;/a&gt;&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img alt="wkl" decoding="async" height="270" loading="lazy" src="https://geekhack.org/index.php?PHPSESSID=pi2h1lruk7gvu4rcaorql989j26i47rp&amp;amp;action=dlattach;topic=104758.0;attach=236362;image" width="360"/&gt;
+&lt;figcaption&gt;Nguồn: &lt;a href="https://geekhack.org/index.php?topic=104758.0" rel="noopener noreferrer" target="_blank"&gt;geek hack&lt;/a&gt;&lt;/figcaption&gt;&lt;/figure&gt;
 &lt;p&gt;Đây là layout rất cổ, trước đây phổ biến do Microsoft chưa ra mắt hệ
 điều hành Windows cùng với Start Menu. Hiện nay layout này đã ít phổ
 biến hơn nhưng vẫn tồn tại. Cá nhân tôi không dùng Windows mà dùng
@@ -19907,8 +19907,8 @@ các hàng.&lt;/p&gt;
 &lt;/a&gt;Các profile phổ biến&lt;/h4&gt;
 &lt;p&gt;Dưới dây là một số profile phổ biến (ngoài ra còn rất nhiều profile
 độc quyền của các hãng khác):&lt;/p&gt;
-&lt;figure&gt;&lt;img alt="profile" decoding="async" height="270" loading="lazy" src="https://yeuphancung.com/wp-content/uploads/2021/09/keycap-profiles-info.jpg" width="360"/&gt;
-&lt;figcaption&gt;Nguồn: &lt;a href="https://yeuphancung.com/keycap-ban-phim-co/" rel="noopener noreferrer" target="_blank"&gt;Yêu phần cứng&lt;/a&gt;&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img alt="profile" decoding="async" height="270" loading="lazy" src="https://cdn.shopify.com/s/files/1/0078/2863/5712/files/Profile_600x600.jpg?v=1681803091" width="360"/&gt;
+&lt;figcaption&gt;Nguồn: &lt;a href="https://www.melgeek.com/en-jp/blogs/melgeek-lab/the-type-of-keycaps-profiles" rel="noopener noreferrer" target="_blank"&gt;MelGeek&lt;/a&gt;&lt;/figcaption&gt;&lt;/figure&gt;
 &lt;p&gt;&lt;strong&gt;OEM&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;OEM (Original Equipped Manufacturer) hiểu đơn giản là dạng profile từ
 lúc xuất xưởng, được nhiều hãng sử dụng để lắp cho bàn phím ngay từ
