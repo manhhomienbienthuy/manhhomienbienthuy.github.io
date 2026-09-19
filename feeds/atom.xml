@@ -641,15 +641,15 @@ xóa
 ngắn như Fenwick Tree lại được dùng nhiều đến vậy. Sau đó tôi nhận ra
 rằng giá trị lớn nhất của nó không nằm ở vài dòng mã nguồn, mà nằm ở
 cách biến đổi bài toán.&lt;/p&gt;
-&lt;p&gt;Một bài toán ban đầu có vẻ yêu cầu duyệt:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;mọi cặp phần tử
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;thường sẽ trở thành:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;đếm + tính tổng
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;trên các phần tử đã xuất hiện.&lt;/p&gt;
+&lt;p&gt;Một bài toán ban đầu có vẻ yêu cầu duyệt mọi cặp phần tử
+thường sẽ trở thành:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;tỉnh tổng trong một khoảng&lt;/li&gt;
+&lt;li&gt;cập nhật lại một phần tử&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;Ngay khi nhìn thấy dạng này, Fenwick Tree gần như là công cụ đầu tiên
 tôi nghĩ tới.&lt;/p&gt;
+&lt;p&gt;Tuy nhiên, Fenwick tree không phù hợp với bào toán tìm min/max (cần Segment tree).&lt;/p&gt;
 &lt;h2 id="ket-luan"&gt;&lt;a class="headerlink" href="#ket-luan" title="Permanent link"&gt;
 &lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
 &lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
