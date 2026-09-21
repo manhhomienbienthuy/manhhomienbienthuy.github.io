@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>manhhomienbienthuy</title><link href="https://manhhomienbienthuy.github.io/" rel="alternate"/><link href="https://manhhomienbienthuy.github.io/feeds/atom.xml" rel="self"/><id>https://manhhomienbienthuy.github.io/</id><updated>2026-09-19T04:18:57+00:00</updated><subtitle>Đây là thế giới của manhhomienbienthuy (naa). Chào mừng đến với thế giới của tôi!</subtitle><entry><title>Fenwick Tree: Cấu trúc dữ liệu tôi ước mình được học sớm hơn ở trường</title><link href="https://manhhomienbienthuy.github.io/2026/09/19/fenwick-tree-cau-truc-du-lieu-toi-uoc-minh-duoc-hoc-som-hon-o-truong.html" rel="alternate"/><published>2026-09-19T13:18:57+09:00</published><updated>2026-09-19T04:18:57+00:00</updated><author><name>manhhomienbienthuy</name></author><id>tag:manhhomienbienthuy.github.io,2026-09-19:/2026/09/19/fenwick-tree-cau-truc-du-lieu-toi-uoc-minh-duoc-hoc-som-hon-o-truong.html</id><summary type="html">Trong quá trình học lập trình và đặc biệt là lập trình thi đấu, tôi đã gặp rất nhiều bài toán mà lời giải ngây thơ ban đầu chạy chậm đến mức không thể vượt qua giới hạn thời gian. Một trong những công cụ xuất hiện lặp đi lặp […]</summary><content type="html">&lt;p&gt;Trong quá trình học lập trình và đặc biệt là lập trình thi đấu, tôi đã
+<feed xmlns="http://www.w3.org/2005/Atom"><title>manhhomienbienthuy</title><link href="https://manhhomienbienthuy.github.io/" rel="alternate"/><link href="https://manhhomienbienthuy.github.io/feeds/atom.xml" rel="self"/><id>https://manhhomienbienthuy.github.io/</id><updated>2026-09-21T01:11:06+00:00</updated><subtitle>Đây là thế giới của manhhomienbienthuy (naa). Chào mừng đến với thế giới của tôi!</subtitle><entry><title>Fenwick Tree: Cấu trúc dữ liệu tôi ước mình được học sớm hơn</title><link href="https://manhhomienbienthuy.github.io/2026/09/19/fenwick-tree-cau-truc-du-lieu-toi-uoc-minh-duoc-hoc-som-hon.html" rel="alternate"/><published>2026-09-19T13:18:57+09:00</published><updated>2026-09-21T01:11:06+00:00</updated><author><name>manhhomienbienthuy</name></author><id>tag:manhhomienbienthuy.github.io,2026-09-19:/2026/09/19/fenwick-tree-cau-truc-du-lieu-toi-uoc-minh-duoc-hoc-som-hon.html</id><summary type="html">Trong quá trình học lập trình và đặc biệt là lập trình thi đấu, tôi đã gặp rất nhiều bài toán mà lời giải ngây thơ ban đầu chạy chậm đến mức không thể vượt qua giới hạn thời gian. Một trong những công cụ xuất hiện lặp đi lặp […]</summary><content type="html">&lt;p&gt;Trong quá trình học lập trình và đặc biệt là lập trình thi đấu, tôi đã
 gặp rất nhiều bài toán mà lời giải ngây thơ ban đầu chạy chậm đến mức
 không thể vượt qua giới hạn thời gian. Một trong những công cụ xuất
 hiện lặp đi lặp lại để giải quyết những bài toán như vậy là Fenwick
@@ -115,8 +115,8 @@ qua được các bài test.&lt;/p&gt;
 giản hơn như sau. Hiểu đơn giản, cách làm là duyệt qua tất cả các cột
 từ trái sang phải, với mỗi cột &lt;code&gt;i&lt;/code&gt; sẽ coi như các hộp đang được dồn
 lại ở cột &lt;code&gt;i - 1&lt;/code&gt;. Lúc này các cột có độ cao lớn hơn &lt;code&gt;a[i]&lt;/code&gt; có thể
-dịch chuyển được thêm 1 bước. Sau đó tiếp tục với các cột &lt;code&gt;i + 1&lt;/code&gt;, &lt;code&gt;i
-+ 2&lt;/code&gt;, v.v…&lt;/p&gt;
+dịch chuyển được thêm 1 bước. Sau đó tiếp tục với các cột &lt;code&gt;i + 1&lt;/code&gt;,
+&lt;code&gt;i + 2&lt;/code&gt;, v.v…&lt;/p&gt;
 &lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="kt"&gt;int64_t&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;ans&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;j&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;j&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;j&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
@@ -139,8 +139,8 @@ tử&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Bài toán đã biến thành: Trong quá trình duyệt mảng từ trái sang phải,
 hãy liên tục trả lời truy vấn:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Có bao nhiêu số lớn hơn &lt;code&gt;x&lt;/code&gt;?&lt;/li&gt;
-&lt;li&gt;Tổng các số lớn hơn &lt;code&gt;x&lt;/code&gt; là bao nhiêu?&lt;/li&gt;
+&lt;li&gt;Có bao nhiêu số lớn hơn &lt;code&gt;a[i]&lt;/code&gt;?&lt;/li&gt;
+&lt;li&gt;Tổng các số lớn hơn &lt;code&gt;a[i]&lt;/code&gt; là bao nhiêu?&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Đây chính là lúc Fenwick Tree xuất hiện.&lt;/p&gt;
 &lt;h2 id="fenwick-tree-la-gi"&gt;&lt;a class="headerlink" href="#fenwick-tree-la-gi" title="Permanent link"&gt;
@@ -421,18 +421,13 @@ a[j] &amp;gt; a[i]
 &lt;/svg&gt;
 &lt;/a&gt;Fenwick thứ nhất: đếm số phần tử&lt;/h3&gt;
 &lt;p&gt;Tôi tạo:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="n"&gt;Fenwick&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;bit_cnt&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="n"&gt;fenwick&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;bit_cnt&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Mỗi lần gặp một giá trị:&lt;/p&gt;
 &lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="n"&gt;bit_cnt&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Khi cần biết:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;có bao nhiêu số lớn hơn x
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;ta truy vấn:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="n"&gt;cnt_gt&lt;/span&gt;
-&lt;span class="o"&gt;=&lt;/span&gt;
-&lt;span class="n"&gt;bit_cnt&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;query&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;p&gt;Khi cần biết có bao nhiêu số lớn hơn x, ta truy vấn:&lt;/p&gt;
+&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="n"&gt;cnt_gt&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;bit_cnt&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3 id="fenwick-thu-hai-tong-cac-gia-tri"&gt;&lt;a class="headerlink" href="#fenwick-thu-hai-tong-cac-gia-tri" title="Permanent link"&gt;
 &lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
@@ -440,15 +435,13 @@ a[j] &amp;gt; a[i]
 &lt;/svg&gt;
 &lt;/a&gt;Fenwick thứ hai: tổng các giá trị&lt;/h3&gt;
 &lt;p&gt;Tôi tạo:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="n"&gt;Fenwick&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;bit_sum&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="n"&gt;fenwick&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;bit_sum&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Mỗi lần thêm:&lt;/p&gt;
 &lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="n"&gt;bit_sum&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Truy vấn:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="n"&gt;sum_gt&lt;/span&gt;
-&lt;span class="o"&gt;=&lt;/span&gt;
-&lt;span class="n"&gt;bit_sum&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;query&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="n"&gt;sum_gt&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;bit_sum&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;query&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3 id="tinh-ong-gop-cua-mot-phan-tu"&gt;&lt;a class="headerlink" href="#tinh-ong-gop-cua-mot-phan-tu" title="Permanent link"&gt;
 &lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
@@ -482,20 +475,12 @@ sum_gt   = 24
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Mục tiêu là đếm:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;bao nhiêu phần tử trước đó &amp;gt;= a[i]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Đây cũng là bài toán mà Fenwick tree có thể giải quyết, tương tự như
-phần trước. Thậm chí phần này có thể kết hợp tính toán luôn trong cùng
-một vòng lặp với phần trước.&lt;/p&gt;
+&lt;p&gt;Mục tiêu là đếm bao nhiêu phần tử trước đó &amp;gt;= a[i]. Đây cũng là bài
+toán mà Fenwick tree có thể giải quyết, tương tự như phần trước. Thậm
+chí phần này có thể kết hợp tính toán luôn trong cùng một vòng lặp với
+phần trước.&lt;/p&gt;
 &lt;p&gt;Dưới đây là lời giải đầy đủ cho bài toán này:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="cm"&gt;/*!&lt;/span&gt;
-&lt;span class="cm"&gt; * author: manhhomienbienthuy&lt;/span&gt;
-&lt;span class="cm"&gt; * created: 2026-07-09T00:53:15+00:00&lt;/span&gt;
-&lt;span class="cm"&gt; * https://codeforces.com/contest/2227/problem/F&lt;/span&gt;
-&lt;span class="cm"&gt; */&lt;/span&gt;
-
-&lt;span class="cp"&gt;#include&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="cpf"&gt;&amp;lt;bits/stdc++.h&amp;gt;&lt;/span&gt;
+&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="cp"&gt;#include&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="cpf"&gt;&amp;lt;bits/stdc++.h&amp;gt;&lt;/span&gt;
 &lt;span class="k"&gt;using&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;namespace&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;std&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 
 &lt;span class="k"&gt;struct&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;fenwick&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
@@ -527,9 +512,11 @@ một vòng lặp với phần trước.&lt;/p&gt;
 
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;cin&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;while&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;cin&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;vector&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;cin&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 
@@ -615,7 +602,6 @@ xóa
 đếm
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;liên tục.&lt;/p&gt;
-&lt;p&gt;Fenwick Tree thường là lời giải đơn giản hơn Segment Tree.&lt;/p&gt;
 &lt;h3 id="em-so-luong-trong-oan"&gt;&lt;a class="headerlink" href="#em-so-luong-trong-oan" title="Permanent link"&gt;
 &lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
 &lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
@@ -641,15 +627,16 @@ xóa
 ngắn như Fenwick Tree lại được dùng nhiều đến vậy. Sau đó tôi nhận ra
 rằng giá trị lớn nhất của nó không nằm ở vài dòng mã nguồn, mà nằm ở
 cách biến đổi bài toán.&lt;/p&gt;
-&lt;p&gt;Một bài toán ban đầu có vẻ yêu cầu duyệt mọi cặp phần tử
-thường sẽ trở thành:&lt;/p&gt;
+&lt;p&gt;Một bài toán ban đầu có vẻ yêu cầu duyệt mọi cặp phần tử thường sẽ trở
+thành:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;tỉnh tổng trong một khoảng&lt;/li&gt;
 &lt;li&gt;cập nhật lại một phần tử&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Ngay khi nhìn thấy dạng này, Fenwick Tree gần như là công cụ đầu tiên
-tôi nghĩ tới.&lt;/p&gt;
-&lt;p&gt;Tuy nhiên, Fenwick tree không phù hợp với bài toán tìm min/max (cần Segment tree).&lt;/p&gt;
+tôi nghĩ tới. Tuy nhiên, Fenwick tree không phù hợp với bài toán tìm
+min/max (cần một cấu trúc dữ liệu khác là Segment Tree, tôi sẽ viết ở
+một bài viết khác).&lt;/p&gt;
 &lt;h2 id="ket-luan"&gt;&lt;a class="headerlink" href="#ket-luan" title="Permanent link"&gt;
 &lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
 &lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
