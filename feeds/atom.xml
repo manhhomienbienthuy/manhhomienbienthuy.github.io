@@ -69,7 +69,7 @@ thể tính toán riêng: tính tổng quãng đường các hộp di chuyển, 
 tối ưu việc bỏ đi một hộp ở cột bất kỳ.&lt;/p&gt;
 &lt;p&gt;Với phần thứ nhất, cần tính toán tổng quãng đường các hộp di chuyển.
 Với mỗi hộp ở cột thứ &lt;code&gt;i&lt;/code&gt;, nó có thể di chuyển quãng đường tối đa là
-&lt;code&gt;n - 1 -i&lt;/code&gt; (khi không có hộp nào bên phải nó cùng độ cao). Nếu ở cùng
+&lt;code&gt;n - 1 - i&lt;/code&gt; (khi không có hộp nào bên phải nó cùng độ cao). Nếu ở cùng
 độ cao với nó, ở bên phải có &lt;code&gt;c&lt;/code&gt; hộp, thì quãng đường nó di chuyển sẽ
 là &lt;code&gt;n - 1 - i - c&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Để tính tổng quãng đường các hộp di chuyển, có thể duyệt mảng từ phải
