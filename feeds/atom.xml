@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>manhhomienbienthuy</title><link href="https://manhhomienbienthuy.github.io/" rel="alternate"/><link href="https://manhhomienbienthuy.github.io/feeds/atom.xml" rel="self"/><id>https://manhhomienbienthuy.github.io/</id><updated>2026-09-23T09:51:10+00:00</updated><subtitle>Đây là thế giới của manhhomienbienthuy (naa). Chào mừng đến với thế giới của tôi!</subtitle><entry><title>Fenwick Tree: Cấu trúc dữ liệu tôi ước mình được học sớm hơn</title><link href="https://manhhomienbienthuy.github.io/2026/09/19/fenwick-tree-cau-truc-du-lieu-toi-uoc-minh-duoc-hoc-som-hon.html" rel="alternate"/><published>2026-09-19T13:18:57+09:00</published><updated>2026-09-21T01:11:06+00:00</updated><author><name>manhhomienbienthuy</name></author><id>tag:manhhomienbienthuy.github.io,2026-09-19:/2026/09/19/fenwick-tree-cau-truc-du-lieu-toi-uoc-minh-duoc-hoc-som-hon.html</id><summary type="html">Trong quá trình học lập trình và đặc biệt là lập trình thi đấu, tôi đã gặp rất nhiều bài toán mà lời giải ngây thơ ban đầu chạy chậm đến mức không thể vượt qua giới hạn thời gian. Một trong những công cụ xuất hiện lặp đi lặp […]</summary><content type="html">&lt;p&gt;Trong quá trình học lập trình và đặc biệt là lập trình thi đấu, tôi đã
+<feed xmlns="http://www.w3.org/2005/Atom"><title>manhhomienbienthuy</title><link href="https://manhhomienbienthuy.github.io/" rel="alternate"/><link href="https://manhhomienbienthuy.github.io/feeds/atom.xml" rel="self"/><id>https://manhhomienbienthuy.github.io/</id><updated>2026-09-23T23:39:52+00:00</updated><subtitle>Đây là thế giới của manhhomienbienthuy (naa). Chào mừng đến với thế giới của tôi!</subtitle><entry><title>Fenwick Tree: Cấu trúc dữ liệu tôi ước mình được học sớm hơn</title><link href="https://manhhomienbienthuy.github.io/2026/09/19/fenwick-tree-cau-truc-du-lieu-toi-uoc-minh-duoc-hoc-som-hon.html" rel="alternate"/><published>2026-09-19T13:18:57+09:00</published><updated>2026-09-21T01:11:06+00:00</updated><author><name>manhhomienbienthuy</name></author><id>tag:manhhomienbienthuy.github.io,2026-09-19:/2026/09/19/fenwick-tree-cau-truc-du-lieu-toi-uoc-minh-duoc-hoc-som-hon.html</id><summary type="html">Trong quá trình học lập trình và đặc biệt là lập trình thi đấu, tôi đã gặp rất nhiều bài toán mà lời giải ngây thơ ban đầu chạy chậm đến mức không thể vượt qua giới hạn thời gian. Một trong những công cụ xuất hiện lặp đi lặp […]</summary><content type="html">&lt;p&gt;Trong quá trình học lập trình và đặc biệt là lập trình thi đấu, tôi đã
 gặp rất nhiều bài toán mà lời giải ngây thơ ban đầu chạy chậm đến mức
 không thể vượt qua giới hạn thời gian. Một trong những công cụ xuất
 hiện lặp đi lặp lại để giải quyết những bài toán như vậy là Fenwick
@@ -19448,7 +19448,7 @@ này:&lt;/p&gt;
 &lt;p&gt;Vậy là xong, mọi request đến server sẽ không được chuyển đổi tự động
 nữa mà nhận luôn dữ liệu thô (dưới dạng url encoded với các dấu &lt;code&gt;%&lt;/code&gt;).&lt;/p&gt;
 &lt;figure&gt;&lt;img alt="works" decoding="async" height="270" loading="lazy" src="https://img-9gag-fun.9cache.com/photo/ayXgMwq_700bwp.webp" width="360"/&gt;
-&lt;figcaption&gt;Nguồn: &lt;a href="https://9gag.com/gag/ayXgMwq" rel="noopener noreferrer" target="_blank"&gt;9gag&lt;/a&gt;&lt;/figcaption&gt;&lt;/figure&gt;</content><category term="Lập trình"/><category term="Node.js"/><category term="JavaScript"/><category term="encoding"/><category term="unicode"/><category term="utf-8"/><category term="Shift_JIS"/><category term="converting"/></entry><entry><title>Khai phím đầu năm: Tổng hợp hiểu biết về bàn phím cơ</title><link href="https://manhhomienbienthuy.github.io/2022/01/04/khai-phim-dau-nam-tong-hop-hieu-biet-ve-ban-phim-co.html" rel="alternate"/><published>2022-01-04T16:31:00+00:00</published><updated>2026-09-23T09:51:10+00:00</updated><author><name>manhhomienbienthuy</name></author><id>tag:manhhomienbienthuy.github.io,2022-01-04:/2022/01/04/khai-phim-dau-nam-tong-hop-hieu-biet-ve-ban-phim-co.html</id><summary type="html">Bàn phím butterfly của MacBook (đời 2017 – do khách hàng cung cấp) thực sự là quá chán, đúng như những gì người ta vẫn kêu ca bấy lâu nay. Thậm chí nó còn chán hơn cả bàn phím Chiclet của chiếc MacBook Pro đời Tống tôi mua cách đây đã […]</summary><content type="html">&lt;p&gt;Bàn phím butterfly của MacBook (đời 2017 – do khách hàng cung cấp)
+&lt;figcaption&gt;Nguồn: &lt;a href="https://9gag.com/gag/ayXgMwq" rel="noopener noreferrer" target="_blank"&gt;9gag&lt;/a&gt;&lt;/figcaption&gt;&lt;/figure&gt;</content><category term="Lập trình"/><category term="Node.js"/><category term="JavaScript"/><category term="encoding"/><category term="unicode"/><category term="utf-8"/><category term="Shift_JIS"/><category term="converting"/></entry><entry><title>Khai phím đầu năm: Tổng hợp hiểu biết về bàn phím cơ</title><link href="https://manhhomienbienthuy.github.io/2022/01/04/khai-phim-dau-nam-tong-hop-hieu-biet-ve-ban-phim-co.html" rel="alternate"/><published>2022-01-04T16:31:00+00:00</published><updated>2026-09-23T23:39:52+00:00</updated><author><name>manhhomienbienthuy</name></author><id>tag:manhhomienbienthuy.github.io,2022-01-04:/2022/01/04/khai-phim-dau-nam-tong-hop-hieu-biet-ve-ban-phim-co.html</id><summary type="html">Bàn phím butterfly của MacBook (đời 2017 – do khách hàng cung cấp) thực sự là quá chán, đúng như những gì người ta vẫn kêu ca bấy lâu nay. Thậm chí nó còn chán hơn cả bàn phím Chiclet của chiếc MacBook Pro đời Tống tôi mua cách đây đã […]</summary><content type="html">&lt;p&gt;Bàn phím butterfly của MacBook (đời 2017 – do khách hàng cung cấp)
 thực sự là quá chán, đúng như những gì người ta vẫn kêu ca bấy lâu
 nay. Thậm chí nó còn chán hơn cả bàn phím Chiclet của chiếc MacBook
 Pro đời Tống tôi mua cách đây đã 10 năm. Vì vậy tôi có nhu cầu mua một
@@ -21705,7 +21705,7 @@ giải pháp công nghệ mạnh mẽ cho lĩnh vực bàn phím và chuột.&lt
 &lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
 &lt;/svg&gt;
 &lt;/a&gt;Filco Majestouch Ninja (Blue switch)&lt;/h3&gt;
-&lt;figure&gt;&lt;img alt="ninja" decoding="async" height="270" loading="lazy" src="https://www.diatec.co.jp/image_prod/EFB/image02.jpg" width="360"/&gt;
+&lt;figure&gt;&lt;img alt="ninja" decoding="async" height="270" loading="lazy" src="https://i.imgur.com/CvwgzFM.png" width="360"/&gt;
 &lt;figcaption&gt;Nguồn: &lt;a href="https://www.diatec.co.jp/products/det.php?prod_c=777" rel="noopener noreferrer" target="_blank"&gt;Diatec&lt;/a&gt;&lt;/figcaption&gt;&lt;/figure&gt;
 &lt;p&gt;Filco là thương hiệu tôi chọn vì nhiều yếu tố khác nhau.&lt;/p&gt;
 &lt;p&gt;Đầu tiên là tôi đang ở Nhật, nên mua một thương hiệu Nhật (tuy sản
@@ -21780,7 +21780,7 @@ phím đen hết, không có một ký tự nào. Thế nhưng đó chỉ là c�
 &lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
 &lt;/svg&gt;
 &lt;/a&gt;Filco Majestouch 2 (Black switch)&lt;/h3&gt;
-&lt;figure&gt;&lt;img alt="filco" decoding="async" height="270" loading="lazy" src="https://www.diatec.co.jp/image_prod/FKBN87MLEB2_01.jpg" width="360"/&gt;
+&lt;figure&gt;&lt;img alt="filco" decoding="async" height="270" loading="lazy" src="https://i.imgur.com/NaZpQfF.png" width="360"/&gt;
 &lt;figcaption&gt;Nguồn: &lt;a href="https://www.diatec.co.jp/products/det.php?prod_c=764" rel="noopener noreferrer" target="_blank"&gt;Diatec&lt;/a&gt;&lt;/figcaption&gt;&lt;/figure&gt;
 &lt;p&gt;Khó mà tiếp tục dùng Blue switch nên tôi quyết định đổi sang linear.
 Nguyên nhân là theo nhiều ý kiến của dân chơi lâu năm thì linear phù
@@ -21851,7 +21851,7 @@ và cổng USB-C rồi.&lt;/p&gt;
 &lt;/a&gt;Ngoài lề: Cherry MX Black&lt;/h2&gt;
 &lt;p&gt;Vì tôi đã mua một bàn phím dùng Cherry Black switch, nên cũng đã tìm
 hiểu qua về nó.&lt;/p&gt;
-&lt;figure&gt;&lt;img alt="Cherry Black" decoding="async" height="270" loading="lazy" src="https://www.cherrymx.de/_Resources/Persistent/9/7/8/d/978dc6181bbf5a46e513d84281a655ce8fdad7b1/CHERRY_MX_BLACK-368x368.png" width="360"/&gt;
+&lt;figure&gt;&lt;img alt="Cherry Black" decoding="async" height="270" loading="lazy" src="https://i.imgur.com/tSU8CHj.png" width="360"/&gt;
 &lt;figcaption&gt;Nguồn: &lt;a href="https://www.cherrymx.de/en/cherry-mx/mx-original/mx-black.html" rel="noopener noreferrer" target="_blank"&gt;Cherry MX&lt;/a&gt;&lt;/figcaption&gt;&lt;/figure&gt;
 &lt;h3 id="khai-quat"&gt;&lt;a class="headerlink" href="#khai-quat" title="Permanent link"&gt;
 &lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
@@ -21956,8 +21956,8 @@ do khuôn đúc không được bảo dưỡng tốt.&lt;/p&gt;
 phép tăng tuổi thọ các switch lên gấp đôi (từ 50 triệu lần bấm lên 100
 triệu lần bấm). Cherry Hyperglide Black sử dụng khuôn mới giúp nó mượt
 mà hơn và quan trọng là chất lượng đồng đều hơn.&lt;/p&gt;
-&lt;p&gt;Càng về sau, các lô switch càng mượt hơn, được nhiều người chơi cho
-rằng nó đã mượt tương đương Retooled đã burn in 500k lần.&lt;/p&gt;
+&lt;p&gt;Phiên bản Hyperglide Black được đánh giá là mượt hơn, nhiều người chơi
+cho rằng nó mượt tương đương Retooled đã burn in 500k lần.&lt;/p&gt;
 &lt;h4 id="mx2a-black"&gt;&lt;a class="headerlink" href="#mx2a-black" title="Permanent link"&gt;
 &lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
 &lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
@@ -21965,14 +21965,18 @@ rằng nó đã mượt tương đương Retooled đã burn in 500k lần.&lt;/p
 &lt;/a&gt;MX2A Black&lt;/h4&gt;
 &lt;p&gt;Sau một thời gian làm ra dòng Hyperglide thì tầm năm 2023, Cherry đã
 đổi mới khuôn và đánh mã cho sản phẩm mới là MX2A, nhằm đem lại một
-luồng gió tuy không mới nhưng vẫn có chất riêng.&lt;/p&gt;
+luồng gió tuy không mới nhưng vẫn có chất riêng. Một số điểm thay đổi
+lớn trong phiên bản này có thể kể đến như lò xò hình cái trống và
+đường stem rail được đánh bóng để tăng độ mượt.&lt;/p&gt;
 &lt;p&gt;Độ mượt của nó đã được cải thiện kha khá. MX2A có độ mượt tương đương
 Retooled được burn ít nhất 1 triệu lần hoặc hơn. Độ rung lắc stem cũng
 đã được cải thiện, dù không đáng kể.&lt;/p&gt;
 &lt;p&gt;Ngoài ra, kể từ phiên bản này, Cherry có thêm tùy chọn switch lube sẵn
-từ nhà máy. Tuy nhiên, bản lube sẵn này không được đánh giá cao (mua
-bản không lube còn hơn). Tuy nhiên, phiên bản mới vẫn có những điểm
-không bằng tiền bối như chất sạn và âm thanh đặc trưng.&lt;/p&gt;
+từ nhà máy. Tuy nhiên, bản lube sẵn này không được đánh giá cao (hầu
+hết người chơi đều khuyên mua bản không lube). Tuy nhiên, dù đã cải
+tiến lò xo nhưng lò xò hình trống vẫn chưa được đánh giá cao. Phiên
+bản mới vẫn có những điểm không bằng tiền bối như chất sạn và âm thanh
+đặc trưng.&lt;/p&gt;
 &lt;h3 id="cac-bien-the-khac"&gt;&lt;a class="headerlink" href="#cac-bien-the-khac" title="Permanent link"&gt;
 &lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
 &lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
