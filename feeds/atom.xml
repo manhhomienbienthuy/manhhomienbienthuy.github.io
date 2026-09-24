@@ -1,82 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>manhhomienbienthuy</title><link href="https://manhhomienbienthuy.github.io/" rel="alternate"/><link href="https://manhhomienbienthuy.github.io/feeds/atom.xml" rel="self"/><id>https://manhhomienbienthuy.github.io/</id><updated>2026-09-24T02:58:17+00:00</updated><subtitle>Đây là thế giới của manhhomienbienthuy (naa). Chào mừng đến với thế giới của tôi!</subtitle><entry><title>Fenwick Tree: Cấu trúc dữ liệu tôi ước mình được học sớm hơn</title><link href="https://manhhomienbienthuy.github.io/2026/09/19/fenwick-tree-cau-truc-du-lieu-toi-uoc-minh-duoc-hoc-som-hon.html" rel="alternate"/><published>2026-09-19T13:18:57+09:00</published><updated>2026-09-21T01:11:06+00:00</updated><author><name>manhhomienbienthuy</name></author><id>tag:manhhomienbienthuy.github.io,2026-09-19:/2026/09/19/fenwick-tree-cau-truc-du-lieu-toi-uoc-minh-duoc-hoc-som-hon.html</id><summary type="html">Trong quá trình học lập trình và đặc biệt là lập trình thi đấu, tôi đã gặp rất nhiều bài toán mà lời giải ngây thơ ban đầu chạy chậm đến mức không thể vượt qua giới hạn thời gian. Một trong những công cụ xuất hiện lặp đi lặp […]</summary><content type="html">&lt;p&gt;Trong quá trình học lập trình và đặc biệt là lập trình thi đấu, tôi đã
-gặp rất nhiều bài toán mà lời giải ngây thơ ban đầu chạy chậm đến mức
-không thể vượt qua giới hạn thời gian. Một trong những công cụ xuất
-hiện lặp đi lặp lại để giải quyết những bài toán như vậy là Fenwick
-Tree, còn được gọi là Binary Indexed Tree (BIT).&lt;/p&gt;
-&lt;p&gt;Điều thú vị là đây lại không phải là một cấu trúc dữ liệu thường được
-giảng dạy trong các môn học nhập môn ở trường đại học. Phần lớn chúng
-ta được học mảng, danh sách liên kết, hàng đợi, ngăn xếp, cây nhị
-phân, bảng băm,… nhưng Fenwick Tree thường chỉ xuất hiện khi bắt đầu
-tiếp xúc với thuật toán nâng cao hoặc lập trình thi đấu.&lt;/p&gt;
-&lt;p&gt;Trong bài viết này, tôi muốn chia sẻ cách tôi hiểu Fenwick Tree, tại
-sao nó hữu ích, cách nó hoạt động, và đặc biệt là cách áp dụng nó vào
-một bài toán thực tế mà ban đầu có độ phức tạp gần như không thể chạy
-được. Hy vọng bài viết sẽ giúp những người mới tiếp xúc với cấu trúc
-dữ liệu này có được một góc nhìn trực quan hơn.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>manhhomienbienthuy</title><link href="https://manhhomienbienthuy.github.io/" rel="alternate"/><link href="https://manhhomienbienthuy.github.io/feeds/atom.xml" rel="self"/><id>https://manhhomienbienthuy.github.io/</id><updated>2026-09-24T04:04:16+00:00</updated><subtitle>Đây là thế giới của manhhomienbienthuy (naa). Chào mừng đến với thế giới của tôi!</subtitle><entry><title>Fenwick Tree: Cấu trúc dữ liệu tôi ước mình được học sớm hơn</title><link href="https://manhhomienbienthuy.github.io/2026/09/19/fenwick-tree-cau-truc-du-lieu-toi-uoc-minh-duoc-hoc-som-hon.html" rel="alternate"/><published>2026-09-19T13:18:57+09:00</published><updated>2026-09-24T04:04:16+00:00</updated><author><name>manhhomienbienthuy</name></author><id>tag:manhhomienbienthuy.github.io,2026-09-19:/2026/09/19/fenwick-tree-cau-truc-du-lieu-toi-uoc-minh-duoc-hoc-som-hon.html</id><summary type="html">Trong quá trình học thuật toán, có những cấu trúc dữ liệu tôi chủ động tìm hiểu từ sớm vì nghe tên quá nhiều. Nhưng cũng có những cấu trúc dữ liệu mà tôi chỉ thực sự học khi bị một bài toán “ép” phải học. Fenwick Tree thuộc nhóm […]</summary><content type="html">&lt;p&gt;Trong quá trình học thuật toán, có những cấu trúc dữ liệu tôi chủ động
+tìm hiểu từ sớm vì nghe tên quá nhiều. Nhưng cũng có những cấu trúc dữ
+liệu mà tôi chỉ thực sự học khi bị một bài toán “ép” phải học.&lt;/p&gt;
+&lt;p&gt;Fenwick Tree thuộc nhóm thứ hai.&lt;/p&gt;
+&lt;p&gt;Lần đầu tiên nhìn thấy Fenwick Tree, tôi không hề có ấn tượng gì đặc
+biệt. Thậm chí tôi còn nghĩ rằng một cấu trúc dữ liệu chỉ gồm vài chục
+dòng code chắc cũng không có gì quá phức tạp hay quan trọng.&lt;/p&gt;
+&lt;p&gt;Nhưng càng giải nhiều bài toán hơn, tôi càng nhận ra Fenwick Tree xuất
+hiện ở rất nhiều nơi. Từ những bài đếm nghịch thế kinh điển, các bài
+toán thống kê tần suất, cho tới những bài yêu cầu xử lý hàng trăm
+nghìn truy vấn trong thời gian rất ngắn.&lt;/p&gt;
+&lt;p&gt;Điều thú vị là Fenwick Tree không phải là một cấu trúc dữ liệu thường
+được dạy trong những môn nhập môn ở trường đại học. Chúng ta thường
+học mảng, danh sách liên kết, hàng đợi, ngăn xếp, cây nhị phân hay
+bảng băm. Trong khi đó, Fenwick Tree thường chỉ bắt đầu xuất hiện khi
+tìm hiểu các thuật toán nâng cao hoặc tham gia competitive
+programming.&lt;/p&gt;
+&lt;p&gt;Trong bài viết này, tôi muốn chia sẻ cách tôi tiếp cận Fenwick Tree
+thông qua một bài toán thực tế, quá trình từ một lời giải chậm tới một
+lời giải đủ nhanh, cũng như trực giác giúp tôi hiểu vì sao cấu trúc dữ
+liệu này lại hoạt động được.&lt;/p&gt;
 &lt;div class="toc"&gt;&lt;span class="toctitle"&gt;Mục lục&lt;/span&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="#tu-mot-bai-toan-chay-cham"&gt;Từ một bài toán chạy chậm&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#toi-uu-loi-giai"&gt;Tối ưu lời giải&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#toi-biet-en-fenwick-tree-nhu-the-nao"&gt;Tôi biết đến Fenwick Tree như thế nào?&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#bai-toan"&gt;Bài toán&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#loi-giai-au-tien"&gt;Lời giải đầu tiên&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#van-e-cua-loi-giai"&gt;Vấn đề của lời giải&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#nhin-lai-bai-toan-tu-goc-o-khac"&gt;Nhìn lại bài toán từ góc độ khác&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;&lt;a href="#fenwick-tree-la-gi"&gt;Fenwick Tree là gì?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#truc-giac-au-tien"&gt;Trực giác đầu tiên&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#truc-giac-giup-toi-hieu-fenwick-tree"&gt;Trực giác giúp tôi hiểu Fenwick Tree&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#cai-at-fenwick-tree"&gt;Cài đặt Fenwick Tree&lt;/a&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href="#cap-nhat"&gt;Cập nhật&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#lay-prefix-sum"&gt;Lấy prefix sum&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#lay-tong-oan"&gt;Lấy tổng đoạn&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#tai-sao-lai-la-olog-n"&gt;Tại sao lại là O(log n)?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#vi-du"&gt;Ví dụ&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#nhung-node-nay-ai-dien-cho-oan-nao"&gt;Những node này đại diện cho đoạn nào?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#query-thi-sao"&gt;Query thì sao?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#mot-cach-nho-rat-de"&gt;Một cách nhớ rất dễ&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#prefix-sum"&gt;Prefix Sum&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#mot-cach-nho-fenwick-tree-rat-de"&gt;Một cách nhớ Fenwick Tree rất dễ&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#coordinate-compression"&gt;Coordinate Compression&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;a href="#ap-dung-vao-bai-toan"&gt;Áp dụng vào bài toán&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="#fenwick-thu-nhat-em-so-phan-tu"&gt;Fenwick thứ nhất: đếm số phần tử&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#fenwick-thu-hai-tong-cac-gia-tri"&gt;Fenwick thứ hai: tổng các giá trị&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#tinh-ong-gop-cua-mot-phan-tu"&gt;Tính đóng góp của một phần tử&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#toi-uu-hoa-viec-loai-bo-1-hop"&gt;Tối ưu hóa việc loại bỏ 1 hộp&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#mot-fenwick-tree-e-em"&gt;Một Fenwick Tree để đếm&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#mot-fenwick-tree-e-luu-tong"&gt;Một Fenwick Tree để lưu tổng&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#tinh-phan-tang-them-khi-loai-bo-mot-hop"&gt;Tính phần tăng thêm khi loại bỏ một hộp&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#code-hoan-chinh"&gt;Code hoàn chỉnh&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="#nhung-truong-hop-nao-nen-dung-fenwick-tree"&gt;Những trường hợp nào nên dùng Fenwick Tree?&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="#em-nghich-the-inversion-count"&gt;Đếm nghịch thế (Inversion Count)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#truy-van-tan-suat"&gt;Truy vấn tần suất&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#truy-van-thu-hang"&gt;Truy vấn thứ hạng&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#dynamic-order-statistics"&gt;Dynamic Order Statistics&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#em-so-luong-trong-oan"&gt;Đếm số lượng trong đoạn&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#tinh-tong-trong-so"&gt;Tính tổng trọng số&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="#kinh-nghiem-ca-nhan"&gt;Kinh nghiệm cá nhân&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#nhung-truong-hop-toi-thuong-nghi-en-fenwick-tree"&gt;Những trường hợp tôi thường nghĩ đến Fenwick Tree&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#ieu-toi-rut-ra-sau-khi-hoc-fenwick-tree"&gt;Điều tôi rút ra sau khi học Fenwick Tree&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#ket-luan"&gt;Kết luận&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;h2 id="tu-mot-bai-toan-chay-cham"&gt;&lt;a class="headerlink" href="#tu-mot-bai-toan-chay-cham" title="Permanent link"&gt;
+&lt;h2 id="toi-biet-en-fenwick-tree-nhu-the-nao"&gt;&lt;a class="headerlink" href="#toi-biet-en-fenwick-tree-nhu-the-nao" title="Permanent link"&gt;
 &lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
 &lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
 &lt;/svg&gt;
-&lt;/a&gt;Từ một bài toán chạy chậm&lt;/h2&gt;
-&lt;p&gt;Đó là một bài toán trên Codeforces. Đề bài đầy đủ &lt;a href="https://codeforces.com/contest/2227/problem/F" rel="noopener noreferrer" target="_blank"&gt;ở
-đây&lt;/a&gt;. Có thể tóm tắt đề
-bài như sau: Cho một mảng &lt;code&gt;a&lt;/code&gt; có &lt;code&gt;n&lt;/code&gt; phần tử tương ứng với n cột, giá
-trị mỗi phần tử là số lượng hộp của mỗi cột. Khi trượt tất cả các hộp
-sang phải nhất có thể, cần tính tổng quãng đường mà các hộp di chuyển.
-Ngoài ra, có thể bỏ đi một hộp trên cùng của cột bất kỳ. Cần tìm cách
-bỏ đi một hộp để tổng quãng đường là tối đa.&lt;/p&gt;
-&lt;p&gt;Sau khi phân tính bài toán, tôi tìm ra lời giải đơn giản như sau (sử
-dụng index bắt đầu từ 0 cho phù hợp với code). Bài toán có 2 phần, có
-thể tính toán riêng: tính tổng quãng đường các hộp di chuyển, tìm cách
-tối ưu việc bỏ đi một hộp ở cột bất kỳ.&lt;/p&gt;
-&lt;p&gt;Với phần thứ nhất, cần tính toán tổng quãng đường các hộp di chuyển.
-Với mỗi hộp ở cột thứ &lt;code&gt;i&lt;/code&gt;, nó có thể di chuyển quãng đường tối đa là
-&lt;code&gt;n - 1 - i&lt;/code&gt; (khi không có hộp nào bên phải nó cùng độ cao). Nếu ở cùng
-độ cao với nó, ở bên phải có &lt;code&gt;c&lt;/code&gt; hộp, thì quãng đường nó di chuyển sẽ
-là &lt;code&gt;n - 1 - i - c&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Để tính tổng quãng đường các hộp di chuyển, có thể duyệt mảng từ phải
-sang trái, dùng một mảng &lt;code&gt;cnt&lt;/code&gt; để lưu số lượng các hộp đã duyệt ở từng
-độ cao. Code cho phần này như dưới đây:&lt;/p&gt;
+&lt;/a&gt;Tôi biết đến Fenwick Tree như thế nào?&lt;/h2&gt;
+&lt;p&gt;Tôi biết đến Fenwick Tree khi giải một bài toán trên Codeforces.&lt;/p&gt;
+&lt;p&gt;Như thường lệ, việc đầu tiên tôi làm không phải là nghĩ đến cấu trúc
+dữ liệu nào cả. Tôi luôn cố gắng tìm ra một lời giải đơn giản nhất
+trước, miễn là nó đúng.&lt;/p&gt;
+&lt;h3 id="bai-toan"&gt;&lt;a class="headerlink" href="#bai-toan" title="Permanent link"&gt;
+&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/a&gt;Bài toán&lt;/h3&gt;
+&lt;p&gt;Đề bài đầy đủ có thể xem &lt;a href="https://codeforces.com/contest/2227/problem/F" rel="noopener noreferrer" target="_blank"&gt;tại
+đây&lt;/a&gt;. Tóm tắt ngắn gọn
+như sau.&lt;/p&gt;
+&lt;p&gt;Cho một mảng &lt;code&gt;a&lt;/code&gt;, trong đó &lt;code&gt;a[i]&lt;/code&gt; biểu diễn số lượng hộp ở cột thứ
+&lt;code&gt;i&lt;/code&gt;. Ta thực hiện thao tác trượt tất cả các hộp sang phải nhiều nhất
+có thể và cần tính tổng quãng đường mà các hộp đã di chuyển. Ngoài ra,
+được phép loại bỏ đúng một hộp nằm trên cùng của bất kỳ cột nào trước
+khi thực hiện việc trượt. Mục tiêu là tìm cách loại bỏ một hộp sao cho
+tổng quãng đường di chuyển của các hộp là lớn nhất.&lt;/p&gt;
+&lt;p&gt;Khi mới đọc đề bài, tôi chưa nghĩ đến tối ưu. Tôi chỉ nghĩ: Trước hết
+phải tìm được lời giải đúng đã.&lt;/p&gt;
+&lt;p&gt;Sau khi phân tích, tôi nhận ra bài toán có thể tách thành hai phần
+tương đối độc lập:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Tính tổng quãng đường tất cả các hộp di chuyển.&lt;/li&gt;
+&lt;li&gt;Tìm xem việc loại bỏ hộp ở cột nào mang lại lợi ích lớn nhất.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="loi-giai-au-tien"&gt;&lt;a class="headerlink" href="#loi-giai-au-tien" title="Permanent link"&gt;
+&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/a&gt;Lời giải đầu tiên&lt;/h3&gt;
+&lt;p&gt;Đầu tiên, tôi muốn tính tổng quãng đường tất cả các hộp di chuyển. Nếu
+xét một hộp nằm ở cột &lt;code&gt;i&lt;/code&gt;, quãng đường tối đa nó có thể di chuyển là:&lt;/p&gt;
+&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;n - 1 - i
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Tuy nhiên, nếu ở cùng độ cao đó đã có một số hộp nằm bên phải, quãng
+đường thực tế sẽ giảm tương ứng. Từ suy nghĩ đó, tôi viết được đoạn
+code sau:&lt;/p&gt;
 &lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="kt"&gt;int64_t&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;ans&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="n"&gt;vector&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;cnt&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ranges&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;max&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+
 &lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;h&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;h&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;h&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
 &lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="n"&gt;ans&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;cnt&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;h&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
@@ -84,89 +102,113 @@ sang trái, dùng một mảng &lt;code&gt;cnt&lt;/code&gt; để lưu số lư�
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Với phần thứ hai, do đã tính được tổng quãng đường các hộp di chuyển,
-lúc này chỉ cần tính việc bỏ đi một hộp ở cột bất kỳ mang lại bao
-nhiêu lợi ích mà thôi. Sau đó chúng ta sẽ chọn ra cột tối ưu nhất. Với
-cột thứ &lt;code&gt;i&lt;/code&gt;, sau khi bỏ đi hộp trên cùng, giả sử độ cao của hộp này là
-&lt;code&gt;h&lt;/code&gt;. Lúc này, tất cả các hộp ở cột bên trái cột &lt;code&gt;i&lt;/code&gt; có độ cao &lt;code&gt;h&lt;/code&gt; sẽ
-di chuyển được thêm 1 ô. Tức là với mỗi cột &lt;code&gt;i&lt;/code&gt;, lợi ích nó mang lại
-khi bỏ đi hộp trên cùng là số lượng các cột &lt;code&gt;j &amp;lt; i&lt;/code&gt; mà &lt;code&gt;a[j] &amp;gt;= a[i]&lt;/code&gt;.&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="kt"&gt;int64_t&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;cur&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;p&gt;Sau đó tôi tiếp tục xử lý phần thứ hai.&lt;/p&gt;
+&lt;p&gt;Nếu bỏ hộp trên cùng của cột &lt;code&gt;i&lt;/code&gt;, thì tất cả các cột phía trước có
+chiều cao không nhỏ hơn &lt;code&gt;a[i]&lt;/code&gt; sẽ được hưởng lợi thêm một đơn vị
+khoảng cách. Tôi cài đặt trực tiếp:&lt;/p&gt;
+&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="kt"&gt;int64_t&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
 &lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;cur&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kt"&gt;int64_t&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;cur&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;j&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;j&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;j&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;       &lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;j&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;cur&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;j&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;cur&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;max&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;cur&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Cuối cùng là in ra kết quả tối ưu nhất:&lt;/p&gt;
+&lt;p&gt;Cuối cùng:&lt;/p&gt;
 &lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="n"&gt;cout&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;ans&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="sc"&gt;'\n'&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Tuy nhiên, với cách làm này, độ phức tạp là O(n² + n·maxA), với &lt;code&gt;n&lt;/code&gt; tối đa là
-&lt;code&gt;2e5&lt;/code&gt; thì cần tới hàng chục tỉ phép tính. Chắc chắn là không thể vượt
-qua được các bài test.&lt;/p&gt;
-&lt;h2 id="toi-uu-loi-giai"&gt;&lt;a class="headerlink" href="#toi-uu-loi-giai" title="Permanent link"&gt;
+&lt;p&gt;Mọi thứ có vẻ ổn.&lt;/p&gt;
+&lt;p&gt;Cho đến khi tôi nhìn lại độ phức tạp.&lt;/p&gt;
+&lt;h3 id="van-e-cua-loi-giai"&gt;&lt;a class="headerlink" href="#van-e-cua-loi-giai" title="Permanent link"&gt;
 &lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
 &lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
 &lt;/svg&gt;
-&lt;/a&gt;Tối ưu lời giải&lt;/h2&gt;
-&lt;p&gt;Xem lại đoạn mã của phần thứ nhất, tôi tìm ra một công thức trông đơn
-giản hơn như sau. Hiểu đơn giản, cách làm là duyệt qua tất cả các cột
-từ trái sang phải, với mỗi cột &lt;code&gt;i&lt;/code&gt; sẽ coi như các hộp đang được dồn
-lại ở cột &lt;code&gt;i - 1&lt;/code&gt;. Lúc này các cột có độ cao lớn hơn &lt;code&gt;a[i]&lt;/code&gt; có thể
-dịch chuyển được thêm 1 bước. Sau đó tiếp tục với các cột &lt;code&gt;i + 1&lt;/code&gt;,
-&lt;code&gt;i + 2&lt;/code&gt;, v.v…&lt;/p&gt;
+&lt;/a&gt;Vấn đề của lời giải&lt;/h3&gt;
+&lt;p&gt;Thoạt nhìn, đoạn code trên không quá dài. Nhưng nếu phân tích kỹ, ta
+sẽ thấy nhiều vòng lặp lồng nhau. Độ phức tạp xấp xỉ:
+&lt;code&gt;O(n² + n·maxA)&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Trong khi đề bài cho &lt;code&gt;n = 200000&lt;/code&gt;. Điều đó đồng nghĩa với hàng chục tỷ
+phép tính. Nói cách khác: “Chắc chắn TLE”.&lt;/p&gt;
+&lt;p&gt;Đây là một tình huống tôi gặp rất nhiều trong competitive programming.
+Tìm ra lời giải đúng không quá khó. Tìm ra lời giải đủ nhanh mới là
+phần khó.&lt;/p&gt;
+&lt;h3 id="nhin-lai-bai-toan-tu-goc-o-khac"&gt;&lt;a class="headerlink" href="#nhin-lai-bai-toan-tu-goc-o-khac" title="Permanent link"&gt;
+&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/a&gt;Nhìn lại bài toán từ góc độ khác&lt;/h3&gt;
+&lt;p&gt;Khi gặp một lời giải &lt;code&gt;O(n²)&lt;/code&gt;, tôi thường làm một việc khá đơn giản.
+Thay vì nhìn vào code, tôi nhìn vào công thức mà code đang tính. Sau
+một lúc biến đổi, tôi nhận ra phần tính tổng quãng đường thực chất có
+thể viết lại thành:&lt;/p&gt;
 &lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="kt"&gt;int64_t&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;ans&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
 &lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;j&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;j&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;j&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
 &lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="n"&gt;ans&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;max&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;j&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]);&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Tuy nhiên, độ phức tạp của đoạn mã này vẫn là O(n²). Trong lúc tìm
-cách tối ưu thuật toán, tôi biết đến Fenwick Tree.&lt;/p&gt;
-&lt;p&gt;Nhìn lại công thức tính toán, có thể thấy rằng với mỗi phần tử &lt;code&gt;a[i]&lt;/code&gt;,
-chúng ta cần tính tổng &lt;code&gt;a[j] - a[i]&lt;/code&gt; với &lt;code&gt;j &amp;lt; i&lt;/code&gt; và &lt;code&gt;a[j] &amp;gt; a[i]&lt;/code&gt;.
-Công thức này có thể rút gọn thành tổng: &lt;code&gt;Σa[j] - a[i] * số lượng phần
-tử&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Như vậy nếu tôi biết được:&lt;/p&gt;
+&lt;p&gt;Độ phức tạp vẫn là &lt;code&gt;O(n²)&lt;/code&gt;, nhưng công thức lúc này dễ quan sát hơn.&lt;/p&gt;
+&lt;p&gt;Với mỗi phần tử a[i], tôi đang cần tính &lt;code&gt;Σ(a[j] - a[i])&lt;/code&gt;với điều kiện:&lt;/p&gt;
+&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;j &amp;lt; i
+a[j] &amp;gt; a[i]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Nhìn kỹ hơn một chút:&lt;/p&gt;
+&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;Σ(a[j] - a[i]) = Σa[j] - a[i] × count
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Đây là khoảnh khắc khiến tôi nhìn thấy hướng tối ưu. Để tính đóng góp
+của &lt;code&gt;a[i]&lt;/code&gt;, thực ra tôi chỉ cần biết:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Có bao nhiêu phần tử trước đó lớn hơn &lt;code&gt;a[i]&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Tổng của các phần tử trước đó lớn hơn &lt;code&gt;a[i]&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Tổng giá trị của các phần tử đó là bao nhiêu&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;thì tôi sẽ tính được đóng góp của &lt;code&gt;a[i]&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Bài toán đã biến thành: Trong quá trình duyệt mảng từ trái sang phải,
-hãy liên tục trả lời truy vấn:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Có bao nhiêu số lớn hơn &lt;code&gt;a[i]&lt;/code&gt;?&lt;/li&gt;
-&lt;li&gt;Tổng các số lớn hơn &lt;code&gt;a[i]&lt;/code&gt; là bao nhiêu?&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Đây chính là lúc Fenwick Tree xuất hiện.&lt;/p&gt;
+&lt;p&gt;Bài toán lúc này không còn là duyệt mọi cặp phần tử nữa. Nó đã biến
+thành một bài toán truy vấn động trên dữ liệu đã xuất hiện trước đó.
+Và đó chính là lúc Fenwick Tree bước lên sân khấu.&lt;/p&gt;
 &lt;h2 id="fenwick-tree-la-gi"&gt;&lt;a class="headerlink" href="#fenwick-tree-la-gi" title="Permanent link"&gt;
 &lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
 &lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
 &lt;/svg&gt;
 &lt;/a&gt;Fenwick Tree là gì?&lt;/h2&gt;
-&lt;p&gt;Fenwick Tree là một cấu trúc dữ liệu hỗ trợ:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;cập nhật một phần tử&lt;/li&gt;
-&lt;li&gt;truy vấn tổng prefix&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;trong thời gian O(log n) thay vì O(n) như mảng thông thường.&lt;/p&gt;
-&lt;h2 id="truc-giac-au-tien"&gt;&lt;a class="headerlink" href="#truc-giac-au-tien" title="Permanent link"&gt;
+&lt;p&gt;Lần đầu đọc định nghĩa Fenwick Tree, tôi không cảm thấy nó đặc biệt dễ
+hiểu. Thông thường người ta sẽ mô tả như sau:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Fenwick Tree là một cấu trúc dữ liệu hỗ trợ cập nhật một phần tử và
+truy vấn tổng prefix trong &lt;code&gt;O(log n)&lt;/code&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Định nghĩa này hoàn toàn đúng.
+Nhưng nếu mới học, tôi nghĩ nó hơi khô khan.
+Sau này tôi thường tự giải thích đơn giản hơn:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Fenwick Tree là một cách lưu nhiều tổng trung gian khác nhau để
+tránh phải cộng lại từ đầu mỗi lần truy vấn.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Nếu nhìn theo góc độ đó, Fenwick Tree giống như một phiên bản thông
+minh hơn của việc cộng dồn thông thường. Thay vì lưu toàn bộ dữ liệu
+thô, nó lưu sẵn những “mảnh ghép” đủ lớn để ghép lại thành kết quả cần
+tìm.&lt;/p&gt;
+&lt;h2 id="truc-giac-giup-toi-hieu-fenwick-tree"&gt;&lt;a class="headerlink" href="#truc-giac-giup-toi-hieu-fenwick-tree" title="Permanent link"&gt;
 &lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
 &lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
 &lt;/svg&gt;
-&lt;/a&gt;Trực giác đầu tiên&lt;/h2&gt;
-&lt;p&gt;Giả sử tôi có mảng:&lt;/p&gt;
+&lt;/a&gt;Trực giác giúp tôi hiểu Fenwick Tree&lt;/h2&gt;
+&lt;p&gt;Điều khiến tôi bối rối nhất khi mới học là: Tại sao vài dòng code ngắn
+như vậy lại có thể chạy trong &lt;code&gt;O(log n)&lt;/code&gt;?. Sau một thời gian, tôi nhận
+ra rằng mình đang nghĩ sai về cách dữ liệu được lưu.&lt;/p&gt;
+&lt;p&gt;Giả sử có mảng:&lt;/p&gt;
 &lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;1 2 3 4 5 6 7 8
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Nếu muốn tính:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;a[1] + a[2] + ... + a[8]
+&lt;p&gt;Trực giác đầu tiên thường là:&lt;/p&gt;
+&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;bit[1] lưu phần tử 1
+bit[2] lưu phần tử 2
+...
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;thì tôi cần cộng toàn bộ các phần tử.&lt;/p&gt;
-&lt;p&gt;Fenwick Tree lưu sẵn nhiều tổng trung gian:&lt;/p&gt;
+&lt;p&gt;Nhưng Fenwick Tree không hoạt động theo cách đó. Nó lưu các đoạn:&lt;/p&gt;
 &lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;[1]
 [1..2]
 [3]
@@ -176,13 +218,21 @@ hãy liên tục trả lời truy vấn:&lt;/p&gt;
 [7]
 [1..8]
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Nhờ đó khi cần tính một prefix sum, tôi chỉ phải ghép vài khối lớn lại với nhau.&lt;/p&gt;
-&lt;p&gt;Đây là ý tưởng cốt lõi.&lt;/p&gt;
+&lt;p&gt;Tức là rất nhiều tổng trung gian ở các kích thước khác nhau. Khi cần
+tính tổng từ 1 tới 7, thay vì cộng bảy phần tử riêng lẻ, tôi chỉ việc
+lấy:&lt;/p&gt;
+&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;[1..4]
+[5..6]
+[7]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;rồi cộng lại.&lt;/p&gt;
+&lt;p&gt;Đó chính là ý tưởng cốt lõi của Fenwick Tree.&lt;/p&gt;
 &lt;h2 id="cai-at-fenwick-tree"&gt;&lt;a class="headerlink" href="#cai-at-fenwick-tree" title="Permanent link"&gt;
 &lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
 &lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
 &lt;/svg&gt;
 &lt;/a&gt;Cài đặt Fenwick Tree&lt;/h2&gt;
+&lt;p&gt;Điều tôi thích nhất ở Fenwick Tree là phần cài đặt cực kỳ ngắn.&lt;/p&gt;
 &lt;h3 id="cap-nhat"&gt;&lt;a class="headerlink" href="#cap-nhat" title="Permanent link"&gt;
 &lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
 &lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
@@ -194,11 +244,11 @@ hãy liên tục trả lời truy vấn:&lt;/p&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id="lay-prefix-sum"&gt;&lt;a class="headerlink" href="#lay-prefix-sum" title="Permanent link"&gt;
+&lt;h3 id="prefix-sum"&gt;&lt;a class="headerlink" href="#prefix-sum" title="Permanent link"&gt;
 &lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
 &lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
 &lt;/svg&gt;
-&lt;/a&gt;Lấy prefix sum&lt;/h3&gt;
+&lt;/a&gt;Prefix Sum&lt;/h3&gt;
 &lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="kt"&gt;int64_t&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kt"&gt;int64_t&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;res&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 
@@ -209,458 +259,311 @@ hãy liên tục trả lời truy vấn:&lt;/p&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;res&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id="lay-tong-oan"&gt;&lt;a class="headerlink" href="#lay-tong-oan" title="Permanent link"&gt;
+&lt;p&gt;Nếu chỉ nhìn code, rất nhiều người sẽ thấy biểu thức này khá bí ẩn:&lt;/p&gt;
+&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Tôi cũng từng như vậy. Sau này tôi mới biết đây là cách lấy bit 1 thấp
+nhất của một số, thường được gọi là lowbit.&lt;/p&gt;
+&lt;p&gt;Ví dụ:&lt;/p&gt;
+&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;6 = 110
+lowbit = 2
+
+12 = 1100
+lowbit = 4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Fenwick Tree sử dụng lowbit để nhảy giữa các đoạn dữ liệu có liên
+quan. Nhờ đó số bước xử lý luôn chỉ vào khoảng &lt;code&gt;O(log n)&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id="mot-cach-nho-fenwick-tree-rat-de"&gt;&lt;a class="headerlink" href="#mot-cach-nho-fenwick-tree-rat-de" title="Permanent link"&gt;
 &lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
 &lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
 &lt;/svg&gt;
-&lt;/a&gt;Lấy tổng đoạn&lt;/h3&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="n"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;l&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;l&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;cài đặt:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="kt"&gt;int64_t&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;l&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;l&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id="tai-sao-lai-la-olog-n"&gt;&lt;a class="headerlink" href="#tai-sao-lai-la-olog-n" title="Permanent link"&gt;
-&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
-&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
-&lt;/svg&gt;
-&lt;/a&gt;Tại sao lại là O(log n)?&lt;/h3&gt;
-&lt;p&gt;Quan sát:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;hoặc:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Mỗi lần thực hiện sẽ loại bỏ bit thấp nhất của p. Số bit của một số
-nguyên cỡ:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;log₂(n)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Nên tổng số bước chỉ là:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;O(log n)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id="vi-du"&gt;&lt;a class="headerlink" href="#vi-du" title="Permanent link"&gt;
-&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
-&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
-&lt;/svg&gt;
-&lt;/a&gt;Ví dụ&lt;/h3&gt;
-&lt;p&gt;Đây là một điểm rất hay khiến nhiều người mới học Fenwick Tree bị
-nhầm. Fenwick Tree không lưu trực tiếp theo kiểu:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;id = 7
-val = 10
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;ở đúng một vị trí.&lt;/p&gt;
-&lt;p&gt;Thay vào đó, giá trị được cộng vào nhiều node khác nhau để các node đó
-đại diện cho các đoạn (range) khác nhau. Giả sử:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;index: 1 2 3 4 5 6 7 8
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Các đoạn Fenwick:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;bit[1] = [1]
-bit[2] = [1..2]
-bit[3] = [3]
-bit[4] = [1..4]
-bit[5] = [5]
-bit[6] = [5..6]
-bit[7] = [7]
-bit[8] = [1..8]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Khi cộng:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;các đoạn bị ảnh hưởng là:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;[7]
-[1..8]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;nên:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;bit[7] += 10
-bit[8] += 10
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id="nhung-node-nay-ai-dien-cho-oan-nao"&gt;&lt;a class="headerlink" href="#nhung-node-nay-ai-dien-cho-oan-nao" title="Permanent link"&gt;
-&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
-&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
-&lt;/svg&gt;
-&lt;/a&gt;Những node này đại diện cho đoạn nào?&lt;/h3&gt;
-&lt;p&gt;Một node Fenwick:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;bit[i]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;đại diện cho đoạn:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;[i-lowbit(i)+1, i]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Ví dụ: &lt;code&gt;bit[7]&lt;/code&gt;&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;lowbit(7)=1
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Đại diện:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;[7, 7]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;code&gt;bit[8]&lt;/code&gt;&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;lowbit(8)=8
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Đại diện:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;[1, 8]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Nên sau khi:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;ta đang nói rằng:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Mọi đoạn chứa vị trí 7 đều phải biết rằng vị trí 7 tăng thêm 10.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id="query-thi-sao"&gt;&lt;a class="headerlink" href="#query-thi-sao" title="Permanent link"&gt;
-&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
-&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
-&lt;/svg&gt;
-&lt;/a&gt;Query thì sao?&lt;/h3&gt;
-&lt;p&gt;Giả sử gọi:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="n"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Ta thực hiện:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;7 -&amp;gt; 6 -&amp;gt; 4 -&amp;gt; 0
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;vì:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Các node được cộng vào kết quả:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;bit[7]
-bit[6]
-bit[4]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;tương ứng các đoạn:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;[7]
-[5..6]
-[1..4]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Ghép lại:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;[1..7]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Chính là prefix sum cần tìm.&lt;/p&gt;
-&lt;h3 id="mot-cach-nho-rat-de"&gt;&lt;a class="headerlink" href="#mot-cach-nho-rat-de" title="Permanent link"&gt;
-&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
-&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
-&lt;/svg&gt;
-&lt;/a&gt;Một cách nhớ rất dễ&lt;/h3&gt;
-&lt;p&gt;Khi:&lt;/p&gt;
+&lt;/a&gt;Một cách nhớ Fenwick Tree rất dễ&lt;/h3&gt;
+&lt;p&gt;Nếu phải tóm tắt Fenwick Tree bằng một câu, tôi thường nhớ như sau.&lt;/p&gt;
+&lt;p&gt;Khi cập nhật:&lt;/p&gt;
 &lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pos&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;val&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;ta đi lên trên:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="n"&gt;pos&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;lowbit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pos&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;p&gt;ta đi lên các đoạn lớn hơn:&lt;/p&gt;
+&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="n"&gt;pos&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;lowbit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pos&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;để thông báo cho tất cả các đoạn lớn hơn chứa &lt;code&gt;pos&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Khi:&lt;/p&gt;
+&lt;p&gt;để thông báo rằng vị trí này vừa thay đổi.&lt;/p&gt;
+&lt;p&gt;Ngược lại, khi truy vấn:&lt;/p&gt;
 &lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="n"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pos&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;ta đi xuống dưới:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="n"&gt;pos&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;lowbit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pos&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;p&gt;ta đi xuống:&lt;/p&gt;
+&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="n"&gt;pos&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;lowbit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pos&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;để ghép các đoạn nhỏ lại thành:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;[1..pos]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Ví dụ với:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Fenwick thực sự lưu:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;bit[7] += 10
-bit[8] += 10
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;chứ không chỉ lưu riêng ở:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;bit[7]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Đó chính là bí quyết giúp Fenwick trả lời truy vấn prefix sum trong
-&lt;code&gt;O(log n)&lt;/code&gt; thay vì &lt;code&gt;O(n)&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;để ghép nhiều đoạn nhỏ thành prefix sum cần tìm.&lt;/p&gt;
+&lt;p&gt;Chỉ cần nhớ hai hướng di chuyển đó, tôi gần như không bao giờ phải học
+thuộc code Fenwick Tree.&lt;/p&gt;
 &lt;h3 id="coordinate-compression"&gt;&lt;a class="headerlink" href="#coordinate-compression" title="Permanent link"&gt;
 &lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
 &lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
 &lt;/svg&gt;
 &lt;/a&gt;Coordinate Compression&lt;/h3&gt;
-&lt;p&gt;Trong rất nhiều bài toán, giá trị không nhỏ.&lt;/p&gt;
+&lt;p&gt;Một điều rất hay là Fenwick Tree không nhất thiết phải hoạt động trên
+giá trị gốc.&lt;/p&gt;
 &lt;p&gt;Ví dụ:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1000000&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1000000&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Không thể tạo Fenwick Tree kích thước:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;1000000
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;chỉ để lưu ba giá trị.&lt;/p&gt;
-&lt;p&gt;Ta thực hiện nén tọa độ.&lt;/p&gt;
-&lt;p&gt;Ví dụ:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1000000&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Sau khi sắp xếp:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="n"&gt;vals&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1000000&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Gán:&lt;/p&gt;
+&lt;p&gt;Tôi không muốn tạo một Fenwick Tree kích thước một triệu chỉ để lưu ba
+số. Lúc này ta thực hiện coordinate compression.&lt;/p&gt;
+&lt;p&gt;Sau khi nén:&lt;/p&gt;
 &lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;7       -&amp;gt; 1
 100     -&amp;gt; 2
 1000000 -&amp;gt; 3
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Tất cả truy vấn sau đó được thực hiện trên:&lt;/p&gt;
+&lt;p&gt;Mọi thao tác sau đó chỉ làm việc trên:&lt;/p&gt;
 &lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;1..3
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Đây là một kỹ thuật mà tôi gần như luôn sử dụng cùng Fenwick Tree.&lt;/p&gt;
 &lt;h2 id="ap-dung-vao-bai-toan"&gt;&lt;a class="headerlink" href="#ap-dung-vao-bai-toan" title="Permanent link"&gt;
 &lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
 &lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
 &lt;/svg&gt;
 &lt;/a&gt;Áp dụng vào bài toán&lt;/h2&gt;
-&lt;p&gt;Ta cần:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;Σ(a[j]-a[i])
+&lt;p&gt;Sau khi đã hiểu Fenwick Tree hoạt động như thế nào, hãy quay lại bài
+toán ban đầu. Khi đang duyệt phần tử:&lt;/p&gt;
+&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;x = a[i]
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;với:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;j &amp;lt; i
-a[j] &amp;gt; a[i]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Khi đang xét:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Tôi muốn biết:&lt;/p&gt;
+&lt;p&gt;tôi cần biết hai thông tin về các phần tử đã xuất hiện trước đó:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Có bao nhiêu phần tử lớn hơn x&lt;/li&gt;
+&lt;li&gt;Tổng các phần tử lớn hơn x&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Nếu gọi:&lt;/p&gt;
 &lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;count_gt
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;và&lt;/p&gt;
+&lt;p&gt;là số lượng phần tử lớn hơn x, và:&lt;/p&gt;
 &lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;sum_gt
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id="fenwick-thu-nhat-em-so-phan-tu"&gt;&lt;a class="headerlink" href="#fenwick-thu-nhat-em-so-phan-tu" title="Permanent link"&gt;
+&lt;p&gt;là tổng giá trị của các phần tử đó, thì đóng góp của x vào đáp án sẽ là:&lt;/p&gt;
+&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;sum_gt - count_gt * x
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Nhờ vậy, thay vì duyệt toàn bộ các phần tử trước đó, tôi chỉ cần biết
+hai giá trị tổng hợp.&lt;/p&gt;
+&lt;h3 id="mot-fenwick-tree-e-em"&gt;&lt;a class="headerlink" href="#mot-fenwick-tree-e-em" title="Permanent link"&gt;
 &lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
 &lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
 &lt;/svg&gt;
-&lt;/a&gt;Fenwick thứ nhất: đếm số phần tử&lt;/h3&gt;
-&lt;p&gt;Tôi tạo:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="n"&gt;fenwick&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;bit_cnt&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/a&gt;Một Fenwick Tree để đếm&lt;/h3&gt;
+&lt;p&gt;Đầu tiên, tôi tạo một Fenwick Tree dùng để lưu số lượng phần tử đã
+xuất hiện.&lt;/p&gt;
+&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="n"&gt;fenwick&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;bit_cnt&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Mỗi lần gặp một giá trị:&lt;/p&gt;
+&lt;p&gt;Khi gặp một giá trị mới:&lt;/p&gt;
 &lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="n"&gt;bit_cnt&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Khi cần biết có bao nhiêu số lớn hơn x, ta truy vấn:&lt;/p&gt;
+&lt;p&gt;Nếu muốn biết có bao nhiêu số lớn hơn x:&lt;/p&gt;
 &lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="n"&gt;cnt_gt&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;bit_cnt&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id="fenwick-thu-hai-tong-cac-gia-tri"&gt;&lt;a class="headerlink" href="#fenwick-thu-hai-tong-cac-gia-tri" title="Permanent link"&gt;
+&lt;h3 id="mot-fenwick-tree-e-luu-tong"&gt;&lt;a class="headerlink" href="#mot-fenwick-tree-e-luu-tong" title="Permanent link"&gt;
 &lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
 &lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
 &lt;/svg&gt;
-&lt;/a&gt;Fenwick thứ hai: tổng các giá trị&lt;/h3&gt;
-&lt;p&gt;Tôi tạo:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="n"&gt;fenwick&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;bit_sum&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/a&gt;Một Fenwick Tree để lưu tổng&lt;/h3&gt;
+&lt;p&gt;Tiếp theo, tôi tạo thêm một Fenwick Tree thứ hai.&lt;/p&gt;
+&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="n"&gt;fenwick&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;bit_sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Mỗi lần thêm:&lt;/p&gt;
+&lt;p&gt;Lần này thay vì cộng &lt;code&gt;1&lt;/code&gt;, tôi cộng &lt;code&gt;x&lt;/code&gt; vào cây.&lt;/p&gt;
 &lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="n"&gt;bit_sum&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Truy vấn:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="n"&gt;sum_gt&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;bit_sum&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;query&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;p&gt;Khi đó tổng các giá trị lớn hơn x là:&lt;/p&gt;
+&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="n"&gt;sum_gt&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;bit_sum&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id="tinh-ong-gop-cua-mot-phan-tu"&gt;&lt;a class="headerlink" href="#tinh-ong-gop-cua-mot-phan-tu" title="Permanent link"&gt;
+&lt;h3 id="tinh-phan-tang-them-khi-loai-bo-mot-hop"&gt;&lt;a class="headerlink" href="#tinh-phan-tang-them-khi-loai-bo-mot-hop" title="Permanent link"&gt;
 &lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
 &lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
 &lt;/svg&gt;
-&lt;/a&gt;Tính đóng góp của một phần tử&lt;/h3&gt;
-&lt;p&gt;Ví dụ:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;Các số trước đó:
-8 10 6
-x = 5
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Khi đó:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;count_gt = 3
-sum_gt   = 24
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Đóng góp là:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;24 - 3 * 5 = 9
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;vì:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;(8 - 5) + (10 - 5) + (6 - 5) = 9
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id="toi-uu-hoa-viec-loai-bo-1-hop"&gt;&lt;a class="headerlink" href="#toi-uu-hoa-viec-loai-bo-1-hop" title="Permanent link"&gt;
-&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
-&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
-&lt;/svg&gt;
-&lt;/a&gt;Tối ưu hóa việc loại bỏ 1 hộp&lt;/h3&gt;
-&lt;p&gt;Đoạn mã gốc của phần này như sau:&lt;/p&gt;
+&lt;/a&gt;Tính phần tăng thêm khi loại bỏ một hộp&lt;/h3&gt;
+&lt;p&gt;Điều khá thú vị là phần thứ hai của bài toán cũng có thể giải bằng
+chính Fenwick Tree.&lt;/p&gt;
+&lt;p&gt;Trong lời giải ban đầu, tôi viết:&lt;/p&gt;
 &lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;j&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;j&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;j&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;j&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
 &lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="n"&gt;cur&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Mục tiêu là đếm bao nhiêu phần tử trước đó &amp;gt;= a[i]. Đây cũng là bài
-toán mà Fenwick tree có thể giải quyết, tương tự như phần trước. Thậm
-chí phần này có thể kết hợp tính toán luôn trong cùng một vòng lặp với
-phần trước.&lt;/p&gt;
-&lt;p&gt;Dưới đây là lời giải đầy đủ cho bài toán này:&lt;/p&gt;
+&lt;p&gt;Đoạn code này đang trả lời câu hỏi: Có bao nhiêu phần tử trước đó &lt;code&gt;&amp;gt;=
+a[i]&lt;/code&gt;? Mà đây lại chính là loại truy vấn Fenwick Tree xử lý rất tốt.&lt;/p&gt;
+&lt;p&gt;Nếu đang đứng tại:&lt;/p&gt;
+&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;x = a[i]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;thì:&lt;/p&gt;
+&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;bit_cnt.sum(id, m)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;chính là số lượng phần tử đã xuất hiện có giá trị lớn hơn hoặc bằng &lt;code&gt;x&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Từ đó ta có thể cập nhật trực tiếp:&lt;/p&gt;
+&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;max&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;bit_cnt&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;mà không cần thêm một vòng lặp O(n) nào nữa. Tất cả được thực hiện
+trong một lần duyệt Điều tôi thích nhất ở lời giải này là mọi thứ đều
+diễn ra trong cùng một vòng lặp.&lt;/p&gt;
+&lt;p&gt;Khi duyệt một phần tử:&lt;/p&gt;
+&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;x = a[i]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;ta thực hiện:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Truy vấn số lượng phần tử lớn hơn &lt;code&gt;x&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Truy vấn tổng các phần tử lớn hơn &lt;code&gt;x&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Cập nhật đáp án cho phần thứ nhất&lt;/li&gt;
+&lt;li&gt;Cập nhật đáp án cho phần thứ hai&lt;/li&gt;
+&lt;li&gt;Thêm &lt;code&gt;x&lt;/code&gt; vào hai Fenwick Tree&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Tất cả các thao tác đều có độ phức tạp &lt;code&gt;O(log n)&lt;/code&gt;, nên toàn bộ lời
+giải trở thành &lt;code&gt;O(n log n)&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id="code-hoan-chinh"&gt;&lt;a class="headerlink" href="#code-hoan-chinh" title="Permanent link"&gt;
+&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/a&gt;Code hoàn chỉnh&lt;/h3&gt;
 &lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="cp"&gt;#include&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="cpf"&gt;&amp;lt;bits/stdc++.h&amp;gt;&lt;/span&gt;
 &lt;span class="k"&gt;using&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;namespace&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;std&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 
 &lt;span class="k"&gt;struct&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;fenwick&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;vector&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="kt"&gt;int64_t&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;bit&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;vector&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="kt"&gt;int64_t&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;bit&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;fenwick&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;n_&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n_&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;bit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{}&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;fenwick&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;n_&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n_&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;bit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{}&lt;/span&gt;
 
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="kt"&gt;void&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;int64_t&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="n"&gt;bit&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kt"&gt;void&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;int64_t&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="n"&gt;bit&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
 
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="kt"&gt;int64_t&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;const&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kt"&gt;int64_t&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;res&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="n"&gt;res&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;bit&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kt"&gt;int64_t&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;const&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="kt"&gt;int64_t&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;res&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="n"&gt;res&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;bit&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;res&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;res&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
 
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="kt"&gt;int64_t&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;l&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;const&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;l&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kt"&gt;int64_t&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;l&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;const&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;l&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
 &lt;span class="p"&gt;};&lt;/span&gt;
 
 &lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;ios&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;sync_with_stdio&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;false&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;cin&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tie&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;nullptr&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;ios&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;sync_with_stdio&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;false&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;cin&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tie&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;nullptr&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;cin&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;cin&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;while&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;cin&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;while&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="n"&gt;cin&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;vector&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;cin&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="n"&gt;vector&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;vector&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;vals&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;ranges&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;sort&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;vals&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;vals&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;erase&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;unique&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;vals&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;begin&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;vals&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;end&lt;/span&gt;&lt;span class="p"&gt;()),&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;vals&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;end&lt;/span&gt;&lt;span class="p"&gt;());&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;cin&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="n"&gt;vals&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;size&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="n"&gt;vector&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;vals&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;auto&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;gid&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="p"&gt;](&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;lower_bound&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;vals&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;begin&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;vals&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;end&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;vals&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;begin&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="n"&gt;ranges&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;sort&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;vals&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="n"&gt;vals&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;erase&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;unique&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;vals&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;begin&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;vals&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;end&lt;/span&gt;&lt;span class="p"&gt;()),&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;vals&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;end&lt;/span&gt;&lt;span class="p"&gt;());&lt;/span&gt;
 
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;fenwick&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;bit_cnt&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;fenwick&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;bit_sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="n"&gt;vals&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;size&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
 
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kt"&gt;int64_t&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;ans&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="k"&gt;auto&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;gid&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;lower_bound&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;vals&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;begin&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;vals&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;end&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;vals&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;begin&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
 
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;gid&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="n"&gt;fenwick&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;bit_cnt&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="n"&gt;fenwick&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;bit_sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="kt"&gt;int64_t&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;cnt_gt&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;bit_cnt&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="kt"&gt;int64_t&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;sum_gt&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;bit_sum&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="kt"&gt;int64_t&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;ans&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="kt"&gt;int64_t&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="n"&gt;ans&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;sum_gt&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;cnt_gt&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;max&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;bit_cnt&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;gid&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="n"&gt;bit_cnt&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="n"&gt;bit_sum&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="kt"&gt;int64_t&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;cnt_gt&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;bit_cnt&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+&lt;span class="w"&gt;                &lt;/span&gt;&lt;span class="n"&gt;sum_gt&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;bit_sum&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+
+&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="n"&gt;ans&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;sum_gt&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;cnt_gt&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;max&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;bit_cnt&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;
+
+&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="n"&gt;bit_cnt&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="n"&gt;bit_sum&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="n"&gt;cout&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;ans&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="sc"&gt;'\n'&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
 
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;cout&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;ans&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="sc"&gt;'\n'&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
-
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2 id="nhung-truong-hop-nao-nen-dung-fenwick-tree"&gt;&lt;a class="headerlink" href="#nhung-truong-hop-nao-nen-dung-fenwick-tree" title="Permanent link"&gt;
+&lt;p&gt;Đây là một trong những ví dụ khiến tôi thực sự hiểu giá trị của
+Fenwick Tree. Nếu chỉ nhìn vào lời giải cuối cùng, rất dễ nghĩ rằng
+Fenwick Tree là phần quan trọng nhất. Nhưng nhìn lại quá trình giải
+bài, tôi thấy bước quan trọng hơn lại là việc biến đổi công thức và
+nhận ra mình chỉ cần biết “bao nhiêu phần tử lớn hơn x” và “tổng của
+chúng là bao nhiêu”.&lt;/p&gt;
+&lt;p&gt;Fenwick Tree chỉ là công cụ giúp trả lời hai câu hỏi đó một cách hiệu
+quả. Đây cũng là điều tôi gặp lại rất nhiều lần khi giải các bài toán
+khác: tối ưu thường bắt đầu từ việc nhìn lại bài toán dưới một góc độ
+khác, trước khi chọn cấu trúc dữ liệu phù hợp.&lt;/p&gt;
+&lt;h2 id="nhung-truong-hop-toi-thuong-nghi-en-fenwick-tree"&gt;&lt;a class="headerlink" href="#nhung-truong-hop-toi-thuong-nghi-en-fenwick-tree" title="Permanent link"&gt;
 &lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
 &lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
 &lt;/svg&gt;
-&lt;/a&gt;Những trường hợp nào nên dùng Fenwick Tree?&lt;/h2&gt;
-&lt;p&gt;Sau một thời gian giải thuật toán, tôi thấy Fenwick Tree thường xuất
-hiện trong các tình huống sau.&lt;/p&gt;
-&lt;h3 id="em-nghich-the-inversion-count"&gt;&lt;a class="headerlink" href="#em-nghich-the-inversion-count" title="Permanent link"&gt;
-&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
-&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
-&lt;/svg&gt;
-&lt;/a&gt;Đếm nghịch thế (Inversion Count)&lt;/h3&gt;
-&lt;p&gt;Bài toán kinh điển:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;Có bao nhiêu cặp:
-
-i &amp;lt; j
-a[i] &amp;gt; a[j]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Fenwick Tree giải trong:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;O(n log n)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id="truy-van-tan-suat"&gt;&lt;a class="headerlink" href="#truy-van-tan-suat" title="Permanent link"&gt;
-&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
-&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
-&lt;/svg&gt;
-&lt;/a&gt;Truy vấn tần suất&lt;/h3&gt;
+&lt;/a&gt;Những trường hợp tôi thường nghĩ đến Fenwick Tree&lt;/h2&gt;
+&lt;p&gt;Sau một thời gian giải thuật toán, tôi nhận ra Fenwick Tree xuất hiện
+rất thường xuyên trong một số nhóm bài.&lt;/p&gt;
 &lt;p&gt;Ví dụ:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;Đã xuất hiện bao nhiêu số &amp;lt;= x ?
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id="truy-van-thu-hang"&gt;&lt;a class="headerlink" href="#truy-van-thu-hang" title="Permanent link"&gt;
-&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
-&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
-&lt;/svg&gt;
-&lt;/a&gt;Truy vấn thứ hạng&lt;/h3&gt;
-&lt;p&gt;Ví dụ:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;x hiện là số nhỏ thứ mấy?
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id="dynamic-order-statistics"&gt;&lt;a class="headerlink" href="#dynamic-order-statistics" title="Permanent link"&gt;
-&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
-&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
-&lt;/svg&gt;
-&lt;/a&gt;Dynamic Order Statistics&lt;/h3&gt;
-&lt;p&gt;Một số bài toán yêu cầu:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;thêm
-xóa
-đếm
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;liên tục.&lt;/p&gt;
-&lt;h3 id="em-so-luong-trong-oan"&gt;&lt;a class="headerlink" href="#em-so-luong-trong-oan" title="Permanent link"&gt;
-&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
-&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
-&lt;/svg&gt;
-&lt;/a&gt;Đếm số lượng trong đoạn&lt;/h3&gt;
-&lt;p&gt;Ví dụ:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;Có bao nhiêu phần tử thuộc [L,R]?
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id="tinh-tong-trong-so"&gt;&lt;a class="headerlink" href="#tinh-tong-trong-so" title="Permanent link"&gt;
-&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
-&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
-&lt;/svg&gt;
-&lt;/a&gt;Tính tổng trọng số&lt;/h3&gt;
-&lt;p&gt;Giống bài toán ở trên:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;Tổng các giá trị lớn hơn x là bao nhiêu?
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2 id="kinh-nghiem-ca-nhan"&gt;&lt;a class="headerlink" href="#kinh-nghiem-ca-nhan" title="Permanent link"&gt;
-&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
-&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
-&lt;/svg&gt;
-&lt;/a&gt;Kinh nghiệm cá nhân&lt;/h2&gt;
-&lt;p&gt;Tôi từng mất khá nhiều thời gian để hiểu vì sao một cấu trúc dữ liệu
-ngắn như Fenwick Tree lại được dùng nhiều đến vậy. Sau đó tôi nhận ra
-rằng giá trị lớn nhất của nó không nằm ở vài dòng mã nguồn, mà nằm ở
-cách biến đổi bài toán.&lt;/p&gt;
-&lt;p&gt;Một bài toán ban đầu có vẻ yêu cầu duyệt mọi cặp phần tử thường sẽ trở
-thành:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;tỉnh tổng trong một khoảng&lt;/li&gt;
-&lt;li&gt;cập nhật lại một phần tử&lt;/li&gt;
+&lt;li&gt;Đếm nghịch thế (Inversion Count)&lt;/li&gt;
+&lt;li&gt;Đếm số lượng phần tử nhỏ hơn hoặc lớn hơn một giá trị&lt;/li&gt;
+&lt;li&gt;Truy vấn tần suất xuất hiện&lt;/li&gt;
+&lt;li&gt;Xếp hạng (Ranking)&lt;/li&gt;
+&lt;li&gt;Order Statistics&lt;/li&gt;
+&lt;li&gt;Thống kê động trên dữ liệu đã xuất hiện&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Ngay khi nhìn thấy dạng này, Fenwick Tree gần như là công cụ đầu tiên
-tôi nghĩ tới. Tuy nhiên, Fenwick tree không phù hợp với bài toán tìm
-min/max (cần một cấu trúc dữ liệu khác là Segment Tree, tôi sẽ viết ở
-một bài viết khác).&lt;/p&gt;
+&lt;p&gt;Mỗi khi nhìn thấy các cụm từ như “đếm số lượng”, hoặc “tổng các phần
+tử thuộc một khoảng giá trị”, Fenwick Tree gần như là một trong những
+công cụ đầu tiên tôi nghĩ tới.&lt;/p&gt;
+&lt;h2 id="ieu-toi-rut-ra-sau-khi-hoc-fenwick-tree"&gt;&lt;a class="headerlink" href="#ieu-toi-rut-ra-sau-khi-hoc-fenwick-tree" title="Permanent link"&gt;
+&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/a&gt;Điều tôi rút ra sau khi học Fenwick Tree&lt;/h2&gt;
+&lt;p&gt;Điều khiến tôi thích Fenwick Tree không phải là vì nó nhanh. Điều
+khiến tôi thích nó là vì nó thay đổi cách tôi nhìn bài toán. Rất nhiều
+bài toán ban đầu trông như đang yêu cầu duyệt mọi cặp phần tử, nhưng
+sau khi biến đổi công thức một chút, chúng lại trở thành đếm số lượng
+trong một khoảng hoặc tính tổng trong một khoảng.&lt;/p&gt;
+&lt;p&gt;Khi đó Fenwick Tree xuất hiện như một lời giải rất tự nhiên. Và đó
+cũng là lúc tôi nhận ra rằng việc học cấu trúc dữ liệu không chỉ để
+nhớ cách cài đặt. Điều quan trọng hơn là học cách nhận ra bài toán nào
+phù hợp với cấu trúc dữ liệu đó.&lt;/p&gt;
 &lt;h2 id="ket-luan"&gt;&lt;a class="headerlink" href="#ket-luan" title="Permanent link"&gt;
 &lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
 &lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
 &lt;/svg&gt;
 &lt;/a&gt;Kết luận&lt;/h2&gt;
-&lt;p&gt;Fenwick Tree là một cấu trúc dữ liệu đơn giản nhưng cực kỳ mạnh mẽ.
-Chỉ với khả năng cập nhật một điểm và truy vấn tổng prefix trong
-&lt;code&gt;O(log n)&lt;/code&gt;, nó có thể giải quyết rất nhiều bài toán đếm, thống kê,
-nghịch thế, xếp hạng và truy vấn động.&lt;/p&gt;
-&lt;p&gt;Trong bài toán ví dụ của bài viết, chúng ta đã biến một lời giải có độ
-phức tạp:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;O(n² + n·maxA)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;thành:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;O(n log n)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;bằng cách sử dụng hai Fenwick Tree để lưu số lượng phần tử và tổng giá
-trị của các phần tử đã xuất hiện.&lt;/p&gt;
-&lt;p&gt;Đối với tôi, Fenwick Tree là một trong những cấu trúc dữ liệu đem lại
-“cảm giác khai sáng” rõ rệt nhất khi học thuật toán. Nó đơn giản hơn
-Segment Tree, dễ cài đặt hơn nhiều cấu trúc nâng cao khác, nhưng lại
-đủ mạnh để xuất hiện trong vô số bài toán thực tế và bài toán thi đấu.
-Nếu bạn mới làm quen với các kỹ thuật tối ưu truy vấn trên mảng, đây
-là một cấu trúc dữ liệu rất đáng để đầu tư thời gian tìm hiểu kỹ.&lt;/p&gt;</content><category term="Tổng hợp"/><category term="Codeforces"/><category term="competitive programming"/><category term="coding"/><category term="contest"/><category term="practice"/><category term="algorithm"/><category term="data structure"/><category term="software engineering"/><category term="developer life"/><category term="fundamental"/><category term="basic"/></entry><entry><title>Những lỗi “nhỏ nhưng đau” khi dùng C++ trong competitive programming</title><link href="https://manhhomienbienthuy.github.io/2026/07/14/nhung-loi-nho-nhung-dau-khi-dung-c-trong-competitive-programming.html" rel="alternate"/><published>2026-07-14T16:15:31+09:00</published><updated>2026-09-24T02:58:17+00:00</updated><author><name>manhhomienbienthuy</name></author><id>tag:manhhomienbienthuy.github.io,2026-07-14:/2026/07/14/nhung-loi-nho-nhung-dau-khi-dung-c-trong-competitive-programming.html</id><summary type="html">Đến với competitive programming từ nền tảng Python và JavaScript, tôi từng nghĩ rằng logic đúng là đủ. Nhưng C++ lại là một “thế giới khác” – nơi những chi tiết nhỏ như kiểu dữ liệu, thứ tự toán tử hay cách đọc input có thể quyết định AC hay WA […]</summary><content type="html">&lt;p&gt;Đến với competitive programming từ nền tảng Python và JavaScript, tôi
+&lt;p&gt;Fenwick Tree là một trong những cấu trúc dữ liệu nhỏ gọn nhất mà tôi
+từng học.&lt;/p&gt;
+&lt;p&gt;Toàn bộ phần cài đặt chỉ gồm vài hàm ngắn, nhưng khả năng ứng dụng của
+nó lại rất rộng. Từ đếm nghịch thế, thống kê tần suất, xếp hạng cho
+tới rất nhiều bài toán tối ưu trong competitive programming đều có thể
+xuất hiện Fenwick Tree ở đâu đó trong lời giải.&lt;/p&gt;
+&lt;p&gt;Đối với tôi, đây cũng là một trong những cấu trúc dữ liệu mang lại cảm
+giác “khai sáng” rõ rệt nhất. Không phải vì cách cài đặt phức tạp hay
+kỹ thuật quá cao siêu, mà vì nó cho thấy một điều rất quan trọng:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Đôi khi chìa khóa để tối ưu không nằm ở việc viết code nhanh hơn, mà
+nằm ở việc nhìn bài toán theo một góc độ khác.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Nếu bạn đang bắt đầu tìm hiểu các kỹ thuật xử lý truy vấn trên mảng và
+muốn bước xa hơn khỏi những vòng lặp &lt;code&gt;O(n²)&lt;/code&gt;, tôi nghĩ Fenwick Tree là
+một trong những cấu trúc dữ liệu đáng học nhất. Và cũng giống như tôi
+khi mới học nó, rất có thể bạn sẽ bắt đầu nhìn thấy Fenwick Tree xuất
+hiện ở khắp mọi nơi sau đó.&lt;/p&gt;</content><category term="Tổng hợp"/><category term="Codeforces"/><category term="competitive programming"/><category term="coding"/><category term="contest"/><category term="practice"/><category term="algorithm"/><category term="data structure"/><category term="software engineering"/><category term="developer life"/><category term="fundamental"/><category term="basic"/></entry><entry><title>Những lỗi “nhỏ nhưng đau” khi dùng C++ trong competitive programming</title><link href="https://manhhomienbienthuy.github.io/2026/07/14/nhung-loi-nho-nhung-dau-khi-dung-c-trong-competitive-programming.html" rel="alternate"/><published>2026-07-14T16:15:31+09:00</published><updated>2026-09-24T02:58:17+00:00</updated><author><name>manhhomienbienthuy</name></author><id>tag:manhhomienbienthuy.github.io,2026-07-14:/2026/07/14/nhung-loi-nho-nhung-dau-khi-dung-c-trong-competitive-programming.html</id><summary type="html">Đến với competitive programming từ nền tảng Python và JavaScript, tôi từng nghĩ rằng logic đúng là đủ. Nhưng C++ lại là một “thế giới khác” – nơi những chi tiết nhỏ như kiểu dữ liệu, thứ tự toán tử hay cách đọc input có thể quyết định AC hay WA […]</summary><content type="html">&lt;p&gt;Đến với competitive programming từ nền tảng Python và JavaScript, tôi
 từng nghĩ rằng logic đúng là đủ. Nhưng C++ lại là một “thế giới khác”
 – nơi những chi tiết nhỏ như kiểu dữ liệu, thứ tự toán tử hay cách đọc
 input có thể quyết định AC hay WA. Trong quá trình làm quen, tôi liên
