@@ -327,16 +327,17 @@ toán ban đầu. Khi đang duyệt phần tử:&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;tôi cần biết hai thông tin về các phần tử đã xuất hiện trước đó:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Có bao nhiêu phần tử lớn hơn x&lt;/li&gt;
-&lt;li&gt;Tổng các phần tử lớn hơn x&lt;/li&gt;
+&lt;li&gt;Có bao nhiêu phần tử lớn hơn &lt;code&gt;x&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Tổng các phần tử lớn hơn &lt;code&gt;x&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Nếu gọi:&lt;/p&gt;
 &lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;count_gt
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;là số lượng phần tử lớn hơn x, và:&lt;/p&gt;
+&lt;p&gt;là số lượng phần tử lớn hơn &lt;code&gt;x&lt;/code&gt;, và:&lt;/p&gt;
 &lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;sum_gt
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;là tổng giá trị của các phần tử đó, thì đóng góp của x vào đáp án sẽ là:&lt;/p&gt;
+&lt;p&gt;là tổng giá trị của các phần tử đó, thì đóng góp của &lt;code&gt;x&lt;/code&gt; vào đáp án sẽ
+là:&lt;/p&gt;
 &lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;sum_gt - count_gt * x
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Nhờ vậy, thay vì duyệt toàn bộ các phần tử trước đó, tôi chỉ cần biết
@@ -502,7 +503,7 @@ giải trở thành &lt;code&gt;O(n log n)&lt;/code&gt;.&lt;/p&gt;
 Fenwick Tree. Nếu chỉ nhìn vào lời giải cuối cùng, rất dễ nghĩ rằng
 Fenwick Tree là phần quan trọng nhất. Nhưng nhìn lại quá trình giải
 bài, tôi thấy bước quan trọng hơn lại là việc biến đổi công thức và
-nhận ra mình chỉ cần biết “bao nhiêu phần tử lớn hơn x” và “tổng của
+nhận ra mình chỉ cần biết “bao nhiêu phần tử lớn hơn &lt;code&gt;x&lt;/code&gt;” và “tổng của
 chúng là bao nhiêu”.&lt;/p&gt;
 &lt;p&gt;Fenwick Tree chỉ là công cụ giúp trả lời hai câu hỏi đó một cách hiệu
 quả. Đây cũng là điều tôi gặp lại rất nhiều lần khi giải các bài toán
