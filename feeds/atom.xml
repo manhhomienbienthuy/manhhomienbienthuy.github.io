@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>manhhomienbienthuy</title><link href="https://manhhomienbienthuy.github.io/" rel="alternate"/><link href="https://manhhomienbienthuy.github.io/feeds/atom.xml" rel="self"/><id>https://manhhomienbienthuy.github.io/</id><updated>2026-09-23T23:39:52+00:00</updated><subtitle>Đây là thế giới của manhhomienbienthuy (naa). Chào mừng đến với thế giới của tôi!</subtitle><entry><title>Fenwick Tree: Cấu trúc dữ liệu tôi ước mình được học sớm hơn</title><link href="https://manhhomienbienthuy.github.io/2026/09/19/fenwick-tree-cau-truc-du-lieu-toi-uoc-minh-duoc-hoc-som-hon.html" rel="alternate"/><published>2026-09-19T13:18:57+09:00</published><updated>2026-09-21T01:11:06+00:00</updated><author><name>manhhomienbienthuy</name></author><id>tag:manhhomienbienthuy.github.io,2026-09-19:/2026/09/19/fenwick-tree-cau-truc-du-lieu-toi-uoc-minh-duoc-hoc-som-hon.html</id><summary type="html">Trong quá trình học lập trình và đặc biệt là lập trình thi đấu, tôi đã gặp rất nhiều bài toán mà lời giải ngây thơ ban đầu chạy chậm đến mức không thể vượt qua giới hạn thời gian. Một trong những công cụ xuất hiện lặp đi lặp […]</summary><content type="html">&lt;p&gt;Trong quá trình học lập trình và đặc biệt là lập trình thi đấu, tôi đã
+<feed xmlns="http://www.w3.org/2005/Atom"><title>manhhomienbienthuy</title><link href="https://manhhomienbienthuy.github.io/" rel="alternate"/><link href="https://manhhomienbienthuy.github.io/feeds/atom.xml" rel="self"/><id>https://manhhomienbienthuy.github.io/</id><updated>2026-09-24T02:58:17+00:00</updated><subtitle>Đây là thế giới của manhhomienbienthuy (naa). Chào mừng đến với thế giới của tôi!</subtitle><entry><title>Fenwick Tree: Cấu trúc dữ liệu tôi ước mình được học sớm hơn</title><link href="https://manhhomienbienthuy.github.io/2026/09/19/fenwick-tree-cau-truc-du-lieu-toi-uoc-minh-duoc-hoc-som-hon.html" rel="alternate"/><published>2026-09-19T13:18:57+09:00</published><updated>2026-09-21T01:11:06+00:00</updated><author><name>manhhomienbienthuy</name></author><id>tag:manhhomienbienthuy.github.io,2026-09-19:/2026/09/19/fenwick-tree-cau-truc-du-lieu-toi-uoc-minh-duoc-hoc-som-hon.html</id><summary type="html">Trong quá trình học lập trình và đặc biệt là lập trình thi đấu, tôi đã gặp rất nhiều bài toán mà lời giải ngây thơ ban đầu chạy chậm đến mức không thể vượt qua giới hạn thời gian. Một trong những công cụ xuất hiện lặp đi lặp […]</summary><content type="html">&lt;p&gt;Trong quá trình học lập trình và đặc biệt là lập trình thi đấu, tôi đã
 gặp rất nhiều bài toán mà lời giải ngây thơ ban đầu chạy chậm đến mức
 không thể vượt qua giới hạn thời gian. Một trong những công cụ xuất
 hiện lặp đi lặp lại để giải quyết những bài toán như vậy là Fenwick
@@ -660,7 +660,7 @@ trị của các phần tử đã xuất hiện.&lt;/p&gt;
 Segment Tree, dễ cài đặt hơn nhiều cấu trúc nâng cao khác, nhưng lại
 đủ mạnh để xuất hiện trong vô số bài toán thực tế và bài toán thi đấu.
 Nếu bạn mới làm quen với các kỹ thuật tối ưu truy vấn trên mảng, đây
-là một cấu trúc dữ liệu rất đáng để đầu tư thời gian tìm hiểu kỹ.&lt;/p&gt;</content><category term="Tổng hợp"/><category term="Codeforces"/><category term="competitive programming"/><category term="coding"/><category term="contest"/><category term="practice"/><category term="algorithm"/><category term="data structure"/><category term="software engineering"/><category term="developer life"/><category term="fundamental"/><category term="basic"/></entry><entry><title>Những lỗi “nhỏ nhưng đau” khi dùng C++ trong competitive programming</title><link href="https://manhhomienbienthuy.github.io/2026/07/14/nhung-loi-nho-nhung-dau-khi-dung-c-trong-competitive-programming.html" rel="alternate"/><published>2026-07-14T16:15:31+09:00</published><updated>2026-08-28T05:01:45+00:00</updated><author><name>manhhomienbienthuy</name></author><id>tag:manhhomienbienthuy.github.io,2026-07-14:/2026/07/14/nhung-loi-nho-nhung-dau-khi-dung-c-trong-competitive-programming.html</id><summary type="html">Đến với competitive programming từ nền tảng Python và JavaScript, tôi từng nghĩ rằng logic đúng là đủ. Nhưng C++ lại là một “thế giới khác” – nơi những chi tiết nhỏ như kiểu dữ liệu, thứ tự toán tử hay cách đọc input có thể quyết định AC hay WA […]</summary><content type="html">&lt;p&gt;Đến với competitive programming từ nền tảng Python và JavaScript, tôi
+là một cấu trúc dữ liệu rất đáng để đầu tư thời gian tìm hiểu kỹ.&lt;/p&gt;</content><category term="Tổng hợp"/><category term="Codeforces"/><category term="competitive programming"/><category term="coding"/><category term="contest"/><category term="practice"/><category term="algorithm"/><category term="data structure"/><category term="software engineering"/><category term="developer life"/><category term="fundamental"/><category term="basic"/></entry><entry><title>Những lỗi “nhỏ nhưng đau” khi dùng C++ trong competitive programming</title><link href="https://manhhomienbienthuy.github.io/2026/07/14/nhung-loi-nho-nhung-dau-khi-dung-c-trong-competitive-programming.html" rel="alternate"/><published>2026-07-14T16:15:31+09:00</published><updated>2026-09-24T02:58:17+00:00</updated><author><name>manhhomienbienthuy</name></author><id>tag:manhhomienbienthuy.github.io,2026-07-14:/2026/07/14/nhung-loi-nho-nhung-dau-khi-dung-c-trong-competitive-programming.html</id><summary type="html">Đến với competitive programming từ nền tảng Python và JavaScript, tôi từng nghĩ rằng logic đúng là đủ. Nhưng C++ lại là một “thế giới khác” – nơi những chi tiết nhỏ như kiểu dữ liệu, thứ tự toán tử hay cách đọc input có thể quyết định AC hay WA […]</summary><content type="html">&lt;p&gt;Đến với competitive programming từ nền tảng Python và JavaScript, tôi
 từng nghĩ rằng logic đúng là đủ. Nhưng C++ lại là một “thế giới khác”
 – nơi những chi tiết nhỏ như kiểu dữ liệu, thứ tự toán tử hay cách đọc
 input có thể quyết định AC hay WA. Trong quá trình làm quen, tôi liên
@@ -671,7 +671,7 @@ quen và tự tin hơn khi dùng C++ trong thi đấu.&lt;/p&gt;
 &lt;li&gt;&lt;a href="#hanh-trinh-en-voi-c"&gt;Hành trình đến với C++&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#kieu-du-lieu-overflow-nhom-loi-nguy-hiem-nhat"&gt;Kiểu dữ liệu &amp;amp; Overflow – nhóm lỗi nguy hiểm nhất&lt;/a&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href="#tin-tuong-int-qua-muc"&gt;Tin tưởng int quá mức&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#long-long-cho-tat-ca-phan-xa-sai-thi-cung-met"&gt;“long long cho tất cả” – phản xạ sai thì cũng mệt&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#int64_t-cho-tat-ca-phan-xa-sai-thi-cung-met"&gt;“int64_t cho tất cả” – phản xạ sai thì cũng mệt&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#loi-voi-modulo"&gt;Lỗi với modulo&lt;/a&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href="#ket-qua-am"&gt;Kết quả âm&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#overflow-truoc-khi-mod"&gt;Overflow trước khi mod&lt;/a&gt;&lt;/li&gt;
@@ -784,7 +784,7 @@ cũng tồn tại trong C++, chỉ khác ở cách sử dụng.&lt;/p&gt;
 &lt;p&gt;Khác với Python, đây là ngôn ngữ yêu cầu khai báo kiểu dữ liệu một
 cách tường minh. Tôi phải suy nghĩ liên tục:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Dùng &lt;code&gt;int&lt;/code&gt; hay &lt;code&gt;long long&lt;/code&gt;?&lt;/li&gt;
+&lt;li&gt;Dùng &lt;code&gt;int&lt;/code&gt; hay &lt;code&gt;int64_t&lt;/code&gt;?&lt;/li&gt;
 &lt;li&gt;Truyền tham chiếu hay truyền giá trị?&lt;/li&gt;
 &lt;li&gt;Kiểu trả về của hàm là gì?&lt;/li&gt;
 &lt;li&gt;Có bị overflow hay không?&lt;/li&gt;
@@ -828,15 +828,15 @@ thường.&lt;/p&gt;
 &lt;p&gt;Nhưng:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;1e9 * 1e9 = 1e18&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Trong khi &lt;code&gt;int&lt;/code&gt; chỉ chứa được khoảng &lt;code&gt;2 * 10^9&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Trong khi &lt;code&gt;int&lt;/code&gt; chỉ chứa được khoảng &lt;code&gt;2e9&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Giá trị bị overflow ngay lập tức.&lt;/p&gt;
 &lt;p&gt;Điều thú vị là sau lần gặp lỗi đầu tiên, tôi nghĩ mình đã tìm được
 cách sửa:&lt;/p&gt;
 &lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mf"&gt;1e9&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mf"&gt;1e9&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="kt"&gt;long&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;long&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="kt"&gt;int64_t&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Nhìn qua thì rất hợp lý. Biến kết quả đã là &lt;code&gt;long long&lt;/code&gt;, vậy còn gì có
+&lt;p&gt;Nhìn qua thì rất hợp lý. Biến kết quả đã là &lt;code&gt;int64_t&lt;/code&gt;, vậy còn gì có
 thể sai nữa?&lt;/p&gt;
 &lt;p&gt;Nhưng kết quả vẫn sai.&lt;/p&gt;
 &lt;p&gt;Tôi đã mất khá lâu để nhận ra rằng lỗi không nằm ở biến &lt;code&gt;c&lt;/code&gt;, mà nằm ở
@@ -844,38 +844,38 @@ chính phép tính &lt;code&gt;a * b&lt;/code&gt;. Vì cả hai toán hạng đ�
 được thực hiện bằng kiểu &lt;code&gt;int&lt;/code&gt; trước. Giá trị đã overflow từ trước khi
 được gán vào &lt;code&gt;c&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Cách đúng:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="kt"&gt;long&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;long&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mf"&gt;1L&lt;/span&gt;&lt;span class="n"&gt;L&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="kt"&gt;int64_t&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mf"&gt;1L&lt;/span&gt;&lt;span class="n"&gt;L&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Điều khiến lỗi này nguy hiểm là chương trình vẫn biên dịch, vẫn chạy,
 không hề báo lỗi. Chỉ có kết quả là sai.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Bài học:&lt;/strong&gt; Đừng chỉ nhìn vào kiểu dữ liệu của biến kết quả. Hãy nhìn
 vào kiểu dữ liệu được dùng trong phép tính.&lt;/p&gt;
-&lt;h3 id="long-long-cho-tat-ca-phan-xa-sai-thi-cung-met"&gt;&lt;a class="headerlink" href="#long-long-cho-tat-ca-phan-xa-sai-thi-cung-met" title="Permanent link"&gt;
+&lt;h3 id="int64_t-cho-tat-ca-phan-xa-sai-thi-cung-met"&gt;&lt;a class="headerlink" href="#int64_t-cho-tat-ca-phan-xa-sai-thi-cung-met" title="Permanent link"&gt;
 &lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
 &lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
 &lt;/svg&gt;
-&lt;/a&gt;“&lt;code&gt;long long&lt;/code&gt; cho tất cả” – phản xạ sai thì cũng mệt&lt;/h3&gt;
+&lt;/a&gt;“&lt;code&gt;int64_t&lt;/code&gt; cho tất cả” – phản xạ sai thì cũng mệt&lt;/h3&gt;
 &lt;p&gt;Sau vài lần bị overflow hành hạ, tôi đi sang cực đoan còn lại.&lt;/p&gt;
-&lt;p&gt;Tôi gần như đổi toàn bộ &lt;code&gt;int&lt;/code&gt; thành &lt;code&gt;long long&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Tôi gần như đổi toàn bộ &lt;code&gt;int&lt;/code&gt; thành &lt;code&gt;int64_t&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Lúc đó tôi thấy mình rất thông minh. Khỏi cần tính toán giới hạn giá
 trị. Khỏi cần lo overflow.&lt;/p&gt;
 &lt;p&gt;Nhưng rồi tôi bắt đầu gặp những bài có dữ liệu rất lớn. Mảng vài triệu
 phần tử. Những cấu trúc dữ liệu cần lưu nhiều trạng thái. Khi đó việc
-mọi thứ đều là &lt;code&gt;long long&lt;/code&gt; bắt đầu trở thành gánh nặng.&lt;/p&gt;
+mọi thứ đều là &lt;code&gt;int64_t&lt;/code&gt; bắt đầu trở thành gánh nặng.&lt;/p&gt;
 &lt;p&gt;Nó:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Dùng nhiều bộ nhớ hơn&lt;/li&gt;
 &lt;li&gt;Làm cache hoạt động kém hiệu quả hơn&lt;/li&gt;
 &lt;li&gt;Có thể khiến chương trình chậm hơn&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Tôi thậm chí từng gặp trường hợp thay &lt;code&gt;long long&lt;/code&gt; bằng &lt;code&gt;int&lt;/code&gt; thì AC,
-còn giữ nguyên thì TLE.&lt;/p&gt;
+&lt;p&gt;Tôi thậm chí từng gặp trường hợp thay &lt;code&gt;int64_t&lt;/code&gt; bằng &lt;code&gt;int&lt;/code&gt; thì AC, còn
+giữ nguyên thì TLE.&lt;/p&gt;
 &lt;p&gt;Đó là lúc tôi nhận ra mục tiêu không phải dùng kiểu dữ liệu lớn nhất,
 mà là dùng kiểu dữ liệu phù hợp nhất.&lt;/p&gt;
 &lt;p&gt;Gợi ý thực tế:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;int&lt;/code&gt; → giá trị khoảng &lt;code&gt;10^9&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;long long&lt;/code&gt; → tổng lớn, phép nhân lớn hoặc đề cho tới &lt;code&gt;10^18&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;int&lt;/code&gt; → giá trị khoảng &lt;code&gt;1e9&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;int64_t&lt;/code&gt; → tổng lớn, phép nhân lớn hoặc đề cho tới &lt;code&gt;1e18&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id="loi-voi-modulo"&gt;&lt;a class="headerlink" href="#loi-voi-modulo" title="Permanent link"&gt;
 &lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
@@ -21957,7 +21957,8 @@ phép tăng tuổi thọ các switch lên gấp đôi (từ 50 triệu lần b�
 triệu lần bấm). Cherry Hyperglide Black sử dụng khuôn mới giúp nó mượt
 mà hơn và quan trọng là chất lượng đồng đều hơn.&lt;/p&gt;
 &lt;p&gt;Phiên bản Hyperglide Black được đánh giá là mượt hơn, nhiều người chơi
-cho rằng nó mượt tương đương Retooled đã burn in 500k lần.&lt;/p&gt;
+cho rằng nó mượt tương đương Retooled đã burn in 500k lần ngay từ lúc
+xuất xưởng.&lt;/p&gt;
 &lt;h4 id="mx2a-black"&gt;&lt;a class="headerlink" href="#mx2a-black" title="Permanent link"&gt;
 &lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
 &lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
@@ -21966,17 +21967,20 @@ cho rằng nó mượt tương đương Retooled đã burn in 500k lần.&lt;/p&
 &lt;p&gt;Sau một thời gian làm ra dòng Hyperglide thì tầm năm 2023, Cherry đã
 đổi mới khuôn và đánh mã cho sản phẩm mới là MX2A, nhằm đem lại một
 luồng gió tuy không mới nhưng vẫn có chất riêng. Một số điểm thay đổi
-lớn trong phiên bản này có thể kể đến như lò xò hình cái trống và
-đường stem rail được đánh bóng để tăng độ mượt.&lt;/p&gt;
+lớn trong phiên bản này có thể kể đến như lò xò hình trống và đường
+stem rail được đánh bóng để tăng độ mượt.&lt;/p&gt;
 &lt;p&gt;Độ mượt của nó đã được cải thiện kha khá. MX2A có độ mượt tương đương
 Retooled được burn ít nhất 1 triệu lần hoặc hơn. Độ rung lắc stem cũng
 đã được cải thiện, dù không đáng kể.&lt;/p&gt;
 &lt;p&gt;Ngoài ra, kể từ phiên bản này, Cherry có thêm tùy chọn switch lube sẵn
 từ nhà máy. Tuy nhiên, bản lube sẵn này không được đánh giá cao (hầu
-hết người chơi đều khuyên mua bản không lube). Tuy nhiên, dù đã cải
-tiến lò xo nhưng lò xò hình trống vẫn chưa được đánh giá cao. Phiên
-bản mới vẫn có những điểm không bằng tiền bối như chất sạn và âm thanh
-đặc trưng.&lt;/p&gt;
+hết người chơi đều khuyên mua bản không lube). Ngoài ra, lò xò dù đã
+cải tiến nhưng vẫn được đánh giá là “không thay đổi gì”. Phiên bản mới
+đã giảm bớt chất sạn và âm thanh đặc trưng nhưng về cơ bản là rất đáng
+để thử.&lt;/p&gt;
+&lt;p&gt;Cũng như truyền thống trước đây, mỗi khi ra phiên bản mới thì hãng sẽ
+ngừng sản xuất các phiên bản cũ. Tuy nhiên, có thể hàng dã sản xuất từ
+trước vẫn còn xuất hiện trên thị trường.&lt;/p&gt;
 &lt;h3 id="cac-bien-the-khac"&gt;&lt;a class="headerlink" href="#cac-bien-the-khac" title="Permanent link"&gt;
 &lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
 &lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
