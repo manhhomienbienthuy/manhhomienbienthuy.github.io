@@ -1,5 +1,871 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>manhhomienbienthuy</title><link href="https://manhhomienbienthuy.github.io/" rel="alternate"/><link href="https://manhhomienbienthuy.github.io/feeds/atom.xml" rel="self"/><id>https://manhhomienbienthuy.github.io/</id><updated>2026-09-24T04:04:16+00:00</updated><subtitle>Đây là thế giới của manhhomienbienthuy (naa). Chào mừng đến với thế giới của tôi!</subtitle><entry><title>Fenwick Tree: Cấu trúc dữ liệu tôi ước mình được học sớm hơn</title><link href="https://manhhomienbienthuy.github.io/2026/09/19/fenwick-tree-cau-truc-du-lieu-toi-uoc-minh-duoc-hoc-som-hon.html" rel="alternate"/><published>2026-09-19T13:18:57+09:00</published><updated>2026-09-24T04:04:16+00:00</updated><author><name>manhhomienbienthuy</name></author><id>tag:manhhomienbienthuy.github.io,2026-09-19:/2026/09/19/fenwick-tree-cau-truc-du-lieu-toi-uoc-minh-duoc-hoc-som-hon.html</id><summary type="html">Trong quá trình học thuật toán, có những cấu trúc dữ liệu tôi chủ động tìm hiểu từ sớm vì nghe tên quá nhiều. Nhưng cũng có những cấu trúc dữ liệu mà tôi chỉ thực sự học khi bị một bài toán “ép” phải học. Fenwick Tree thuộc nhóm […]</summary><content type="html">&lt;p&gt;Trong quá trình học thuật toán, có những cấu trúc dữ liệu tôi chủ động
+<feed xmlns="http://www.w3.org/2005/Atom"><title>manhhomienbienthuy</title><link href="https://manhhomienbienthuy.github.io/" rel="alternate"/><link href="https://manhhomienbienthuy.github.io/feeds/atom.xml" rel="self"/><id>https://manhhomienbienthuy.github.io/</id><updated>2026-10-02T03:14:50+00:00</updated><subtitle>Đây là thế giới của manhhomienbienthuy (naa). Chào mừng đến với thế giới của tôi!</subtitle><entry><title>Có lẽ đã đến lúc tôi nên nghỉ việc</title><link href="https://manhhomienbienthuy.github.io/2026/10/02/co-le-da-den-luc-toi-nen-nghi-viec.html" rel="alternate"/><published>2026-10-02T12:14:50+09:00</published><updated>2026-10-02T03:14:50+00:00</updated><author><name>manhhomienbienthuy</name></author><id>tag:manhhomienbienthuy.github.io,2026-10-02:/2026/10/02/co-le-da-den-luc-toi-nen-nghi-viec.html</id><summary type="html">Đã có một thời gian tôi thật sự yêu thích công ty này. Tôi từng tin rằng ở đây, một kỹ sư có thể được ghi nhận bằng năng lực chuyên môn, bằng những vấn đề đã giải quyết và những sản phẩm đã góp phần xây dựng. Nhưng công […]</summary><content type="html">&lt;p&gt;Đã có một thời gian tôi thật sự yêu thích công ty này. Tôi từng tin
+rằng ở đây, một kỹ sư có thể được ghi nhận bằng năng lực chuyên môn,
+bằng những vấn đề đã giải quyết và những sản phẩm đã góp phần xây
+dựng. Nhưng công ty thay đổi, công việc thay đổi, và có lẽ tôi cũng đã
+thay đổi. Điều khó khăn nhất không phải là quyết định có nên nghỉ việc
+hay không, mà là chấp nhận rằng nơi mình muốn ở lại có thể chỉ còn tồn
+tại trong ký ức.&lt;/p&gt;
+&lt;div class="toc"&gt;&lt;span class="toctitle"&gt;Mục lục&lt;/span&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#mo-au"&gt;Mở đầu&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#ngay-au-tien-toi-a-nghi-minh-tim-thay-thien-uong"&gt;Ngày đầu tiên, tôi đã nghĩ mình tìm thấy thiên đường&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#nhung-thay-oi-toi-tung-cho-rang-khong-ang-lo"&gt;Những thay đổi tôi từng cho rằng không đáng lo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#khi-du-an-ket-thuc-vi-khach-hang-het-tien"&gt;Khi dự án kết thúc vì “khách hàng hết tiền”&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#ky-anh-gia-au-tien-khien-toi-cam-thay-bat-an"&gt;Kỳ đánh giá đầu tiên khiến tôi cảm thấy bất an&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#i-anh-thue-va-vi-tri-thap-nhat-trong-du-an"&gt;Đi “đánh thuê” và vị trí thấp nhất trong dự án&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#mot-du-an-khong-co-muc-tieu-ro-rang"&gt;Một dự án không có mục tiêu rõ ràng&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#ky-anh-gia-khien-hinh-anh-ve-cong-ty-trong-toi-sup-o"&gt;Kỳ đánh giá khiến hình ảnh về công ty trong tôi sụp đổ&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#toi-tro-thanh-nguoi-thua-tu-luc-nao"&gt;Tôi trở thành người thừa từ lúc nào?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#mot-co-hoi-uoc-nhac-en-roi-bien-mat"&gt;Một cơ hội được nhắc đến rồi biến mất&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#toi-at-hy-vong-vao-bo-phan-ai"&gt;Tôi đặt hy vọng vào bộ phận AI&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#lan-au-tien-toi-chinh-thuc-bi-giam-luong"&gt;Lần đầu tiên tôi chính thức bị giảm lương&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#nhung-nguoi-tung-at-ky-vong-lan-luot-roi-i"&gt;Những người từng đặt kỳ vọng lần lượt rời đi&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#song-trong-trang-thai-cho-oi"&gt;Sống trong trạng thái chờ đợi&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#ieu-toi-tung-muon-tranh-cuoi-cung-van-uoi-kip-toi"&gt;Điều tôi từng muốn tránh cuối cùng vẫn đuổi kịp tôi&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#toi-van-thich-cong-viec-ky-thuat-nhu-ngay-nao"&gt;Tôi vẫn thích công việc kỹ thuật như ngày nào&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#moi-truong-ly-tuong-a-ket-thuc-tu-bao-gio"&gt;Môi trường lý tưởng đã kết thúc từ bao giờ?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#ieu-lam-toi-met-moi-khong-chi-la-chuyen-giam-luong"&gt;Điều làm tôi mệt mỏi không chỉ là chuyện giảm lương&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#toi-a-o-lai-vi-so-phai-bat-au-lai"&gt;Tôi đã ở lại vì sợ phải bắt đầu lại&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#co-le-nghi-viec-khong-co-nghia-la-toi-a-that-bai"&gt;Có lẽ nghỉ việc không có nghĩa là tôi đã thất bại&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#toi-can-chuan-bi-truoc-khi-roi-i"&gt;Tôi cần chuẩn bị trước khi rời đi&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#co-le-a-en-luc-toi-nen-nghi-viec"&gt;Có lẽ đã đến lúc tôi nên nghỉ việc&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;h2 id="mo-au"&gt;&lt;a class="headerlink" href="#mo-au" title="Permanent link"&gt;
+&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/a&gt;Mở đầu&lt;/h2&gt;
+&lt;p&gt;Tôi đã suy nghĩ rất lâu trước khi viết những dòng này.&lt;/p&gt;
+&lt;p&gt;Đây không phải là một quyết định bộc phát sau một ngày làm việc tồi
+tệ. Cũng không phải là lời than phiền vì một lần bị cấp trên phê bình
+hay một kỳ đánh giá không như mong đợi.&lt;/p&gt;
+&lt;p&gt;Cảm giác muốn nghỉ việc trong tôi đã tích tụ qua nhiều năm. Nó bắt đầu
+từ những thay đổi nhỏ mà ban đầu tôi cho rằng không đáng để bận tâm.
+Đến một lúc nào đó, khi nhìn lại, tôi mới nhận ra môi trường mình từng
+yêu thích dường như đã không còn tồn tại.&lt;/p&gt;
+&lt;p&gt;Tôi viết bài này không phải để tìm người đúng, người sai. Tôi chỉ muốn
+nhìn lại hành trình của chính mình và thành thật với những gì mình
+đang cảm thấy.&lt;/p&gt;
+&lt;p&gt;Có lẽ nếu không viết ra, tôi sẽ còn tiếp tục tự nhủ rằng mọi thứ chỉ
+là một giai đoạn tạm thời.&lt;/p&gt;
+&lt;p&gt;Và câu hỏi mà tôi đã né tránh suốt một thời gian dài là:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Đã đến lúc tôi nên nghỉ việc hay chưa?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="ngay-au-tien-toi-a-nghi-minh-tim-thay-thien-uong"&gt;&lt;a class="headerlink" href="#ngay-au-tien-toi-a-nghi-minh-tim-thay-thien-uong" title="Permanent link"&gt;
+&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/a&gt;Ngày đầu tiên, tôi đã nghĩ mình tìm thấy thiên đường&lt;/h2&gt;
+&lt;p&gt;Đến tận bây giờ, mỗi khi nhớ lại những ngày đầu tiên ở công ty, tôi
+vẫn nhớ rất rõ cảm giác hào hứng khi ấy.&lt;/p&gt;
+&lt;p&gt;Tôi thực sự tin rằng mình đã tìm được môi trường làm việc mà bản thân
+vẫn luôn tìm kiếm.&lt;/p&gt;
+&lt;p&gt;Công việc ở đây gần như trùng khớp với những gì tôi từng hình dung về
+một nơi làm việc lý tưởng. Tôi được tham gia các dự án cho những khách
+hàng lớn, được tiếp xúc với công nghệ hiện đại và được cấp đầy đủ tài
+khoản cho những dịch vụ trả phí cần thiết. Tôi không phải tự xoay xở
+với các công cụ miễn phí thiếu chức năng, cũng không cần xin đi xin
+lại chỉ để có một tài khoản phục vụ công việc.&lt;/p&gt;
+&lt;p&gt;Những điều ấy nghe có vẻ nhỏ, nhưng với tôi khi đó, chúng thể hiện
+rằng công ty thật sự coi trọng công việc kỹ thuật.&lt;/p&gt;
+&lt;p&gt;Tôi có cảm giác bộ phận của mình được ưu tiên. Chuyên môn của tôi được
+coi trọng và năng lực của tôi được nhìn nhận đúng với những gì tôi có
+thể làm. Sau những trải nghiệm không mấy vui vẻ ở công ty cũ, nơi tôi
+thường xuyên phải đảm nhận những công việc mà bản thân không thấy phù
+hợp, cảm giác ấy có ý nghĩa rất lớn.&lt;/p&gt;
+&lt;p&gt;Trong bộ phận còn có nhiều người nước ngoài. Điều đó khiến tôi yên tâm
+hơn vì tôi không cảm thấy mình là người duy nhất khác biệt. Tôi không
+phải lúc nào cũng lo rằng cách suy nghĩ, cách diễn đạt hay nền tảng
+văn hóa của mình sẽ khiến mình trở nên lạc lõng trong một công ty
+Nhật.&lt;/p&gt;
+&lt;p&gt;Điều khiến tôi ấn tượng nhất là quan niệm về vai trò trong dự án.&lt;/p&gt;
+&lt;p&gt;Trong bộ phận, công việc của kỹ sư hệ thống, kỹ sư phát triển hay quản
+lý dự án đều được xem là những phần khác nhau của cùng một dự án. Theo
+tư tưởng Agile mà chúng tôi theo đuổi, không có công việc nào “sang”
+hơn công việc nào. Một người không mặc nhiên tạo ra nhiều giá trị hơn
+chỉ vì thường xuyên nói chuyện với khách hàng. Người trực tiếp viết
+code cũng không phải là người đứng ở vị trí thấp hơn.&lt;/p&gt;
+&lt;p&gt;Mỗi người đảm nhận một phần khác nhau, và tất cả những phần đó đều
+quan trọng đối với thành công chung.&lt;/p&gt;
+&lt;p&gt;Tôi đặc biệt thích cách suy nghĩ ấy.&lt;/p&gt;
+&lt;p&gt;Tôi không cần dành phần lớn năng lượng để làm hài lòng khách hàng bằng
+lời nói. Tôi có thể tập trung làm tốt chuyên môn của mình. Tôi tin
+rằng nếu sản phẩm có chất lượng, nếu từng thành viên đều có kỹ năng
+tốt và thực hiện đúng trách nhiệm của mình, khách hàng sẽ tự cảm nhận
+được giá trị.&lt;/p&gt;
+&lt;p&gt;Các dự án khi đó thường tập trung vào việc nhanh chóng xây dựng MVP
+hoặc prototype để khách hàng sớm đưa ý tưởng vào hoạt động kinh doanh.
+Mục tiêu là giúp họ thử nghiệm thị trường, phản ứng nhanh với thay đổi
+và duy trì lợi thế trước đối thủ.&lt;/p&gt;
+&lt;p&gt;Để làm được điều đó, bộ phận tuyển những người có trình độ cao. Bài
+kiểm tra đầu vào khá phức tạp, gồm nhiều vòng và đòi hỏi cả kiến thức
+lẫn khả năng giải quyết vấn đề.&lt;/p&gt;
+&lt;p&gt;Tôi đã vượt qua tất cả những vòng tuyển dụng ấy.&lt;/p&gt;
+&lt;p&gt;Tôi rất tự hào về điều đó.&lt;/p&gt;
+&lt;p&gt;Hồi ấy, tôi thật sự tin rằng công ty nhìn thấy những gì mình có thể
+làm. Và tôi cũng tin rằng mình đã chọn đúng nơi.&lt;/p&gt;
+&lt;p&gt;Với một môi trường như thế, tôi từng nghĩ mình có thể gắn bó lâu dài.
+Thậm chí, đã có lúc tôi cho rằng mình sẽ không cần tìm một công ty nào
+khác nữa.&lt;/p&gt;
+&lt;h2 id="nhung-thay-oi-toi-tung-cho-rang-khong-ang-lo"&gt;&lt;a class="headerlink" href="#nhung-thay-oi-toi-tung-cho-rang-khong-ang-lo" title="Permanent link"&gt;
+&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/a&gt;Những thay đổi tôi từng cho rằng không đáng lo&lt;/h2&gt;
+&lt;p&gt;Sau một dự án đầu tiên khá ngắn, tôi được giao tham gia một dự án kéo
+dài hơn hai năm.&lt;/p&gt;
+&lt;p&gt;Trong khoảng thời gian đó, bộ phận của tôi có rất nhiều biến động. Cơ
+cấu tổ chức thay đổi liên tục. Người quản lý trực tiếp cũng thay đổi
+nhiều lần, đến mức gần như không có ai quản lý tôi đủ lâu để theo dõi
+và đánh giá công việc của tôi xuyên suốt hai kỳ liên tiếp.&lt;/p&gt;
+&lt;p&gt;Ban đầu, tôi không để tâm nhiều.&lt;/p&gt;
+&lt;p&gt;Tái cơ cấu là chuyện tương đối bình thường trong các công ty lớn. Tôi
+nghĩ rằng chỉ cần dự án vẫn tiếp tục, công việc không bị ảnh hưởng và
+lương vẫn được trả đúng hạn thì việc sơ đồ tổ chức thay đổi không phải
+là điều quá đáng lo ngại.&lt;/p&gt;
+&lt;p&gt;Tôi vẫn làm dự án, vẫn trao đổi với khách hàng và vẫn hoàn thành trách
+nhiệm của mình. Vì vậy, tôi cứ tiếp tục làm việc như trước.&lt;/p&gt;
+&lt;p&gt;Thế nhưng, đến khi vị trưởng bộ phận mà tôi từng nghĩ sẽ còn gắn bó
+lâu dài cũng chuyển sang đơn vị khác, tôi bắt đầu cảm thấy có điều gì
+đó không ổn.&lt;/p&gt;
+&lt;p&gt;Sau đó, quá trình tái cơ cấu diễn ra mạnh đến mức bộ phận của tôi mất
+luôn tên ban đầu và trở thành một nhóm thuộc một bộ phận khác. Về sau,
+tôi được biết tên cũ của bộ phận lại được chuyển cho một đơn vị khác,
+được thành lập từ một số thành viên từng tách ra từ chính bộ phận của
+chúng tôi.&lt;/p&gt;
+&lt;p&gt;Khi chuyện ấy xảy ra, tôi vẫn cố nghĩ đơn giản rằng tên gọi, suy cho
+cùng, cũng chỉ là tên gọi. Điều quan trọng nhất vẫn phải là bản chất
+công việc.&lt;/p&gt;
+&lt;p&gt;Nhưng khi nhìn lại, tôi nhận ra không chỉ cái tên thay đổi.&lt;/p&gt;
+&lt;p&gt;Nhiều thứ khác cũng thay đổi theo. Chỉ là khi ấy, tôi chưa đủ chú ý để
+nhận ra mà thôi.&lt;/p&gt;
+&lt;h2 id="khi-du-an-ket-thuc-vi-khach-hang-het-tien"&gt;&lt;a class="headerlink" href="#khi-du-an-ket-thuc-vi-khach-hang-het-tien" title="Permanent link"&gt;
+&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/a&gt;Khi dự án kết thúc vì “khách hàng hết tiền”&lt;/h2&gt;
+&lt;p&gt;Cùng thời điểm bộ phận tái cơ cấu, dự án kéo dài hơn hai năm của tôi
+cũng kết thúc.&lt;/p&gt;
+&lt;p&gt;Theo lời quản lý trực tiếp khi đó, lý do là “khách hàng hết tiền”.&lt;/p&gt;
+&lt;p&gt;Sau dự án ấy, tôi trải qua một thời gian không có dự án chính thức.
+Tôi cùng hai người khác được giao nhiệm vụ xây dựng template hoặc
+boilerplate cho bộ phận.&lt;/p&gt;
+&lt;p&gt;Nếu chỉ nghe tên, đây là một công việc có ý nghĩa. Một bộ template tốt
+có thể giúp các dự án sau khởi động nhanh hơn, thống nhất cấu trúc và
+giảm những công việc lặp lại.&lt;/p&gt;
+&lt;p&gt;Tuy nhiên, cả ba chúng tôi đều hiểu rằng đây là công việc tạm thời
+trong lúc chưa có dự án mới.&lt;/p&gt;
+&lt;p&gt;Dù vậy, khi ấy tôi vẫn lạc quan. Tôi vẫn được đánh giá tốt và vẫn được
+tăng lương. Vì thế, tôi xem đây như một quãng nghỉ sau một dự án dài,
+đồng thời là thời gian chuẩn bị trước khi bước vào dự án tiếp theo.&lt;/p&gt;
+&lt;p&gt;Sau đó, hai người làm cùng tôi lần lượt được đưa vào những dự án khác.&lt;/p&gt;
+&lt;p&gt;Cuối cùng, chỉ còn lại một mình tôi.&lt;/p&gt;
+&lt;p&gt;Tôi vẫn tự nhủ rằng chuyện đó chỉ là tạm thời. Công ty có nhiều khách
+hàng, bộ phận trước đây từng có nhiều dự án và nhu cầu nhân lực chắc
+chắn rồi sẽ xuất hiện.&lt;/p&gt;
+&lt;p&gt;Khi đó, tôi chưa nghĩ rằng việc một người bị để lại quá lâu đôi khi
+không còn đơn thuần là vấn đề lịch trình.&lt;/p&gt;
+&lt;p&gt;Nó cũng có thể là dấu hiệu cho thấy tổ chức chưa biết nên đặt người đó
+vào đâu.&lt;/p&gt;
+&lt;h2 id="ky-anh-gia-au-tien-khien-toi-cam-thay-bat-an"&gt;&lt;a class="headerlink" href="#ky-anh-gia-au-tien-khien-toi-cam-thay-bat-an" title="Permanent link"&gt;
+&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/a&gt;Kỳ đánh giá đầu tiên khiến tôi cảm thấy bất an&lt;/h2&gt;
+&lt;p&gt;Đến kỳ đánh giá sau đó, quản lý của tôi bắt đầu nói về những điều
+trước đây chưa từng được nhắc tới.&lt;/p&gt;
+&lt;p&gt;Ông nói đây là công ty Nhật và phần lớn khách hàng cũng là công ty
+Nhật. Ông hỏi về trình độ tiếng Nhật của tôi, đồng thời lấy chính file
+Excel tôi dùng để trình bày nội dung tự đánh giá làm ví dụ.&lt;/p&gt;
+&lt;p&gt;Tôi vốn xem file đó giống như một bản báo cáo nội bộ nên đã sử dụng
+cách viết ngắn gọn thường thấy trong tài liệu công việc. Tôi không
+nghĩ đó là một bài văn cần câu chữ hoàn chỉnh hoặc phải thể hiện khả
+năng ngôn ngữ theo một cách đặc biệt.&lt;/p&gt;
+&lt;p&gt;Với những người quản lý trước đây, điều đó chưa từng trở thành vấn đề.&lt;/p&gt;
+&lt;p&gt;Tuy nhiên, người quản lý khi đó không đánh giá cao cách viết ấy. Ông
+xem đó là một ví dụ cho thấy khả năng tiếng Nhật của tôi còn hạn chế.&lt;/p&gt;
+&lt;p&gt;Tất nhiên, tôi hiểu tiếng Nhật của mình không thể giống một người bản
+xứ. Tôi chưa bao giờ phủ nhận điều đó. Nhưng trong suốt thời gian làm
+việc với khách hàng, theo cảm nhận của tôi, ngôn ngữ chưa từng gây ra
+một vấn đề nghiêm trọng. Tôi vẫn trao đổi được, vẫn hiểu yêu cầu và
+vẫn hoàn thành công việc.&lt;/p&gt;
+&lt;p&gt;Điều khiến tôi băn khoăn là trước đó chưa ai xem đây là một vấn đề
+lớn. Vậy mà đột nhiên, nó lại trở thành một trong những nội dung được
+nhắc đến nhiều nhất trong buổi đánh giá.&lt;/p&gt;
+&lt;p&gt;Trong cuộc nói chuyện ấy, ông cũng nhắc đến một người sắp nghỉ việc.
+Tôi biết người đó. Anh là một đồng nghiệp người Hàn Quốc, từng học tại
+Đại học Tokyo và làm việc với cùng một khách hàng với tôi, dù ở một
+nhóm khác.&lt;/p&gt;
+&lt;p&gt;Khi ấy, tôi không suy nghĩ nhiều. Nhưng về sau, tôi đã có lúc tự hỏi
+liệu việc nhắc đến anh trong hoàn cảnh đó có mang một hàm ý nào hay
+không.&lt;/p&gt;
+&lt;p&gt;Tôi không biết câu trả lời. Có thể tôi đã suy nghĩ quá nhiều.&lt;/p&gt;
+&lt;p&gt;Nhưng cảm giác bất an trong tôi là có thật.&lt;/p&gt;
+&lt;p&gt;Cuối buổi, quản lý nói rằng sau này công ty sẽ đánh giá lại trình độ
+của tôi và thậm chí có thể giảm lương. Điều đó hoàn toàn trái ngược
+với những gì chính ông từng nói trong kỳ đánh giá trước, khi ông cho
+rằng sẽ không có chuyện giảm lương.&lt;/p&gt;
+&lt;p&gt;Từ thời điểm ấy, tôi bắt đầu cảm thấy vị trí của mình trong công ty
+không còn chắc chắn như trước.&lt;/p&gt;
+&lt;h2 id="i-anh-thue-va-vi-tri-thap-nhat-trong-du-an"&gt;&lt;a class="headerlink" href="#i-anh-thue-va-vi-tri-thap-nhat-trong-du-an" title="Permanent link"&gt;
+&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/a&gt;Đi “đánh thuê” và vị trí thấp nhất trong dự án&lt;/h2&gt;
+&lt;p&gt;Sau đó, tôi được đưa sang hỗ trợ một bộ phận khác. Trùng hợp là bộ
+phận đó đã nhận tên cũ của bộ phận tôi.&lt;/p&gt;
+&lt;p&gt;Tôi thường gọi hoàn cảnh này là đi “đánh thuê”. Trên danh nghĩa, tôi
+vẫn thuộc bộ phận cũ, nhưng công việc thực tế lại nằm ở một đơn vị
+khác.&lt;/p&gt;
+&lt;p&gt;Dự án đầu tiên là phát triển một mạng xã hội nội bộ cho công ty. Ban
+đầu, kế hoạch là tôi sẽ thực hiện một mình. Sau đó, dự án bổ sung thêm
+một số thành viên.&lt;/p&gt;
+&lt;p&gt;Trong cơ cấu nhân sự, tôi được xếp ở vị trí thấp nhất và chỉ phụ trách
+frontend. Phía trên tôi còn có một frontend leader.&lt;/p&gt;
+&lt;p&gt;Tôi không phản đối việc có leader. Tuy nhiên, cách sắp xếp đó khiến
+tôi hiểu mình đang được nhìn nhận ở vị trí nào.&lt;/p&gt;
+&lt;p&gt;Tôi vẫn làm việc như bình thường. Người leader thậm chí còn nói rằng
+với năng lực của tôi khi ấy, ông không cần hỗ trợ nhiều và tôi hoàn
+toàn có thể làm việc độc lập.&lt;/p&gt;
+&lt;p&gt;Vai trò chính của ông là review, còn tôi vẫn tự triển khai phần việc
+của mình.&lt;/p&gt;
+&lt;p&gt;Dự án này không kéo dài lâu. Sau khi kết thúc, bộ phận ấy tiếp tục đưa
+tôi vào một dự án nội bộ khác đã được phát triển từ trước.&lt;/p&gt;
+&lt;h2 id="mot-du-an-khong-co-muc-tieu-ro-rang"&gt;&lt;a class="headerlink" href="#mot-du-an-khong-co-muc-tieu-ro-rang" title="Permanent link"&gt;
+&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/a&gt;Một dự án không có mục tiêu rõ ràng&lt;/h2&gt;
+&lt;p&gt;Dự án mới không có cột mốc cụ thể, không có deadline rõ ràng và cũng
+không có yêu cầu chính xác.&lt;/p&gt;
+&lt;p&gt;Thành thật mà nói, làm một dự án như vậy khiến tôi thấy nặng nề theo
+một cách khác.&lt;/p&gt;
+&lt;p&gt;Không phải vì quá bận, mà vì không có gì thật sự rõ ràng.&lt;/p&gt;
+&lt;p&gt;Không có yêu cầu cụ thể, không có áp lực thời gian và cũng không có
+tiêu chí thống nhất để xác định thế nào là hoàn thành tốt. Tôi có cảm
+giác làm theo cách nào cũng được, miễn là vẫn có một việc gì đó để báo
+cáo.&lt;/p&gt;
+&lt;p&gt;Ngoài những người từng tham gia từ trước, nhóm còn có thêm một đồng
+nghiệp khác từ bộ phận của tôi sang hỗ trợ. Anh ấy cũng ở trong tình
+trạng đi “đánh thuê” giống tôi.&lt;/p&gt;
+&lt;p&gt;Ban đầu, tôi nghĩ đây đơn giản là nơi để những người chưa có dự án
+chính thức làm việc tạm thời. Dù sao, để nhân viên ngồi không cũng là
+một sự lãng phí.&lt;/p&gt;
+&lt;p&gt;Tuy nhiên, khi kỳ đánh giá đến gần, cách mọi người review code của tôi
+đột nhiên trở nên chi tiết hơn rất nhiều.&lt;/p&gt;
+&lt;p&gt;Chất lượng code có sẵn của dự án vốn không tốt theo đánh giá cá nhân
+của tôi. Đã có lúc tôi muốn viết lại gần như toàn bộ, nhưng tôi hiểu
+rằng mình không có đủ thời gian và quyền hạn để làm điều đó. Vì vậy,
+tôi chỉ chỉnh sửa những file liên quan trực tiếp đến phần việc được
+giao.&lt;/p&gt;
+&lt;p&gt;Trong quá trình review, tôi được nhắc rằng những thay đổi nằm ngoài
+phạm vi của task phải được bàn bạc trước. Trong khi đó, theo cách hiểu
+của tôi, tôi không thay đổi logic mà chỉ sắp xếp lại code để dễ đọc và
+dễ bảo trì hơn.&lt;/p&gt;
+&lt;p&gt;Từ góc nhìn của người review, có thể họ muốn kiểm soát phạm vi thay
+đổi và giảm rủi ro. Tôi hiểu lý do đó. Nhưng ở vị trí của mình, tôi
+cảm thấy quy trình ngày càng trở nên nặng nề. Một thay đổi nhỏ cũng
+cần được giải thích và thống nhất qua nhiều bước.&lt;/p&gt;
+&lt;p&gt;Có lần, khi tôi phát triển frontend bằng Ant Design, cách tôi sử dụng
+component cũng được xem xét rất kỹ. Tôi nhận được những bình luận rằng
+cách này tốt hơn cách kia, dựa trên kinh nghiệm từ một dự án khác hoặc
+quan điểm của một người được đánh giá cao.&lt;/p&gt;
+&lt;p&gt;Tôi đã đọc những nhận xét đó, nhưng không phải lúc nào cũng hiểu chúng
+liên quan thế nào đến trường hợp cụ thể của mình. Phần code tôi viết
+khá đơn giản. Theo đánh giá của tôi, dùng cách A hay cách B đều tạo ra
+kết quả tương tự và không có khác biệt đáng kể về hiệu năng, độ ổn
+định hoặc khả năng bảo trì.&lt;/p&gt;
+&lt;p&gt;Tôi không phản đối code review. Ngược lại, tôi luôn cho rằng review là
+một phần cần thiết của quá trình phát triển phần mềm.&lt;/p&gt;
+&lt;p&gt;Nhưng khi những chi tiết rất nhỏ được xem xét kỹ trong một dự án chưa
+có mục tiêu và tiêu chuẩn hoàn thành rõ ràng, tôi bắt đầu cảm thấy mất
+phương hướng.&lt;/p&gt;
+&lt;p&gt;Tôi không còn biết điều gì mới thật sự được xem là quan trọng.&lt;/p&gt;
+&lt;h2 id="ky-anh-gia-khien-hinh-anh-ve-cong-ty-trong-toi-sup-o"&gt;&lt;a class="headerlink" href="#ky-anh-gia-khien-hinh-anh-ve-cong-ty-trong-toi-sup-o" title="Permanent link"&gt;
+&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/a&gt;Kỳ đánh giá khiến hình ảnh về công ty trong tôi sụp đổ&lt;/h2&gt;
+&lt;p&gt;Đến kỳ đánh giá tiếp theo, tôi nhận được rất nhiều phản hồi tiêu cực.&lt;/p&gt;
+&lt;p&gt;Tôi được nhận xét là chất lượng code chưa tốt, không chủ động tìm task
+hoặc tự xác định công việc cần làm. Theo đánh giá khi đó, tôi chủ yếu
+chỉ có khả năng thực hiện những task đã được chuẩn bị sẵn.&lt;/p&gt;
+&lt;p&gt;Điều khiến tôi thất vọng là trong giai đoạn đó, tôi đã tham gia hai dự
+án, nhưng dự án đầu tiên gần như không được nhắc đến. Đó là dự án mà
+tôi có thể làm việc độc lập và được frontend leader đánh giá rằng
+không cần hỗ trợ nhiều.&lt;/p&gt;
+&lt;p&gt;Thay vào đó, phần lớn nhận xét tập trung vào dự án thứ hai, một dự án
+vốn không có mục tiêu, deadline hay phạm vi trách nhiệm rõ ràng.&lt;/p&gt;
+&lt;p&gt;Những nội dung tôi tự đánh giá cũng hầu như không được công nhận.&lt;/p&gt;
+&lt;p&gt;Trong dự án thứ hai, tôi chỉ phụ trách phần quản trị và backend API.
+Phần frontend dành cho người dùng cuối và ứng dụng di động do những
+nhóm khác phát triển. Khi có thay đổi ở frontend hoặc ứng dụng, các
+nhóm liên quan thường họp với nhau mà không có tôi tham gia.&lt;/p&gt;
+&lt;p&gt;Vì vậy, tôi không biết người dùng cuối thật sự cần gì. Tôi cũng không
+biết nội bộ muốn thay đổi điều gì cho đến khi những người khác đã thảo
+luận, thống nhất và chuyển kết quả thành một task cụ thể cho tôi.&lt;/p&gt;
+&lt;p&gt;Trong hoàn cảnh ấy, tôi thấy rất khó để tự xác định yêu cầu hoặc chủ
+động đề xuất công việc.&lt;/p&gt;
+&lt;p&gt;Tuy nhiên, đến kỳ đánh giá, chính hoàn cảnh đó lại trở thành cơ sở để
+kết luận rằng tôi không chủ động và chỉ có thể thực hiện những việc đã
+được người khác chuẩn bị.&lt;/p&gt;
+&lt;p&gt;Tôi bị xếp ở cấp bậc chỉ cao hơn người mới tốt nghiệp một chút.&lt;/p&gt;
+&lt;p&gt;Tôi nhớ khi ấy mình không phản bác. Tôi chỉ ngồi nghe.&lt;/p&gt;
+&lt;p&gt;Trên lý thuyết, đó chỉ là một cấp bậc trong hệ thống đánh giá. Nhưng
+trong đầu tôi lúc ấy lại hiện lên tất cả những gì mình đã làm trong
+những năm trước.&lt;/p&gt;
+&lt;p&gt;Tôi tự hỏi những kinh nghiệm đó đã biến mất ở đâu.&lt;/p&gt;
+&lt;p&gt;Tôi có cảm giác như đang nhìn thấy một thứ gì đó vỡ ra mà không kịp
+giữ lại. Những ấn tượng từ ngày đầu tiên, về môi trường lý tưởng,
+triết lý Agile và cảm giác được coi trọng, gần như tan biến.&lt;/p&gt;
+&lt;p&gt;Những mô hình kinh doanh và những loại dự án được giới thiệu khi tôi
+mới vào công ty dường như không còn phổ biến như trước. Thay vào đó,
+tôi ngày càng được kỳ vọng phải có những kỹ năng mềm và kỹ năng kinh
+doanh mà chính vì không muốn dành phần lớn thời gian cho chúng, tôi
+từng rời công ty cũ.&lt;/p&gt;
+&lt;p&gt;Tôi từng tin rằng một kỹ sư có thể tạo ra giá trị chủ yếu bằng năng
+lực chuyên môn. Nhưng theo thời gian, những khả năng như tự tìm việc,
+thuyết phục khách hàng, tạo nhu cầu và mở rộng phạm vi dự án dần trở
+thành điều kiện quan trọng để được đánh giá cao hơn.&lt;/p&gt;
+&lt;p&gt;Tôi không cho rằng những năng lực ấy không cần thiết.&lt;/p&gt;
+&lt;p&gt;Tôi chỉ bắt đầu nhận ra rằng môi trường này đang dần khác với môi
+trường mà tôi đã lựa chọn lúc ban đầu.&lt;/p&gt;
+&lt;p&gt;Cũng từ khoảng thời gian đó, mỗi sáng bắt đầu làm việc, tôi thường có
+một cảm giác lạ lẫm.&lt;/p&gt;
+&lt;p&gt;Vẫn là nơi chốn cũ. Vẫn là những người quen.&lt;/p&gt;
+&lt;p&gt;Nhưng điều khiến tôi từng muốn gắn bó với nơi này dường như đã không
+còn ở đó nữa.&lt;/p&gt;
+&lt;h2 id="toi-tro-thanh-nguoi-thua-tu-luc-nao"&gt;&lt;a class="headerlink" href="#toi-tro-thanh-nguoi-thua-tu-luc-nao" title="Permanent link"&gt;
+&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/a&gt;Tôi trở thành người thừa từ lúc nào?&lt;/h2&gt;
+&lt;p&gt;Từ đó, tôi bắt đầu có cảm giác mình không còn thuộc nhóm những người
+được ưu tiên như trước.&lt;/p&gt;
+&lt;p&gt;Tôi không biết mình có thực sự trở thành người thừa hay không. Không
+ai từng nói thẳng với tôi điều đó. Đây chỉ là cảm nhận hình thành khi
+tôi ngày càng đứng xa hơn khỏi những quyết định quan trọng của bộ
+phận.&lt;/p&gt;
+&lt;p&gt;Tôi có cảm giác bộ phận cũ không còn biết nên giao tôi cho công việc
+nào, trong khi bộ phận tôi đang hỗ trợ cũng không có ý định tiếp nhận
+tôi chính thức.&lt;/p&gt;
+&lt;p&gt;Càng ngày, tôi càng thấy nếu một ngày mình nghỉ việc thì có lẽ cũng
+không tạo ra quá nhiều khác biệt.&lt;/p&gt;
+&lt;p&gt;Đã có lúc tôi tự hỏi nếu mình rời đi ngay khi ấy, liệu có ai thật sự
+cảm thấy thiếu vắng hay không.&lt;/p&gt;
+&lt;p&gt;Cảm giác đó khó chịu hơn tôi tưởng.&lt;/p&gt;
+&lt;p&gt;Không ai nói rằng tôi không còn cần thiết. Nhưng sự thiếu rõ ràng kéo
+dài khiến tôi dần nghi ngờ vị trí của chính mình.&lt;/p&gt;
+&lt;p&gt;Tôi hiểu tình hình của mình. Tuy nhiên, mỗi khi nghĩ đến việc tìm công
+ty mới, viết lại hồ sơ, chuẩn bị phỏng vấn và trải qua hàng loạt vòng
+kiểm tra, tôi lại thấy mệt mỏi.&lt;/p&gt;
+&lt;p&gt;Tôi tự an ủi rằng chỉ cần đợi đến khi có một dự án phù hợp, mọi chuyện
+sẽ ổn. Tôi vẫn muốn tin rằng những năm tháng không thuận lợi ấy chỉ là
+một giai đoạn tạm thời.&lt;/p&gt;
+&lt;p&gt;Nhưng rồi không có “sau đó” nào thật sự xảy ra.&lt;/p&gt;
+&lt;p&gt;Theo lời quản lý, việc tôi tiếp tục hỗ trợ bộ phận kia sẽ không giúp
+cải thiện hiệu suất làm việc. Vì vậy, tôi rời dự án.&lt;/p&gt;
+&lt;p&gt;Gần thời điểm ấy, người đồng nghiệp cũng đi “đánh thuê” giống tôi
+quyết định chuyển việc. Tôi không biết chính xác anh đã trải qua những
+gì vì chúng tôi không trao đổi sâu về chuyện cá nhân.&lt;/p&gt;
+&lt;p&gt;Nhưng tôi thật sự khâm phục anh.&lt;/p&gt;
+&lt;p&gt;Tôi khâm phục vì khi nhận ra môi trường không còn phù hợp, anh đã có
+thể đưa ra quyết định và bước tiếp.&lt;/p&gt;
+&lt;p&gt;Trong ngày cuối cùng làm việc với bộ phận kia, tôi không nhận được
+những câu xã giao như “cảm ơn vì đã cộng tác” hay “chúc bạn may mắn”,
+dù trước đó tôi từng thấy họ nói những lời ấy với người đồng nghiệp
+sắp nghỉ việc.&lt;/p&gt;
+&lt;p&gt;Có thể chỉ là mọi người bận. Có thể không ai để ý.&lt;/p&gt;
+&lt;p&gt;Đó là một chi tiết rất nhỏ.&lt;/p&gt;
+&lt;p&gt;Nhưng trong hoàn cảnh lúc ấy, nó khiến cảm giác mình đang đứng bên lề
+trở nên rõ ràng hơn.&lt;/p&gt;
+&lt;h2 id="mot-co-hoi-uoc-nhac-en-roi-bien-mat"&gt;&lt;a class="headerlink" href="#mot-co-hoi-uoc-nhac-en-roi-bien-mat" title="Permanent link"&gt;
+&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/a&gt;Một cơ hội được nhắc đến rồi biến mất&lt;/h2&gt;
+&lt;p&gt;Sau đó, quản lý nói với tôi về một dự án cho khách hàng lớn. Dự án cần
+sử dụng tiếng Anh và ông cho rằng tôi phù hợp.&lt;/p&gt;
+&lt;p&gt;Tôi đã hy vọng đây sẽ là cơ hội giúp mọi việc quay trở lại đúng hướng.&lt;/p&gt;
+&lt;p&gt;Nhưng cuối cùng, cơ hội ấy cũng không đi đến đâu. Phía bên kia không
+tiếp nhận tôi và tôi không biết nguyên nhân cụ thể. Tôi không rõ mình
+còn thiếu kỹ năng nào, khách hàng thay đổi kế hoạch hay công ty đã lựa
+chọn một ứng viên khác.&lt;/p&gt;
+&lt;p&gt;Chỉ đến khi trưởng bộ phận mới can thiệp, tôi mới được đưa sang hỗ trợ
+một đơn vị khác. Đó là bộ phận AI vừa được thành lập.&lt;/p&gt;
+&lt;p&gt;Khi ấy, tôi vui hơn mình tưởng.&lt;/p&gt;
+&lt;p&gt;Sau một thời gian dài không biết mình thuộc về đâu, chỉ cần có một
+công việc rõ ràng cũng đủ khiến tôi cảm thấy nhẹ nhõm. Hơn nữa, đây
+còn là loại công việc mà tôi đang muốn thử: phát triển một product.&lt;/p&gt;
+&lt;h2 id="toi-at-hy-vong-vao-bo-phan-ai"&gt;&lt;a class="headerlink" href="#toi-at-hy-vong-vao-bo-phan-ai" title="Permanent link"&gt;
+&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/a&gt;Tôi đặt hy vọng vào bộ phận AI&lt;/h2&gt;
+&lt;p&gt;Ở bộ phận AI, tôi tham gia phát triển một sản phẩm đã có phiên bản đầu
+tiên. Công ty cung cấp dịch vụ này cho khách hàng và tùy chỉnh theo
+yêu cầu của từng trường hợp.&lt;/p&gt;
+&lt;p&gt;Dù vẫn có yếu tố triển khai riêng cho từng khách hàng, tôi cảm thấy mô
+hình này gần với phát triển product hơn. Chúng tôi có một nền tảng
+chung, có dịch vụ của riêng mình và tạo ra giá trị từ sản phẩm đó.&lt;/p&gt;
+&lt;p&gt;Với tôi, đây là một hướng đi ổn định hơn so với việc hoàn toàn phụ
+thuộc vào các dự án outsource riêng lẻ.&lt;/p&gt;
+&lt;p&gt;Sau vài tháng, trưởng bộ phận AI mời tôi chuyển hẳn sang đơn vị đó.
+Ông nói công việc ở đây có khả năng mang lại doanh thu cao hơn so với
+bộ phận cũ.&lt;/p&gt;
+&lt;p&gt;Tôi đồng ý.&lt;/p&gt;
+&lt;p&gt;Có một khoảnh khắc tôi đã tự hỏi mình có nên nhận lời hay không. Nếu
+tiếp tục ở bộ phận cũ, về lý thuyết, tôi vẫn có thể chờ cơ hội quay
+lại những loại dự án từng khiến mình yêu thích công ty.&lt;/p&gt;
+&lt;p&gt;Nhưng suy nghĩ đó nhanh chóng bị thực tế thay thế.&lt;/p&gt;
+&lt;p&gt;Tôi đã chờ khá lâu mà không biết cơ hội ấy có thật sự đến hay không.
+Trong khi đó, ở bộ phận AI, ít nhất tôi có một công việc rõ ràng và
+một hướng đi mới để thử sức.&lt;/p&gt;
+&lt;p&gt;Tôi xem đó như một cơ hội bắt đầu lại.&lt;/p&gt;
+&lt;h2 id="lan-au-tien-toi-chinh-thuc-bi-giam-luong"&gt;&lt;a class="headerlink" href="#lan-au-tien-toi-chinh-thuc-bi-giam-luong" title="Permanent link"&gt;
+&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/a&gt;Lần đầu tiên tôi chính thức bị giảm lương&lt;/h2&gt;
+&lt;p&gt;Ngay sau khi chuyển sang bộ phận mới, kỳ đánh giá lại đến.&lt;/p&gt;
+&lt;p&gt;Do thời điểm chuyển bộ phận quá gần kỳ đánh giá, tôi vẫn phải thực
+hiện đánh giá với người quản lý cũ.&lt;/p&gt;
+&lt;p&gt;Trong kỳ đó, tôi chính thức bị giảm lương.&lt;/p&gt;
+&lt;p&gt;Người quản lý nói rằng hiệu suất của tôi đã cải thiện sau khi sang bộ
+phận AI, nhưng theo đánh giá của ông, mức cải thiện vẫn chưa đủ. Ông
+cho rằng cấp bậc thực tế của tôi chỉ tương đương với thời điểm mới vào
+công ty, vì vậy công ty không thể tiếp tục duy trì mức lương hiện tại.&lt;/p&gt;
+&lt;p&gt;Tôi không biết nên nói gì.&lt;/p&gt;
+&lt;p&gt;Tôi chỉ ngồi nghe đến hết buổi rồi đi về.&lt;/p&gt;
+&lt;p&gt;Trong vài ngày sau đó, tôi gần như không thể tập trung làm việc.&lt;/p&gt;
+&lt;p&gt;Tôi không chỉ buồn vì số tiền bị giảm. Điều khiến tôi tổn thương hơn
+là cảm giác kinh nghiệm, đóng góp và những năm làm việc của mình bị
+phủ nhận.&lt;/p&gt;
+&lt;p&gt;Tôi từng vượt qua một quy trình tuyển dụng phức tạp để vào công ty.
+Tôi từng được đánh giá tốt và được tăng lương. Tôi đã hoàn thành một
+dự án kéo dài hơn hai năm.&lt;/p&gt;
+&lt;p&gt;Vậy mà sau tất cả, cấp bậc của tôi lại được đưa về gần với mức ban
+đầu.&lt;/p&gt;
+&lt;p&gt;Tôi đã cố tự an ủi rằng mình vừa sang một bộ phận mới. Nếu tiếp tục
+làm tốt, những người ở đây sẽ có cơ hội quan sát công việc của tôi lâu
+hơn và đưa ra một đánh giá khác.&lt;/p&gt;
+&lt;p&gt;Tôi đặt hy vọng vào một khởi đầu mới.&lt;/p&gt;
+&lt;p&gt;Nhưng hy vọng ấy cũng không kéo dài lâu.&lt;/p&gt;
+&lt;h2 id="nhung-nguoi-tung-at-ky-vong-lan-luot-roi-i"&gt;&lt;a class="headerlink" href="#nhung-nguoi-tung-at-ky-vong-lan-luot-roi-i" title="Permanent link"&gt;
+&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/a&gt;Những người từng đặt kỳ vọng lần lượt rời đi&lt;/h2&gt;
+&lt;p&gt;Sau đó, service manager rồi trưởng bộ phận lần lượt nghỉ việc. Quản lý
+của tôi cũng chuyển sang đơn vị khác và người quản lý trực tiếp được
+thay thế.&lt;/p&gt;
+&lt;p&gt;Những người đã tuyển tôi sang bộ phận AI đều lần lượt rời công ty.&lt;/p&gt;
+&lt;p&gt;Cùng với họ, những định hướng về công việc, kế hoạch phát triển và kỳ
+vọng doanh thu trước đây cũng dần trở nên không còn rõ ràng.&lt;/p&gt;
+&lt;p&gt;Một người khác được chỉ định làm service manager tạm thời. Ngay từ
+đầu, tôi đã cảm thấy khó đặt niềm tin vào cách ông làm việc. Tôi hiểu
+đó có thể chỉ là cảm nhận cá nhân và có thể chịu ảnh hưởng bởi những
+trải nghiệm không tốt trước đó của tôi.&lt;/p&gt;
+&lt;p&gt;Cùng thời điểm ấy, dịch vụ mà tôi tham gia phát triển bắt đầu bước vào
+giai đoạn khó khăn.&lt;/p&gt;
+&lt;p&gt;AI đã thay đổi rất nhiều chỉ trong thời gian ngắn. Bên trong công ty
+cũng xuất hiện một dịch vụ khác có chức năng tương tự. Dần dần, nhiều
+khách hàng được định hướng sang sử dụng dịch vụ mới.&lt;/p&gt;
+&lt;p&gt;Tôi chủ yếu tiếp tục xử lý công việc cho những khách hàng hiện tại.&lt;/p&gt;
+&lt;p&gt;Khách hàng cuối cùng mà tôi phụ trách thay đổi yêu cầu khá nhiều. Họ
+muốn dùng thử miễn phí, sau đó lại yêu cầu một hình thức dùng thử giới
+hạn. Chúng tôi đã trao đổi và điều chỉnh nhiều lần, nhưng cuối cùng họ
+vẫn quyết định không ký hợp đồng.&lt;/p&gt;
+&lt;p&gt;Service manager tạm quyền đã cố gắng giữ khách hàng bằng nhiều cách và
+liên tục tìm phương án để đáp ứng yêu cầu của họ.&lt;/p&gt;
+&lt;p&gt;Tuy nhiên, vì trực tiếp tham gia phát triển product, tôi hiểu khá rõ
+giới hạn kỹ thuật của nó. Theo đánh giá của tôi, sản phẩm không thể
+đáp ứng hoàn toàn những gì khách hàng muốn nếu không thay đổi đáng kể
+kiến trúc hoặc bản chất dịch vụ.&lt;/p&gt;
+&lt;p&gt;Chúng tôi cũng đưa ra một số phương án thay thế. Những phương án ấy
+không cung cấp sản phẩm đúng theo hình thức khách hàng đề nghị, nhưng
+vẫn có thể giải quyết nhu cầu theo một cách khác.&lt;/p&gt;
+&lt;p&gt;Dù vậy, các giải pháp đó không đủ sức thuyết phục khách hàng.&lt;/p&gt;
+&lt;p&gt;Cuối cùng, rất nhiều thời gian và công sức đã được bỏ ra nhưng không
+tạo thành hợp đồng.&lt;/p&gt;
+&lt;h2 id="song-trong-trang-thai-cho-oi"&gt;&lt;a class="headerlink" href="#song-trong-trang-thai-cho-oi" title="Permanent link"&gt;
+&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/a&gt;Sống trong trạng thái chờ đợi&lt;/h2&gt;
+&lt;p&gt;Trong giai đoạn đó, tôi thường xuyên ở trong trạng thái chờ xem khách
+hàng có tiếp tục sử dụng dịch vụ hay không.&lt;/p&gt;
+&lt;p&gt;Có tháng tôi có việc. Có tháng tôi gần như không có gì để làm.&lt;/p&gt;
+&lt;p&gt;Đã có lúc quản lý muốn chuyển tôi sang một bộ phận khác. Bộ phận đó do
+chính vị trưởng bộ phận cũ của tôi thành lập. Theo cách tôi hiểu, quản
+lý hiện tại muốn đưa tôi trở lại làm việc dưới đơn vị của người quản
+lý cũ.&lt;/p&gt;
+&lt;p&gt;Nhưng trước khi việc điều chuyển xảy ra, khách hàng lại phát sinh công
+việc. Vì thế, tôi tiếp tục ở lại.&lt;/p&gt;
+&lt;p&gt;Tình trạng ấy lặp đi lặp lại.&lt;/p&gt;
+&lt;p&gt;Tôi không biết vài tháng sau mình sẽ làm gì. Tôi không biết service có
+tồn tại lâu dài hay không. Tôi cũng không biết bộ phận thật sự cần
+tôi, hay chỉ đang giữ tôi lại trong khi chưa tìm được một vị trí khác
+phù hợp hơn.&lt;/p&gt;
+&lt;p&gt;Sự bất định kéo dài khiến tôi mệt mỏi hơn cả những giai đoạn bận rộn.&lt;/p&gt;
+&lt;p&gt;Khi có việc, ít nhất tôi còn có một vấn đề để tập trung giải quyết.&lt;/p&gt;
+&lt;p&gt;Nhưng trong những ngày gần như không có việc, tôi phải đối diện với
+một câu hỏi rất bình thường mà lại rất khó trả lời:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Mình đang ở đây để làm gì?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="ieu-toi-tung-muon-tranh-cuoi-cung-van-uoi-kip-toi"&gt;&lt;a class="headerlink" href="#ieu-toi-tung-muon-tranh-cuoi-cung-van-uoi-kip-toi" title="Permanent link"&gt;
+&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/a&gt;Điều tôi từng muốn tránh cuối cùng vẫn đuổi kịp tôi&lt;/h2&gt;
+&lt;p&gt;Những kỳ đánh giá sau đó gần như luôn xoay quanh cùng một chủ đề.&lt;/p&gt;
+&lt;p&gt;Tôi được hỏi làm thế nào để khách hàng tin tưởng mình hơn, làm thế nào
+để nâng cao giá trị bản thân, làm thế nào để tăng giá trị dự án và tạo
+ra thêm cơ hội kinh doanh.&lt;/p&gt;
+&lt;p&gt;Tôi hiểu rằng với một công ty cung cấp dịch vụ, những vấn đề ấy rất
+quan trọng.&lt;/p&gt;
+&lt;p&gt;Tuy nhiên, đó không phải là điều đã thu hút tôi gia nhập công ty trong
+những ngày đầu tiên.&lt;/p&gt;
+&lt;p&gt;Khi mới vào, tôi có cảm giác chỉ cần tập trung làm tốt chuyên môn là
+đủ. Đội ngũ quản lý sẽ giải quyết bài toán kinh doanh, còn đội ngũ kỹ
+thuật tập trung vào những vấn đề kỹ thuật. Mỗi người đóng góp theo
+cách riêng và những đóng góp khác nhau đều được tôn trọng.&lt;/p&gt;
+&lt;p&gt;Theo thời gian, tôi ngày càng cảm thấy chuyên môn kỹ thuật chỉ còn là
+điều kiện tối thiểu. Khả năng tạo ra dự án, tạo doanh thu và mở rộng
+quan hệ với khách hàng dường như ngày càng có ảnh hưởng lớn hơn đến
+việc một người được đánh giá thế nào.&lt;/p&gt;
+&lt;p&gt;Tôi không cho rằng cách suy nghĩ đó là sai.&lt;/p&gt;
+&lt;p&gt;Nếu đứng từ góc nhìn của người quản lý hoặc của doanh nghiệp, có lẽ đó
+là một yêu cầu hợp lý.&lt;/p&gt;
+&lt;p&gt;Nhưng với một người chọn nghề kỹ sư vì thích xây dựng hệ thống và giải
+quyết vấn đề như tôi, việc liên tục được đánh giá dựa trên những tiêu
+chí ấy khiến tôi cảm thấy ngày càng xa lạ với môi trường xung quanh.&lt;/p&gt;
+&lt;h2 id="toi-van-thich-cong-viec-ky-thuat-nhu-ngay-nao"&gt;&lt;a class="headerlink" href="#toi-van-thich-cong-viec-ky-thuat-nhu-ngay-nao" title="Permanent link"&gt;
+&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/a&gt;Tôi vẫn thích công việc kỹ thuật như ngày nào&lt;/h2&gt;
+&lt;p&gt;Có một điều mà tôi đã mất khá lâu mới nhận ra.&lt;/p&gt;
+&lt;p&gt;Điều khiến tôi buồn nhất không phải là việc bị đánh giá thấp. Cũng
+không hẳn là những lần giảm lương hay những lần bị chuyển từ bộ phận
+này sang bộ phận khác.&lt;/p&gt;
+&lt;p&gt;Nếu chỉ có những chuyện đó, có lẽ tôi đã nghỉ việc từ lâu.&lt;/p&gt;
+&lt;p&gt;Trong nghề này, ai cũng hiểu rằng sẽ có lúc được đánh giá cao và cũng
+có lúc không. Có lúc gặp dự án tốt, có lúc gặp dự án không phù hợp.&lt;/p&gt;
+&lt;p&gt;Điều khiến tôi buồn hơn là tôi vẫn còn rất thích công việc của mình.&lt;/p&gt;
+&lt;p&gt;Sau nhiều năm làm kỹ sư, tôi vẫn thích ngồi đọc code. Tôi vẫn thích
+nhìn vào một vấn đề khó và tự hỏi nguyên nhân thật sự nằm ở đâu. Tôi
+vẫn thấy hào hứng khi cuối cùng tìm ra lời giải sau nhiều ngày điều
+tra.&lt;/p&gt;
+&lt;p&gt;Trong thời gian gần đây, phần lớn công việc của tôi liên quan đến các
+hệ thống AI.&lt;/p&gt;
+&lt;p&gt;Có những task thoạt nhìn rất đơn giản. Chỉ là một kết quả đánh giá
+không giống mong đợi, một test case thất bại hoặc một hành vi kỳ lạ
+của hệ thống.&lt;/p&gt;
+&lt;p&gt;Nhưng càng đào sâu, tôi càng nhận ra phía sau đó là rất nhiều tầng xử
+lý khác nhau. Dữ liệu đi qua nhiều bước, nhiều agent, nhiều prompt và
+nhiều cơ chế đánh giá. Chỉ riêng việc xác định lỗi xuất hiện ở đâu đôi
+khi cũng mất vài ngày.&lt;/p&gt;
+&lt;p&gt;Tôi vẫn nhớ những lần ngồi đọc log hàng giờ.&lt;/p&gt;
+&lt;p&gt;Ban đầu, tôi nghĩ nguyên nhân nằm ở dữ liệu đầu vào. Sau khi kiểm tra,
+tôi lại nhận ra không phải như vậy. Tôi chuyển sang điều tra cách các
+agent tương tác với nhau. Có lúc tôi gần như chắc chắn đã tìm thấy câu
+trả lời, nhưng khi kiểm tra lại thì vẫn còn một điểm nào đó chưa khớp.&lt;/p&gt;
+&lt;p&gt;Những lúc như vậy vừa mệt, vừa thú vị theo cách rất riêng của nghề kỹ
+sư.&lt;/p&gt;
+&lt;p&gt;Gần đây, tôi dành khá nhiều thời gian cho những task liên quan đến
+phát triển AI Agent cho khách hàng. Có những bug mà lúc đầu tôi nghĩ
+chỉ cần sửa vài dòng code là xong. Nhưng sau khi điều tra, tôi mới
+phát hiện nguyên nhân nằm ở việc một sub-agent được gọi nhiều lần
+ngoài dự kiến.&lt;/p&gt;
+&lt;p&gt;Cũng có những trường hợp kết quả đánh giá thay đổi chỉ vì cách dữ liệu
+được truyền từ bước này sang bước khác.&lt;/p&gt;
+&lt;p&gt;Mỗi lần lần theo từng dấu vết và tìm được nguyên nhân thật sự, tôi vẫn
+cảm thấy hào hứng như những ngày đầu bước chân vào nghề.&lt;/p&gt;
+&lt;p&gt;Đó là những khoảnh khắc nhắc tôi nhớ lý do mình chọn công việc này.&lt;/p&gt;
+&lt;p&gt;Tôi không trở thành kỹ sư vì thích họp. Tôi cũng không chọn nghề này
+vì muốn thuyết phục người khác mua dịch vụ.&lt;/p&gt;
+&lt;p&gt;Tôi trở thành kỹ sư đơn giản vì tôi thích xây dựng hệ thống và giải
+quyết vấn đề.&lt;/p&gt;
+&lt;p&gt;Có lẽ vì vậy mà tôi càng cảm thấy mâu thuẫn.&lt;/p&gt;
+&lt;p&gt;Ban ngày, tôi vẫn được làm những công việc kỹ thuật mà mình yêu thích.
+Tôi vẫn được giao điều tra các vấn đề phức tạp. Đồng nghiệp vẫn tìm
+đến tôi khi gặp những vấn đề khó. Có những lúc tôi vẫn cảm thấy mình
+là một kỹ sư có ích.&lt;/p&gt;
+&lt;p&gt;Thế nhưng, cứ đến kỳ đánh giá, tôi lại có cảm giác những điều đó không
+còn giữ vị trí quan trọng như tôi từng nghĩ.&lt;/p&gt;
+&lt;p&gt;Những câu chuyện thường tập trung nhiều hơn vào việc làm thế nào để
+nâng cao giá trị bản thân trong mắt khách hàng, tạo ra cơ hội kinh
+doanh hoặc mở rộng dự án.&lt;/p&gt;
+&lt;p&gt;Tôi hiểu tất cả những điều ấy đều quan trọng đối với công ty.&lt;/p&gt;
+&lt;p&gt;Có lẽ ở vị trí của người quản lý, họ cũng có những áp lực và trách
+nhiệm riêng. Tôi không nghĩ mọi người cố tình phủ nhận công việc kỹ
+thuật của tôi.&lt;/p&gt;
+&lt;p&gt;Nhưng mỗi lần nghe những yêu cầu ấy, tôi lại cảm thấy mình đang rời xa
+lý do ban đầu khiến mình gia nhập nơi này.&lt;/p&gt;
+&lt;p&gt;Ngày trước, điều tôi yêu thích nhất ở bộ phận là cảm giác mọi người
+được đánh giá dựa trên đóng góp của mình đối với sản phẩm và dự án.&lt;/p&gt;
+&lt;p&gt;PM có giá trị riêng. SE cũng có giá trị riêng. Không ai phải chứng
+minh rằng công việc của mình quan trọng hơn công việc của người khác.&lt;/p&gt;
+&lt;p&gt;Bây giờ, ít nhất theo cảm nhận của tôi, giá trị của một kỹ sư không
+chỉ nằm ở việc người đó giải quyết được những bài toán khó đến đâu.
+Khả năng tạo ra cơ hội kinh doanh, xây dựng niềm tin với khách hàng và
+giúp công ty mở rộng dịch vụ cũng trở nên quan trọng không kém, thậm
+chí có lúc quan trọng hơn.&lt;/p&gt;
+&lt;p&gt;Có thể đó là sự trưởng thành của tổ chức.&lt;/p&gt;
+&lt;p&gt;Có thể đó là hướng đi đúng đối với công ty.&lt;/p&gt;
+&lt;p&gt;Nhưng mỗi lần nghĩ đến điều đó, tôi lại thấy tiếc.&lt;/p&gt;
+&lt;p&gt;Tôi tiếc không chỉ vì mình bị đánh giá thấp.&lt;/p&gt;
+&lt;p&gt;Tôi tiếc vì môi trường mà mình từng rất yêu quý dường như đã không còn
+nữa.&lt;/p&gt;
+&lt;p&gt;Nếu công ty ngay từ đầu đã giống như hiện tại, có lẽ tôi đã không thất
+vọng đến thế. Tôi có thể đơn giản chấp nhận rằng đó không phải là nơi
+phù hợp với mình.&lt;/p&gt;
+&lt;p&gt;Điều khó khăn nhất là tôi đã từng nhìn thấy một phiên bản khác của nơi
+này.&lt;/p&gt;
+&lt;p&gt;Một phiên bản khiến tôi tin rằng mình có thể gắn bó rất lâu.&lt;/p&gt;
+&lt;p&gt;Có lẽ chính ký ức về phiên bản ấy là thứ đã giữ chân tôi suốt những
+năm qua.&lt;/p&gt;
+&lt;p&gt;Và cũng có lẽ, vì từng yêu quý nơi này như vậy nên tôi càng khó chấp
+nhận thực tế hiện tại.&lt;/p&gt;
+&lt;h2 id="moi-truong-ly-tuong-a-ket-thuc-tu-bao-gio"&gt;&lt;a class="headerlink" href="#moi-truong-ly-tuong-a-ket-thuc-tu-bao-gio" title="Permanent link"&gt;
+&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/a&gt;Môi trường lý tưởng đã kết thúc từ bao giờ?&lt;/h2&gt;
+&lt;p&gt;Sau đó, tôi được chuyển sang một team mới với một service manager mới.&lt;/p&gt;
+&lt;p&gt;Theo cảm nhận của tôi, người quản lý mới có nền tảng thiên về sales.
+Cách diễn đạt của ông nhẹ nhàng hơn người trước, nhưng thông điệp cốt
+lõi tôi nhận được không thay đổi nhiều.&lt;/p&gt;
+&lt;p&gt;Tôi cần nghĩ cách tạo ra nhu cầu. Tôi cần nâng cao giá trị của mình
+trong mắt khách hàng. Tôi cần tham gia sâu hơn vào những công việc
+liên quan đến bán hàng và tìm kiếm dự án.&lt;/p&gt;
+&lt;p&gt;Nếu không làm được những điều ấy, năng lực kỹ thuật dường như không
+còn đủ để chứng minh giá trị của tôi trong tổ chức.&lt;/p&gt;
+&lt;p&gt;Môi trường làm việc ngày càng giống với những công ty outsource mà
+trước đây tôi không muốn quay lại.&lt;/p&gt;
+&lt;p&gt;Nghĩ cho cùng, công ty của tôi là một công ty cung cấp dịch vụ IT,
+không phải một công ty công nghệ thuần túy. Doanh thu đến từ khách
+hàng, hợp đồng và khả năng bán dịch vụ. Khi thị trường thay đổi, cách
+vận hành và cách đánh giá nhân viên cũng phải thay đổi theo.&lt;/p&gt;
+&lt;p&gt;Tôi hiểu logic kinh doanh đó.&lt;/p&gt;
+&lt;p&gt;Nhưng hiểu không có nghĩa là tôi nhất định phải thấy phù hợp.&lt;/p&gt;
+&lt;p&gt;Có lẽ môi trường lý tưởng trong ký ức của tôi đã kết thúc từ lần tái
+cơ cấu năm ấy.&lt;/p&gt;
+&lt;p&gt;Có lẽ tôi đã ở lại quá lâu vì vẫn cố tin rằng môi trường cũ rồi sẽ
+quay trở lại.&lt;/p&gt;
+&lt;p&gt;Có những ngày tôi nhớ lại quãng thời gian mới vào công ty.&lt;/p&gt;
+&lt;p&gt;Tôi nhớ cảm giác háo hức khi bắt đầu một dự án mới. Tôi nhớ những cuộc
+thảo luận kỹ thuật kéo dài hàng giờ. Tôi nhớ cảm giác mình đang được
+làm đúng công việc mình yêu thích và mỗi sáng đều biết rõ mình đang cố
+gắng vì điều gì.&lt;/p&gt;
+&lt;p&gt;Điều khiến tôi buồn nhất không phải là lương giảm hay bị đánh giá
+thấp.&lt;/p&gt;
+&lt;p&gt;Điều khiến tôi buồn nhất là nhận ra những cảm giác ấy đã không còn
+nữa.&lt;/p&gt;
+&lt;h2 id="ieu-lam-toi-met-moi-khong-chi-la-chuyen-giam-luong"&gt;&lt;a class="headerlink" href="#ieu-lam-toi-met-moi-khong-chi-la-chuyen-giam-luong" title="Permanent link"&gt;
+&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/a&gt;Điều làm tôi mệt mỏi không chỉ là chuyện giảm lương&lt;/h2&gt;
+&lt;p&gt;Nếu chỉ là giảm lương, có lẽ tôi vẫn có thể cố gắng thêm.&lt;/p&gt;
+&lt;p&gt;Nếu chỉ là một kỳ đánh giá không tốt, tôi có thể xem đó là phản hồi và
+tìm cách cải thiện.&lt;/p&gt;
+&lt;p&gt;Nếu chỉ là thiếu dự án trong vài tháng, tôi có thể học thêm kỹ năng
+mới hoặc kiên nhẫn chờ cơ hội.&lt;/p&gt;
+&lt;p&gt;Nhưng điều khiến tôi mệt mỏi là tất cả những chuyện ấy diễn ra cùng
+lúc và kéo dài trong nhiều năm.&lt;/p&gt;
+&lt;p&gt;Tôi từng được đặt vào một dự án thiếu mục tiêu rõ ràng, sau đó bị đánh
+giá là không chủ động.&lt;/p&gt;
+&lt;p&gt;Tôi không được tham gia những cuộc họp xác định yêu cầu, nhưng lại bị
+phê bình vì không tự nghĩ ra yêu cầu.&lt;/p&gt;
+&lt;p&gt;Tôi từng tin rằng chuyên môn là điều quan trọng nhất, rồi sau đó nhận
+ra mình còn được kỳ vọng phải làm tốt cả những công việc mang tính
+sales và phát triển kinh doanh.&lt;/p&gt;
+&lt;p&gt;Tôi được mời sang một bộ phận mới với nhiều kỳ vọng, nhưng những người
+đưa ra định hướng ấy lần lượt rời công ty.&lt;/p&gt;
+&lt;p&gt;Tôi cố gắng bám vào một sản phẩm, nhưng sản phẩm đó dần mất vị trí khi
+một dịch vụ khác xuất hiện trong cùng công ty.&lt;/p&gt;
+&lt;p&gt;Mỗi thay đổi riêng lẻ đều có thể giải thích được.&lt;/p&gt;
+&lt;p&gt;Nhưng khi ghép tất cả lại, tôi nhìn thấy một bức tranh mà mình không
+thể tiếp tục giả vờ không nhìn thấy.&lt;/p&gt;
+&lt;p&gt;Công ty đã thay đổi.&lt;/p&gt;
+&lt;p&gt;Bộ phận đã thay đổi.&lt;/p&gt;
+&lt;p&gt;Công việc đã thay đổi.&lt;/p&gt;
+&lt;p&gt;Cách đánh giá con người cũng đã thay đổi.&lt;/p&gt;
+&lt;p&gt;Có lẽ bản thân tôi cũng đã thay đổi. Tôi không còn đủ năng lượng để
+liên tục thích nghi với một môi trường ngày càng xa những điều mình
+trân trọng.&lt;/p&gt;
+&lt;h2 id="toi-a-o-lai-vi-so-phai-bat-au-lai"&gt;&lt;a class="headerlink" href="#toi-a-o-lai-vi-so-phai-bat-au-lai" title="Permanent link"&gt;
+&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/a&gt;Tôi đã ở lại vì sợ phải bắt đầu lại&lt;/h2&gt;
+&lt;p&gt;Tôi vẫn chưa nghỉ việc. Phần lớn không phải vì tôi còn tin chắc mọi
+thứ sẽ tốt lên, mà vì tôi sợ phải bắt đầu lại.&lt;/p&gt;
+&lt;p&gt;Tôi nghĩ đến việc sửa hồ sơ, liệt kê thành tích, luyện phỏng vấn và
+giải thích lý do muốn nghỉ việc. Tôi nghĩ đến những vòng kiểm tra kỹ
+thuật, những cuộc nói chuyện bằng tiếng Nhật hoặc tiếng Anh và những
+ngày chờ đợi kết quả.&lt;/p&gt;
+&lt;p&gt;Tôi cũng sợ rằng vấn đề không nằm ở công ty, mà nằm ở chính mình.&lt;/p&gt;
+&lt;p&gt;Nếu sang một công ty khác mà tôi vẫn bị đánh giá như vậy thì sao?&lt;/p&gt;
+&lt;p&gt;Nếu năng lực của tôi thật sự chỉ hơn một người mới tốt nghiệp một chút
+thì sao?&lt;/p&gt;
+&lt;p&gt;Nếu những gì tôi tin là thế mạnh chuyên môn của mình thực ra không còn
+được thị trường coi trọng thì sao?&lt;/p&gt;
+&lt;p&gt;Những câu hỏi ấy khiến tôi chần chừ.&lt;/p&gt;
+&lt;p&gt;Nhưng rồi tôi nghĩ đến người đồng nghiệp đã quyết định chuyển việc.&lt;/p&gt;
+&lt;p&gt;Tôi từng khâm phục anh vì anh dám rời đi khi nhận ra môi trường không
+còn phù hợp.&lt;/p&gt;
+&lt;p&gt;Có lẽ anh cũng từng sợ.&lt;/p&gt;
+&lt;p&gt;Có lẽ anh không chờ đến khi hoàn toàn hết sợ mới hành động. Có lẽ anh
+chỉ hiểu rằng nỗi sợ trước một khởi đầu mới vẫn dễ chịu hơn việc tiếp
+tục ở lại một nơi khiến mình dần mất niềm tin vào bản thân.&lt;/p&gt;
+&lt;h2 id="co-le-nghi-viec-khong-co-nghia-la-toi-a-that-bai"&gt;&lt;a class="headerlink" href="#co-le-nghi-viec-khong-co-nghia-la-toi-a-that-bai" title="Permanent link"&gt;
+&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/a&gt;Có lẽ nghỉ việc không có nghĩa là tôi đã thất bại&lt;/h2&gt;
+&lt;p&gt;Trong một thời gian dài, tôi xem việc nghỉ việc như một sự thừa nhận
+thất bại.&lt;/p&gt;
+&lt;p&gt;Tôi từng nghĩ đây là công ty mà mình có thể gắn bó lâu dài. Nếu bây
+giờ rời đi, tôi có cảm giác như mình phải thừa nhận rằng những kỳ vọng
+ban đầu của mình đều sai.&lt;/p&gt;
+&lt;p&gt;Nhưng có lẽ cách nghĩ đó không công bằng với chính tôi.&lt;/p&gt;
+&lt;p&gt;Những cảm xúc tốt đẹp trong ngày tôi mới vào công ty là thật.&lt;/p&gt;
+&lt;p&gt;Những dự án đầu tiên, những đồng nghiệp giỏi, triết lý Agile và cảm
+giác được coi trọng đều là thật.&lt;/p&gt;
+&lt;p&gt;Tôi không sai khi từng yêu thích môi trường đó.&lt;/p&gt;
+&lt;p&gt;Chỉ là môi trường ấy không còn giống như trước.&lt;/p&gt;
+&lt;p&gt;Rời khỏi một nơi đã thay đổi không có nghĩa là tôi phủ nhận toàn bộ
+quá khứ. Tôi chỉ thừa nhận rằng hiện tại không còn phù hợp với mình.&lt;/p&gt;
+&lt;p&gt;Tôi cũng không nhất thiết phải chứng minh rằng công ty sai và tôi
+đúng.&lt;/p&gt;
+&lt;p&gt;Công ty có quyền lựa chọn mô hình kinh doanh, điều chỉnh chiến lược và
+xây dựng hệ thống đánh giá phù hợp với mục tiêu của họ.&lt;/p&gt;
+&lt;p&gt;Tôi cũng có quyền lựa chọn một nơi phù hợp hơn với thế mạnh và giá trị
+nghề nghiệp của mình.&lt;/p&gt;
+&lt;p&gt;Nếu công ty cần một người vừa làm kỹ thuật, vừa tham gia bán hàng, vừa
+tạo nhu cầu, vừa xây dựng quan hệ với khách hàng và mở rộng dự án, thì
+có thể tôi không phải là người họ cần.&lt;/p&gt;
+&lt;p&gt;Nếu tôi muốn trở thành một kỹ sư được đánh giá chủ yếu dựa trên khả
+năng giải quyết vấn đề, chất lượng sản phẩm và năng lực chuyên môn,
+thì có thể công ty hiện tại không còn là nơi tôi cần.&lt;/p&gt;
+&lt;p&gt;Hai điều đó có thể cùng đúng.&lt;/p&gt;
+&lt;p&gt;Không nhất thiết phải có một bên hoàn toàn tốt và một bên hoàn toàn
+xấu.&lt;/p&gt;
+&lt;h2 id="toi-can-chuan-bi-truoc-khi-roi-i"&gt;&lt;a class="headerlink" href="#toi-can-chuan-bi-truoc-khi-roi-i" title="Permanent link"&gt;
+&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/a&gt;Tôi cần chuẩn bị trước khi rời đi&lt;/h2&gt;
+&lt;p&gt;Dù đã nghĩ nhiều đến chuyện nghỉ việc, tôi không muốn đưa ra quyết
+định trong lúc giận dữ.&lt;/p&gt;
+&lt;p&gt;Tôi cần nhìn lại năng lực của mình một cách khách quan. Tôi cần phân
+biệt đâu là phản hồi hợp lý mà mình nên tiếp thu, đâu là sự khác biệt
+về giá trị nghề nghiệp và đâu là hệ quả của việc tổ chức không có một
+vị trí thật sự phù hợp với tôi.&lt;/p&gt;
+&lt;p&gt;Tôi cũng cần chuẩn bị về tài chính.&lt;/p&gt;
+&lt;p&gt;Tôi không muốn nghỉ ngay khi chưa biết mình có thể duy trì cuộc sống
+trong bao lâu. Một quyết định nhằm giải thoát bản thân khỏi áp lực
+không nên tạo ra một áp lực khác còn lớn hơn.&lt;/p&gt;
+&lt;p&gt;Tôi cần cập nhật hồ sơ nghề nghiệp, tổng hợp lại những dự án đã làm và
+ghi rõ những vấn đề mình từng giải quyết.&lt;/p&gt;
+&lt;p&gt;Tôi đã để những kỳ đánh giá gần đây khiến mình quên mất những gì bản
+thân từng làm được.&lt;/p&gt;
+&lt;p&gt;Tôi cần thử phỏng vấn để hiểu giá trị hiện tại của mình trên thị
+trường. Một vài cuộc phỏng vấn có thể giúp tôi biết kỹ năng nào vẫn
+còn phù hợp, kỹ năng nào cần cập nhật và phần nào tôi còn thiếu.&lt;/p&gt;
+&lt;p&gt;Quan trọng hơn, tôi cần xác định rõ mình đang tìm kiếm điều gì.&lt;/p&gt;
+&lt;p&gt;Tôi không muốn tiếp tục chuyển từ một công ty outsource sang một công
+ty outsource khác rồi hy vọng mọi thứ sẽ tự khác đi. Tôi muốn hiểu mô
+hình kinh doanh của công ty mới, cách họ tạo doanh thu, cách họ đánh
+giá kỹ sư và con đường phát triển dành cho những người thiên về chuyên
+môn.&lt;/p&gt;
+&lt;p&gt;Tôi cũng cần hỏi rõ rằng một kỹ sư cấp cao ở đó được kỳ vọng làm những
+gì.&lt;/p&gt;
+&lt;p&gt;Nếu câu trả lời vẫn chủ yếu là tự tìm dự án, thuyết phục khách hàng và
+bán thêm dịch vụ, tôi phải thành thật thừa nhận rằng môi trường ấy có
+thể không phù hợp với mình.&lt;/p&gt;
+&lt;p&gt;Có những ngày tôi mở lại tài liệu cũ của những dự án đầu tiên và đọc
+những ghi chú kỹ thuật mình từng viết.&lt;/p&gt;
+&lt;p&gt;Đôi khi tôi bất giác mỉm cười.&lt;/p&gt;
+&lt;p&gt;Có những đoạn code bây giờ nhìn lại không còn đặc biệt nữa. Nhưng
+chúng nhắc tôi nhớ đến thời điểm mình từng thật sự hào hứng với công
+việc.&lt;/p&gt;
+&lt;p&gt;Tôi thích cảm giác giải quyết được một vấn đề khó.&lt;/p&gt;
+&lt;p&gt;Tôi thích những cuộc thảo luận kỹ thuật kéo dài hàng giờ với đồng
+nghiệp.&lt;/p&gt;
+&lt;p&gt;Tôi thích cảm giác bắt đầu một ngày làm việc và biết rõ mình đang cố
+gắng vì điều gì.&lt;/p&gt;
+&lt;p&gt;Có lẽ điều tôi tiếc nuối nhất không phải là một công ty.&lt;/p&gt;
+&lt;p&gt;Điều tôi tiếc nuối là cảm giác ấy.&lt;/p&gt;
+&lt;h2 id="co-le-a-en-luc-toi-nen-nghi-viec"&gt;&lt;a class="headerlink" href="#co-le-a-en-luc-toi-nen-nghi-viec" title="Permanent link"&gt;
+&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/a&gt;Có lẽ đã đến lúc tôi nên nghỉ việc&lt;/h2&gt;
+&lt;p&gt;Sau khi viết hết những điều này, tôi nhận ra câu hỏi quan trọng không
+còn là liệu công ty có quay trở lại như trước hay không.&lt;/p&gt;
+&lt;p&gt;Có lẽ những gì tôi từng yêu thích ở công ty này sẽ không quay trở lại
+nữa.&lt;/p&gt;
+&lt;p&gt;Câu hỏi thật sự là liệu tôi có muốn tiếp tục đánh đổi thời gian, thu
+nhập và sự tự tin để chờ đợi một môi trường đã biến mất hay không.&lt;/p&gt;
+&lt;p&gt;Tôi chưa thể nói rằng ngày mai mình sẽ nộp đơn nghỉ việc.&lt;/p&gt;
+&lt;p&gt;Tôi vẫn cần chuẩn bị hồ sơ, tài chính và tinh thần. Tôi vẫn cần đánh
+giá thị trường, học thêm những gì cần thiết và tìm một nơi phù hợp
+hơn.&lt;/p&gt;
+&lt;p&gt;Nhưng tôi nghĩ mình không nên tiếp tục tự thuyết phục rằng chỉ cần chờ
+thêm một dự án, thêm một kỳ đánh giá hoặc thêm một lần tái cơ cấu thì
+mọi thứ sẽ lại tốt đẹp như xưa.&lt;/p&gt;
+&lt;p&gt;Tôi đã chờ đủ lâu rồi.&lt;/p&gt;
+&lt;p&gt;Có lẽ điều tôi cần làm bây giờ không phải là cố gắng chứng minh giá
+trị của mình với những người đang sử dụng một hệ tiêu chuẩn khác.&lt;/p&gt;
+&lt;p&gt;Điều tôi cần làm là tìm một môi trường nơi năng lực của mình thật sự
+cần thiết, đồng thời chấp nhận rằng bản thân vẫn phải tiếp tục học hỏi
+và thay đổi.&lt;/p&gt;
+&lt;p&gt;Tôi không muốn nghỉ việc chỉ vì tức giận.&lt;/p&gt;
+&lt;p&gt;Tôi muốn rời đi vì đã nhìn rõ mình đang ở đâu và muốn đi đâu.&lt;/p&gt;
+&lt;p&gt;Tôi cũng không muốn biến quyết định nghỉ việc thành một hành động trả
+đũa.&lt;/p&gt;
+&lt;p&gt;Công ty vẫn sẽ tiếp tục hoạt động. Những người từng đánh giá tôi vẫn
+sẽ tiếp tục công việc của họ. Người chịu trách nhiệm cho cuộc sống của
+tôi, cuối cùng, vẫn chỉ có tôi.&lt;/p&gt;
+&lt;p&gt;Nếu tiếp tục ở lại, tôi phải chấp nhận môi trường hiện tại, không phải
+môi trường trong ký ức.&lt;/p&gt;
+&lt;p&gt;Tôi phải chấp nhận rằng chuyên môn kỹ thuật không còn là tiêu chí quan
+trọng nhất. Tôi sẽ phải tham gia nhiều hơn vào hoạt động bán hàng, tìm
+kiếm dự án và xây dựng quan hệ với khách hàng.&lt;/p&gt;
+&lt;p&gt;Nếu tôi không thể hoặc không muốn chấp nhận điều đó, tôi cần rời đi.&lt;/p&gt;
+&lt;p&gt;Sau nhiều năm chờ đợi, hy vọng rồi thất vọng, có lẽ tôi đã có câu trả
+lời cho mình.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Có lẽ đã đến lúc tôi nên nghỉ việc.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Có thể vài tháng nữa tôi vẫn còn ở đây. Có thể tôi sẽ cần thêm thời
+gian mới đủ sẵn sàng để bắt đầu lại.&lt;/p&gt;
+&lt;p&gt;Nhưng ít nhất, sau khi viết ra những dòng này, tôi không còn tự thuyết
+phục mình rằng mọi thứ rồi sẽ quay lại như trước.&lt;/p&gt;
+&lt;p&gt;Có lẽ nơi mà tôi từng yêu thích đã thay đổi từ rất lâu rồi. Chỉ là đến
+bây giờ tôi mới thật sự chấp nhận điều đó.&lt;/p&gt;
+&lt;p&gt;Điều khiến tôi do dự đến tận bây giờ không hẳn là vì tôi còn muốn ở
+lại.&lt;/p&gt;
+&lt;p&gt;Có lẽ chỉ là tôi vẫn chưa hoàn toàn sẵn sàng để rời đi.&lt;/p&gt;
+&lt;p&gt;Tôi đã mất nhiều năm mới dám thừa nhận rằng công ty trong ký ức và
+công ty hiện tại không còn là một.&lt;/p&gt;
+&lt;p&gt;Tôi vẫn biết ơn quãng thời gian đã qua. Tôi vẫn biết ơn những con
+người và những dự án từng giúp mình trưởng thành.&lt;/p&gt;
+&lt;p&gt;Những điều tốt đẹp ấy không trở nên vô nghĩa chỉ vì hiện tại đã thay
+đổi.&lt;/p&gt;
+&lt;p&gt;Nhưng có lẽ đã đến lúc tôi ngừng chờ đợi một nơi không còn tồn tại
+theo cách mà tôi từng biết.&lt;/p&gt;
+&lt;p&gt;Không phải vì tôi ghét công ty này.&lt;/p&gt;
+&lt;p&gt;Cũng không phải vì tôi muốn chứng minh điều gì với ai.&lt;/p&gt;
+&lt;p&gt;Chỉ đơn giản là vì tôi không còn nhìn thấy tương lai của mình ở đây
+nữa.&lt;/p&gt;</content><category term="Cuộc sống"/><category term="job interview"/><category term="interview"/><category term="job change"/><category term="job"/><category term="employment"/><category term="occupation"/><category term="career"/><category term="change"/><category term="Japan"/></entry><entry><title>Fenwick Tree: Cấu trúc dữ liệu tôi ước mình được học sớm hơn</title><link href="https://manhhomienbienthuy.github.io/2026/09/19/fenwick-tree-cau-truc-du-lieu-toi-uoc-minh-duoc-hoc-som-hon.html" rel="alternate"/><published>2026-09-19T13:18:57+09:00</published><updated>2026-09-24T04:04:16+00:00</updated><author><name>manhhomienbienthuy</name></author><id>tag:manhhomienbienthuy.github.io,2026-09-19:/2026/09/19/fenwick-tree-cau-truc-du-lieu-toi-uoc-minh-duoc-hoc-som-hon.html</id><summary type="html">Trong quá trình học thuật toán, có những cấu trúc dữ liệu tôi chủ động tìm hiểu từ sớm vì nghe tên quá nhiều. Nhưng cũng có những cấu trúc dữ liệu mà tôi chỉ thực sự học khi bị một bài toán “ép” phải học. Fenwick Tree thuộc nhóm […]</summary><content type="html">&lt;p&gt;Trong quá trình học thuật toán, có những cấu trúc dữ liệu tôi chủ động
 tìm hiểu từ sớm vì nghe tên quá nhiều. Nhưng cũng có những cấu trúc dữ
 liệu mà tôi chỉ thực sự học khi bị một bài toán “ép” phải học.&lt;/p&gt;
 &lt;p&gt;Fenwick Tree thuộc nhóm thứ hai.&lt;/p&gt;
@@ -40195,681 +41061,4 @@ Vì vậy, các biến &lt;code&gt;a_list&lt;/code&gt;, &lt;code&gt;another_list
 &lt;/a&gt;Kết luận&lt;/h2&gt;
 &lt;p&gt;Mutable và immutable là những kiến thức cơ bản trong Python.  Hiểu
 biết về nó sẽ giúp chúng ta code tối ưu hơn.  Hy vọng bài viết giúp
-ích cho các bạn trọng công việc.&lt;/p&gt;</content><category term="Lập trình"/><category term="Python"/><category term="Fundamentals"/><category term="Mutable"/><category term="Immutable"/></entry><entry><title>Javascript: async/await</title><link href="https://manhhomienbienthuy.github.io/2018/07/17/javascript-asyncawait.html" rel="alternate"/><published>2018-07-17T03:00:00+00:00</published><updated>2025-06-05T09:22:54+00:00</updated><author><name>manhhomienbienthuy</name></author><id>tag:manhhomienbienthuy.github.io,2018-07-17:/2018/07/17/javascript-asyncawait.html</id><summary type="html">Trong bài viết trước, chúng ta đã tìm hiểu cách sử dụng Promise để code bất đồng bộ dễ dàng hơn. Trong bài viết này, chúng ta sẽ tìm hiểu thêm những cách nâng cao hơn nữa để code bất đồng bộ trong JavaScript. Đó chính là sử dụng async […]</summary><content type="html">&lt;p&gt;Trong &lt;a href="https://manhhomienbienthuy.github.io/2018/06/20/javascript-promise.html" rel="noopener noreferrer" target="_blank"&gt;bài viết
-trước&lt;/a&gt;, chúng ta đã
-tìm hiểu cách sử dụng Promise để code bất đồng bộ dễ dàng hơn.  Trong
-bài viết này, chúng ta sẽ tìm hiểu thêm những cách nâng cao hơn nữa để
-code bất đồng bộ trong JavaScript.  Đó chính là sử dụng &lt;code&gt;async&lt;/code&gt; và
-&lt;code&gt;await&lt;/code&gt;, những keyword mới được giới thiệu từ ECMAScript 2017 (ES8).&lt;/p&gt;
-&lt;p&gt;Cách hoạt động của &lt;code&gt;async/await&lt;/code&gt; dựa trên generator, vì vậy, để hiểu
-được &lt;code&gt;async/await&lt;/code&gt;, chúng ta cần hiểu về generator trước đã.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Bài viết tập trung chủ yếu vào code bất đồng bộ với &lt;code&gt;async/await&lt;/code&gt;
-nên những gì trình bày về generator ở đây chỉ ở mức sơ khai.  Nếu
-muốn tìm hiểu kỹ hơn, mời các bạn tìm đọc các bài viết chuyên sâu
-hơn về chủ đề này.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div class="toc"&gt;&lt;span class="toctitle"&gt;Mục lục&lt;/span&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="#generator"&gt;Generator&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="#cach-thuc-hoat-ong"&gt;Cách thức hoạt động&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#mot-so-vi-du"&gt;Một số ví dụ&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="#mot-generator-thong-thuong"&gt;Một generator thông thường&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#generator-su-dung-expression"&gt;Generator sử dụng expression&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#goi-generator-khac-voi-yield"&gt;Gọi generator khác với yield*&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#truyen-tham-so-cho-generator"&gt;Truyền tham số cho generator&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#goi-return-trong-generator"&gt;Gọi return trong generator&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="#su-dung-generator-e-code-bat-ong-bo"&gt;Sử dụng generator để code bất đồng bộ&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#asyncawait"&gt;Async/await&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="#ham-async"&gt;Hàm async&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#await"&gt;Await&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#phuong-thuc-async"&gt;Phương thức async&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#viet-lai-promise-chain-bang-asyncawait"&gt;Viết lại promise chain bằng async/await&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#xu-ly-loi"&gt;Xử lý lỗi&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="#ket-luan"&gt;Kết luận&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;h2 id="generator"&gt;&lt;a class="headerlink" href="#generator" title="Permanent link"&gt;
-&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
-&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
-&lt;/svg&gt;
-&lt;/a&gt;Generator&lt;/h2&gt;
-&lt;p&gt;&lt;a href="https://www.ecma-international.org/ecma-262/6.0/#sec-generator-function-definitions" rel="noopener noreferrer" target="_blank"&gt;Generator&lt;/a&gt;
-của JavaScript được giới thiệu kể từ ECMAScript 2015 (ES6).  Tôi đã
-từng làm việc với ngôn ngữ Python và thấy rằng, generator của
-JavaScript cũng có ý tưởng tương tự như &lt;a href="https://manhhomienbienthuy.github.io/2016/01/05/python-iterator-generator.html" rel="noopener noreferrer" target="_blank"&gt;generator của
-Python&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Trong JavaScript, để định nghĩa một generator, chúng ta cần định nghĩa
-chúng là một &lt;code&gt;function*&lt;/code&gt; (keyword &lt;code&gt;function&lt;/code&gt; và tiếp theo là dấu sao
-&lt;code&gt;*&lt;/code&gt;, có thể thêm dấu space tuỳ vào phong cách của mỗi người).  Khi gặp
-định nghĩa này, chúng ta sẽ thu được một generator (thuộc lớp
-&lt;code&gt;GeneratorFunction&lt;/code&gt;) thay vì một hàm thông thường.  (Cú pháp có chặt
-chẽ hơn Python đôi chút).&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;generator&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;yield&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;yield&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mf"&gt;10&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Chúng ta cũng có thể sử dụng cú pháp generator expression để định
-nghĩa:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="kd"&gt;const&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;generator&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;yield&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;yield&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mf"&gt;10&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Một lưu ý nhỏ là lớp &lt;code&gt;GeneratorFunction&lt;/code&gt; không phải đối tượng chúng ta
-có thể truy cập được nên không thể dùng nó để tạo ra một generator
-được mà phải dùng cú pháp như trên.&lt;/p&gt;
-&lt;p&gt;Cách sử dụng generator rất đơn giản thôi:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="kd"&gt;var&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;gen&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;generator&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;10&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;gen&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;next&lt;/span&gt;&lt;span class="p"&gt;().&lt;/span&gt;&lt;span class="nx"&gt;value&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;gen&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;next&lt;/span&gt;&lt;span class="p"&gt;().&lt;/span&gt;&lt;span class="nx"&gt;value&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="c1"&gt;// Kết quả:&lt;/span&gt;
-&lt;span class="c1"&gt;// 10&lt;/span&gt;
-&lt;span class="c1"&gt;// 20&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id="cach-thuc-hoat-ong"&gt;&lt;a class="headerlink" href="#cach-thuc-hoat-ong" title="Permanent link"&gt;
-&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
-&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
-&lt;/svg&gt;
-&lt;/a&gt;Cách thức hoạt động&lt;/h3&gt;
-&lt;p&gt;Khi gọi một hàm generator, thì nội hàm đó sẽ không được thực thi ngay,
-mà một đối tượng
-&lt;a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_generators" rel="noopener noreferrer" target="_blank"&gt;iterator&lt;/a&gt;
-sẽ được trả về.  Khi phương thức &lt;code&gt;next&lt;/code&gt; của iterator đó được gọi (vòng
-lặp &lt;code&gt;for..of&lt;/code&gt; cũng gọi đến phương thức này), nội dung của hàm
-generator mới được thực thi, và nó sẽ “tạm dừng” khi gặp lệnh &lt;code&gt;yield&lt;/code&gt;.
-Những gì tiếp sau lệnh &lt;code&gt;yield&lt;/code&gt; sẽ là giá trị được trả về của phương
-thức &lt;code&gt;next&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Phương thức &lt;code&gt;next&lt;/code&gt; trả về kết quả là một đối tượng là giá trị được
-&lt;code&gt;yield&lt;/code&gt; và một trạng thái biểu thị generator đã &lt;code&gt;yield&lt;/code&gt; giá trị cuối
-cùng hay chưa (giá trị &lt;code&gt;done&lt;/code&gt; là &lt;code&gt;true&lt;/code&gt; hoặc &lt;code&gt;false&lt;/code&gt;).  Nếu chưa,
-chúng ta có thể tiếp tục gọi &lt;code&gt;next&lt;/code&gt; và hàm generator đang bị tạm dừng
-sẽ tiếp tục chạy cho đến khi gặp &lt;code&gt;yield&lt;/code&gt; tiếp theo (hoặc hàm kết
-thúc).&lt;/p&gt;
-&lt;p&gt;Ngoài ra, generator có thể sử dụng &lt;code&gt;yield*&lt;/code&gt; để &lt;code&gt;yield&lt;/code&gt; một generator
-khác.  Hàm generator cũng có thể dùng &lt;code&gt;return&lt;/code&gt;.  Nếu một giá trị được
-&lt;code&gt;return&lt;/code&gt; thì nó cũng tương tự &lt;code&gt;yield&lt;/code&gt; sẽ là giá trị trả về của &lt;code&gt;next&lt;/code&gt;,
-đồng thời hàm sẽ kết thúc tại đó.&lt;/p&gt;
-&lt;p&gt;Một generator đã kết thúc (&lt;code&gt;done&lt;/code&gt;) thì dù chúng ta có tiếp tục gọi
-&lt;code&gt;next&lt;/code&gt;, nó sẽ không thực thi thêm bất cứ một đoạn code nào của
-generator đó nữa.  Ngoài ra, nếu có exception xảy ra, thì generator
-cũng bị kết thúc sớm (generator &lt;code&gt;done&lt;/code&gt; nhưng giá trị sẽ là
-&lt;code&gt;undefined&lt;/code&gt;).&lt;/p&gt;
-&lt;p&gt;Bằng cách hoạt động như vậy, generator chỉ thực hiện tính toán và
-&lt;code&gt;yield&lt;/code&gt; các giá trị khi cần thiết.  Vì vậy, nó rất thích hợp để thực
-hiện những tính toán mất nhiều thời gian và bộ nhớ, ví dụ như một mảng
-vô hạn chẳng hạn.&lt;/p&gt;
-&lt;h3 id="mot-so-vi-du"&gt;&lt;a class="headerlink" href="#mot-so-vi-du" title="Permanent link"&gt;
-&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
-&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
-&lt;/svg&gt;
-&lt;/a&gt;Một số ví dụ&lt;/h3&gt;
-&lt;h4 id="mot-generator-thong-thuong"&gt;&lt;a class="headerlink" href="#mot-generator-thong-thuong" title="Permanent link"&gt;
-&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
-&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
-&lt;/svg&gt;
-&lt;/a&gt;Một generator thông thường&lt;/h4&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;foo&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kd"&gt;let&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;index&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mf"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;while&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="k"&gt;yield&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;index&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-
-&lt;span class="kd"&gt;const&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;bar&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;foo&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
-&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;bar&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;next&lt;/span&gt;&lt;span class="p"&gt;());&lt;/span&gt;
-&lt;span class="c1"&gt;// {value: 0, done: false}&lt;/span&gt;
-&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;bar&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;next&lt;/span&gt;&lt;span class="p"&gt;());&lt;/span&gt;
-&lt;span class="c1"&gt;// {value: 1, done: false}&lt;/span&gt;
-&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;bar&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;next&lt;/span&gt;&lt;span class="p"&gt;());&lt;/span&gt;
-&lt;span class="c1"&gt;// {value: 2, done: false}&lt;/span&gt;
-&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;bar&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;next&lt;/span&gt;&lt;span class="p"&gt;());&lt;/span&gt;
-&lt;span class="c1"&gt;// {value: 3, done: false}&lt;/span&gt;
-&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;bar&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;next&lt;/span&gt;&lt;span class="p"&gt;());&lt;/span&gt;
-&lt;span class="c1"&gt;// {value: 4, done: false}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h4 id="generator-su-dung-expression"&gt;&lt;a class="headerlink" href="#generator-su-dung-expression" title="Permanent link"&gt;
-&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
-&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
-&lt;/svg&gt;
-&lt;/a&gt;Generator sử dụng expression&lt;/h4&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="kd"&gt;const&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;foo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;yield&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mf"&gt;10&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;yield&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mf"&gt;20&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="p"&gt;};&lt;/span&gt;
-
-&lt;span class="kd"&gt;const&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;bar&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;foo&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
-&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;bar&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;next&lt;/span&gt;&lt;span class="p"&gt;());&lt;/span&gt;
-&lt;span class="c1"&gt;// {value: 10, done: false}&lt;/span&gt;
-&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;bar&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;next&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
-&lt;span class="c1"&gt;// {value: 20, done: false}&lt;/span&gt;
-&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;bar&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;next&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
-&lt;span class="c1"&gt;// {value: undefined, done: false}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h4 id="goi-generator-khac-voi-yield"&gt;&lt;a class="headerlink" href="#goi-generator-khac-voi-yield" title="Permanent link"&gt;
-&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
-&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
-&lt;/svg&gt;
-&lt;/a&gt;Gọi generator khác với &lt;code&gt;yield*&lt;/code&gt;&lt;/h4&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;foo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;yield&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mf"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;yield&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mf"&gt;2&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;yield&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mf"&gt;3&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-
-&lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;bar&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;yield&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;yield&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;foo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;yield&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mf"&gt;10&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-
-&lt;span class="kd"&gt;const&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;fooBar&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;bar&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;10&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-
-&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;fooBar&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;next&lt;/span&gt;&lt;span class="p"&gt;());&lt;/span&gt;
-&lt;span class="c1"&gt;// {value: 10, done: false}&lt;/span&gt;
-&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;fooBar&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;next&lt;/span&gt;&lt;span class="p"&gt;());&lt;/span&gt;
-&lt;span class="c1"&gt;// {value: 11, done: false}&lt;/span&gt;
-&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;fooBar&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;next&lt;/span&gt;&lt;span class="p"&gt;());&lt;/span&gt;
-&lt;span class="c1"&gt;// {value: 12, done: false}&lt;/span&gt;
-&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;fooBar&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;next&lt;/span&gt;&lt;span class="p"&gt;());&lt;/span&gt;
-&lt;span class="c1"&gt;// {value: 13, done: false}&lt;/span&gt;
-&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;fooBar&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;next&lt;/span&gt;&lt;span class="p"&gt;());&lt;/span&gt;
-&lt;span class="c1"&gt;// {value: 20, done: false}&lt;/span&gt;
-&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;fooBar&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;next&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
-&lt;span class="c1"&gt;// {value: undefined, done: true}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h4 id="truyen-tham-so-cho-generator"&gt;&lt;a class="headerlink" href="#truyen-tham-so-cho-generator" title="Permanent link"&gt;
-&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
-&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
-&lt;/svg&gt;
-&lt;/a&gt;Truyền tham số cho generator&lt;/h4&gt;
-&lt;p&gt;Phương thức &lt;code&gt;next&lt;/code&gt; có thể nhận tham số để thay đổi trạng thái hiện tại
-của generator.  Giá trị được truyền vào cho &lt;code&gt;next&lt;/code&gt; được coi là kết quả
-được trả về của lệnh &lt;code&gt;yield&lt;/code&gt; cuối cùng trước khi generator bị tạm dừng
-(bình thường lệnh này sẽ không trả về gì cả).&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;logGenerator&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;0&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;yield&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;yield&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;yield&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-
-&lt;span class="kd"&gt;const&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;logger&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;logGenerator&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
-
-&lt;span class="nx"&gt;logger&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;next&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
-&lt;span class="c1"&gt;// 0&lt;/span&gt;
-&lt;span class="nx"&gt;logger&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;next&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'pretzel'&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="c1"&gt;// 1 pretzel&lt;/span&gt;
-&lt;span class="nx"&gt;logger&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;next&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'california'&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="c1"&gt;// 2 california&lt;/span&gt;
-&lt;span class="nx"&gt;logger&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;next&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'mayonnaise'&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="c1"&gt;// 3 mayonnaise&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Trong ví dụ dưới, chúng ta có thể sử dụng &lt;code&gt;next(true)&lt;/code&gt; để reset chuỗi
-lại từ đầu:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;foo&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kd"&gt;let&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;index&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mf"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;while&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="kd"&gt;const&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;result&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;yield&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;index&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;result&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="nx"&gt;index&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mf"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-
-&lt;span class="kd"&gt;const&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;bar&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;foo&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
-
-&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;bar&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;next&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
-&lt;span class="c1"&gt;// {value: 0, done: false}&lt;/span&gt;
-&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;bar&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;next&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
-&lt;span class="c1"&gt;// {value: 1, done: false}&lt;/span&gt;
-&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;bar&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;next&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;span class="c1"&gt;// {value: 0, done: false}&lt;/span&gt;
-&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;bar&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;next&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
-&lt;span class="c1"&gt;// {value: 1, done: false}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h4 id="goi-return-trong-generator"&gt;&lt;a class="headerlink" href="#goi-return-trong-generator" title="Permanent link"&gt;
-&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
-&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
-&lt;/svg&gt;
-&lt;/a&gt;Gọi &lt;code&gt;return&lt;/code&gt; trong generator&lt;/h4&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;foo&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;yield&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'yield'&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'return'&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;yield&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'unreachable'&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-
-&lt;span class="kd"&gt;const&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;bar&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;foo&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;bar&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;next&lt;/span&gt;&lt;span class="p"&gt;());&lt;/span&gt;
-&lt;span class="c1"&gt;// { value: "yield", done: false }&lt;/span&gt;
-&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;bar&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;next&lt;/span&gt;&lt;span class="p"&gt;());&lt;/span&gt;
-&lt;span class="c1"&gt;// { value: "return", done: true }&lt;/span&gt;
-&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;bar&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;next&lt;/span&gt;&lt;span class="p"&gt;());&lt;/span&gt;
-&lt;span class="c1"&gt;// { value: undefined, done: true }&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2 id="su-dung-generator-e-code-bat-ong-bo"&gt;&lt;a class="headerlink" href="#su-dung-generator-e-code-bat-ong-bo" title="Permanent link"&gt;
-&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
-&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
-&lt;/svg&gt;
-&lt;/a&gt;Sử dụng generator để code bất đồng bộ&lt;/h2&gt;
-&lt;p&gt;Generator có một tính chất rất hay đó là hàm generator có thể được
-thực thi, rồi tạm dừng, sau đó tiếp tục thực thi mà trạng thái của nó
-sẽ được lưu lại.  Tất cả mọi biến, hằng, v.v… sẽ được giữ nguyên giá
-trị khi hàm được thực thi trở lại sau khi tạm dừng.&lt;/p&gt;
-&lt;p&gt;Vì vậy, generator có thể kết hợp với Promise (vốn là một công cụ tuyệt
-vời) để giúp chúng ta code bất đồng bộ dễ dàng hơn nữa.  Promise đã
-giúp chúng ta rất nhiều nhưng code bất đồng bộ vẫn còn quá khó đọc và
-hiểu so với code đồng bộ.  Việc xử lý khi gặp lỗi vẫn còn sử dụng rất
-nhiều đến cơ chế callback mà không thể dùng những cú pháp tiện lợi của
-chính JavaScript như &lt;code&gt;try..catch&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Chúng ta có thể kết hợp generator với Promise theo cách sau: &lt;code&gt;yield&lt;/code&gt;
-một promise khi nào chúng ta muốn code tạm dừng (vì hoạt động bất đồng
-bộ), và trong callback của promise đó sẽ gọi tiếp &lt;code&gt;next&lt;/code&gt; của generator
-để hàm tiếp tục chạy.  Dưới đây là một ví dụ:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="kd"&gt;let&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;foo&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;bar&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'before async'&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;yield&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ow"&gt;new&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;Promise&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;resolve&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;setTimeout&lt;/span&gt;&lt;span class="p"&gt;(()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;resolve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;1&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mf"&gt;1000&lt;/span&gt;&lt;span class="p"&gt;)).&lt;/span&gt;&lt;span class="nx"&gt;then&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;x&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;x&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nx"&gt;foo&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;next&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;})&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'after async'&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="nx"&gt;foo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;bar&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
-&lt;span class="nx"&gt;foo&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;next&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Trong code cũng không lấy gì làm đẹp lắm.  Nhưng nó đã hoạt động đúng:
-sau khi in ra dòng &lt;code&gt;before async&lt;/code&gt; thì 1 giấy sau nó mới in ra kết quả
-của promise và tiếp theo là dòng &lt;code&gt;after async&lt;/code&gt;.  Bằng cách kết hợp
-generator với Promise như thế này, chúng ta có thể tạm dừng một hàm để
-chờ các hoạt động bất đồng bộ được thực thi và sau đó lại tiếp tục
-hàm.&lt;/p&gt;
-&lt;p&gt;Cách làm này cho chúng ta kết quả hay hơn khá nhiều so với chỉ sử dụng
-Promise thông thường, khi mà code bất đồng bộ sẽ luôn bị thực thi sau
-code đồng bộ.&lt;/p&gt;
-&lt;p&gt;Tuy nhiên, code này không phải là một dạng tổng quát, chúng ta sẽ phải
-biến hoá nó cho từng bài toán cụ thể.  Ngoài ra, generator cũng giúp
-chúng ta xử lý lỗi bằng cú pháp &lt;code&gt;try..catch&lt;/code&gt; truyền thống của
-JavaScript.&lt;/p&gt;
-&lt;p&gt;Chúng ta có thể xây dựng một hàm cho phép tạm dừng code với generator
-và Promise tương đối tổng quát như sau:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;async&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;gen&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;context&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;undefined&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kd"&gt;const&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;generator&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ow"&gt;typeof&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;gen&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;===&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'function'&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;?&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;gen&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;gen&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kd"&gt;const&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="nx"&gt;value&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;promise&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;generator&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;next&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;context&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ow"&gt;typeof&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;promise&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;!==&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'undefined'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nx"&gt;promise&lt;/span&gt;
-&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;then&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;resolved&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;async&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;generator&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;resolved&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="k"&gt;catch&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;error&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;generator&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="k"&gt;throw&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;error&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Sử dụng hàm này, chúng ta có thể tạm dừng một hàm bằng cách &lt;code&gt;yield&lt;/code&gt;
-một Promise, chờ nó kết thúc và nhận kết quả về:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="k"&gt;async&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'before async'&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kd"&gt;const&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;promise&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ow"&gt;new&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;Promise&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;resolve&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;setTimeout&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;resolve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'async'&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="mf"&gt;1000&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kd"&gt;const&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;result&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;yield&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;promise&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;result&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'after async'&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="p"&gt;})&lt;/span&gt;
-&lt;span class="c1"&gt;// Kết quả:&lt;/span&gt;
-&lt;span class="c1"&gt;// before async&lt;/span&gt;
-&lt;span class="c1"&gt;// (Tạm dừng 1 giấy)&lt;/span&gt;
-&lt;span class="c1"&gt;// async&lt;/span&gt;
-&lt;span class="c1"&gt;// after async&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Bằng cách sử dụng đệ quy, chúng ta có thể tạm dừng một hàm bao nhiêu
-lần cũng được:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="k"&gt;async&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kd"&gt;const&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;promise1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ow"&gt;new&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;Promise&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;resolve&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;setTimeout&lt;/span&gt;&lt;span class="p"&gt;(()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;resolve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;1&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mf"&gt;1000&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kd"&gt;const&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;promise2&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ow"&gt;new&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;Promise&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;resolve&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;setTimeout&lt;/span&gt;&lt;span class="p"&gt;(()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;resolve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;2&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mf"&gt;1000&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kd"&gt;const&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;promise3&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ow"&gt;new&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;Promise&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;resolve&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;setTimeout&lt;/span&gt;&lt;span class="p"&gt;(()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;resolve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;3&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mf"&gt;2000&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;
-
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kd"&gt;const&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;result1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;yield&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;promise1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;result1&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kd"&gt;const&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;result2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;result3&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;yield&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;Promise&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;all&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="nx"&gt;promise2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;promise3&lt;/span&gt;&lt;span class="p"&gt;]);&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;result2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;result3&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="p"&gt;})&lt;/span&gt;
-&lt;span class="c1"&gt;// Kết quả:&lt;/span&gt;
-&lt;span class="c1"&gt;// 1 (hiện ra sau 1 giây)&lt;/span&gt;
-&lt;span class="c1"&gt;// 2 3 (hiện ra sau 2 giây)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Vậy là chúng ta đã có một cách tương đối tổng quát dùng để code bất
-đồng bộ rất dễ dàng.  Tuy nhiên, mức độ tổng quát như trên chưa thể
-đảm bảo được.  Nó sẽ chạy tốt cho các trường hợp thông thường, nhưng
-không rõ là một số trường hợp “không thông thường” thì sẽ thế nào.&lt;/p&gt;
-&lt;p&gt;Rất may cho chúng ta, những người làm đặc tả cho ngôn ngữ, cụ thể là
-tổ chức &lt;a href="https://www.ecma-international.org/" rel="noopener noreferrer" target="_blank"&gt;Ecma International&lt;/a&gt; với
-đặc tả ECMAScript đã thiết kế phần này giúp chúng ta.  Tuy nó ra đời
-hơi muộn, nhưng muộn còn hơn là không có, những tính năng mới của
-JavaScript sẽ giúp chúng ta code bất đồng bộ dễ dàng hơn bao giờ hết.
-Đó chính là nội dung mà chúng ta sẽ tìm hiểu ngay sau đây.&lt;/p&gt;
-&lt;h2 id="asyncawait"&gt;&lt;a class="headerlink" href="#asyncawait" title="Permanent link"&gt;
-&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
-&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
-&lt;/svg&gt;
-&lt;/a&gt;Async/await&lt;/h2&gt;
-&lt;p&gt;Async/await được thêm vào từ đặc tả &lt;a href="https://www.ecma-international.org/ecma-262/8.0/#sec-async-function-definitions" rel="noopener noreferrer" target="_blank"&gt;ECMAScript
-2017&lt;/a&gt;
-(ES 8), nên hiện nay chưa được hỗ trợ bởi tất cả các trình duyệt.
-Nhưng với sự trợ giúp của
-&lt;a href="https://new.babeljs.io/docs/en/next/babel-preset-env.html" rel="noopener noreferrer" target="_blank"&gt;babel-preset-env&lt;/a&gt;
-(đã hỗ trợ hết ES 6, 7, 8) thì chúng ta hoàn toàn có thể transpile để
-sử dụng &lt;code&gt;async&lt;/code&gt;, &lt;code&gt;await&lt;/code&gt; trên các trình duyệt phiên bản cũ hơn.&lt;/p&gt;
-&lt;p&gt;Async/await được xây dựng dựa trên generator và Promise, nó được xây
-dựng tương đối giống với ý tưởng của hàm &lt;code&gt;async&lt;/code&gt; tổng quát ở phần
-trước, tất nhiên là phức tạp và bao quát hơn.  Để tìm hiểu rõ hơn về
-các xây dựng những keyword này, mời các bạn xem thêm &lt;a href="https://tc39.github.io/ecmascript-asyncawait/#desugaring" rel="noopener noreferrer" target="_blank"&gt;ở
-đây&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Trong bài viết này, chúng ta chủ yếu tập trung vào cách áp dụng những
-keyword này cho bài toán bất đồng bộ.&lt;/p&gt;
-&lt;h3 id="ham-async"&gt;&lt;a class="headerlink" href="#ham-async" title="Permanent link"&gt;
-&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
-&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
-&lt;/svg&gt;
-&lt;/a&gt;Hàm &lt;code&gt;async&lt;/code&gt;&lt;/h3&gt;
-&lt;p&gt;Chúng ta có thể định nghĩa một hàm bất đồng bộ bằng keyword &lt;code&gt;async&lt;/code&gt;:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="k"&gt;async&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;fname&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mf"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Hoặc định nghĩa bằng function expression cũng không vấn đề gì:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="nx"&gt;fname&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;async&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mf"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Thậm chí, chúng ta có thể kết hợp với cú pháp arrow function của ES 6:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="nx"&gt;fname&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;async&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mf"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Keyword &lt;code&gt;async&lt;/code&gt; trong định nghĩa hàm trên sẽ giúp chúng ta định nghĩa
-một hàm thuộc lớp &lt;code&gt;AsyncFunction&lt;/code&gt;.  Lưu ý rằng, &lt;code&gt;AsyncFunction&lt;/code&gt; không
-thể truy cập như một biến toàn cục được nên muốn định nghĩa một hàm
-bất đồng bộ, chúng ta bắt buộc phải dùng đến keyword &lt;code&gt;async&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;AsyncFunction cũng không khác các hàm thông thường nhiều lắm, ngoại
-trừ nó luôn luôn &lt;code&gt;return&lt;/code&gt; một promise.  Nếu trong code không &lt;code&gt;return&lt;/code&gt;
-một promise nào cả, thì một promise mới được resolve với giá trị được
-&lt;code&gt;return&lt;/code&gt; trong code (sẽ là &lt;code&gt;undefined&lt;/code&gt; nếu không có giá trị nào được
-return).&lt;/p&gt;
-&lt;p&gt;Và vì là một promise được trả về, chúng ta có thể dùng nó với callback
-như các promise khác:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="nx"&gt;fname&lt;/span&gt;&lt;span class="p"&gt;().&lt;/span&gt;&lt;span class="nx"&gt;then&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="c1"&gt;// Kết quả:&lt;/span&gt;
-&lt;span class="c1"&gt;// 1&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Nếu trong trường hợp hàm async trả về một promise, thì càng tốt, không
-cần phải chuyển đổi giá trị thành promise được resolve nữa, khi đó,
-thực ra &lt;code&gt;async&lt;/code&gt; có hay không cũng như nhau cả:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="nx"&gt;another_func&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;async&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;Promise&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;resolve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;2&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="nx"&gt;another_func&lt;/span&gt;&lt;span class="p"&gt;().&lt;/span&gt;&lt;span class="nx"&gt;then&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="c1"&gt;// Kết quả:&lt;/span&gt;
-&lt;span class="c1"&gt;// 2&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Vậy là keyword &lt;code&gt;async&lt;/code&gt; luôn đảm bảo một hàm sẽ trả về một promise. Tất
-nhiên, một hàm không async cũng có thể trả về một promise cũng không
-sao cả.  Nhưng &lt;code&gt;async&lt;/code&gt; còn cho chúng ta một khả năng tuyệt vời hơn: sử
-dụng &lt;code&gt;async&lt;/code&gt; kết hợp với &lt;code&gt;await&lt;/code&gt;.&lt;/p&gt;
-&lt;h3 id="await"&gt;&lt;a class="headerlink" href="#await" title="Permanent link"&gt;
-&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
-&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
-&lt;/svg&gt;
-&lt;/a&gt;Await&lt;/h3&gt;
-&lt;p&gt;Câu lệnh &lt;code&gt;await&lt;/code&gt; sẽ giúp chúng ta “tạm dừng” việc thực thi các code
-trong một hàm async, chờ cho đến khi promise được resolve thì mới tiếp
-tục thực thi các code đó với giá tị được resolve.  Keyword &lt;code&gt;await&lt;/code&gt; chỉ
-có thể hoạt động bên trong một hàm async, nếu chúng ta gọi nó ở chỗ
-khác thì sẽ gặp lỗi &lt;code&gt;SyntaxError&lt;/code&gt;.  Cũng dễ hiểu thôi, phải ở bên
-trong một hàm thì mới có thể xác định được phạm vi code được để mà tạm
-dừng.  Nếu chúng ta gọi &lt;code&gt;await&lt;/code&gt; ở một nơi toàn cục chẳng hạn, rõ ràng
-là không thể xác định được code nào cần tạm dừng vì phạm vi quá rộng.&lt;/p&gt;
-&lt;p&gt;Sự kết hợp với &lt;code&gt;async&lt;/code&gt; và &lt;code&gt;await&lt;/code&gt; giúp chúng ta đơn giản hoá code với
-các hoạt động bất đồng bộ (kết hợp với promise).  Vì promise sẽ dễ
-dàng kết hợp với callback, &lt;code&gt;async&lt;/code&gt; và &lt;code&gt;await&lt;/code&gt; giúp chúng ta code đơn
-giản hơn bằng cách kết hợp generator và promise.  Chúng ta hãy xem xét
-ví dụ sau:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;async&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kd"&gt;const&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;promise&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ow"&gt;new&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;Promise&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;resolve&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;setTimeout&lt;/span&gt;&lt;span class="p"&gt;(()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;resolve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;1&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mf"&gt;1000&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;await&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;promise&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'done'&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="p"&gt;})();&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Trong đoạn code trên, sau 1 giây, trên console sẽ hiển thị &lt;code&gt;1&lt;/code&gt;.  Hàm
-async của chúng ta đã được tạm dừng khi gặp câu lệnh &lt;code&gt;await&lt;/code&gt;, và chờ 1
-giấy cho promise được resolve và tiếp tục thực thi với kết quả được
-trả về.&lt;/p&gt;
-&lt;p&gt;Bằng cách này, chúng ta có thể code bất đồng bộ theo phong cách tuần
-tự tương tự như các hoạt động đồng bộ mà không cần phải dùng callback.
-Điều đó giúp code dễ đọc và dễ hiểu hơn.  Thậm chí chúng ta có thể sử
-dụng &lt;code&gt;await&lt;/code&gt; nhiều lần nếu muốn nhiều hoạt động bất đồng bộ diễn ra
-lần lượt (như ở phần trước, chúng ta cần đến promise chain).&lt;/p&gt;
-&lt;p&gt;Ví dụ load script nếu chuyển sang sử dụng async await có thể chuyển
-thành như sau:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;async&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;(){&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;await&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;loadScript&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'//code.jquery.com/jquery-3.3.1.min.js'&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;await&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;loadScript&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'//cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js'&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;...&lt;/span&gt;
-&lt;span class="p"&gt;})();&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Một điều thú vị là &lt;code&gt;await&lt;/code&gt; đúng ra phải đi kèm với promise, nhưng về
-mặt code thì không cần phải làm như vậy.  Trong trường hợp phía sau
-&lt;code&gt;await&lt;/code&gt; là một giá trị, nó sẽ được hiểu là một promise được resolve
-với giá trị đó.&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;async&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;(){&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kd"&gt;const&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;x&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;await&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mf"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;x&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="p"&gt;})()&lt;/span&gt;
-&lt;span class="c1"&gt;// Kết quả:&lt;/span&gt;
-&lt;span class="c1"&gt;// 1&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Và vì bản chất hoạt động bất đồng bộ là sử dụng một stack nên các đoạn
-code phía sau &lt;code&gt;await&lt;/code&gt; đều được thực thi sau các code đồng bộ khác:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;async&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;(){&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kd"&gt;const&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;x&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;await&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mf"&gt;2&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;x&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="p"&gt;})()&lt;/span&gt;
-&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;3&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="c1"&gt;// Kết quả:&lt;/span&gt;
-&lt;span class="c1"&gt;// 1&lt;/span&gt;
-&lt;span class="c1"&gt;// 3&lt;/span&gt;
-&lt;span class="c1"&gt;// 2&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Lệnh &lt;code&gt;await&lt;/code&gt; sẽ chờ promise được resolve và trả về kết quả được
-resolve đó (và sẽ tự convert một giá trị thành promise).  Nhưng trong
-trường hợp promise bị reject, thì nó sẽ trả về một exception.&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;async&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kd"&gt;const&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;x&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;await&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;Promise&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;reject&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;1&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;x&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="p"&gt;})();&lt;/span&gt;
-&lt;span class="c1"&gt;// Kết quả:&lt;/span&gt;
-&lt;span class="c1"&gt;// Uncaught (in promise) 1&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Chúng ta sẽ tìm hiểu thêm về việc xử lý khi gặp lỗi trong phần sau.&lt;/p&gt;
-&lt;h3 id="phuong-thuc-async"&gt;&lt;a class="headerlink" href="#phuong-thuc-async" title="Permanent link"&gt;
-&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
-&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
-&lt;/svg&gt;
-&lt;/a&gt;Phương thức &lt;code&gt;async&lt;/code&gt;&lt;/h3&gt;
-&lt;p&gt;Trong phần trước chúng ta đã tìm hiểu về hàm &lt;code&gt;async&lt;/code&gt;, với cú pháp
-ES2015, chúng ta có thể thêm &lt;code&gt;async&lt;/code&gt; và trước các phương thức của một
-class để biến nó thành phương thức &lt;code&gt;async&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Về cơ bản, cách hoạt động của phương thức &lt;code&gt;async&lt;/code&gt; cũng không khác
-nhiều so với hàm.  Ví dụ:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="kd"&gt;class&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;Restaurant&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;async&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;takeOrder&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;await&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;Promise&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;resolve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;1&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;async&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kd"&gt;const&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;x&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;await&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ow"&gt;new&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;Restaurant&lt;/span&gt;&lt;span class="p"&gt;).&lt;/span&gt;&lt;span class="nx"&gt;takeOrder&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;x&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="p"&gt;})();&lt;/span&gt;
-&lt;span class="c1"&gt;// Kết quả:&lt;/span&gt;
-&lt;span class="c1"&gt;// 1&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Lưu ý rằng, với tư tưởng thiết kế khác nhau, &lt;code&gt;async/await&lt;/code&gt; hoạt động
-rất khác với promise chain.  Cơ chế “tạm dừng – chạy tiếp” của nó
-nhiều lúc có thể khiến hai promise được chạy một cách song song như ví
-dụ sau:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="kd"&gt;var&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;resolveAfter2Seconds&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"starting slow promise"&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ow"&gt;new&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;Promise&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;resolve&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nx"&gt;setTimeout&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="nx"&gt;resolve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;20&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"slow promise is done"&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mf"&gt;2000&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;});&lt;/span&gt;
-&lt;span class="p"&gt;};&lt;/span&gt;
-
-&lt;span class="kd"&gt;var&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;resolveAfter1Second&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"starting fast promise"&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ow"&gt;new&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;Promise&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;resolve&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nx"&gt;setTimeout&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="nx"&gt;resolve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;10&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"fast promise is done"&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mf"&gt;1000&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;});&lt;/span&gt;
-&lt;span class="p"&gt;};&lt;/span&gt;
-
-&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;async&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'==CONCURRENT START with await=='&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kd"&gt;const&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;slow&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;resolveAfter2Seconds&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kd"&gt;const&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;fast&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;resolveAfter1Second&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
-
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;await&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;slow&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;await&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;fast&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="p"&gt;})();&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Trong hàm async ở trên, cả &lt;code&gt;slow&lt;/code&gt; và &lt;code&gt;fast&lt;/code&gt; đều được tạo ra và
-&lt;code&gt;await&lt;/code&gt;.  Hai promise tương ứng đều được thực thi nhưng &lt;code&gt;await&lt;/code&gt; đã tạm
-dừng chúng lại và nó chỉ thực thi tiếp khi promise được resolve.  Vì
-vậy với đoạn code trên, nó sẽ mất 2 giây để thực thi, và việc thực thi
-await là lần lượt nên kết quả của &lt;code&gt;slow&lt;/code&gt; và &lt;code&gt;fast&lt;/code&gt; sẽ lần lượt xuất
-hiện.&lt;/p&gt;
-&lt;p&gt;Trong trường hợp này, cách hoạt động của nó giống với &lt;code&gt;Promise.all&lt;/code&gt;
-nhiều hơn.  Nếu muốn một hoạt động song song thực sự thì &lt;code&gt;await&lt;/code&gt; không
-phải là lựa chọn tốt, mà cách tốt nhất là sử dụng &lt;code&gt;Promise.then&lt;/code&gt;, khi
-đó, promise nào kết thúc trước sẽ xuất hiện kết quả trước.&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'==PARALLEL with Promise.then=='&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;resolveAfter2Seconds&lt;/span&gt;&lt;span class="p"&gt;().&lt;/span&gt;&lt;span class="nx"&gt;then&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;resolveAfter1Second&lt;/span&gt;&lt;span class="p"&gt;().&lt;/span&gt;&lt;span class="nx"&gt;then&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="p"&gt;})()&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id="viet-lai-promise-chain-bang-asyncawait"&gt;&lt;a class="headerlink" href="#viet-lai-promise-chain-bang-asyncawait" title="Permanent link"&gt;
-&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
-&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
-&lt;/svg&gt;
-&lt;/a&gt;Viết lại promise chain bằng &lt;code&gt;async/await&lt;/code&gt;&lt;/h3&gt;
-&lt;p&gt;JavaScript hiện nay có &lt;code&gt;fetch&lt;/code&gt; API sẽ gửi truy vấn đến 1 URL và trả
-kết quả về là một promise.  Promise được trả về này hoàn toàn có thể
-được sử dụng bởi promise chain, ví dụ như sau:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;fetch&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'https://jsonplaceholder.typicode.com/posts/1'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;then&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;response&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;response&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;json&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;then&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;json&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;json&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;span class="p"&gt;})();&lt;/span&gt;
-&lt;span class="c1"&gt;// Kết quả&lt;/span&gt;
-&lt;span class="c1"&gt;// {&lt;/span&gt;
-&lt;span class="c1"&gt;//     userId: 1,&lt;/span&gt;
-&lt;span class="c1"&gt;//     id: 1,&lt;/span&gt;
-&lt;span class="c1"&gt;//     title: "sunt aut facere repellat provident occaecati...",&lt;/span&gt;
-&lt;span class="c1"&gt;//     body: "quia et suscipit recusandae consequuntur..."&lt;/span&gt;
-&lt;span class="c1"&gt;// }&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Hoàn toàn có thể được viết lại bằng &lt;code&gt;async/await&lt;/code&gt; như sau:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;async&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kd"&gt;const&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;response&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;await&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;fetch&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'https://jsonplaceholder.typicode.com/posts/1'&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kd"&gt;const&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;json&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;await&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;response&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;json&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;json&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="p"&gt;})();&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id="xu-ly-loi"&gt;&lt;a class="headerlink" href="#xu-ly-loi" title="Permanent link"&gt;
-&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
-&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
-&lt;/svg&gt;
-&lt;/a&gt;Xử lý lỗi&lt;/h3&gt;
-&lt;p&gt;Trong những phần trên, chúng ta mới chỉ quan tâm đến &lt;code&gt;aysnc/await&lt;/code&gt; khi
-mà mọi việc đều diễn ra bình thường, nghĩa là promise hoạt động và
-resolve một kết quả.  Thế nhưng, trong trường hợp promise bị reject,
-với những code thông thường thì một exception sẽ xảy ra, và với hàm
-async thì mọi chuyện cũng giống như vậy:&lt;/p&gt;
-&lt;p&gt;Đoạn code này&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;async&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;await&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;Promise&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;reject&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ow"&gt;new&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ne"&gt;Error&lt;/span&gt;&lt;span class="p"&gt;());&lt;/span&gt;
-&lt;span class="p"&gt;})();&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;cũng giống như đoạn code này&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;async&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;f&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;throw&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ow"&gt;new&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ne"&gt;Error&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
-&lt;span class="p"&gt;})();&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;đều sẽ cho ra một exception&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="nx"&gt;Uncaught&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ow"&gt;in&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;promise&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ne"&gt;Error&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Và cũng giống như những hàm thông thường khác, chúng ta có thể sử dụng
-&lt;code&gt;try..catch&lt;/code&gt; để xử lý khi gặp những exception này:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="k"&gt;async&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="kd"&gt;const&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;result&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;await&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;doSomething&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="kd"&gt;const&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;newResult&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;await&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;doSomethingElse&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;result&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="kd"&gt;const&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;finalResult&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;await&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;doThirdThing&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;newResult&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sb"&gt;`Got the final result: &lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nx"&gt;finalResult&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;catch&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;error&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nx"&gt;failureCallback&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;error&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Trong nhiều trường hợp, một promise có thể sẽ mất thời gian thực thi
-rồi mới bị reject vì vậy, exception cũng phải chờ một lúc mới xảy ra.&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;async&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="kd"&gt;let&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;response&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;await&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;fetch&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'http://no-such-url'&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;catch&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;err&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;err&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="p"&gt;})();&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Trong trường hợp hàm async, &lt;code&gt;try..catch&lt;/code&gt; cũng hoạt động giống như các
-hàm thông thường khác, khi gặp exception, code của &lt;code&gt;catch&lt;/code&gt; gần nhất sẽ
-được thực thi.  Tuy nhiên, chúng ta không thể sử dụng &lt;code&gt;try..catch&lt;/code&gt; ở
-bên ngoài hàm async được, cũng giống như chúng ta không thể
-&lt;code&gt;try..catch&lt;/code&gt; với promise vậy:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="k"&gt;async&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;f&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;await&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;fetch&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'http://no-such-url'&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="p"&gt;};&lt;/span&gt;
-
-&lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;f&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;catch&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;err&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;err&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="c1"&gt;// try catch này không có tác dụng&lt;/span&gt;
-&lt;span class="c1"&gt;// exception vẫn cứ xảy ra mà không bị catch&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Nếu muốn xử lý exception ở bên ngoài hàm async thì chúng ta vẫn có thể
-sử dụng cơ chế callback thông thường với &lt;code&gt;Promise.catch&lt;/code&gt; hoặc
-&lt;code&gt;Promise.then(null, function)&lt;/code&gt;.  Bởi vì hàm async sẽ trả về một
-promise, chúng ta dễ dàng sử dụng cơ chế này:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="k"&gt;async&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;f&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;await&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;fetch&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'http://no-such-url'&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="p"&gt;};&lt;/span&gt;
-
-&lt;span class="nx"&gt;f&lt;/span&gt;&lt;span class="p"&gt;().&lt;/span&gt;&lt;span class="k"&gt;catch&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2 id="ket-luan"&gt;&lt;a class="headerlink" href="#ket-luan" title="Permanent link"&gt;
-&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
-&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
-&lt;/svg&gt;
-&lt;/a&gt;Kết luận&lt;/h2&gt;
-&lt;p&gt;Cặp keyword &lt;code&gt;async/await&lt;/code&gt; cho chúng ta cơ chế “tạm dừng – chạy tiếp”
-rất hay, giúp công việc code bất đồng bộ dễ dàng hơn bao giờ hết.  Giờ
-đây, chúng ta có thể code bất đồng bộ không khác gì code đồng bộ cả.
-Điều đó giúp code dễ đọc và dễ hiểu hơn.&lt;/p&gt;</content><category term="Lập trình"/><category term="JavaScript"/><category term="Promise"/><category term="async"/><category term="await"/></entry></feed>
+ích cho các bạn trọng công việc.&lt;/p&gt;</content><category term="Lập trình"/><category term="Python"/><category term="Fundamentals"/><category term="Mutable"/><category term="Immutable"/></entry></feed>
