@@ -1,5 +1,416 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>manhhomienbienthuy</title><link href="https://manhhomienbienthuy.github.io/" rel="alternate"/><link href="https://manhhomienbienthuy.github.io/feeds/atom.xml" rel="self"/><id>https://manhhomienbienthuy.github.io/</id><updated>2026-10-23T03:34:29+00:00</updated><subtitle>Đây là thế giới của manhhomienbienthuy (naa). Chào mừng đến với thế giới của tôi!</subtitle><entry><title>Những suy nghĩ vẩn vơ về AI: khi tương lai đến sớm hơn tôi tưởng</title><link href="https://manhhomienbienthuy.github.io/2026/10/23/nhung-suy-nghi-van-vo-ve-ai-khi-tuong-lai-den-som-hon-toi-tuong.html" rel="alternate"/><published>2026-10-23T12:34:29+09:00</published><updated>2026-10-23T03:34:29+00:00</updated><author><name>manhhomienbienthuy</name></author><id>tag:manhhomienbienthuy.github.io,2026-10-23:/2026/10/23/nhung-suy-nghi-van-vo-ve-ai-khi-tuong-lai-den-som-hon-toi-tuong.html</id><summary type="html">Gần đây, tôi thường có cảm giác công nghệ AI đang phát triển nhanh hơn khả năng thích nghi của chính mình. Một công cụ hôm nay còn khiến tôi hào hứng, vài tháng sau đã có thể trở nên bình thường, thậm chí lỗi thời. Giữa những thay đổi […]</summary><content type="html">&lt;p&gt;Gần đây, tôi thường có cảm giác công nghệ AI đang phát triển nhanh hơn
+<feed xmlns="http://www.w3.org/2005/Atom"><title>manhhomienbienthuy</title><link href="https://manhhomienbienthuy.github.io/" rel="alternate"/><link href="https://manhhomienbienthuy.github.io/feeds/atom.xml" rel="self"/><id>https://manhhomienbienthuy.github.io/</id><updated>2026-11-11T02:36:09+00:00</updated><subtitle>Đây là thế giới của manhhomienbienthuy (naa). Chào mừng đến với thế giới của tôi!</subtitle><entry><title>Bồi hồi sau lời chào tạm biệt</title><link href="https://manhhomienbienthuy.github.io/2026/11/11/boi-hoi-sau-loi-chao-tam-biet.html" rel="alternate"/><published>2026-11-11T11:36:09+09:00</published><updated>2026-11-11T02:36:09+00:00</updated><author><name>manhhomienbienthuy</name></author><id>tag:manhhomienbienthuy.github.io,2026-11-11:/2026/11/11/boi-hoi-sau-loi-chao-tam-biet.html</id><summary type="html">Tuần trước, tôi vừa kết thúc một dự án kéo dài khoảng sáu tháng. Như những lần kết thúc dự án trước đây, tôi, khách hàng và các bên đối tác đã gửi cho nhau những lời cảm ơn, những lời chúc và những câu chào tạm biệt lịch sự […]</summary><content type="html">&lt;p&gt;Tuần trước, tôi vừa kết thúc một dự án kéo dài khoảng sáu tháng. Như
+những lần kết thúc dự án trước đây, tôi, khách hàng và các bên đối tác
+đã gửi cho nhau những lời cảm ơn, những lời chúc và những câu chào tạm
+biệt lịch sự. Mọi thứ diễn ra nhẹ nhàng, đúng mực và không có điều gì
+đặc biệt. Thế nhưng, không hiểu vì sao lần này tôi lại cảm thấy bồi
+hồi lâu đến vậy. Sau những lời chào tưởng như quen thuộc ấy, trong tôi
+không chỉ còn lại ký ức về một dự án vừa kết thúc, mà còn xuất hiện
+rất nhiều câu hỏi về công việc, về tương lai và về con đường mà tôi
+đang đi.&lt;/p&gt;
+&lt;div class="toc"&gt;&lt;span class="toctitle"&gt;Mục lục&lt;/span&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#mot-du-an-vua-ket-thuc"&gt;Một dự án vừa kết thúc&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#nhung-lan-chia-tay-truoc-ay"&gt;Những lần chia tay trước đây&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#nhung-ngay-au-tien-cua-gia-inh-toi-tai-nhat-ban"&gt;Những ngày đầu tiên của gia đình tôi tại Nhật Bản&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#khoang-cach-giua-qua-khu-va-hien-tai"&gt;Khoảng cách giữa quá khứ và hiện tại&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#khi-ngoai-kia-ai-cung-co-nhung-noi-lo-giong-nhau"&gt;Khi ngoài kia ai cũng có những nỗi lo giống nhau&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#tri-tue-nhan-tao-ang-can-quet-moi-mat-tran"&gt;Trí tuệ nhân tạo đang càn quét mọi mặt trận&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#tim-lai-cam-giac-ban-au-qua-nhung-cuoc-thi-lap-trinh"&gt;Tìm lại cảm giác ban đầu qua những cuộc thi lập trình&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#toi-ang-so-ieu-gi"&gt;Tôi đang sợ điều gì?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#co-the-toi-chua-can-phai-co-cau-tra-loi-ngay-lap-tuc"&gt;Có thể tôi chưa cần phải có câu trả lời ngay lập tức&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#sau-nhung-suy-nghi-van-vo"&gt;Sau những suy nghĩ vẩn vơ&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;h2 id="mot-du-an-vua-ket-thuc"&gt;&lt;a class="headerlink" href="#mot-du-an-vua-ket-thuc" title="Permanent link"&gt;
+&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/a&gt;Một dự án vừa kết thúc&lt;/h2&gt;
+&lt;p&gt;Tuần trước là những ngày làm việc cuối cùng của tôi trong một dự án.
+Sau khoảng thời gian cùng nhau trao đổi, phát triển, sửa lỗi và xử lý
+không biết bao nhiêu vấn đề lớn nhỏ, cuối cùng dự án cũng đi đến thời
+điểm mà phần công việc của tôi kết thúc. Tôi, phía khách hàng và các
+bên đối tác đã nói với nhau những lời cảm ơn quen thuộc. Mọi người cảm
+ơn nhau vì sự hỗ trợ trong suốt thời gian qua, chúc nhau thành công và
+hy vọng sẽ có dịp hợp tác trở lại trong tương lai.&lt;/p&gt;
+&lt;p&gt;Đó đều là những lời xã giao rất bình thường trong công việc. Tôi đã
+từng nói những lời như vậy nhiều lần, và tôi cũng đã nhiều lần nhận
+được những lời tương tự từ khách hàng hoặc đồng nghiệp. Khi một dự án
+kết thúc, mỗi người sẽ trở về với công việc riêng, tiếp tục một dự án
+khác hoặc chuyển sang một vai trò khác. Chúng tôi đều hiểu rằng sự hợp
+tác nào rồi cũng có lúc kết thúc, vì vậy những lời chia tay thường
+được nói ra một cách nhẹ nhàng và chuyên nghiệp.&lt;/p&gt;
+&lt;p&gt;Tuy nhiên, lần này tôi lại có một cảm giác rất khác. Tôi đọc những lời
+cảm ơn từ phía khách hàng, rồi tự viết lời cảm ơn của mình, nhưng
+trong lòng cứ có một cảm giác bồi hồi khó diễn tả. Tôi không quá buồn,
+bởi dự án đã kết thúc tương đối trọn vẹn và mọi người đều đã hoàn
+thành phần việc của mình. Tôi cũng không hẳn là tiếc nuối một điều cụ
+thể nào đó, nhưng tôi cảm thấy như mình vừa đứng trước một dấu mốc mà
+phía sau là con đường quen thuộc, còn phía trước lại phủ một lớp sương
+mờ.&lt;/p&gt;
+&lt;p&gt;Tôi đã suy nghĩ khá lâu về cảm giác ấy. Có thể tôi lưu luyến những
+người đã làm việc cùng mình, cũng có thể tôi lưu luyến nhịp sống đã
+trở nên quen thuộc trong sáu tháng vừa qua. Tuy nhiên, có lẽ điều
+khiến tôi bồi hồi nhất không nằm ở dự án vừa kết thúc, mà nằm ở câu
+hỏi tôi sẽ làm gì sau đó. Khi tương lai vẫn chưa có một hình dạng rõ
+ràng, ngay cả một lời chào tạm biệt bình thường cũng có thể trở nên
+nặng hơn rất nhiều.&lt;/p&gt;
+&lt;h2 id="nhung-lan-chia-tay-truoc-ay"&gt;&lt;a class="headerlink" href="#nhung-lan-chia-tay-truoc-ay" title="Permanent link"&gt;
+&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/a&gt;Những lần chia tay trước đây&lt;/h2&gt;
+&lt;p&gt;Trước đây, tôi đã tham gia nhiều dự án khác nhau và cũng đã trải qua
+không ít lần chia tay. Có những khách hàng mà tôi chưa kịp nói lời tạm
+biệt thì một dự án mới đã bắt đầu. Khi ấy, tôi chỉ kịp bàn giao những
+công việc còn lại, đóng những tài liệu đang mở và chuyển sự chú ý sang
+những yêu cầu mới. Tôi không có nhiều thời gian để nhìn lại, bởi lịch
+họp, danh sách công việc và những vấn đề kỹ thuật mới đã nhanh chóng
+lấp đầy khoảng trống.&lt;/p&gt;
+&lt;p&gt;Cũng có những giai đoạn mà một dự án chưa kết thúc thì một dự án khác
+đã xuất hiện. Tôi vừa phải hoàn thành những công việc còn lại, vừa
+phải chuẩn bị cho dự án tiếp theo. Trong hoàn cảnh đó, việc kết thúc
+một dự án không tạo ra cảm giác trống trải, bởi tôi biết chính xác
+sáng hôm sau mình cần làm gì. Những lời chào tạm biệt khi ấy giống như
+việc đóng lại một cánh cửa, nhưng ngay bên cạnh đã có một cánh cửa
+khác mở ra.&lt;/p&gt;
+&lt;p&gt;Có lần, tôi còn nghỉ việc trước khi dự án kết thúc. Tôi rời công ty
+khi công việc vẫn đang tiếp tục, và dự án sau đó được bàn giao cho
+người khác. Việc chia tay trong hoàn cảnh ấy cũng có những cảm xúc
+riêng, nhưng tâm trí của tôi lúc đó đã hướng về một môi trường mới.
+Tôi bận suy nghĩ về công việc tiếp theo, về đồng nghiệp mới và về
+những thử thách đang đợi mình, nên không có nhiều thời gian để cảm
+nhận sự kết thúc.&lt;/p&gt;
+&lt;p&gt;Tất nhiên, cũng có những khách hàng mà tôi chia tay trong sự luyến
+tiếc. Có những người đã hỗ trợ tôi rất nhiều, có những dự án giúp tôi
+học được những điều quan trọng, và có những giai đoạn làm việc khiến
+tôi cảm thấy mình thực sự trưởng thành. Tôi đã từng tiếc vì một mối
+quan hệ công việc tốt đẹp phải kết thúc, hoặc vì một sản phẩm mà mình
+dành nhiều tâm sức không còn do mình tiếp tục phát triển. Dù vậy, tôi
+luôn tin rằng cuộc sống sẽ tiếp tục, tôi sẽ gặp những khách hàng khác
+và tham gia những dự án khác.&lt;/p&gt;
+&lt;p&gt;Chính niềm tin đó đã khiến tôi bước qua những lần chia tay trước đây
+khá nhẹ nhàng. Tôi có thể lưu luyến một vài ngày, nhưng tôi không thực
+sự lo lắng. Tôi biết một chặng đường đã kết thúc, nhưng tôi cũng tin
+rằng một chặng đường khác đang chờ đợi. Khi ấy, tương lai chưa chắc đã
+rõ ràng hoàn toàn, nhưng ít nhất tôi vẫn cảm nhận được rằng mình đang
+tiến về phía trước.&lt;/p&gt;
+&lt;p&gt;Lần này lại không giống như vậy. Sau khi gửi đi những lời cảm ơn cuối
+cùng, tôi không nhìn thấy ngay một cánh cửa khác đang mở. Tôi không
+biết dự án tiếp theo sẽ là gì, cũng không chắc những kinh nghiệm mình
+đã tích lũy có còn được thị trường cần đến như trước hay không. Khoảng
+trống xuất hiện sau dự án vì thế không chỉ là khoảng trống trong lịch
+làm việc, mà còn là khoảng trống trong cảm giác an tâm vốn đã theo tôi
+suốt nhiều năm.&lt;/p&gt;
+&lt;h2 id="nhung-ngay-au-tien-cua-gia-inh-toi-tai-nhat-ban"&gt;&lt;a class="headerlink" href="#nhung-ngay-au-tien-cua-gia-inh-toi-tai-nhat-ban" title="Permanent link"&gt;
+&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/a&gt;Những ngày đầu tiên của gia đình tôi tại Nhật Bản&lt;/h2&gt;
+&lt;p&gt;Mấy ngày gần đây, tôi liên tục nhớ lại quãng thời gian khi cả gia đình
+tôi mới sang Nhật Bản. Tôi không chủ động tìm lại những hình ảnh cũ,
+cũng không có một sự kiện đặc biệt nào nhắc tôi về thời điểm ấy. Những
+ký ức cứ tự nhiên xuất hiện khi tôi ngồi một mình, khi tôi đi trên
+đường hoặc khi tôi nhìn thấy một khung cảnh quen thuộc. Có lẽ khi
+không biết phải nhìn về đâu, con người thường có xu hướng quay lại
+nhìn đoạn đường mình đã đi qua.&lt;/p&gt;
+&lt;p&gt;Những ngày đầu tiên ở Nhật Bản không phải là một cuộc sống dễ dàng.
+Chúng tôi phải làm quen với một môi trường mới, một ngôn ngữ mới và
+rất nhiều quy tắc mà trước đó chúng tôi chưa từng biết. Những việc
+tưởng như đơn giản cũng có thể trở thành thử thách, từ việc làm thủ
+tục hành chính, tìm đường, đi tàu, mua sắm cho đến việc trao đổi với
+giáo viên, bác sĩ hoặc nhân viên tại các cơ quan. Cuộc sống khi ấy có
+phần vất vả, nhưng trong ký ức của tôi, mọi người trong gia đình dường
+như đều rất vui.&lt;/p&gt;
+&lt;p&gt;Niềm vui ấy không đến từ việc chúng tôi có một cuộc sống đầy đủ. Trái
+lại, có lẽ mọi thứ khi đó còn thiếu thốn hơn bây giờ rất nhiều. Chúng
+tôi phải tính toán chi tiêu cẩn thận, phải tự tìm hiểu gần như mọi thứ
+và phải cùng nhau giải quyết từng khó khăn nhỏ. Tuy nhiên, chúng tôi
+cảm thấy mình đang đứng trước một khởi đầu mới, và chính cảm giác ấy
+đã tạo ra hy vọng.&lt;/p&gt;
+&lt;p&gt;Chúng tôi đều tin rằng cuộc sống sau này sẽ tốt lên. Tôi tin rằng nếu
+mình làm việc chăm chỉ, học thêm tiếng Nhật, tích lũy kinh nghiệm và
+cố gắng từng ngày, gia đình tôi sẽ dần ổn định. Những khó khăn lúc đó
+không làm tôi quá sợ hãi, bởi tôi nhìn thấy chúng như những phần tất
+yếu của một hành trình đi lên. Tôi chưa biết tương lai cụ thể sẽ như
+thế nào, nhưng tôi tin rằng tương lai ấy sẽ tốt hơn hiện tại.&lt;/p&gt;
+&lt;p&gt;Bây giờ, cuộc sống của gia đình tôi đã ổn định hơn rất nhiều so với
+những ngày đầu. Những việc từng khiến chúng tôi lo lắng đã dần trở
+thành thói quen, và những điều từng xa lạ cũng đã trở nên quen thuộc.
+Tôi đã đi qua nhiều dự án, làm việc với nhiều khách hàng và tích lũy
+được nhiều kinh nghiệm hơn. Nếu nhìn từ điểm xuất phát, có lẽ tôi đã
+đạt được không ít điều mà mình từng mong muốn.&lt;/p&gt;
+&lt;p&gt;Thế nhưng, điều kỳ lạ là tôi lại không còn cảm thấy chắc chắn về tương
+lai như trước. Khi chưa có nhiều thứ trong tay, tôi rất tin rằng ngày
+mai sẽ tốt hơn hôm nay. Khi đã có thêm kinh nghiệm, có thêm trách
+nhiệm và có nhiều điều cần bảo vệ, tôi lại bắt đầu lo rằng ngày mai có
+thể không diễn ra như mình mong đợi. Tôi không biết đó là sự trưởng
+thành, sự thận trọng hay đơn giản chỉ là nỗi lo của một người đã đi đủ
+lâu để hiểu rằng cuộc sống không phải lúc nào cũng tiến theo một đường
+thẳng.&lt;/p&gt;
+&lt;h2 id="khoang-cach-giua-qua-khu-va-hien-tai"&gt;&lt;a class="headerlink" href="#khoang-cach-giua-qua-khu-va-hien-tai" title="Permanent link"&gt;
+&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/a&gt;Khoảng cách giữa quá khứ và hiện tại&lt;/h2&gt;
+&lt;p&gt;Tôi từng nghĩ rằng kinh nghiệm sẽ mang lại sự tự tin. Càng làm việc
+lâu, tôi càng hiểu rõ khả năng của mình, càng biết cách giải quyết vấn
+đề và càng ít hoang mang trước những thay đổi. Điều đó đúng ở một mức
+độ nào đó, bởi tôi biết mình đã trải qua nhiều tình huống khó khăn và
+đã từng tìm ra cách vượt qua. Tuy nhiên, kinh nghiệm cũng khiến tôi
+nhận ra rằng thị trường có thể thay đổi, công nghệ có thể chuyển hướng
+và những điều từng được xem là lợi thế có thể nhanh chóng trở thành
+điều hiển nhiên.&lt;/p&gt;
+&lt;p&gt;Ngày trước, tôi chỉ cần tập trung làm tốt công việc trước mắt. Tôi học
+một công nghệ mới vì dự án cần, tìm hiểu một hệ thống mới vì khách
+hàng yêu cầu và cải thiện kỹ năng bởi tôi muốn làm việc hiệu quả hơn.
+Tôi có thể nhìn thấy khá rõ mối liên hệ giữa nỗ lực và kết quả. Nếu
+tôi học tốt hơn, làm tốt hơn và có thêm kinh nghiệm, tôi tin rằng cơ
+hội cũng sẽ nhiều hơn.&lt;/p&gt;
+&lt;p&gt;Gần đây, mối liên hệ đó dường như không còn đơn giản như trước. Tôi
+vẫn có thể học thêm, vẫn có thể làm việc chăm chỉ và vẫn có thể cải
+thiện bản thân, nhưng tôi không chắc những nỗ lực ấy sẽ dẫn mình đến
+đâu. Có quá nhiều công nghệ mới xuất hiện, quá nhiều vai trò thay đổi,
+và có quá nhiều tiêu chuẩn mới được đặt ra. Tôi cảm thấy như mình đang
+đứng trên một mặt đất vẫn còn chắc chắn, nhưng xung quanh đã bắt đầu
+chuyển động.&lt;/p&gt;
+&lt;p&gt;Có lẽ vì thế mà lần kết thúc dự án này khiến tôi nghĩ nhiều đến vậy.
+Nếu nó chỉ đơn giản là kết thúc một công việc để bắt đầu một công việc
+khác, tôi đã không có cảm giác bồi hồi kéo dài. Điều làm tôi lo lắng
+là tôi không biết con đường quen thuộc có còn tiếp tục hay không. Tôi
+không biết sau này mình sẽ đi về đâu, và tôi cũng không biết mình cần
+chuẩn bị chính xác cho điều gì.&lt;/p&gt;
+&lt;h2 id="khi-ngoai-kia-ai-cung-co-nhung-noi-lo-giong-nhau"&gt;&lt;a class="headerlink" href="#khi-ngoai-kia-ai-cung-co-nhung-noi-lo-giong-nhau" title="Permanent link"&gt;
+&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/a&gt;Khi ngoài kia ai cũng có những nỗi lo giống nhau&lt;/h2&gt;
+&lt;p&gt;Tôi không biết phải chia sẻ những suy nghĩ này với ai. Đây không phải
+là một câu chuyện quá đặc biệt, cũng không phải là một biến cố chỉ xảy
+ra với riêng tôi. Nếu tôi nói rằng mình lo lắng về tương lai công
+việc, có lẽ rất nhiều người cũng sẽ nói rằng họ có cùng nỗi lo. Ngoài
+kia, thị trường dường như không thực sự dễ dàng với bất kỳ ai.&lt;/p&gt;
+&lt;p&gt;Tôi lên các diễn đàn để đọc những câu chuyện của những người làm trong
+ngành công nghệ thông tin. Tôi muốn biết liệu tình hình của mình có
+phải là cá biệt hay không, và tôi cũng muốn tìm một tín hiệu nào đó để
+cảm thấy yên tâm hơn. Tuy nhiên, những gì tôi nhìn thấy phần lớn lại
+là các câu chuyện về việc khó tìm dự án, khó chuyển việc, yêu cầu
+tuyển dụng ngày càng cao và mức độ cạnh tranh ngày càng lớn. Người ít
+kinh nghiệm lo rằng mình không có cơ hội bắt đầu, còn người nhiều kinh
+nghiệm lại lo rằng kinh nghiệm của mình không còn phù hợp.&lt;/p&gt;
+&lt;p&gt;Tôi nhận ra rằng rất nhiều người cũng đang cố gắng thích nghi. Có
+người học thêm một ngôn ngữ lập trình mới, có người chuyển sang dữ
+liệu, có người học điện toán đám mây và có người tập trung hoàn toàn
+vào trí tuệ nhân tạo. Mỗi người đều đang tự tìm một hướng đi, nhưng
+không ai thực sự biết hướng nào sẽ an toàn. Những chia sẻ ấy khiến tôi
+cảm thấy mình không cô độc, nhưng chúng không làm sự mơ hồ trong tôi
+biến mất.&lt;/p&gt;
+&lt;p&gt;Khi một khó khăn mang tính cá nhân, đôi khi chúng ta có thể tìm ra một
+nguyên nhân cụ thể và một cách giải quyết cụ thể. Tuy nhiên, khi cả
+thị trường cùng thay đổi, tôi không biết mình nên đứng ở đâu để quan
+sát. Tôi không thể chỉ đơn giản thay đổi một kỹ năng rồi tin rằng mọi
+thứ sẽ ổn. Tôi cần hiểu bản thân thực sự muốn gì, mình còn có thể làm
+tốt điều gì và giá trị nào của mình có thể tồn tại qua những thay đổi
+liên tục.&lt;/p&gt;
+&lt;h2 id="tri-tue-nhan-tao-ang-can-quet-moi-mat-tran"&gt;&lt;a class="headerlink" href="#tri-tue-nhan-tao-ang-can-quet-moi-mat-tran" title="Permanent link"&gt;
+&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/a&gt;Trí tuệ nhân tạo đang càn quét mọi mặt trận&lt;/h2&gt;
+&lt;p&gt;Trong những cuộc thảo luận gần đây, trí tuệ nhân tạo xuất hiện ở gần
+như mọi nơi. Trí tuệ nhân tạo được nhắc đến trong phát triển phần mềm,
+kiểm thử, thiết kế, phân tích dữ liệu, vận hành hệ thống và cả quản lý
+dự án. Những công việc trước đây cần nhiều thời gian của con người nay
+có thể được hỗ trợ hoặc tự động hóa ở một mức độ nào đó. Những giới
+hạn của công cụ vẫn còn tồn tại, nhưng tốc độ thay đổi khiến tôi khó
+có thể xem đây chỉ là một trào lưu nhất thời.&lt;/p&gt;
+&lt;p&gt;Tôi không phản đối trí tuệ nhân tạo. Ngược lại, tôi đã tìm hiểu, sử
+dụng và nhìn thấy rất nhiều tiềm năng thực tế của nó. Tôi hiểu rằng
+một công cụ mới không chỉ lấy đi công việc, mà còn có thể tạo ra những
+công việc và những cách làm việc mới. Nếu biết sử dụng đúng cách, con
+người có thể làm được nhiều hơn, nhanh hơn và tập trung vào những việc
+có giá trị cao hơn.&lt;/p&gt;
+&lt;p&gt;Tuy nhiên, hiểu điều đó không có nghĩa là tôi không lo lắng. Khi trí
+tuệ nhân tạo có thể viết mã, phân tích yêu cầu, đề xuất kiến trúc và
+hỗ trợ xử lý lỗi, tôi không thể tránh khỏi việc tự hỏi vai trò của một
+kỹ sư phần mềm sẽ thay đổi đến mức nào. Những kỹ năng mà tôi đã dành
+nhiều năm để rèn luyện sẽ còn quan trọng trong bao lâu, và phần nào
+trong công việc của tôi sẽ dần được công cụ đảm nhận? Tôi biết rằng
+câu trả lời không đơn giản là con người sẽ bị thay thế hoàn toàn,
+nhưng tôi cũng không thể tự trấn an rằng mọi thứ sẽ giữ nguyên như
+trước.&lt;/p&gt;
+&lt;p&gt;Điều khiến tôi bất an không hẳn là sự tồn tại của trí tuệ nhân tạo, mà
+là tốc độ của sự thay đổi. Trong quá khứ, tôi có thể học một công nghệ
+trong vài tháng, sử dụng nó trong vài năm và tiếp tục xây dựng kinh
+nghiệm từ đó. Bây giờ, những công cụ và phương pháp mới xuất hiện liên
+tục, khiến tôi có cảm giác mình luôn trong trạng thái phải chạy theo.
+Ngay cả khi tôi học được một điều hôm nay, tôi cũng không chắc điều đó
+sẽ còn tạo ra khác biệt lớn vào ngày mai.&lt;/p&gt;
+&lt;p&gt;Tôi hiểu rằng thích nghi là một phần của nghề công nghệ. Tôi đã làm
+điều đó trong nhiều năm và có lẽ sẽ còn phải tiếp tục làm như vậy. Tuy
+nhiên, có những ngày tôi cảm thấy hào hứng trước những khả năng mới,
+và cũng có những ngày tôi cảm thấy mệt mỏi vì không biết đích đến nằm
+ở đâu. Cảm xúc của tôi cứ dao động giữa tò mò và lo lắng, giữa mong
+muốn bước tiếp và nỗi sợ mình đang đi chậm hơn thế giới.&lt;/p&gt;
+&lt;h2 id="tim-lai-cam-giac-ban-au-qua-nhung-cuoc-thi-lap-trinh"&gt;&lt;a class="headerlink" href="#tim-lai-cam-giac-ban-au-qua-nhung-cuoc-thi-lap-trinh" title="Permanent link"&gt;
+&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/a&gt;Tìm lại cảm giác ban đầu qua những cuộc thi lập trình&lt;/h2&gt;
+&lt;p&gt;Trong thời gian gần đây, tôi tích cực tham gia các cuộc thi lập trình
+trực tuyến. Một phần lý do là tôi muốn rèn luyện tư duy và cải thiện
+khả năng giải quyết vấn đề. Tuy nhiên, sâu xa hơn, tôi muốn tìm lại
+những điều từng khiến mình đam mê công nghệ. Tôi muốn nhớ lại cảm giác
+khi mình ngồi trước một bài toán, suy nghĩ rất lâu, thử nhiều cách
+khác nhau và cuối cùng tìm được một lời giải đúng.&lt;/p&gt;
+&lt;p&gt;Có một niềm vui rất đặc biệt trong việc giải quyết một bài toán khó.
+Niềm vui ấy không phụ thuộc vào khách hàng, dự án hay những cuộc họp.
+Khi chương trình chạy đúng, tôi biết chính xác mình đã làm được điều
+gì. Tôi có thể nhìn thấy lỗi sai của mình, sửa lại cách suy nghĩ và
+học thêm một phương pháp mới. Trong một thế giới nghề nghiệp ngày càng
+khó đoán, sự rõ ràng ấy khiến tôi cảm thấy dễ chịu.&lt;/p&gt;
+&lt;p&gt;Những cuộc thi lập trình cũng nhắc tôi nhớ vì sao mình đã chọn công
+việc này. Tôi từng thích lập trình không chỉ vì đó là một nghề nghiệp
+có triển vọng, mà vì tôi thích cảm giác biến một ý tưởng thành thứ có
+thể hoạt động. Tôi thích việc một vấn đề phức tạp có thể được chia
+nhỏ, phân tích và giải quyết bằng logic. Tôi thích khoảnh khắc tìm ra
+một cách tiếp cận tốt hơn sau nhiều lần đi sai hướng.&lt;/p&gt;
+&lt;p&gt;Tôi vẫn thích những điều đó. Dù có những bài toán khiến tôi mất nhiều
+thời gian, dù có những lần tôi nộp sai liên tục hoặc không thể tìm ra
+lời giải, tôi vẫn muốn tiếp tục. Tôi không còn tham gia với tâm thế
+của một người trẻ chỉ muốn chứng minh mình giỏi đến đâu. Tôi tham gia
+vì tôi muốn giữ lại một phần tình yêu nguyên bản đối với nghề, trước
+khi mọi thứ bị bao phủ bởi lịch họp, tiến độ, chi phí và sự bất an về
+thị trường.&lt;/p&gt;
+&lt;p&gt;Thế nhưng, ngay cả lĩnh vực này cũng đang chịu ảnh hưởng mạnh mẽ của
+trí tuệ nhân tạo. Những bài toán từng cần con người suy nghĩ rất lâu
+nay có thể được công cụ phân tích và đề xuất lời giải trong thời gian
+ngắn. Những kỹ năng mà người học phải rèn luyện qua nhiều năm có thể
+được mô phỏng một phần chỉ bằng vài câu yêu cầu. Điều đó khiến tôi vừa
+ngạc nhiên, vừa khâm phục, nhưng đồng thời cũng khiến tôi tự hỏi việc
+mình đang cố gắng có còn ý nghĩa như trước hay không.&lt;/p&gt;
+&lt;p&gt;Tôi hiểu rằng việc giải bài không chỉ để tạo ra một đoạn mã đúng. Quá
+trình suy nghĩ vẫn giúp tôi rèn luyện tư duy, sự kiên nhẫn và khả năng
+nhìn nhận vấn đề từ nhiều góc độ. Một công cụ có thể đưa ra đáp án,
+nhưng việc tự mình hiểu vì sao đáp án đó đúng vẫn mang lại giá trị
+riêng. Dù vậy, tôi không thể phủ nhận rằng ranh giới giữa việc con
+người luyện tập và việc công cụ hỗ trợ đang ngày càng trở nên mờ hơn.&lt;/p&gt;
+&lt;p&gt;Tôi vẫn tiếp tục tham gia các cuộc thi, nhưng tâm trạng không còn đơn
+giản. Có lúc tôi cảm thấy mình đang tìm lại được niềm vui cũ, nhưng có
+lúc tôi lại nghĩ rằng mình chỉ đang cố bám vào một điều quen thuộc
+giữa quá nhiều thay đổi. Tôi vừa muốn tiến lên, vừa muốn quay lại
+khoảng thời gian mà niềm đam mê chưa đi kèm với nỗi lo về tương lai.
+Có lẽ đó là lý do những cuộc thi mang lại cho tôi cả niềm vui lẫn một
+chút buồn.&lt;/p&gt;
+&lt;h2 id="toi-ang-so-ieu-gi"&gt;&lt;a class="headerlink" href="#toi-ang-so-ieu-gi" title="Permanent link"&gt;
+&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/a&gt;Tôi đang sợ điều gì?&lt;/h2&gt;
+&lt;p&gt;Khi nghĩ kỹ hơn, tôi nhận ra mình không chỉ sợ thiếu một dự án hay
+thiếu một cơ hội việc làm. Tôi sợ cảm giác không còn biết mình nên
+chuẩn bị cho điều gì. Nếu có một mục tiêu rõ ràng, tôi có thể học,
+luyện tập và dành thời gian để tiến về phía mục tiêu ấy. Điều khó khăn
+nhất hiện nay là mọi hướng đi đều có vẻ vừa có tiềm năng, vừa có rủi
+ro.&lt;/p&gt;
+&lt;p&gt;Tôi cũng sợ rằng một ngày nào đó những gì mình từng tự hào sẽ không
+còn đủ giá trị. Tôi đã dành nhiều năm để tích lũy kinh nghiệm, học
+cách làm việc với khách hàng, xây dựng hệ thống và giải quyết những
+vấn đề thực tế. Những điều đó không thể biến mất chỉ sau một đêm,
+nhưng cách thị trường đánh giá chúng có thể thay đổi. Tôi không biết
+liệu mình nên tiếp tục đào sâu những thế mạnh hiện có hay phải nhanh
+chóng trở thành một phiên bản hoàn toàn khác.&lt;/p&gt;
+&lt;p&gt;Bên cạnh đó, tôi còn có trách nhiệm với gia đình. Khi còn trẻ và chỉ
+cần chịu trách nhiệm cho bản thân, tôi có thể chấp nhận nhiều rủi ro
+hơn. Bây giờ, mỗi quyết định không chỉ ảnh hưởng đến riêng tôi, nên
+tôi không thể đơn giản nói rằng mình sẽ thử mọi thứ rồi xem điều gì
+xảy ra. Tôi cần vừa tiến lên, vừa bảo vệ sự ổn định mà gia đình đã mất
+nhiều năm mới xây dựng được.&lt;/p&gt;
+&lt;p&gt;Có lẽ vì thế mà tôi nhớ rất nhiều về những ngày đầu tại Nhật Bản. Khi
+đó, chúng tôi có ít thứ hơn để mất và có rất nhiều điều để hy vọng.
+Bây giờ, chúng tôi đã có một cuộc sống ổn định hơn, nhưng chính sự ổn
+định ấy lại khiến tôi sợ những thay đổi có thể xảy ra. Tôi nhận ra
+rằng càng sở hữu nhiều điều quan trọng, con người càng khó bước đi một
+cách vô tư.&lt;/p&gt;
+&lt;h2 id="co-the-toi-chua-can-phai-co-cau-tra-loi-ngay-lap-tuc"&gt;&lt;a class="headerlink" href="#co-the-toi-chua-can-phai-co-cau-tra-loi-ngay-lap-tuc" title="Permanent link"&gt;
+&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/a&gt;Có thể tôi chưa cần phải có câu trả lời ngay lập tức&lt;/h2&gt;
+&lt;p&gt;Tôi đã cố gắng tìm một kết luận rõ ràng cho những suy nghĩ của mình,
+nhưng đến lúc này tôi vẫn chưa tìm thấy. Tôi không thể biết chắc thị
+trường sẽ thay đổi như thế nào, vai trò của kỹ sư phần mềm sẽ trở
+thành gì hay bản thân tôi sẽ làm công việc nào trong vài năm tới. Tôi
+cũng không thể quay lại quá khứ để lấy lại cảm giác tin tưởng tuyệt
+đối rằng mọi thứ chắc chắn sẽ tốt đẹp hơn. Có lẽ điều duy nhất tôi có
+thể làm là chấp nhận rằng mình đang ở trong một giai đoạn chưa có câu
+trả lời.&lt;/p&gt;
+&lt;p&gt;Sự mơ hồ không có nghĩa là mọi nỗ lực đều vô ích. Tôi vẫn có thể tiếp
+tục học, tiếp tục làm những việc mình thấy có ý nghĩa và tiếp tục quan
+sát thị trường bằng một tâm thế tỉnh táo. Tôi có thể tìm hiểu trí tuệ
+nhân tạo mà không cần phủ nhận những kỹ năng mình đã tích lũy. Tôi
+cũng có thể tham gia các cuộc thi lập trình không phải vì chúng đảm
+bảo cho tôi một tương lai, mà vì chúng giúp tôi duy trì khả năng suy
+nghĩ và nhắc tôi nhớ rằng tôi vẫn yêu thích việc giải quyết vấn đề.&lt;/p&gt;
+&lt;p&gt;Tôi cũng cần thừa nhận rằng việc lo lắng không phải là dấu hiệu của sự
+yếu đuối. Nỗi lo xuất hiện vì tôi quan tâm đến công việc, gia đình và
+tương lai của mình. Nếu tôi hoàn toàn thờ ơ, có lẽ tôi đã không suy
+nghĩ nhiều đến như vậy. Điều quan trọng không phải là loại bỏ mọi nỗi
+lo, mà là không để nỗi lo khiến mình ngừng bước.&lt;/p&gt;
+&lt;p&gt;Có thể dự án vừa kết thúc không phải là dấu chấm hết, mà chỉ là một
+khoảng nghỉ dài hơn những lần trước. Khoảng nghỉ ấy khiến tôi khó chịu
+vì tôi chưa quen với việc không biết điều gì đang đợi mình. Tuy nhiên,
+nó cũng cho tôi cơ hội nhìn lại quãng đường đã qua, nhận ra những điều
+mình vẫn còn yêu thích và suy nghĩ nghiêm túc hơn về hướng đi tiếp
+theo. Tôi chưa biết mình sẽ tìm thấy điều gì, nhưng ít nhất tôi hiểu
+rằng mình không thể tiếp tục chỉ dựa vào quán tính.&lt;/p&gt;
+&lt;h2 id="sau-nhung-suy-nghi-van-vo"&gt;&lt;a class="headerlink" href="#sau-nhung-suy-nghi-van-vo" title="Permanent link"&gt;
+&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/a&gt;Sau những suy nghĩ vẩn vơ&lt;/h2&gt;
+&lt;p&gt;Những ngày này, tôi vẫn nhớ về dự án vừa kết thúc và những lời chào
+tạm biệt đã được gửi đi. Tôi vẫn nhớ những dự án trước, những khách
+hàng trước và những lần mình bước sang một công việc mới mà không kịp
+cảm thấy trống trải. Tôi cũng nhớ những ngày đầu tiên của gia đình tại
+Nhật Bản, khi cuộc sống còn nhiều khó khăn nhưng niềm hy vọng lại rất
+rõ ràng. Tất cả những ký ức ấy đan xen với nhau, khiến hiện tại trong
+tôi vừa có sự biết ơn, vừa có sự bất an.&lt;/p&gt;
+&lt;p&gt;Tôi biết mình đã đi được một quãng đường dài. Tôi đã vượt qua những
+khó khăn mà ngày trước mình chưa từng hình dung, đã học được nhiều
+điều và đã xây dựng được một cuộc sống tốt hơn so với lúc bắt đầu.
+Những điều đó là có thật, cho dù tương lai hiện tại có mờ mịt đến đâu.
+Có lẽ tôi cần nhớ rằng phiên bản của tôi trong quá khứ cũng không hề
+biết chính xác điều gì sẽ xảy ra, nhưng vẫn từng bước đi đến ngày hôm
+nay.&lt;/p&gt;
+&lt;p&gt;Sự khác biệt là ngày trước tôi nhìn sự không chắc chắn bằng hy vọng,
+còn bây giờ tôi thường nhìn nó bằng lo lắng. Có thể tương lai không
+thực sự trở nên tối hơn, mà chỉ là tôi đã nhận thức rõ hơn về những
+rủi ro. Nếu vậy, điều tôi cần tìm lại không phải là sự ngây thơ của
+những ngày đầu, mà là lòng can đảm để tiếp tục bước đi dù đã hiểu rằng
+không có gì được bảo đảm.&lt;/p&gt;
+&lt;p&gt;Tôi vẫn chưa biết sau này mình sẽ đi về đâu. Tôi chưa biết dự án tiếp
+theo sẽ là gì, thị trường sẽ thay đổi ra sao hay trí tuệ nhân tạo sẽ
+đưa nghề nghiệp của tôi đến một hình dạng như thế nào. Tôi cũng chưa
+biết những cuộc thi lập trình mà mình đang tham gia sẽ mang lại điều
+gì ngoài một chút niềm vui và một vài giờ được tập trung hoàn toàn vào
+một bài toán. Tuy nhiên, có lẽ ở thời điểm này, như vậy đã là đủ để
+tôi tiếp tục.&lt;/p&gt;
+&lt;p&gt;Tôi sẽ vẫn học những điều mới, vẫn cố gắng thích nghi và vẫn giữ lại
+những gì từng khiến mình yêu thích nghề này. Tôi không muốn giả vờ
+rằng mình hoàn toàn lạc quan, bởi sự mờ mịt trong tôi là có thật.
+Nhưng tôi cũng không muốn kết luận rằng mọi con đường đều đã khép lại
+chỉ vì tôi chưa nhìn thấy chúng. Có thể ở đâu đó phía trước vẫn có một
+cánh cửa khác, chỉ là lần này tôi phải đi thêm một đoạn mới có thể
+nhìn thấy nó.&lt;/p&gt;
+&lt;p&gt;Sau cùng, những lời chào tạm biệt của tuần trước có lẽ đã khiến tôi
+dừng lại lâu hơn bình thường. Tôi đã đứng giữa một chặng đường cũ vừa
+kết thúc và một chặng đường mới chưa bắt đầu, rồi để mặc cho những suy
+nghĩ vẩn vơ kéo mình về quá khứ và đẩy mình tới những viễn cảnh chưa
+rõ ràng. Tôi vẫn còn bồi hồi, vẫn còn lo lắng và vẫn chưa có một câu
+trả lời hoàn chỉnh. Dù vậy, tôi nghĩ mình rồi sẽ tiếp tục bước đi, bởi
+trong những năm qua, đó vẫn luôn là cách tôi vượt qua những giai đoạn
+không biết trước tương lai.&lt;/p&gt;</content><category term="Cuộc sống"/><category term="goodbye"/><category term="software"/><category term="computer"/><category term="engineer"/><category term="work"/><category term="think"/><category term="misc"/><category term="miscellaneous"/><category term="thinking"/></entry><entry><title>Những suy nghĩ vẩn vơ về AI: khi tương lai đến sớm hơn tôi tưởng</title><link href="https://manhhomienbienthuy.github.io/2026/10/23/nhung-suy-nghi-van-vo-ve-ai-khi-tuong-lai-den-som-hon-toi-tuong.html" rel="alternate"/><published>2026-10-23T12:34:29+09:00</published><updated>2026-10-23T03:34:29+00:00</updated><author><name>manhhomienbienthuy</name></author><id>tag:manhhomienbienthuy.github.io,2026-10-23:/2026/10/23/nhung-suy-nghi-van-vo-ve-ai-khi-tuong-lai-den-som-hon-toi-tuong.html</id><summary type="html">Gần đây, tôi thường có cảm giác công nghệ AI đang phát triển nhanh hơn khả năng thích nghi của chính mình. Một công cụ hôm nay còn khiến tôi hào hứng, vài tháng sau đã có thể trở nên bình thường, thậm chí lỗi thời. Giữa những thay đổi […]</summary><content type="html">&lt;p&gt;Gần đây, tôi thường có cảm giác công nghệ AI đang phát triển nhanh hơn
 khả năng thích nghi của chính mình. Một công cụ hôm nay còn khiến tôi
 hào hứng, vài tháng sau đã có thể trở nên bình thường, thậm chí lỗi
 thời. Giữa những thay đổi chóng mặt ấy, tôi chợt nhớ đến một câu
@@ -40567,372 +40978,4 @@ làm thủ tục nhập cảnh rồi đi ra cửa luôn.  Thủ tục nhập c�
 thôi, mình về nước mà, nhưng ra cửa thì gặp hải quan, họ yêu cầu soi
 chiếu hành lý của mình.  Lúc trước ở Nhật về cũng bị yêu cầu như thế,
 nhưng mình thấy có người đi thẳng ra cửa luôn còn mình thì bị gọi.  Có
-lẽ khách du lịch thì không cần soi chăng (??)&lt;/p&gt;</content><category term="Du lịch"/><category term="Singapore"/><category term="South East Asia"/><category term="abroad"/><category term="travel"/><category term="tour"/></entry><entry><title>Little endian vs. Big endian</title><link href="https://manhhomienbienthuy.github.io/2018/09/20/little-endian-vs-big-endian.html" rel="alternate"/><published>2018-09-20T03:00:00+00:00</published><updated>2025-06-05T09:22:54+00:00</updated><author><name>manhhomienbienthuy</name></author><id>tag:manhhomienbienthuy.github.io,2018-09-20:/2018/09/20/little-endian-vs-big-endian.html</id><summary type="html">Little endian và big endian, đây là hai phương thức khác nhau để lưu trữ dữ liệu dạng nhị phân (binary). Bình thường thì chúng ta cũng chẳng cần quan tâm đến chúng làm gì. Bởi mọi việc sẽ được tự động hoá hết. Thế nhưng có những tình huống […]</summary><content type="html">&lt;p&gt;Little endian và big endian, đây là hai phương thức khác nhau để lưu
-trữ dữ liệu dạng nhị phân (binary).  Bình thường thì chúng ta cũng
-chẳng cần quan tâm đến chúng làm gì.  Bởi mọi việc sẽ được tự động hoá
-hết.&lt;/p&gt;
-&lt;p&gt;Thế nhưng có những tình huống, ví dụ khi phải xử lý các tập tin có cấu
-trúc, tập tin binary, nhất là những tập tin được ghi bằng ngôn ngữ
-khác, thì việc hiểu về little endian và big endian là rất quan trọng.
-Bởi nếu không, rất có thể chúng ta sẽ đọc sai thứ tự và xử lý với dữ
-liệu được hiểu sai.&lt;/p&gt;
-&lt;div class="toc"&gt;&lt;span class="toctitle"&gt;Mục lục&lt;/span&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="#du-lieu"&gt;Dữ liệu&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#little-endian-va-big-endian-la-gi"&gt;Little endian và big endian là gì?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#little-endian-va-big-endian-uoc-dung-tren-nhung-may-tinh-nao"&gt;Little endian và big endian được dùng trên những máy tính nào?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#cac-lam-nao-thi-tot-hon-little-endian-hay-big-endian"&gt;Các làm nào thì tốt hơn: little endian hay big endian?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#xem-cac-byte-du-lieu-trong-bo-nho"&gt;Xem các byte dữ liệu trong bộ nhớ&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#ieu-nay-anh-huong-the-nao-en-viec-lap-trinh"&gt;Điều này ảnh hưởng thế nào đến việc lập trình&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#van-e-nuxi"&gt;Vấn đề NUXI&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#trao-oi-du-lieu-giua-cac-may-co-endian-khac-nhau"&gt;Trao đổi dữ liệu giữa các máy có endian khác nhau&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="#su-dung-chung-inh-dang"&gt;Sử dụng chung định dạng&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#su-dung-bom-byte-order-mark"&gt;Sử dụng BOM (Byte Order Mark)&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;h2 id="du-lieu"&gt;&lt;a class="headerlink" href="#du-lieu" title="Permanent link"&gt;
-&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
-&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
-&lt;/svg&gt;
-&lt;/a&gt;Dữ liệu&lt;/h2&gt;
-&lt;p&gt;Dữ liệu là thể hiện của thông tin dưới dạng lưu trữ được.  Thông tin
-là thứ trừu tượng, không có hình dạng, đó là những hiểu biết về các sự
-vật, sự việc xung quanh chúng ta.  Để lưu trữ, cũng như truyền đạt
-thông tin đến mọi người, chúng ta cần đến dữ liệu.  Dữ liệu có thể là
-chữ viết, hình ảnh được ghi trên giấy, tất cả chúng ta dữ liệu mà con
-người có thể hiểu được.&lt;/p&gt;
-&lt;p&gt;Nhưng những dữ liệu đó cần phải được mã hoá một lần nữa, nếu chúng ta
-muốn lưu trữ chúng trên máy tính.  Như chúng ta đều biết, máy tính chỉ
-làm việc với dữ liệu được mã hoá dưới dạng nhị phân, vậy nên mọi dữ
-liệu cần được mã hoá thành nhị phân mới có thể xử lý trên máy tính
-được.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Thực ra điều này chỉ đúng với máy tính số (digital electronic
-computer).  Nghe nói hiện nay máy tính lượng tử, máy tính sinh học
-cũng đang được phát triển, hy vọng trong vài năm tới, chúng ta sẽ
-update lại kiến thức về dữ liệu.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Thực ra, máy tính không hiểu được các ký tự 0, 1 trong hệ nhị phân
-đâu, nó hoạt động theo các tín hiệu điện tử.  Mô tả chính xác thì rất
-khó, nhưng chúng ta có thể hiểu “sơ sơ” rằng, gặp bit 1 thì sẽ có dòng
-diện, gặp bit 0 thì không có.  Như vậy, các bit 0, 1 được xử lý thành
-các tín hiệu điện tử tương ứng, và chúng ta coi đó như máy tính đã
-hiểu được dữ liệu nhị phân.&lt;/p&gt;
-&lt;p&gt;Thế nhưng, mặc dù cùng sử dụng tín hiệu dạng nhị phân, các máy tính
-khác nhau cũng không thực sự nói chung một ngôn ngữ.  Cũng giống như
-coi người vậy, khi nhìn các ký tự &lt;code&gt;a&lt;/code&gt;, &lt;code&gt;b&lt;/code&gt;, &lt;code&gt;c&lt;/code&gt; có người hiểu, có
-người không.  Máy tính khi nhìn vào các tín hiệu tương ứng với các ký
-hiệu &lt;code&gt;0&lt;/code&gt; hay &lt;code&gt;1&lt;/code&gt;, mỗi máy tính có thể hiểu theo một cách khác nhau.&lt;/p&gt;
-&lt;p&gt;Thế nhưng, rất may là các máy tính vẫn hoạt động theo những tiêu chuẩn
-chung, thế nên nó vẫn có thể giao tiếp với nhau được.  Tuy nhiên, lưu
-ý rằng, không phải bất cứ lúc nào, các máy tính cũng có thể hiểu được
-lẫn nhau.&lt;/p&gt;
-&lt;p&gt;Trong máy tính, các dữ liệu nhị phân không được xử lý theo từng bit
-riêng lẻ, mà được xử lý thành từng khối 8 bit một, và đơn vị xử lý nhỏ
-nhất này gọi là byte.&lt;/p&gt;
-&lt;p&gt;Ví dụ, số nguyên &lt;code&gt;123456789&lt;/code&gt; được biểu diễn dưới dạng nhị phân sẽ là
-(ở đây tôi cho rằng kiểu dữ liệu &lt;code&gt;int&lt;/code&gt; sẽ có kích thước là 4 byte, tuy
-nhiên, nhiều hệ thống 64 bit đã nâng kích thước này lên 8 byte)&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;00000111 01011011 11001101 00010101
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Để ngắn gọn, chúng ta có thể viết nó dưới dạng hexa như sau:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;07 5b cd 15
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Đã có bao giờ, bạn tự hỏi, khi ghi dữ liệu này trên đĩa cứng chẳng
-hạn, nó được ghi thế nào chưa.  Bạn cho rằng, nó sẽ được ghi lần lượt
-theo thứ tự mà chúng ta đang đọc và viết ở trên, thì bạn đã nhầm.&lt;/p&gt;
-&lt;p&gt;Đây là cách viết theo kiểu số Ả rập cho chúng ta dễ hiểu thôi, máy
-tính không “đọc” các ký tự giống như chúng ta nên nó cũng không lưu
-trữ giống cách chúng ta viết các ký tự này ra đâu.  Việc ghi dữ liệu
-như thế nào chính là lúc little endian và big endian được dùng đến.&lt;/p&gt;
-&lt;h2 id="little-endian-va-big-endian-la-gi"&gt;&lt;a class="headerlink" href="#little-endian-va-big-endian-la-gi" title="Permanent link"&gt;
-&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
-&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
-&lt;/svg&gt;
-&lt;/a&gt;Little endian và big endian là gì?&lt;/h2&gt;
-&lt;p&gt;Little endian và big endian là hai phương thức khác nhau để lưu trữ dữ
-liệu.  Sự khác biệt của little endian và big endian khi lưu trữ chính
-là ở việc sắp xếp thứ tự các byte dữ liệu.&lt;/p&gt;
-&lt;p&gt;Trong cơ chế lưu trữ little endian (xuất phát từ “little-end” nghĩa
-kết thúc nhỏ hơn), byte cuối cùng trong biểu diễn nhị phân trên sẽ
-được ghi trước.  Ví dụ &lt;code&gt;123456789&lt;/code&gt; ghi theo kiểu little endian sẽ
-thành&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;15 cd 5b 07
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Hơi ngược một chút đúng không?  Big endian (xuất phát từ “big-end”)
-thì ngược lại, là cơ chế ghi dữ liệu theo thứ tự bình thường mà chúng
-ta vẫn dùng.  &lt;code&gt;123456789&lt;/code&gt; được lưu trữ vẫn theo đúng thứ tự là&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;07 5b cd 15
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Các thuật ngữ big-end hay little-end xuất phát từ cuốn tiểu thuyết
-Gulliver du ký (Gulliver’s Travels), trong đó nhân vật Lilliputans
-tranh luận về việc nên đập trứng bằng đầu to hay nhỏ.&lt;/p&gt;
-&lt;p&gt;Và ngành IT đã ứng dụng thuật ngữ ngày, tương đối giống với nghĩa gốc.
-Lưu ý rằng, little endian hay big endian chỉ khác nhau ở cách sắp xếp
-các &lt;strong&gt;byte&lt;/strong&gt; dữ liệu, còn thứ tự từng bit trong byte thì giống nhau.
-Rất may, các máy tính vẫn có điểm trung này.&lt;/p&gt;
-&lt;p&gt;Thêm một lưu ý nữa rằng, little endian hay big endian chỉ khác biệt
-khi cần lưu trữ những dữ liệu có nhiều byte.  Những dữ liệu chỉ có 1
-byte (ví dụ ký tự ASCII) thì không ảnh hưởng gì (chính xác là dù dùng
-phương thức nào kết quả cũng như nhau)&lt;/p&gt;
-&lt;h2 id="little-endian-va-big-endian-uoc-dung-tren-nhung-may-tinh-nao"&gt;&lt;a class="headerlink" href="#little-endian-va-big-endian-uoc-dung-tren-nhung-may-tinh-nao" title="Permanent link"&gt;
-&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
-&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
-&lt;/svg&gt;
-&lt;/a&gt;Little endian và big endian được dùng trên những máy tính nào?&lt;/h2&gt;
-&lt;p&gt;Việc sắp xếp các byte dữ liệu theo kiểu little endian hay big endian
-không chỉ xảy ra khi chúng ta lưu trữ dữ liệu ra bộ nhớ ngoài.  Mọi
-hoạt động của máy tính đều sử dụng dữ liệu nhị phân, nên little
-endian/big endian hiện hữu trong mọi hoạt động của máy tính.&lt;/p&gt;
-&lt;p&gt;Ngoài việc sử dụng little endian/big endian một phần phụ thuộc vào
-phần mềm (do lập trình viên cố ý sử dụng một trong hai loại, hoặc ngôn
-ngữ lập trình quy định trước), nó còn phụ thuộc vào bộ vi xử lý của
-chính máy tính đó.&lt;/p&gt;
-&lt;p&gt;Các bộ vi xử lý Intel đều sử dụng little endian, các bộ vi xử lý cả
-ARM trước đây cũng là little endian, nhưng hiện này ARM đã nâng cấp vi
-xử lý của mình thành bi-endian (tức là xử lý cả little endian và big
-endian).&lt;/p&gt;
-&lt;p&gt;Các bộ vi xử lý PowerPC và SPARK trước đây đều là big endian, nhưng
-hiện nay chúng cũng được nâng cấp thành bi-endian.&lt;/p&gt;
-&lt;h2 id="cac-lam-nao-thi-tot-hon-little-endian-hay-big-endian"&gt;&lt;a class="headerlink" href="#cac-lam-nao-thi-tot-hon-little-endian-hay-big-endian" title="Permanent link"&gt;
-&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
-&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
-&lt;/svg&gt;
-&lt;/a&gt;Các làm nào thì tốt hơn: little endian hay big endian?&lt;/h2&gt;
-&lt;p&gt;Little endian hay big endian cũng như tranh luận gốc về việc đập
-trứng, không có một phương thức nào thực sự tốt hơn phương thức nào.&lt;/p&gt;
-&lt;p&gt;Little endian hay big endian chỉ khác nhau ở việc lưu trữ thứ tự các
-byte dữ liệu.  Cả hai phương thức đều không làm ảnh hưởng đến tốc độ
-xử lý của CPU.  Thế nên cả hai phương thức đều vẫn tồn tại song song
-và sẽ không bao giờ có thể có một câu trả lời thoả đáng: Phương thức
-nào thì tốt hơn?&lt;/p&gt;
-&lt;p&gt;Mỗi phương thức đều có những lợi thế nhất định.  Với little endian, vì
-byte nhỏ nhất luôn nằm bên trái, nó sẽ cho phép chúng ta đọc dữ liệu
-với độ dài tuỳ ý.  Nó sẽ rất thích hợp nếu chúng ta cần ép kiểu, ví dụ
-từ &lt;code&gt;int&lt;/code&gt; thành &lt;code&gt;long int&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Với giả định &lt;code&gt;int&lt;/code&gt; là 4 byte, &lt;code&gt;long int&lt;/code&gt; là 8 byte, nếu dùng little
-endian, khi ép kiểu, địa chỉ bộ nhớ không cần phải thay đổi, chúng ta
-chỉ cần ghi tiếp các byte lớn hơn mà thôi.&lt;/p&gt;
-&lt;p&gt;Nhưng nếu cũng trường hợp đó, mà sử dụng big endian, thì chúng ta sẽ
-phải dịch địa chỉ bộ nhớ hiện tại thêm 4 byte nữa mới có không gian để
-lưu trữ.&lt;/p&gt;
-&lt;p&gt;Nhưng big endian cũng có nhưng lợi thế nhất định, với việc đọc dữ liệu
-byte lớn nhất trước, nó sẽ rất dễ dàng kiểm tra một số là âm hay
-dương, do byte chứa dấu được đọc đầu tiên.&lt;/p&gt;
-&lt;h2 id="xem-cac-byte-du-lieu-trong-bo-nho"&gt;&lt;a class="headerlink" href="#xem-cac-byte-du-lieu-trong-bo-nho" title="Permanent link"&gt;
-&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
-&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
-&lt;/svg&gt;
-&lt;/a&gt;Xem các byte dữ liệu trong bộ nhớ&lt;/h2&gt;
-&lt;p&gt;Chương trình C đơn giản nhau cho chúng ta cách nhìn về việc sắp xếp
-các byte trong bộ nhớ.&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="cp"&gt;#include&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="cpf"&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;
-
-&lt;span class="cm"&gt;/* function to show bytes in memory, from location start to start+n */&lt;/span&gt;
-&lt;span class="kt"&gt;void&lt;/span&gt;
-&lt;span class="nf"&gt;show_mem_rep&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;char&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;start&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;printf&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;" %.2x"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;start&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]);&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;printf&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;"&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-
-&lt;span class="cm"&gt;/* Main function to call above function for 0x01234567 */&lt;/span&gt;
-&lt;span class="kt"&gt;int&lt;/span&gt;
-&lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mh"&gt;0x01234567&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;show_mem_rep&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="kt"&gt;char&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;sizeof&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Khi thực thi chương trình trên, nếu máy của bạn là little endian thì
-kết quả sẽ là&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt; 67 45 23 01
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;còn nếu máy bạn là big endian thì nó sẽ hiển thị theo thứ tự thông
-thường&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt; 01 23 45 67
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Có cách nào để xác định máy tính của chúng ta là little endian hay big
-endian hay không?  Có vô số các cách khác nhau, dưới đây là một trong
-số những cách đó:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="cp"&gt;#include&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="cpf"&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;
-
-&lt;span class="kt"&gt;int&lt;/span&gt;
-&lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="kt"&gt;unsigned&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="kt"&gt;char&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;char&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;printf&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"Little endian"&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;else&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;printf&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"Big endian"&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Với đoạn code đơn giản trên, &lt;code&gt;c&lt;/code&gt; là con trỏ, nó trỏ đến vùng nhớ của
-biến &lt;code&gt;i&lt;/code&gt; là một số nguyên.  Bởi vì số nguyên là kiểu dữ liệu nhiều
-byte, trong khí dữ liệu của &lt;code&gt;char&lt;/code&gt; chỉ là một byte mà thôi, nên &lt;code&gt;*c&lt;/code&gt;
-sẽ trả về giá trị là byte đầu tiên của số nguyên &lt;code&gt;i&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Nếu máy tính của chúng ta là little endian thì byte đầu tiên này sẽ là
-&lt;code&gt;1&lt;/code&gt;, ngược lại thì nó sẽ là &lt;code&gt;0&lt;/code&gt;.&lt;/p&gt;
-&lt;h2 id="ieu-nay-anh-huong-the-nao-en-viec-lap-trinh"&gt;&lt;a class="headerlink" href="#ieu-nay-anh-huong-the-nao-en-viec-lap-trinh" title="Permanent link"&gt;
-&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
-&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
-&lt;/svg&gt;
-&lt;/a&gt;Điều này ảnh hưởng thế nào đến việc lập trình&lt;/h2&gt;
-&lt;p&gt;Về cơ bản thì little endian hay big endian không có ảnh hưởng lắm đến
-việc lập trình.  Phần lớn các lập trình viên không cần quan tâm nhiều
-lắm, bởi mọi việc đã được các trình biên dịch/thông dich đảm nhiệm
-hết.&lt;/p&gt;
-&lt;p&gt;Tuy nhiên, một số trường hợp, chúng ta cần quan tâm, đặc biệt khi
-chuyển đổi dữ\ liệu giữa các máy tính khác nhau.  Ví dụ: khi chúng ta
-cần xử lý một file có cấu trúc thế này, 4 byte đầu tiên là một số
-nguyên &lt;code&gt;n&lt;/code&gt;, sau đó là n số nguyên, mỗi số chiếm 4 byte bộ nhớ, v.v…&lt;/p&gt;
-&lt;p&gt;Trong trường hợp này, khi nhận file được tạo ra từ một máy tính khác,
-việc nó được ghi theo kiểu little endian hay big endian rõ ràng là ảnh
-hưởng rất nghiêm trọng, nếu sử dụng sai phương thức, chúng ta sẽ thu
-về dữ liệu sai.&lt;/p&gt;
-&lt;p&gt;Một trường hợp khác nữa có thể xảy ra vấn đề là khi chúng ta ép kiểu
-cho các biến&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="cp"&gt;#include&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="cpf"&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;
-
-&lt;span class="kt"&gt;int&lt;/span&gt;
-&lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="kt"&gt;unsigned&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;char&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;arr&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mh"&gt;0x01&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mh"&gt;0x00&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="kt"&gt;unsigned&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;short&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;unsigned&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;short&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;arr&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;printf&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"%d"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Trong đoạn code trên, chúng ta đã ép kiểu một array hai phần tử &lt;code&gt;char&lt;/code&gt;
-thành một số nguyên 2 byte (&lt;code&gt;short int&lt;/code&gt;).  Trong ví dụ này, little
-endian hay big endian cũng có ảnh hưởng rất lớn.&lt;/p&gt;
-&lt;p&gt;Một máy tính dùng little endian sẽ có kết quả là &lt;code&gt;1&lt;/code&gt; trong khi big
-endian sẽ cho kết quả là &lt;code&gt;256&lt;/code&gt;.  Để tránh những lỗi đáng tiếc có thể
-xảy ra, những code như trên cần phải tránh.&lt;/p&gt;
-&lt;h2 id="van-e-nuxi"&gt;&lt;a class="headerlink" href="#van-e-nuxi" title="Permanent link"&gt;
-&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
-&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
-&lt;/svg&gt;
-&lt;/a&gt;Vấn đề NUXI&lt;/h2&gt;
-&lt;p&gt;NUXI là một vấn đề rất nổi tiếng liên quan đến little endian và big
-endian: UNIX được lưu trong một hệ thống big-endian sẽ được hiểu là
-NUXI trong một hệ thống little endian.&lt;/p&gt;
-&lt;p&gt;Giả sử chúng ta cần lưu trữ 4 byte (&lt;code&gt;U&lt;/code&gt;, &lt;code&gt;N&lt;/code&gt;, &lt;code&gt;I&lt;/code&gt;, &lt;code&gt;X&lt;/code&gt;) bằng hai số
-nguyên dạng &lt;code&gt;short int&lt;/code&gt;: &lt;code&gt;UN&lt;/code&gt; và &lt;code&gt;IX&lt;/code&gt;.&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;&lt;span class="cp"&gt;#include&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="cpf"&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;
-
-&lt;span class="kt"&gt;int&lt;/span&gt;
-&lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="kt"&gt;short&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// pointer to set shorts&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;short&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="n"&gt;malloc&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;sizeof&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;short&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="c1"&gt;// point to location 0&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"UN"&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;// store first short: U * 256 + N (fictional code)&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="c1"&gt;// point to next location&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"IX"&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;// store second short: I * 256 + X&lt;/span&gt;
-
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Đoạn code trên hoàn toàn độc lập với hệ thống, bất kể nó là little hay
-big endian.  Nếu chúng ta lưu trữ các giá trị “UN” và “IX” khi đọc ra,
-nó vẫn sẽ là “UNIX” hay không?  Nếu mọi việc chỉ xảy ra trên một máy
-tính, dù là big endian hay little endian thì nó sẽ luôn là như vậy,
-bởi mọi thứ sẽ được tự động hoá giúp chúng ta.&lt;/p&gt;
-&lt;p&gt;Với bất cứ dữ liệu nào cũng vậy, chúng ta luôn thu được dữ liệu đúng
-nếu đọc và ghi trong cùng một hệ thống.  Thế nhưng, hãy xem xét kỹ hơn
-về việc sắp xếp các byte trong bộ nhớ.&lt;/p&gt;
-&lt;p&gt;Một hệ thống big endian sẽ lưu trữ như sau:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;U N I X
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Còn một hệ thống little endian thì sẽ như sau:&lt;/p&gt;
-&lt;div class="chl"&gt;&lt;pre&gt;&lt;code&gt;N U X I
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Mặc dù trông hơi ngược nhưng hệ thống little endian sẽ xử lý việc đọc
-giúp chúng ta, nên lưu trữ như vậy nhưng khi lấy ra chúng ta vẫn có dữ
-liệu ban đầu.  Thế nhưng khi chúng ta ghi dữ liệu này ra file, chuyển
-sang một máy tính khác.  Và mỗi máy tính lại xử lý theo cách riêng của
-nó thì UNIX trên máy big endian sẽ được hiểu là NUXI trên máy little
-endian (và ngược lại).&lt;/p&gt;
-&lt;p&gt;Đây chính là vấn đều nguy hiểm nhất khi chúng ta trao đỏi dữ liệu qua
-lại giữa các máy tính với nhau, đặc biệt trong thời đại Internet ngày
-nay.&lt;/p&gt;
-&lt;h2 id="trao-oi-du-lieu-giua-cac-may-co-endian-khac-nhau"&gt;&lt;a class="headerlink" href="#trao-oi-du-lieu-giua-cac-may-co-endian-khac-nhau" title="Permanent link"&gt;
-&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
-&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
-&lt;/svg&gt;
-&lt;/a&gt;Trao đổi dữ liệu giữa các máy có endian khác nhau&lt;/h2&gt;
-&lt;p&gt;Ngày nay, mọi máy tính đều được kết nối để trao đổi dữ liệu với nhau.
-Little endian hay big endian cũng đều phải trao đổi với nhau, nhưng
-làm thế nào để có hiểu được nhau khi chúng không nói chung một thứ
-tiếng?&lt;/p&gt;
-&lt;p&gt;Có 2 giải pháp chính cho việc này&lt;/p&gt;
-&lt;h3 id="su-dung-chung-inh-dang"&gt;&lt;a class="headerlink" href="#su-dung-chung-inh-dang" title="Permanent link"&gt;
-&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
-&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
-&lt;/svg&gt;
-&lt;/a&gt;Sử dụng chung định dạng&lt;/h3&gt;
-&lt;p&gt;Một phương án đơn giản nhất tất cả sử dụng chung một định dang khi
-truyền dữ liệu.&lt;/p&gt;
-&lt;p&gt;Ví dụ những tập tin dạng PNG đều bắt buộc phải sử dụng big endian.
-Tương tự với các tập tin có cấu trúc khác.  Đó là lý do vì sao chúng
-ta nhiều khi cần phải dùng những phần mềm chuyên dụng để đọc và ghi
-các file này.&lt;/p&gt;
-&lt;p&gt;Thế nhưng trong kết nối với Internet, việc truyền dữ liệu còn phức tạp
-hơn thế.  Chúng ta không thể cứ dùng một định dạng file nào đó, rồi
-truyền từng byte một sang máy khác được.  Muốn tăng tốc độ, bắt buộc
-chúng ta phải truyền nhiều byte một lúc.&lt;/p&gt;
-&lt;p&gt;Và khi đó chúng ta cần có một chuẩn chung.  Hiện nay, chuẩn chung cho
-việc truyền dữ liệu trên mạng, gọi là &lt;a href="https://tools.ietf.org/html/rfc1700#page-3" rel="noopener noreferrer" target="_blank"&gt;network byte
-order&lt;/a&gt; chính là big
-endian.  Thế nhưng, dù đã chuẩn chung rồi, thỉnh thoảng vẫn có những
-giao thức chơi chội hơn, sử dụng little endian.&lt;/p&gt;
-&lt;p&gt;Để có thể chuyển đổi dữ liệu thành dữ liệu chuẩn theo network byte
-order, chương trình cần gọi hàm &lt;code&gt;hton*&lt;/code&gt; (host-to-network) (trong ngôn
-ngữ C).  Trong hệ thống big endian, hàm này không cần làm gì cả, còn
-little endian sẽ thực hiện chuyển đối các byte một chút.&lt;/p&gt;
-&lt;p&gt;Dù hệ thống big endian không cần chuyển đổi dữ liệu, việc gọi hàm này
-vẫn là rất cần thiết.  Chương trình của chúng ta có thể được viết bằng
-một ngôn ngữ (C) nhưng có thể được dịch và thực thi ở nhiều hệ thống
-khác nhau, việc gọi hàm này sẽ giúp chúng ta làm điều đó.&lt;/p&gt;
-&lt;p&gt;Tương tự, ở chiều ngược lại, chúng ta cần gọi hàm &lt;code&gt;ntoh*&lt;/code&gt; để chuyển
-đổi dữ liệu nhận được từ mạng về dữ liệu máy tính có thể hiểu được.
-Ngoài ra, chúng ta còn phải hiểu rõ kiểu dữ liệu mà chúng ta cần
-chuyển đổi nữa, danh sách các hàm chuyển đổi như sau:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;htons&lt;/code&gt; – “Host to Network Short”&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;htonl&lt;/code&gt;– “Host to Network Long”&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;ntohs&lt;/code&gt; – “Network to Host Short”&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;ntohl&lt;/code&gt; – “Network to Host Long”&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Những hàm này vô cùng quan trọng khi thực hiện chia sẽ dữ liệu ở tầng
-thấp, ví dụ khi kiểm tra checksum của các gói tin chẳng hạn.  Nếu
-không hiểu rõ về little endian và big endian thì khi cần làm việc về
-mạng, bạn sẽ gặp nhiều khó khăn.&lt;/p&gt;
-&lt;h3 id="su-dung-bom-byte-order-mark"&gt;&lt;a class="headerlink" href="#su-dung-bom-byte-order-mark" title="Permanent link"&gt;
-&lt;svg fill="none" height="16" stroke="currentColor" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"&gt;
-&lt;path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
-&lt;/svg&gt;
-&lt;/a&gt;Sử dụng BOM (Byte Order Mark)&lt;/h3&gt;
-&lt;p&gt;Một phương án khác để giải quyết sự khác biệt về endian là sử dụng BOM
-(&lt;a href="https://www.unicode.org/versions/Unicode5.0.0/ch16.pdf#G25817" rel="noopener noreferrer" target="_blank"&gt;Byte Order
-Mark&lt;/a&gt;).
-Đây là một ký tự đặc biệt, có giá trị là &lt;code&gt;0xFEFF&lt;/code&gt;, được ghi ở vị trí
-đầu tiên của file.&lt;/p&gt;
-&lt;p&gt;Nếu bạn đọc ký tự này là &lt;code&gt;0xFFFE&lt;/code&gt; (bị ngược) thì có nghĩa file này
-được ghi với endian khác với hệ thống của bạn, khi đó, bạn sẽ cần phải
-thay đổi phương thức đọc dữ liệu một chút.&lt;/p&gt;
-&lt;p&gt;Có một vài vấn đề nhỏ với việc sử dụng BOM.  Thứ nhất, BOM sẽ gây tăng
-dữ liệu được ghi vào file.  Ngay cả khi chúng ta chỉ gửi đi 2 byte dữ
-liệu, chúng ta vẫn cần thêm 2 byte BOM nữa.&lt;/p&gt;
-&lt;p&gt;Thứ hai, BOM không hoàn toàn thần thánh, bởi nó phụ thuộc vào lập
-trình viên.  Có người có tâm thì đọc và xử lý khi gặp BOM, có người
-thì hoàn toàn bỏ quên nó và coi nói như dữ liệu thông thường.  Unicode
-sử dụng BOM khi lưu trữ dữ liệu nhiều byte (nhiều ký tự Unicode được
-mã hoá thành 2, 3 thậm chí là 4 byte).&lt;/p&gt;</content><category term="Lập trình"/><category term="Fundamentals"/><category term="Endian"/><category term="Binary"/></entry></feed>
+lẽ khách du lịch thì không cần soi chăng (??)&lt;/p&gt;</content><category term="Du lịch"/><category term="Singapore"/><category term="South East Asia"/><category term="abroad"/><category term="travel"/><category term="tour"/></entry></feed>
