@@ -1,0 +1,17 @@
+name: Notify Profile Repo
+on:
+  push:
+    branches:
+      - main
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger profile update
+        run: |
+          curl -L \
+            -X POST \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer ${{ secrets.PROFILE_REPO_TOKEN }}" \
+            https://api.github.com/repos/manhhomienbienthuy/manhhomienbienthuy/actions/workflows/build.yml/dispatches \
+            -d '{"ref":"main"}'
