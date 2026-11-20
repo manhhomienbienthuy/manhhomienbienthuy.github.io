@@ -11,4 +11,4 @@
 /* SITE */
 	Language: Vietnamese, English
 	Doctype: HTML5
-	Last update: 2026-11-18T07:24:57+00:00
+	Last update: 2026-11-20T10:45:29+00:00
