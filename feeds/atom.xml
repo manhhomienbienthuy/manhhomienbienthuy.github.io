@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>manhhomienbienthuy</title><link href="https://manhhomienbienthuy.github.io/" rel="alternate"/><link href="https://manhhomienbienthuy.github.io/feeds/atom.xml" rel="self"/><id>https://manhhomienbienthuy.github.io/</id><updated>2026-11-20T10:43:25+00:00</updated><subtitle>Đây là thế giới của manhhomienbienthuy (naa). Chào mừng đến với thế giới của tôi!</subtitle><entry><title>Segment Tree: Cấu trúc dữ liệu khiến tôi mất rất lâu mới dám học</title><link href="https://manhhomienbienthuy.github.io/2026/11/20/segment-tree-cau-truc-du-lieu-khien-toi-mat-rat-lau-moi-dam-hoc.html" rel="alternate"/><published>2026-11-20T19:43:25+09:00</published><updated>2026-11-20T10:43:25+00:00</updated><author><name>manhhomienbienthuy</name></author><id>tag:manhhomienbienthuy.github.io,2026-11-20:/2026/11/20/segment-tree-cau-truc-du-lieu-khien-toi-mat-rat-lau-moi-dam-hoc.html</id><summary type="html">Nếu phải chọn một cấu trúc dữ liệu khiến tôi trì hoãn việc học lâu nhất trong những năm đầu làm quen với competitive programming, có lẽ tôi sẽ chọn Segment Tree. Tôi đã nghe nhắc đến nó không biết bao nhiêu lần trong editorial, trong các buổi thảo luận […]</summary><content type="html">&lt;p&gt;Nếu phải chọn một cấu trúc dữ liệu khiến tôi trì hoãn việc học lâu
-nhất trong những năm đầu làm quen với competitive programming, có lẽ
-tôi sẽ chọn Segment Tree. Tôi đã nghe nhắc đến nó không biết bao nhiêu
-lần trong editorial, trong các buổi thảo luận thuật toán, hay trong
-những bài giải của các cao thủ trên Codeforces. Thế nhưng mỗi lần mở
-mã nguồn của một Segment Tree ra xem, tôi đều có cảm giác như đang
-nhìn vào một thứ gì đó quá phức tạp. Mãi đến sau này, khi thực sự ngồi
+<feed xmlns="http://www.w3.org/2005/Atom"><title>manhhomienbienthuy</title><link href="https://manhhomienbienthuy.github.io/" rel="alternate"/><link href="https://manhhomienbienthuy.github.io/feeds/atom.xml" rel="self"/><id>https://manhhomienbienthuy.github.io/</id><updated>2026-11-24T03:15:49+00:00</updated><subtitle>Đây là thế giới của manhhomienbienthuy (naa). Chào mừng đến với thế giới của tôi!</subtitle><entry><title>Segment Tree: Cấu trúc dữ liệu khiến tôi mất rất lâu mới dám học</title><link href="https://manhhomienbienthuy.github.io/2026/11/20/segment-tree-cau-truc-du-lieu-khien-toi-mat-rat-lau-moi-dam-hoc.html" rel="alternate"/><published>2026-11-20T19:43:25+09:00</published><updated>2026-11-24T03:15:49+00:00</updated><author><name>manhhomienbienthuy</name></author><id>tag:manhhomienbienthuy.github.io,2026-11-20:/2026/11/20/segment-tree-cau-truc-du-lieu-khien-toi-mat-rat-lau-moi-dam-hoc.html</id><summary type="html">Nếu phải chọn một cấu trúc dữ liệu khiến tôi trì hoãn việc học lâu nhất trong những năm làm quen với competitive programming, có lẽ tôi sẽ chọn Segment Tree. Tôi đã nghe nhắc đến nó không biết bao nhiêu lần trong editorial, trong các buổi thảo luận thuật […]</summary><content type="html">&lt;p&gt;Nếu phải chọn một cấu trúc dữ liệu khiến tôi trì hoãn việc học lâu
+nhất trong những năm làm quen với competitive programming, có lẽ tôi
+sẽ chọn Segment Tree. Tôi đã nghe nhắc đến nó không biết bao nhiêu lần
+trong editorial, trong các buổi thảo luận thuật toán, hay trong những
+bài giải của các cao thủ trên Codeforces. Thế nhưng mỗi lần mở mã
+nguồn của một Segment Tree ra xem, tôi đều có cảm giác như đang nhìn
+vào một thứ gì đó quá phức tạp. Mãi đến sau này, khi thực sự ngồi
 xuống tìm hiểu một cách nghiêm túc, tôi mới nhận ra rằng Segment Tree
 không đáng sợ như mình từng nghĩ. Trong bài viết này, tôi muốn chia sẻ
 lại hành trình học Segment Tree của bản thân, từ những khó khăn ban
